@@ -1,0 +1,126 @@
+import { ComicReader } from "./ComicReader";
+
+export const dynamic = "force-static";
+
+const cast = [
+  { name: "Dex Vane", role: "COO · Chief Overpromising Officer", beat: "Sells the deck before slide two.", tone: "sun" },
+  { name: "Clara Fye", role: "Director of Intelligence", beat: "Corrects the premise before answering.", tone: "cream" },
+  { name: "Mina Sparks", role: "Junior creative · vibe coder", beat: "Ships the idea before it notices.", tone: "coral" },
+  { name: "Wes Rollback", role: "Product & Platform Engineer", beat: "Warns once, then protects recovery.", tone: "cyan" },
+  { name: "Boomer Slate", role: "Project Manager", beat: "Leaves chaos with owners and dates.", tone: "folio" },
+  { name: "Token", role: "Robot intern · audience liaison", beat: "Has receipts. Invoices by the stare.", tone: "ink" },
+];
+
+export default function Home() {
+  return (
+    <div className="site-shell">
+      <a className="skip-link" href="#latest-comic">
+        Skip to the latest comic
+      </a>
+
+      <header className="masthead">
+        <div className="folio" aria-label="Issue details">
+          <span>The Saturday edition</span>
+          <span>Ahead AI public deliverable</span>
+          <span>Issue 00 · pre-production</span>
+        </div>
+
+        <div className="cover-lockup">
+          <p className="eyebrow">A workplace satire about artificial confidence</p>
+          <h1>
+            <span>Sorry,</span>
+            <span>Tomorrow</span>
+          </h1>
+          <p className="cover-note">Brilliant. Confidently clueless.</p>
+        </div>
+
+        <nav className="primary-nav" aria-label="Primary navigation">
+          <a href="#latest-comic" aria-current="page">
+            Latest
+          </a>
+          <a href="#characters">Characters</a>
+          <a href="#about">About</a>
+          <a href="#archive">Archive</a>
+          <a href="#store">
+            Store <small>coming soon</small>
+          </a>
+        </nav>
+      </header>
+
+      <main>
+        <ComicReader />
+
+        <section className="cast-section" id="characters" aria-labelledby="cast-title">
+          <header className="section-stripe">
+            <span>The office</span>
+            <h2 id="cast-title">Meet the people who approved this</h2>
+          </header>
+
+          <div className="cast-lineup">
+            {cast.map((character, index) => (
+              <article className={`cast-member cast-${character.tone}`} key={character.name}>
+                <div className={`cast-silhouette silhouette-${index + 1}`} aria-hidden="true">
+                  <span />
+                </div>
+                <div>
+                  <h3>{character.name}</h3>
+                  <p className="cast-role">{character.role}</p>
+                  <p>{character.beat}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <aside className="miles-note" aria-label="Recurring character Miles Away">
+            <span>Recurring agency satellite</span>
+            <strong>Miles Away</strong>
+            <p>Synchronously unreachable. Asynchronously indispensable.</p>
+          </aside>
+        </section>
+
+        <section className="about-section" id="about" aria-labelledby="about-title">
+          <div className="about-declaration">
+            <span>About the comic</span>
+            <h2 id="about-title">Brilliant.<br />Confidently<br />clueless.</h2>
+          </div>
+          <div className="about-copy">
+            <p className="about-lead">
+              <em>Sorry, Tomorrow</em> follows Ahead AI, an AI transformation agency that scales first and locates the intelligence later.
+            </p>
+            <p>
+              Everyone is genuinely excellent at something and dangerously wrong about something adjacent to it. The satire targets hype, incentives, process theater, and misplaced certainty—not the people caught underneath them.
+            </p>
+            <p className="margin-note">Internal status: insight identified. Ownership pending.</p>
+          </div>
+        </section>
+
+        <section className="archive-section" id="archive" aria-labelledby="archive-title">
+          <header>
+            <span>All strips</span>
+            <h2 id="archive-title">The short archive</h2>
+          </header>
+          <ol>
+            <li><a href="?comic=executive-twin#latest-comic"><span>00</span><strong>Executive Twin</strong><small>Latest concept strip</small></a></li>
+            <li><a href="?comic=meeting-reduction#latest-comic"><span>−01</span><strong>Meeting Reduction</strong><small>Design placeholder</small></a></li>
+            <li><a href="?comic=context-window#latest-comic"><span>−02</span><strong>Context Window</strong><small>Design placeholder</small></a></li>
+          </ol>
+        </section>
+
+        <section className="store-section" id="store" aria-labelledby="store-title">
+          <span className="store-kicker">The back-cover ad</span>
+          <h2 id="store-title">Store<br />coming soon</h2>
+          <p>The Board approved it before the merchandise existed.</p>
+          <span className="store-stamp">Procurement status: optimistic</span>
+        </section>
+      </main>
+
+      <footer className="site-footer">
+        <a href="#latest-comic">Latest</a>
+        <a href="#characters">Characters</a>
+        <a href="#about">About</a>
+        <a href="#archive">Archive</a>
+        <span>© Sorry, Tomorrow</span>
+      </footer>
+    </div>
+  );
+}
