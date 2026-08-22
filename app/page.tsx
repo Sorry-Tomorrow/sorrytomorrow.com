@@ -1,15 +1,7 @@
 import { ComicReader } from "./ComicReader";
+import { CastDeck } from "./CastDeck";
 
 export const dynamic = "force-static";
-
-const cast = [
-  { name: "Dex Vane", role: "COO · Chief Overpromising Officer", beat: "Sells the deck before slide two.", tone: "sun" },
-  { name: "Clara Fye", role: "Director of Intelligence", beat: "Corrects the premise before answering.", tone: "cream" },
-  { name: "Mina Sparks", role: "Junior creative · vibe coder", beat: "Ships the idea before it notices.", tone: "coral" },
-  { name: "Wes Rollback", role: "Product & Platform Engineer", beat: "Warns once, then protects recovery.", tone: "cyan" },
-  { name: "Boomer Slate", role: "Project Manager", beat: "Leaves chaos with owners and dates.", tone: "folio" },
-  { name: "Token", role: "Robot intern · audience liaison", beat: "Has receipts. Invoices by the stare.", tone: "ink" },
-];
 
 export default function Home() {
   return (
@@ -50,33 +42,7 @@ export default function Home() {
       <main>
         <ComicReader />
 
-        <section className="cast-section" id="characters" aria-labelledby="cast-title">
-          <header className="section-stripe">
-            <span>The office</span>
-            <h2 id="cast-title">Meet the people who approved this</h2>
-          </header>
-
-          <div className="cast-lineup">
-            {cast.map((character, index) => (
-              <article className={`cast-member cast-${character.tone}`} key={character.name}>
-                <div className={`cast-silhouette silhouette-${index + 1}`} aria-hidden="true">
-                  <span />
-                </div>
-                <div>
-                  <h3>{character.name}</h3>
-                  <p className="cast-role">{character.role}</p>
-                  <p>{character.beat}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <aside className="miles-note" aria-label="Recurring character Miles Away">
-            <span>Recurring agency satellite</span>
-            <strong>Miles Away</strong>
-            <p>Synchronously unreachable. Asynchronously indispensable.</p>
-          </aside>
-        </section>
+        <CastDeck />
 
         <section className="about-section" id="about" aria-labelledby="about-title">
           <div className="about-declaration">

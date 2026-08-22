@@ -35,28 +35,43 @@ test("server-renders the Sorry, Tomorrow comic reader", async () => {
   assert.match(html, /id="latest-comic"/);
   assert.match(html, /Executive Twin/);
   assert.match(html, /Meet the people who approved this/);
+  assert.match(html, /Human in the loop\?/i);
+  assert.match(html, /The Vibe Coder/);
+  assert.match(html, /The App That Got Away/);
+  assert.match(html, /<dialog[^>]*id="character-spotlight"/);
   assert.match(html, /Store/);
   assert.match(html, /og\.png/);
   assert.doesNotMatch(html, /Your site is taking shape|react-loading-skeleton/);
 });
 
 test("keeps the finished surface free of starter residue", async () => {
-  const [page, reader, layout, packageJson] = await Promise.all([
+  const [page, reader, castDeck, layout, packageJson, css] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/ComicReader.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/CastDeck.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
   ]);
 
   assert.match(packageJson, /"name": "sorry-tomorrow-site"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(page, /<ComicReader \/>/);
+  assert.match(page, /<CastDeck \/>/);
   assert.match(reader, /Read comic transcript/);
   assert.match(reader, /aria-keyshortcuts="ArrowLeft"/);
   assert.match(reader, /aria-keyshortcuts="ArrowRight"/);
   assert.match(layout, /title:\s*\{[\s\S]*default:\s*"Sorry, Tomorrow"/);
   assert.match(layout, /const socialImageUrl = new URL\("og\.png", siteUrl\)/);
   assert.match(layout, /url:\s*socialImageUrl/);
+  assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
+  assert.match(castDeck, /showModal\(\)/);
+  assert.match(castDeck, /searchParams\.set\("character"/);
+  assert.match(castDeck, /aria-current=/);
+  assert.match(castDeck, /cast-card-word-tight/);
+  assert.match(css, /\.cast-card-name > span[\s\S]*white-space:\s*nowrap/);
+  assert.doesNotMatch(page, /cast-silhouette/);
+  assert.doesNotMatch(css, /\.cast-silhouette|\.silhouette-[1-6]/);
 
   await access(new URL("../public/og.png", import.meta.url));
   assert.deepEqual(await readdir(previewRoot), []);

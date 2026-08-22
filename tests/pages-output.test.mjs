@@ -14,6 +14,8 @@ test("produces a complete GitHub Pages artifact", async () => {
 
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/);
   assert.match(html, /id="latest-comic"/);
+  assert.match(html, /Human in the loop\?/i);
+  assert.match(html, /id="character-spotlight"/);
   assert.match(html, /href="\?comic=meeting-reduction#latest-comic"/);
   assert.doesNotMatch(html, /href="\/\?comic=/);
 

@@ -134,7 +134,11 @@ export function ComicReader() {
   const navigateTo = useCallback((nextIndex: number) => {
     const target = episodes[nextIndex];
     if (!target) return;
-    window.history.pushState({}, "", `?comic=${target.slug}#latest-comic`);
+    const url = new URL(window.location.href);
+    url.searchParams.set("comic", target.slug);
+    url.searchParams.delete("character");
+    url.hash = "latest-comic";
+    window.history.pushState({}, "", `${url.pathname}${url.search}${url.hash}`);
     setEpisodeIndex(nextIndex);
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.getElementById("latest-comic")?.scrollIntoView({
@@ -152,6 +156,7 @@ export function ComicReader() {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (document.querySelector("dialog[open]")) return;
       const target = event.target as HTMLElement | null;
       if (target?.closest("a, button, input, textarea, select, summary")) return;
 
