@@ -69,10 +69,24 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(castDeck, /searchParams\.set\("character"/);
   assert.match(castDeck, /aria-current=/);
   assert.match(castDeck, /cast-card-word-tight/);
+  assert.match(castDeck, /characters\/dex-vane\.png/);
+  assert.match(castDeck, /characters\/clara-fye\.png/);
+  assert.match(castDeck, /characters\/mina-sparks\.png/);
+  assert.match(castDeck, /characters\/wes-rollback\.png/);
+  assert.match(castDeck, /characters\/boomer-slate\.png/);
+  assert.match(castDeck, /characters\/token\.png/);
   assert.match(css, /\.cast-card-name > span[\s\S]*white-space:\s*nowrap/);
+  assert.doesNotMatch(css, /\.cast-card-has-image::after/);
+  assert.match(css, /\.cast-card-portrait[\s\S]*bottom:\s*0/);
   assert.doesNotMatch(page, /cast-silhouette/);
   assert.doesNotMatch(css, /\.cast-silhouette|\.silhouette-[1-6]/);
 
   await access(new URL("../public/og.png", import.meta.url));
+  await access(new URL("../public/characters/dex-vane.png", import.meta.url));
+  await access(new URL("../public/characters/clara-fye.png", import.meta.url));
+  await access(new URL("../public/characters/mina-sparks.png", import.meta.url));
+  await access(new URL("../public/characters/wes-rollback.png", import.meta.url));
+  await access(new URL("../public/characters/boomer-slate.png", import.meta.url));
+  await access(new URL("../public/characters/token.png", import.meta.url));
   assert.deepEqual(await readdir(previewRoot), []);
 });

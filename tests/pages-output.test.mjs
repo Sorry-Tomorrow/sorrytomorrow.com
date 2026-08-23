@@ -40,6 +40,12 @@ test("produces a complete GitHub Pages artifact", async () => {
     access(new URL("_next/", outputRoot)),
     access(new URL("og.png", outputRoot)),
     access(new URL("favicon.svg", outputRoot)),
+    access(new URL("characters/dex-vane.png", outputRoot)),
+    access(new URL("characters/clara-fye.png", outputRoot)),
+    access(new URL("characters/mina-sparks.png", outputRoot)),
+    access(new URL("characters/wes-rollback.png", outputRoot)),
+    access(new URL("characters/boomer-slate.png", outputRoot)),
+    access(new URL("characters/token.png", outputRoot)),
     access(new URL(".nojekyll", outputRoot)),
     access(new URL("app/ComicReader.tsx", projectRoot)),
   ]);

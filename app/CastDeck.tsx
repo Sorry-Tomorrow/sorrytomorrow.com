@@ -15,6 +15,7 @@ type CastMember = {
   bullets: [string, string, string];
   group: CastGroup;
   tone: CastTone;
+  image?: string;
 };
 
 const cast: CastMember[] = [
@@ -31,6 +32,7 @@ const cast: CastMember[] = [
     ],
     group: "main",
     tone: "sun",
+    image: "characters/dex-vane.png",
   },
   {
     slug: "clara-fye",
@@ -45,6 +47,7 @@ const cast: CastMember[] = [
     ],
     group: "main",
     tone: "cream",
+    image: "characters/clara-fye.png",
   },
   {
     slug: "mina-sparks",
@@ -59,6 +62,7 @@ const cast: CastMember[] = [
     ],
     group: "main",
     tone: "coral",
+    image: "characters/mina-sparks.png",
   },
   {
     slug: "wes-rollback",
@@ -73,6 +77,7 @@ const cast: CastMember[] = [
     ],
     group: "main",
     tone: "cyan",
+    image: "characters/wes-rollback.png",
   },
   {
     slug: "boomer-slate",
@@ -87,6 +92,7 @@ const cast: CastMember[] = [
     ],
     group: "main",
     tone: "folio",
+    image: "characters/boomer-slate.png",
   },
   {
     slug: "token",
@@ -101,6 +107,7 @@ const cast: CastMember[] = [
     ],
     group: "main",
     tone: "ink",
+    image: "characters/token.png",
   },
   {
     slug: "miles-away",
@@ -352,16 +359,21 @@ export function CastDeck() {
     return (
       <button
         type="button"
-        className={`cast-card cast-card-${character.group} cast-${character.tone}`}
+        className={`cast-card cast-card-${character.group} cast-card-${character.slug} cast-${character.tone}${character.image ? " cast-card-has-image" : ""}`}
         key={character.slug}
         onClick={(event) => handleCardClick(event, index)}
         aria-haspopup="dialog"
         aria-controls="character-spotlight"
         aria-label={`Open ${character.name} biography`}
       >
-        <span className="cast-card-kicker">
-          {character.group === "main" ? `Main cast · ${String(index + 1).padStart(2, "0")}` : "Recurring appearance"}
-        </span>
+        {character.group === "side" ? <span className="cast-card-kicker">Recurring appearance</span> : null}
+        {character.image ? (
+          <span className="cast-card-portrait" aria-hidden="true">
+            {/* Public character assets intentionally use relative URLs so project-path and custom-domain builds both resolve. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={character.image} alt="" loading="lazy" decoding="async" />
+          </span>
+        ) : null}
         <span className="cast-card-name" aria-hidden="true">
           {words.map((word) => (
             <span className={word.length >= 8 ? "cast-card-word-tight" : undefined} key={word}>
@@ -412,7 +424,7 @@ export function CastDeck() {
       <dialog
         ref={dialogRef}
         id="character-spotlight"
-        className={`cast-spotlight cast-${selected.tone} spotlight-${selected.group}`}
+        className={`cast-spotlight cast-${selected.tone} spotlight-${selected.group} spotlight-${selected.slug}${selected.image ? " spotlight-has-image" : ""}`}
         style={dialogStyle}
         aria-labelledby="spotlight-title"
         aria-describedby="spotlight-hook"
@@ -436,6 +448,12 @@ export function CastDeck() {
             onTouchEnd={handleTouchEnd}
           >
             <section className="spotlight-identity">
+              {selected.image ? (
+                <span className="spotlight-portrait" aria-hidden="true">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={selected.image} alt="" decoding="async" />
+                </span>
+              ) : null}
               <span className="spotlight-stamp">{selected.group === "main" ? "Ahead AI" : "Special appearance"}</span>
               <p className="spotlight-role">{selected.role}</p>
               <h2 id="spotlight-title">{selected.name}</h2>
