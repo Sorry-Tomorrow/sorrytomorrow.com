@@ -35,6 +35,7 @@ test("server-renders the Sorry, Tomorrow comic reader", async () => {
   assert.match(html, /id="latest-comic"/);
   assert.match(html, /Executive Twin/);
   assert.match(html, /Meet the people who approved this/);
+  assert.match(html, /always slightly ahead of the plan/);
   assert.match(html, /Human in the loop\?/i);
   assert.match(html, /The Vibe Coder/);
   assert.match(html, /The Social Media Prophet/);

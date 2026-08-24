@@ -51,7 +51,7 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p className="about-lead">
-              <em>Sorry, Tomorrow</em> follows Ahead AI, an AI transformation agency that scales first and locates the intelligence later.
+              <em>Sorry, Tomorrow</em> follows Ahead AI, an AI transformation agency that is always slightly ahead of the plan.
             </p>
             <p>
               Everyone is genuinely excellent at something and dangerously wrong about something adjacent to it. The satire targets hype, incentives, process theater, and misplaced certainty—not the people caught underneath them.
