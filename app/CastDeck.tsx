@@ -23,7 +23,7 @@ const cast: CastMember[] = [
     slug: "dex-vane",
     name: "Dex Vane",
     role: "COO · Chief Overpromising Officer",
-    beat: "Sells the deck before slide two.",
+    beat: "So charming, even he buys it.",
     hook: "Can read a room, win it, and leave before anyone asks what the nouns mean.",
     bullets: [
       "Keeps his conference badges better organized than most client work.",
@@ -53,7 +53,7 @@ const cast: CastMember[] = [
     slug: "mina-sparks",
     name: "Mina Sparks",
     role: "Junior creative",
-    beat: "Ships the idea before it notices.",
+    beat: "Designs it. Builds it. Testing optional.",
     hook: "Builds overnight prototypes with great taste and no fear of tomorrow morning.",
     bullets: [
       "Finds the hook before the brief.",
@@ -83,7 +83,7 @@ const cast: CastMember[] = [
     slug: "boomer-slate",
     name: "Boomer Slate",
     role: "Project Manager",
-    beat: "Plans ahead.",
+    beat: "Gently reminds chaos there’s a plan.",
     hook: "Can turn a collapsing meeting into owners, dates, and one extremely optimistic timeline.",
     bullets: [
       "Dex changes the promise.",
