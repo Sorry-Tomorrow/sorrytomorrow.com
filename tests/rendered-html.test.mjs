@@ -37,6 +37,8 @@ test("server-renders the Sorry, Tomorrow comic reader", async () => {
   assert.match(html, /Meet the people who approved this/);
   assert.match(html, /Human in the loop\?/i);
   assert.match(html, /The Vibe Coder/);
+  assert.match(html, /The Social Media Prophet/);
+  assert.doesNotMatch(html, /The LinkedIn Prophet/);
   assert.match(html, /The App That Got Away/);
   assert.match(html, /<dialog[^>]*id="character-spotlight"/);
   assert.match(html, /Store/);

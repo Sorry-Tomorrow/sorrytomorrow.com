@@ -138,8 +138,8 @@ const cast: CastMember[] = [
     tone: "sun",
   },
   {
-    slug: "the-linkedin-prophet",
-    name: "The LinkedIn Prophet",
+    slug: "the-social-media-prophet",
+    name: "The Social Media Prophet",
     role: "AI thought leader · engagement farmer",
     beat: "Predicted it right after everyone noticed.",
     hook: "Turns obvious contradictions into lessons for the rest of us.",
