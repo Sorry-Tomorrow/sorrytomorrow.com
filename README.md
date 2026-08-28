@@ -2,7 +2,7 @@
 
 Website for *Sorry, Tomorrow*, a workplace satire about the fictional AI transformation agency Ahead AI.
 
-This pass combines a comic-first reader, editorial typography, a bold cover-style masthead, a restrained newspaper folio, cast and about sections, a short archive, and a coming-soon store treatment. The comic art is deliberately represented by design-review placeholders until production artwork is approved.
+The homepage leads with **Executive Twin v0.0.1**, the first approved *Sorry, Tomorrow* comic, followed by the cast, about section, archive, and coming-soon store treatment. Its four final lettered SVG panels render in a full-width natural-scroll sequence; Panel 1 loads immediately and Panels 2–4 load as the reader approaches them.
 
 ## Local development
 

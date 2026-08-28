@@ -265,133 +265,16 @@ summary {
   background: var(--cyan);
 }
 
-.comic-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(0.3rem, 0.8vw, 0.65rem);
-  padding: clamp(0.3rem, 0.8vw, 0.65rem);
-  background: var(--ink);
+.comic-art {
   border: 0.22rem solid var(--ink);
-}
-
-.comic-panel {
-  min-height: clamp(15rem, 31vw, 27rem);
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  position: relative;
-  overflow: hidden;
-  padding: clamp(0.7rem, 2vw, 1.25rem);
-  color: var(--ink);
-}
-
-.panel-dex {
-  background: var(--sun);
-}
-
-.panel-mina {
-  background: var(--cyan);
-}
-
-.panel-wes {
-  background:
-    repeating-linear-gradient(-45deg, transparent 0 0.8rem, color-mix(in srgb, var(--ink) 10%, transparent) 0.8rem 0.95rem),
-    var(--coral);
-}
-
-.panel-token {
   background: var(--cream);
 }
 
-.panel-number {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
-}
-
-.panel-scene {
-  display: grid;
-  place-items: center;
-  position: relative;
-}
-
-.character-shape {
-  width: clamp(5rem, 12vw, 10rem);
-  aspect-ratio: 0.9;
-  position: relative;
-  border: clamp(0.25rem, 0.6vw, 0.48rem) solid var(--ink);
-  border-radius: 48% 48% 42% 42%;
-  transform: rotate(-4deg);
-}
-
-.character-shape::before {
-  content: "";
-  position: absolute;
-  inset: -1.25rem 0.7rem auto;
-  height: 2rem;
-  background: var(--ink);
-  clip-path: polygon(0 100%, 12% 25%, 28% 66%, 46% 0, 61% 65%, 79% 24%, 100% 100%);
-}
-
-.panel-mina .character-shape {
-  transform: rotate(10deg) translateY(-0.35rem);
-}
-
-.panel-wes .character-shape {
-  border-radius: 35%;
-  transform: rotate(0deg);
-}
-
-.panel-token .character-shape {
-  width: clamp(3.5rem, 8vw, 6rem);
-  aspect-ratio: 1;
-  border-radius: 24%;
-  transform: translate(-40%, 35%);
-}
-
-.panel-token .character-shape::before {
-  inset: 34% 20%;
+.comic-panel-art {
+  width: 100%;
   height: auto;
-  border-top: 0.25rem solid var(--ink);
-  border-bottom: 0.25rem solid var(--ink);
-  background: none;
-  clip-path: none;
-}
-
-.blame-loop {
-  position: absolute;
-  top: 30%;
-  right: 8%;
-  width: min-content;
-  font-family: var(--font-display), Impact, sans-serif;
-  letter-spacing: 0.08em;
-  transform: rotate(8deg);
-}
-
-.speech {
-  width: fit-content;
-  max-width: 88%;
-  margin: 0;
-  padding: 0.6rem 0.75rem;
-  border: 0.18rem solid var(--ink);
+  display: block;
   background: var(--cream);
-  font-size: clamp(0.82rem, 1.5vw, 1.08rem);
-  line-height: 1.35;
-}
-
-.panel-copy {
-  display: grid;
-  gap: 0.4rem;
-  align-self: end;
-  justify-items: start;
-}
-
-.silent-panel {
-  margin: 0;
-  padding: 0.35rem 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.72rem;
-  font-style: italic;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 .comic-page figcaption {
@@ -1378,16 +1261,9 @@ summary {
     padding: 0;
   }
 
-  .comic-grid {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-    padding: 0.35rem;
+  .comic-art {
     border-left: 0;
     border-right: 0;
-  }
-
-  .comic-panel {
-    min-height: min(96vw, 28rem);
   }
 
   .edge-navigation {

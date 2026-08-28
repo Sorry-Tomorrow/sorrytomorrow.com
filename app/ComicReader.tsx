@@ -9,7 +9,11 @@ type Line = {
 };
 
 type Panel = {
-  scene: "dex" | "mina" | "wes" | "token";
+  image: {
+    src: string;
+    width: number;
+    height: number;
+  };
   lines: Line[];
   description: string;
 };
@@ -26,11 +30,15 @@ const episodes: Episode[] = [
   {
     slug: "executive-twin",
     title: "Executive Twin",
-    label: "Latest concept strip",
-    date: "Design placeholder",
+    label: "First approved comic",
+    date: "v0.0.1",
     panels: [
       {
-        scene: "dex",
+        image: {
+          src: "comics/executive-twin/p1-lettered.svg",
+          width: 1700,
+          height: 1620,
+        },
         lines: [
           { speaker: "Dex", text: "I trained a digital twin on my entire leadership style." },
           { speaker: "Clara", text: "Were outcomes included?" },
@@ -38,7 +46,11 @@ const episodes: Episode[] = [
         description: "Dex presents a miniature holographic copy while Clara tests the premise.",
       },
       {
-        scene: "mina",
+        image: {
+          src: "comics/executive-twin/p2-lettered.svg",
+          width: 1700,
+          height: 1560,
+        },
         lines: [
           { speaker: "Mina", text: "It can now make executive decisions at machine speed." },
           { speaker: "Wes", text: "Can it explain one?" },
@@ -46,7 +58,11 @@ const episodes: Episode[] = [
         description: "Mina celebrates the working prototype as Wes reaches toward rollback.",
       },
       {
-        scene: "wes",
+        image: {
+          src: "comics/executive-twin/p3-lettered.svg",
+          width: 1700,
+          height: 1570,
+        },
         lines: [
           { speaker: "AI Dex", text: "My recommendation: delegate all accountability." },
           { speaker: "Dex", text: "See? It understands management." },
@@ -54,69 +70,25 @@ const episodes: Episode[] = [
         description: "The digital twin reproduces Dex’s blind spot perfectly.",
       },
       {
-        scene: "token",
+        image: {
+          src: "comics/executive-twin/p4-lettered.svg",
+          width: 1700,
+          height: 1240,
+        },
         lines: [],
-        description: "Four Dex holograms point blame in a circle while Token stares at the reader.",
-      },
-    ],
-  },
-  {
-    slug: "meeting-reduction",
-    title: "Meeting Reduction",
-    label: "Older concept strip",
-    date: "Design placeholder",
-    panels: [
-      {
-        scene: "mina",
-        lines: [{ speaker: "Mina", text: "I built a bot that attends meetings for us." }],
-        description: "Mina unveils a cheerful meeting assistant.",
-      },
-      {
-        scene: "wes",
-        lines: [{ speaker: "Wes", text: "What does it do with the summary?" }],
-        description: "Wes asks the only operational question.",
-      },
-      {
-        scene: "dex",
-        lines: [{ speaker: "Dex", text: "It schedules a meeting to review it." }],
-        description: "Dex presents the recursive workflow as a breakthrough.",
-      },
-      {
-        scene: "token",
-        lines: [{ speaker: "Token", text: "Attendance is now fully autonomous." }],
-        description: "An empty conference room contains a wall of overlapping meeting windows.",
-      },
-    ],
-  },
-  {
-    slug: "context-window",
-    title: "Context Window",
-    label: "Oldest concept strip",
-    date: "Design placeholder",
-    panels: [
-      {
-        scene: "wes",
-        lines: [{ speaker: "Clara", text: "The context window is full." }],
-        description: "Clara points to the limit in her annotated notebook.",
-      },
-      {
-        scene: "dex",
-        lines: [{ speaker: "Dex", text: "Then let’s create capacity." }],
-        description: "Dex confidently approaches the conference-room window.",
-      },
-      {
-        scene: "mina",
-        lines: [{ speaker: "Mina", text: "Technically, it is more open now." }],
-        description: "Source documents sail through the open window.",
-      },
-      {
-        scene: "token",
-        lines: [],
-        description: "The team watches the documents scatter across the city as Token faces the reader.",
+        description: "Four holographic Dexes route accountability clockwise around the proudly posing original as Clara and Token stare, Mina applauds, and Wes reaches for rollback.",
       },
     ],
   },
 ];
+
+function panelAlt(panel: Panel, index: number) {
+  const dialogue = panel.lines
+    .map((line) => `${line.speaker} says, “${line.text}”`)
+    .join(" ");
+
+  return `Panel ${index + 1}. ${dialogue ? `${dialogue} ` : ""}${panel.description}`;
+}
 
 function getEpisodeIndex() {
   if (typeof window === "undefined") return 0;
@@ -205,43 +177,34 @@ export function ComicReader() {
             <small>{older.title}</small>
           </a>
         ) : (
-          <div className="edge-navigation latest" aria-label="You are at the oldest concept comic">
+          <div className="edge-navigation latest" aria-label="You are at the first comic">
             <span aria-hidden="true">—</span>
-            <strong>Oldest reached</strong>
+            <strong>First comic</strong>
             <small>Archive begins here</small>
           </div>
         )}
 
         <figure className="comic-page" key={episode.slug}>
-          <div className="comic-grid">
+          <div className="comic-art" role="group" aria-label={`${episode.title}, four panels`}>
             {episode.panels.map((panel, index) => (
-              <section
-                className={`comic-panel panel-${panel.scene}`}
+              // The approved SVG authorities must be served byte-for-byte; image optimization is intentionally bypassed.
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                className="comic-panel-art"
                 key={`${episode.slug}-${index}`}
-                aria-label={`Panel ${index + 1}`}
-              >
-                <span className="panel-number">{String(index + 1).padStart(2, "0")}</span>
-                <div className="panel-scene" aria-hidden="true">
-                  <span className="character-shape" />
-                  {panel.scene === "token" ? <span className="blame-loop">DEX → DEX → DEX</span> : null}
-                </div>
-                <div className="panel-copy">
-                  {panel.lines.length ? (
-                    panel.lines.map((line) => (
-                      <p className="speech" key={`${line.speaker}-${line.text}`}>
-                        <strong>{line.speaker}:</strong> {line.text}
-                      </p>
-                    ))
-                  ) : (
-                    <p className="silent-panel">Silent payoff</p>
-                  )}
-                </div>
-              </section>
+                src={panel.image.src}
+                width={panel.image.width}
+                height={panel.image.height}
+                alt={panelAlt(panel, index)}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                decoding="async"
+              />
             ))}
           </div>
           <figcaption>
             <span>{episode.title}</span>
-            <span>Placeholder artwork for design review</span>
+            <span>First production-ready pilot · v0.0.1</span>
           </figcaption>
         </figure>
 
@@ -271,7 +234,7 @@ export function ComicReader() {
             ← Older comic
           </a>
         ) : (
-          <span>Oldest concept comic</span>
+          <span>First comic</span>
         )}
         <a href="#archive">All strips</a>
         {newer ? (

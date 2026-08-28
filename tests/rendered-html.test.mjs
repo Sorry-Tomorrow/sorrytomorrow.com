@@ -34,6 +34,16 @@ test("server-renders the Sorry, Tomorrow comic reader", async () => {
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/i);
   assert.match(html, /id="latest-comic"/);
   assert.match(html, /Executive Twin/);
+  assert.match(html, /First approved comic/);
+  assert.match(html, /First production-ready pilot/);
+  assert.match(html, /comics\/executive-twin\/p1-lettered\.svg/);
+  assert.match(html, /comics\/executive-twin\/p2-lettered\.svg/);
+  assert.match(html, /comics\/executive-twin\/p3-lettered\.svg/);
+  assert.match(html, /comics\/executive-twin\/p4-lettered\.svg/);
+  assert.doesNotMatch(
+    html,
+    /Design placeholder|Latest concept strip|Placeholder artwork for design review/,
+  );
   assert.match(html, /Meet the people who approved this/);
   assert.match(html, /always slightly ahead of the plan/);
   assert.match(html, /Human in the loop\?/i);
@@ -64,6 +74,11 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(reader, /Read comic transcript/);
   assert.match(reader, /aria-keyshortcuts="ArrowLeft"/);
   assert.match(reader, /aria-keyshortcuts="ArrowRight"/);
+  assert.match(reader, /comics\/executive-twin\/p1-lettered\.svg/);
+  assert.match(reader, /loading=\{index === 0 \? "eager" : "lazy"\}/);
+  assert.match(reader, /width=\{panel\.image\.width\}/);
+  assert.match(reader, /height=\{panel\.image\.height\}/);
+  assert.doesNotMatch(reader, /meeting-reduction|context-window|Design placeholder/);
   assert.match(layout, /title:\s*\{[\s\S]*default:\s*"Sorry, Tomorrow"/);
   assert.match(layout, /const socialImageUrl = new URL\("og\.png", siteUrl\)/);
   assert.match(layout, /url:\s*socialImageUrl/);
@@ -91,5 +106,9 @@ test("keeps the finished surface free of starter residue", async () => {
   await access(new URL("../public/characters/wes-rollback.png", import.meta.url));
   await access(new URL("../public/characters/boomer-slate.png", import.meta.url));
   await access(new URL("../public/characters/token.png", import.meta.url));
+  await access(new URL("../public/comics/executive-twin/p1-lettered.svg", import.meta.url));
+  await access(new URL("../public/comics/executive-twin/p2-lettered.svg", import.meta.url));
+  await access(new URL("../public/comics/executive-twin/p3-lettered.svg", import.meta.url));
+  await access(new URL("../public/comics/executive-twin/p4-lettered.svg", import.meta.url));
   assert.deepEqual(await readdir(previewRoot), []);
 });
