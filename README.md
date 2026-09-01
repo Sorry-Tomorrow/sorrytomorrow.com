@@ -2,7 +2,7 @@
 
 Website for *Sorry, Tomorrow*, a workplace satire about the fictional AI transformation agency Ahead AI.
 
-The homepage leads with **Executive Twin v0.0.1**, the first approved *Sorry, Tomorrow* comic, followed by the cast, about section, archive, and coming-soon store treatment. Its four final lettered SVG panels render in a full-width natural-scroll sequence; Panel 1 loads immediately and Panels 2–4 load as the reader approaches them.
+The homepage leads with **Vibe Coding in Your Sleep v0.0.3** and links the three approved *Sorry, Tomorrow* comics through older/newer navigation and the archive. Each exact publication asset renders at its natural aspect ratio in ordinary page flow, followed by the cast, about section, archive, and coming-soon store treatment.
 
 ## Local development
 
@@ -28,4 +28,4 @@ npm run lint
 
 Pushes to `main` deploy a static export through GitHub Actions and GitHub Pages. The Pages build preserves the repository base path for assets and comic navigation.
 
-No custom domain, social account, publishing integration, or store integration is configured by this repository.
+GitHub Pages serves the site at `sorrytomorrow.com`. No social-account, publishing-service, or store integration is configured by this repository.

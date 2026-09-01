@@ -8,12 +8,14 @@ type Line = {
   text: string;
 };
 
-type Panel = {
-  image: {
-    src: string;
-    width: number;
-    height: number;
-  };
+type ComicArt = {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
+type TranscriptPanel = {
   lines: Line[];
   description: string;
 };
@@ -23,22 +25,109 @@ type Episode = {
   title: string;
   label: string;
   date: string;
-  panels: Panel[];
+  caption: string;
+  art: ComicArt[];
+  panels: TranscriptPanel[];
 };
 
 const episodes: Episode[] = [
+  {
+    slug: "vibe-coding-in-your-sleep",
+    title: "Vibe Coding in Your Sleep",
+    label: "Latest approved comic",
+    date: "v0.0.3",
+    caption: "Third production-ready pilot · v0.0.3",
+    art: [
+      {
+        src: "comics/vibe-coding-in-your-sleep/website-master.png",
+        width: 1700,
+        height: 1838,
+        alt: "At 2:17 A.M., Mina has fallen asleep at her desk while Token waits beside her. Still asleep, she murmurs four disconnected fragments: “auto-magical…”, “add glitter…”, “add joy…”, and “make token pretty…”. Token treats the fragments as requirements. By morning, the workstation has become pastel and decorative under an enabled automated beauty profile. In the silent final panel, Token stands alone beneath a glittering halo, covered in fluffy trim and charms, visibly irritated by the makeover he executed.",
+      },
+    ],
+    panels: [
+      {
+        lines: [{ speaker: "Clock", text: "2:17 A.M." }],
+        description: "Mina has fallen asleep at her desk while Token waits beside her in ambient listening mode.",
+      },
+      {
+        lines: [
+          { speaker: "Mina", text: "auto-magical…" },
+          { speaker: "Mina", text: "add glitter…" },
+          { speaker: "Mina", text: "add joy…" },
+          { speaker: "Mina", text: "make token pretty…" },
+        ],
+        description: "Still asleep, Mina murmurs four disconnected fragments and Token treats them as requirements.",
+      },
+      {
+        lines: [{ speaker: "System", text: "AUTOMATED BEAUTY PROFILE ENABLED" }],
+        description: "By morning, the same workstation has become pastel and decorative while Mina remains asleep.",
+      },
+      {
+        lines: [],
+        description: "Token stands alone beneath a glittering halo, covered in fluffy trim and charms, visibly irritated by the makeover he executed.",
+      },
+    ],
+  },
+  {
+    slug: "undefeated",
+    title: "Undefeated",
+    label: "Second approved comic",
+    date: "v0.0.2",
+    caption: "Second production-ready pilot · v0.0.2",
+    art: [
+      {
+        src: "comics/undefeated/website-master.png",
+        width: 1700,
+        height: 3398,
+        alt: "Two-panel workplace comic. In Panel 1, Mina hands Token a substantial unchecked launch checklist beside a dark, untouched workstation and says, “And make no mistakes.” In Panel 2, the workstation is still untouched and the checklist remains empty. A small, smug Token stands on a tiny podium holding an enormous gold trophy while a scoreboard reads zero mistakes and zero tasks attempted. Mina throws up her hands in stunned disbelief. Token says, “Undefeated.”",
+      },
+    ],
+    panels: [
+      {
+        lines: [{ speaker: "Mina", text: "And make no mistakes." }],
+        description: "Mina hands Token a substantial unchecked launch checklist beside a dark, untouched workstation. The checklist is labeled LAUNCH CHECKLIST.",
+      },
+      {
+        lines: [{ speaker: "Token", text: "Undefeated." }],
+        description: "The workstation remains untouched and the checklist remains empty. Token stands on a tiny podium holding an enormous gold trophy while a scoreboard reads MISTAKES: 0 and TASKS ATTEMPTED: 0. Mina throws up her hands in stunned disbelief.",
+      },
+    ],
+  },
   {
     slug: "executive-twin",
     title: "Executive Twin",
     label: "First approved comic",
     date: "v0.0.1",
+    caption: "First production-ready pilot · v0.0.1",
+    art: [
+      {
+        src: "comics/executive-twin/p1-lettered.svg",
+        width: 1700,
+        height: 1620,
+        alt: "Panel 1. Dex says, “I trained a digital twin on my entire leadership style.” Clara says, “Were outcomes included?” Dex presents a miniature holographic copy while Clara tests the premise.",
+      },
+      {
+        src: "comics/executive-twin/p2-lettered.svg",
+        width: 1700,
+        height: 1560,
+        alt: "Panel 2. Mina says, “It can now make executive decisions at machine speed.” Wes says, “Can it explain one?” Mina celebrates the working prototype as Wes reaches toward rollback.",
+      },
+      {
+        src: "comics/executive-twin/p3-lettered.svg",
+        width: 1700,
+        height: 1570,
+        alt: "Panel 3. AI Dex says, “My recommendation: delegate all accountability.” Dex says, “See? It understands management.” The digital twin reproduces Dex’s blind spot perfectly.",
+      },
+      {
+        src: "comics/executive-twin/p4-lettered.svg",
+        width: 1700,
+        height: 1240,
+        alt: "Panel 4. Four holographic Dexes route accountability clockwise around the proudly posing original as Clara and Token stare, Mina applauds, and Wes reaches for rollback.",
+      },
+    ],
     panels: [
       {
-        image: {
-          src: "comics/executive-twin/p1-lettered.svg",
-          width: 1700,
-          height: 1620,
-        },
         lines: [
           { speaker: "Dex", text: "I trained a digital twin on my entire leadership style." },
           { speaker: "Clara", text: "Were outcomes included?" },
@@ -46,11 +135,6 @@ const episodes: Episode[] = [
         description: "Dex presents a miniature holographic copy while Clara tests the premise.",
       },
       {
-        image: {
-          src: "comics/executive-twin/p2-lettered.svg",
-          width: 1700,
-          height: 1560,
-        },
         lines: [
           { speaker: "Mina", text: "It can now make executive decisions at machine speed." },
           { speaker: "Wes", text: "Can it explain one?" },
@@ -58,11 +142,6 @@ const episodes: Episode[] = [
         description: "Mina celebrates the working prototype as Wes reaches toward rollback.",
       },
       {
-        image: {
-          src: "comics/executive-twin/p3-lettered.svg",
-          width: 1700,
-          height: 1570,
-        },
         lines: [
           { speaker: "AI Dex", text: "My recommendation: delegate all accountability." },
           { speaker: "Dex", text: "See? It understands management." },
@@ -70,25 +149,12 @@ const episodes: Episode[] = [
         description: "The digital twin reproduces Dex’s blind spot perfectly.",
       },
       {
-        image: {
-          src: "comics/executive-twin/p4-lettered.svg",
-          width: 1700,
-          height: 1240,
-        },
         lines: [],
         description: "Four holographic Dexes route accountability clockwise around the proudly posing original as Clara and Token stare, Mina applauds, and Wes reaches for rollback.",
       },
     ],
   },
 ];
-
-function panelAlt(panel: Panel, index: number) {
-  const dialogue = panel.lines
-    .map((line) => `${line.speaker} says, “${line.text}”`)
-    .join(" ");
-
-  return `Panel ${index + 1}. ${dialogue ? `${dialogue} ` : ""}${panel.description}`;
-}
 
 function getEpisodeIndex() {
   if (typeof window === "undefined") return 0;
@@ -185,17 +251,17 @@ export function ComicReader() {
         )}
 
         <figure className="comic-page" key={episode.slug}>
-          <div className="comic-art" role="group" aria-label={`${episode.title}, four panels`}>
-            {episode.panels.map((panel, index) => (
-              // The approved SVG authorities must be served byte-for-byte; image optimization is intentionally bypassed.
+          <div className="comic-art" role="group" aria-label={`${episode.title}, ${episode.panels.length} panels`}>
+            {episode.art.map((art, index) => (
+              // Approved comic assets must be served byte-for-byte; image optimization is intentionally bypassed.
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 className="comic-panel-art"
-                key={`${episode.slug}-${index}`}
-                src={panel.image.src}
-                width={panel.image.width}
-                height={panel.image.height}
-                alt={panelAlt(panel, index)}
+                key={art.src}
+                src={art.src}
+                width={art.width}
+                height={art.height}
+                alt={art.alt}
                 loading={index === 0 ? "eager" : "lazy"}
                 fetchPriority={index === 0 ? "high" : "auto"}
                 decoding="async"
@@ -204,7 +270,7 @@ export function ComicReader() {
           </div>
           <figcaption>
             <span>{episode.title}</span>
-            <span>First production-ready pilot · v0.0.1</span>
+            <span>{episode.caption}</span>
           </figcaption>
         </figure>
 

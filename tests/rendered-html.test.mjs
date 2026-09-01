@@ -33,13 +33,18 @@ test("server-renders the Sorry, Tomorrow comic reader", async () => {
   const html = await response.text();
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/i);
   assert.match(html, /id="latest-comic"/);
+  assert.match(html, /Vibe Coding in Your Sleep/);
+  assert.match(html, /Latest approved comic/);
+  assert.match(html, /Third production-ready pilot/);
+  assert.match(html, /comics\/vibe-coding-in-your-sleep\/website-master\.png/);
+  assert.match(html, /make token pretty…/);
+  assert.match(html, /AUTOMATED BEAUTY PROFILE ENABLED/);
   assert.match(html, /Executive Twin/);
   assert.match(html, /First approved comic/);
-  assert.match(html, /First production-ready pilot/);
-  assert.match(html, /comics\/executive-twin\/p1-lettered\.svg/);
-  assert.match(html, /comics\/executive-twin\/p2-lettered\.svg/);
-  assert.match(html, /comics\/executive-twin\/p3-lettered\.svg/);
-  assert.match(html, /comics\/executive-twin\/p4-lettered\.svg/);
+  assert.match(html, /Undefeated/);
+  assert.match(html, /href="\?comic=vibe-coding-in-your-sleep#latest-comic"/);
+  assert.match(html, /href="\?comic=undefeated#latest-comic"/);
+  assert.match(html, /href="\?comic=executive-twin#latest-comic"/);
   assert.doesNotMatch(
     html,
     /Design placeholder|Latest concept strip|Placeholder artwork for design review/,
@@ -75,9 +80,12 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(reader, /aria-keyshortcuts="ArrowLeft"/);
   assert.match(reader, /aria-keyshortcuts="ArrowRight"/);
   assert.match(reader, /comics\/executive-twin\/p1-lettered\.svg/);
+  assert.match(reader, /comics\/undefeated\/website-master\.png/);
+  assert.match(reader, /comics\/vibe-coding-in-your-sleep\/website-master\.png/);
   assert.match(reader, /loading=\{index === 0 \? "eager" : "lazy"\}/);
-  assert.match(reader, /width=\{panel\.image\.width\}/);
-  assert.match(reader, /height=\{panel\.image\.height\}/);
+  assert.match(reader, /width=\{art\.width\}/);
+  assert.match(reader, /height=\{art\.height\}/);
+  assert.equal([...reader.matchAll(/slug:\s*"/g)].length, 3);
   assert.doesNotMatch(reader, /meeting-reduction|context-window|Design placeholder/);
   assert.match(layout, /title:\s*\{[\s\S]*default:\s*"Sorry, Tomorrow"/);
   assert.match(layout, /const socialImageUrl = new URL\("og\.png", siteUrl\)/);
@@ -110,5 +118,7 @@ test("keeps the finished surface free of starter residue", async () => {
   await access(new URL("../public/comics/executive-twin/p2-lettered.svg", import.meta.url));
   await access(new URL("../public/comics/executive-twin/p3-lettered.svg", import.meta.url));
   await access(new URL("../public/comics/executive-twin/p4-lettered.svg", import.meta.url));
+  await access(new URL("../public/comics/undefeated/website-master.png", import.meta.url));
+  await access(new URL("../public/comics/vibe-coding-in-your-sleep/website-master.png", import.meta.url));
   assert.deepEqual(await readdir(previewRoot), []);
 });
