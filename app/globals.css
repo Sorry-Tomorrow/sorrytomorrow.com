@@ -291,6 +291,88 @@ summary {
   letter-spacing: 0.08em;
 }
 
+.reader-art-first {
+  background: var(--cream);
+}
+
+.art-first-episode-header {
+  width: min(100%, 82rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.9fr) minmax(20rem, 1.1fr);
+  align-items: end;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding: clamp(2.5rem, 7vw, 6.5rem) clamp(1rem, 3vw, 2rem) clamp(2rem, 4vw, 3.5rem);
+  background: var(--cream);
+}
+
+.art-first-episode-header > span {
+  align-self: start;
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.art-first-episode-header h2 {
+  margin: 0;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(3.25rem, 8vw, 7rem);
+  line-height: 0.84;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.art-first-episode-header p {
+  max-width: 35rem;
+  margin: clamp(1rem, 2vw, 1.5rem) 0 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.art-first-reader-stage {
+  display: block;
+  padding: 0 clamp(1rem, 3vw, 2rem) clamp(2.5rem, 5vw, 5rem);
+  background: var(--cream);
+}
+
+.art-first-comic-page {
+  width: min(100%, 82rem);
+  padding: 0;
+  background: var(--cream);
+}
+
+.art-first-comic-art {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.65rem, 1.4vw, 1rem);
+  border: 0;
+  background: var(--cream);
+}
+
+.art-first-comic-art .comic-panel-art {
+  border: 0.2rem solid var(--ink);
+}
+
+.art-first-comic-art .comic-panel-art:first-child {
+  box-shadow: 0.42rem 0.42rem 0 var(--coral);
+}
+
+.art-first-comic-art .comic-panel-art:last-child {
+  box-shadow: 0.42rem 0.42rem 0 var(--cyan);
+}
+
+.reader-art-first .comic-navigation {
+  border-top-width: 0.18rem;
+  border-bottom-width: 0.18rem;
+}
+
+.reader-art-first .transcript {
+  background: var(--cream);
+}
+
 .comic-navigation {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1200,6 +1282,35 @@ summary {
 }
 
 @media (max-width: 760px) {
+  .art-first-episode-header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2.5rem 0.85rem 1.5rem;
+  }
+
+  .art-first-episode-header h2 {
+    font-size: clamp(3.2rem, 17vw, 5.25rem);
+  }
+
+  .art-first-episode-header p {
+    margin-top: 0.9rem;
+    font-size: 1.05rem;
+  }
+
+  .art-first-reader-stage {
+    padding: 0 0.75rem 2.5rem;
+  }
+
+  .art-first-comic-art {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .art-first-comic-art .comic-panel-art:first-child,
+  .art-first-comic-art .comic-panel-art:last-child {
+    box-shadow: none;
+  }
+
   .folio {
     justify-content: space-between;
     flex-wrap: wrap;

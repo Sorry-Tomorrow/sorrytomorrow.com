@@ -401,7 +401,7 @@ export function CastDeck() {
     <section className="cast-section" id="characters" aria-labelledby="cast-title">
       <header className="section-stripe">
         <span>The office</span>
-        <h2 ref={castTitleRef} id="cast-title" tabIndex={-1}>Meet the people who approved this</h2>
+        <h2 ref={castTitleRef} id="cast-title" tabIndex={-1}>Meet the people responsible for this</h2>
       </header>
 
       <div className="cast-lineup">

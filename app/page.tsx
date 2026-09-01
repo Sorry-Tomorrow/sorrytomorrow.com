@@ -14,7 +14,7 @@ export default function Home() {
         <div className="folio" aria-label="Issue details">
           <span>The Saturday edition</span>
           <span>Ahead AI public deliverable</span>
-          <span>Issue 02 · v0.0.3</span>
+          <span>Issue 04 · September 2026</span>
         </div>
 
         <div className="cover-lockup">
@@ -66,9 +66,10 @@ export default function Home() {
             <h2 id="archive-title">The short archive</h2>
           </header>
           <ol>
-            <li><a href="?comic=vibe-coding-in-your-sleep#latest-comic"><span>02</span><strong>Vibe Coding in Your Sleep</strong><small>Latest approved comic</small></a></li>
-            <li><a href="?comic=undefeated#latest-comic"><span>01</span><strong>Undefeated</strong><small>Approved comic · v0.0.2</small></a></li>
-            <li><a href="?comic=executive-twin#latest-comic"><span>00</span><strong>Executive Twin</strong><small>First approved comic</small></a></li>
+            <li><a href="?comic=the-honest-demo#latest-comic"><span>04</span><strong>The Honest Demo</strong><small>Latest comic</small></a></li>
+            <li><a href="?comic=vibe-coding-in-your-sleep#latest-comic"><span>03</span><strong>Vibe Coding in Your Sleep</strong><small>Comic 003</small></a></li>
+            <li><a href="?comic=undefeated#latest-comic"><span>02</span><strong>Undefeated</strong><small>Comic 002</small></a></li>
+            <li><a href="?comic=executive-twin#latest-comic"><span>01</span><strong>Executive Twin</strong><small>Comic 001</small></a></li>
           </ol>
         </section>
 

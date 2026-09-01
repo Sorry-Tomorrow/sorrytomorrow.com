@@ -26,17 +26,82 @@ type Episode = {
   label: string;
   date: string;
   caption: string;
+  shell?: "art-first";
   art: ComicArt[];
   panels: TranscriptPanel[];
 };
 
 const episodes: Episode[] = [
   {
+    slug: "the-honest-demo",
+    title: "The Honest Demo",
+    label: "Comic 004 · Ahead AI",
+    date: "September 2026",
+    caption: "The Ahead AI Agent is live on the client’s servers. What could possibly be in the executive summary?",
+    shell: "art-first",
+    art: [
+      {
+        src: "comics/the-honest-demo/p1-lettered.svg",
+        width: 1536,
+        height: 1024,
+        alt: "Ahead AI begins a live client demonstration. Dex says the Ahead AI Agent is live on the client’s servers, and the middle client CEO asks for the executive summary. Token watches from the left.",
+      },
+      {
+        src: "comics/the-honest-demo/p2-lettered.svg",
+        width: 1536,
+        height: 1024,
+        alt: "The Agent reports that the lease payment is 38 days late and that a customer has been waiting on Line 2 for 36 hours. The room maintains its polite presentation composure.",
+      },
+      {
+        src: "comics/the-honest-demo/p3-lettered.svg",
+        width: 1536,
+        height: 1024,
+        alt: "The Agent reports an empty toilet-paper roll in the lobby restroom and names Marcio, the cafeteria cashier, as top performer with zero missed deliveries. Every human stares in synchronized shock while Token remains dry.",
+      },
+      {
+        src: "comics/the-honest-demo/p4-lettered.svg",
+        width: 1536,
+        height: 1024,
+        alt: "The display says Executive Summary Complete. The middle client CEO beams and says, Brilliant! Roll it out immediately. The clients are pleased, Ahead AI is stunned, and Token looks unimpressed.",
+      },
+    ],
+    panels: [
+      {
+        lines: [
+          { speaker: "Dex", text: "The Ahead AI Agent is live on your servers." },
+          { speaker: "Client CEO", text: "Give me the executive summary." },
+        ],
+        description: "Dex presents the live Agent while the middle client CEO requests its executive summary.",
+      },
+      {
+        lines: [
+          { speaker: "Ahead AI Agent", text: "Lease payment: 38 days late." },
+          { speaker: "Ahead AI Agent", text: "Customer has been waiting on Line 2 for 36 hours." },
+        ],
+        description: "Finance and customer-support findings appear while everyone holds their presentation composure.",
+      },
+      {
+        lines: [
+          { speaker: "Ahead AI Agent", text: "Lobby restroom: out of toilet paper." },
+          { speaker: "Ahead AI Agent", text: "Marcio, cafeteria cashier. Zero missed deliveries." },
+        ],
+        description: "The facilities finding and Marcio’s respectful top-performer result trigger synchronized human shock.",
+      },
+      {
+        lines: [
+          { speaker: "Display", text: "Executive summary complete." },
+          { speaker: "Client CEO", text: "Brilliant!! Roll it out immediately!" },
+        ],
+        description: "The clients are delighted, Ahead AI remains stunned, and Token gives the reader a dry look.",
+      },
+    ],
+  },
+  {
     slug: "vibe-coding-in-your-sleep",
     title: "Vibe Coding in Your Sleep",
-    label: "Latest approved comic",
+    label: "Comic 003 · Ahead AI",
     date: "v0.0.3",
-    caption: "Third production-ready pilot · v0.0.3",
+    caption: "Mina talks in her sleep. Token treats it as a requirements document.",
     art: [
       {
         src: "comics/vibe-coding-in-your-sleep/website-master.png",
@@ -72,9 +137,9 @@ const episodes: Episode[] = [
   {
     slug: "undefeated",
     title: "Undefeated",
-    label: "Second approved comic",
+    label: "Comic 002 · Ahead AI",
     date: "v0.0.2",
-    caption: "Second production-ready pilot · v0.0.2",
+    caption: "Zero mistakes. The methodology is flawless.",
     art: [
       {
         src: "comics/undefeated/website-master.png",
@@ -97,9 +162,9 @@ const episodes: Episode[] = [
   {
     slug: "executive-twin",
     title: "Executive Twin",
-    label: "First approved comic",
+    label: "Comic 001 · Ahead AI",
     date: "v0.0.1",
-    caption: "First production-ready pilot · v0.0.1",
+    caption: "Leadership at machine speed. Accountability sold separately.",
     art: [
       {
         src: "comics/executive-twin/p1-lettered.svg",
@@ -166,6 +231,7 @@ function getEpisodeIndex() {
 export function ComicReader() {
   const [episodeIndex, setEpisodeIndex] = useState(0);
   const episode = episodes[episodeIndex];
+  const artFirst = episode.shell === "art-first";
   const older = episodes[episodeIndex + 1];
   const newer = episodes[episodeIndex - 1];
 
@@ -223,15 +289,25 @@ export function ComicReader() {
   }
 
   return (
-    <article className="reader" id="latest-comic" aria-live="polite">
-      <header className="episode-folio">
-        <span>{episode.label}</span>
-        <h2>{episode.title}</h2>
-        <span>{episode.date}</span>
-      </header>
+    <article className={`reader${artFirst ? " reader-art-first" : ""}`} id="latest-comic" aria-live="polite">
+      {artFirst ? (
+        <header className="art-first-episode-header">
+          <span>{episode.label}</span>
+          <div>
+            <h2>{episode.title}</h2>
+            <p>{episode.caption}</p>
+          </div>
+        </header>
+      ) : (
+        <header className="episode-folio">
+          <span>{episode.label}</span>
+          <h2>{episode.title}</h2>
+          <span>{episode.date}</span>
+        </header>
+      )}
 
-      <div className="reader-stage">
-        {older ? (
+      <div className={`reader-stage${artFirst ? " art-first-reader-stage" : ""}`}>
+        {!artFirst && (older ? (
           <a
             className="edge-navigation older"
             href={episodeHref(older)}
@@ -248,10 +324,10 @@ export function ComicReader() {
             <strong>First comic</strong>
             <small>Archive begins here</small>
           </div>
-        )}
+        ))}
 
-        <figure className="comic-page" key={episode.slug}>
-          <div className="comic-art" role="group" aria-label={`${episode.title}, ${episode.panels.length} panels`}>
+        <figure className={`comic-page${artFirst ? " art-first-comic-page" : ""}`} key={episode.slug}>
+          <div className={`comic-art${artFirst ? " art-first-comic-art" : ""}`} role="group" aria-label={`${episode.title}, ${episode.panels.length} panels`}>
             {episode.art.map((art, index) => (
               // Approved comic assets must be served byte-for-byte; image optimization is intentionally bypassed.
               // eslint-disable-next-line @next/next/no-img-element
@@ -268,13 +344,15 @@ export function ComicReader() {
               />
             ))}
           </div>
-          <figcaption>
-            <span>{episode.title}</span>
-            <span>{episode.caption}</span>
-          </figcaption>
+          {!artFirst && (
+            <figcaption>
+              <span>{episode.title}</span>
+              <span>{episode.caption}</span>
+            </figcaption>
+          )}
         </figure>
 
-        {newer ? (
+        {!artFirst && (newer ? (
           <a
             className="edge-navigation newer"
             href={episodeHref(newer)}
@@ -291,7 +369,7 @@ export function ComicReader() {
             <strong>You’re at the latest</strong>
             <small>Sorry, tomorrow.</small>
           </div>
-        )}
+        ))}
       </div>
 
       <nav className="comic-navigation" aria-label="Comic chronology">

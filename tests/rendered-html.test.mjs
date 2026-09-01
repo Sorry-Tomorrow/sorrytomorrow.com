@@ -33,15 +33,15 @@ test("server-renders the Sorry, Tomorrow comic reader", async () => {
   const html = await response.text();
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/i);
   assert.match(html, /id="latest-comic"/);
+  assert.match(html, /The Honest Demo/);
+  assert.match(html, /Comic 004 · Ahead AI/);
+  assert.match(html, /The Ahead AI Agent is live on your servers/);
+  assert.match(html, /comics\/the-honest-demo\/p1-lettered\.svg/);
   assert.match(html, /Vibe Coding in Your Sleep/);
-  assert.match(html, /Latest approved comic/);
-  assert.match(html, /Third production-ready pilot/);
-  assert.match(html, /comics\/vibe-coding-in-your-sleep\/website-master\.png/);
-  assert.match(html, /make token pretty…/);
-  assert.match(html, /AUTOMATED BEAUTY PROFILE ENABLED/);
+  assert.doesNotMatch(html, /Latest approved comic|production-ready pilot/i);
   assert.match(html, /Executive Twin/);
-  assert.match(html, /First approved comic/);
   assert.match(html, /Undefeated/);
+  assert.match(html, /href="\?comic=the-honest-demo#latest-comic"/);
   assert.match(html, /href="\?comic=vibe-coding-in-your-sleep#latest-comic"/);
   assert.match(html, /href="\?comic=undefeated#latest-comic"/);
   assert.match(html, /href="\?comic=executive-twin#latest-comic"/);
@@ -49,7 +49,7 @@ test("server-renders the Sorry, Tomorrow comic reader", async () => {
     html,
     /Design placeholder|Latest concept strip|Placeholder artwork for design review/,
   );
-  assert.match(html, /Meet the people who approved this/);
+  assert.match(html, /Meet the people responsible for this/);
   assert.match(html, /always slightly ahead of the plan/);
   assert.match(html, /Human in the loop\?/i);
   assert.match(html, /The Vibe Coder/);
@@ -85,7 +85,9 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(reader, /loading=\{index === 0 \? "eager" : "lazy"\}/);
   assert.match(reader, /width=\{art\.width\}/);
   assert.match(reader, /height=\{art\.height\}/);
-  assert.equal([...reader.matchAll(/slug:\s*"/g)].length, 3);
+  assert.match(reader, /comics\/the-honest-demo\/p1-lettered\.svg/);
+  assert.match(reader, /reader-art-first/);
+  assert.equal([...reader.matchAll(/slug:\s*"/g)].length, 4);
   assert.doesNotMatch(reader, /meeting-reduction|context-window|Design placeholder/);
   assert.match(layout, /title:\s*\{[\s\S]*default:\s*"Sorry, Tomorrow"/);
   assert.match(layout, /const socialImageUrl = new URL\("og\.png", siteUrl\)/);
@@ -118,6 +120,10 @@ test("keeps the finished surface free of starter residue", async () => {
   await access(new URL("../public/comics/executive-twin/p2-lettered.svg", import.meta.url));
   await access(new URL("../public/comics/executive-twin/p3-lettered.svg", import.meta.url));
   await access(new URL("../public/comics/executive-twin/p4-lettered.svg", import.meta.url));
+  await access(new URL("../public/comics/the-honest-demo/p1-lettered.svg", import.meta.url));
+  await access(new URL("../public/comics/the-honest-demo/p2-lettered.svg", import.meta.url));
+  await access(new URL("../public/comics/the-honest-demo/p3-lettered.svg", import.meta.url));
+  await access(new URL("../public/comics/the-honest-demo/p4-lettered.svg", import.meta.url));
   await access(new URL("../public/comics/undefeated/website-master.png", import.meta.url));
   await access(new URL("../public/comics/vibe-coding-in-your-sleep/website-master.png", import.meta.url));
   assert.deepEqual(await readdir(previewRoot), []);
