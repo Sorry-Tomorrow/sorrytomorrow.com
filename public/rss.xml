@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Sorry, Tomorrow</title>
+    <link>https://sorrytomorrow.com/</link>
+    <description>Sorry, Tomorrow is a colorful workplace satire about Ahead AI—an agency that scales first and locates the intelligence later.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Sep 2026 22:16:50 GMT</lastBuildDate>
+    <item>
+      <title>The Honest Demo</title>
+      <link>https://sorrytomorrow.com/comics/the-honest-demo/</link>
+      <guid isPermaLink="true">https://sorrytomorrow.com/comics/the-honest-demo/</guid>
+      <pubDate>Tue, 01 Sep 2026 22:16:50 GMT</pubDate>
+      <description>The Ahead AI Agent is live on the client’s servers. What could possibly be in the executive summary?</description>
+    </item>
+    <item>
+      <title>Vibe Coding in Your Sleep</title>
+      <link>https://sorrytomorrow.com/comics/vibe-coding-in-your-sleep/</link>
+      <guid isPermaLink="true">https://sorrytomorrow.com/comics/vibe-coding-in-your-sleep/</guid>
+      <pubDate>Tue, 01 Sep 2026 14:45:34 GMT</pubDate>
+      <description>Mina talks in her sleep. Token treats it as a requirements document.</description>
+    </item>
+    <item>
+      <title>Undefeated</title>
+      <link>https://sorrytomorrow.com/comics/undefeated/</link>
+      <guid isPermaLink="true">https://sorrytomorrow.com/comics/undefeated/</guid>
+      <pubDate>Tue, 01 Sep 2026 14:45:34 GMT</pubDate>
+      <description>Zero mistakes. The methodology is flawless.</description>
+    </item>
+    <item>
+      <title>Executive Twin</title>
+      <link>https://sorrytomorrow.com/comics/executive-twin/</link>
+      <guid isPermaLink="true">https://sorrytomorrow.com/comics/executive-twin/</guid>
+      <pubDate>Fri, 28 Aug 2026 21:39:26 GMT</pubDate>
+      <description>Leadership at machine speed. Accountability sold separately.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,46 +1,29 @@
 import { ComicReader } from "./ComicReader";
 import { CastDeck } from "./CastDeck";
+import { episodePath, episodes } from "@/content/episodes";
+import { LegacyComicRedirect } from "./LegacyComicRedirect";
+import { SiteFooter, SiteHeader } from "./SiteChrome";
+import { publicBasePath, sitePath } from "./site";
 
 export const dynamic = "force-static";
 
 export default function Home() {
+  const latest = episodes[0];
+
   return (
     <div className="site-shell">
+      <LegacyComicRedirect
+        knownSlugs={episodes.map((episode) => episode.slug)}
+        basePath={publicBasePath}
+      />
       <a className="skip-link" href="#latest-comic">
         Skip to the latest comic
       </a>
 
-      <header className="masthead">
-        <div className="folio" aria-label="Issue details">
-          <span>The Saturday edition</span>
-          <span>Ahead AI public deliverable</span>
-          <span>Issue 04 · September 2026</span>
-        </div>
-
-        <div className="cover-lockup">
-          <p className="eyebrow">A workplace satire about artificial confidence</p>
-          <h1>
-            <span>Sorry,</span>
-            <span>Tomorrow</span>
-          </h1>
-          <p className="cover-note">Brilliant. Confidently clueless.</p>
-        </div>
-
-        <nav className="primary-nav" aria-label="Primary navigation">
-          <a href="#latest-comic" aria-current="page">
-            Latest
-          </a>
-          <a href="#characters">Characters</a>
-          <a href="#about">About</a>
-          <a href="#archive">Archive</a>
-          <a href="#store">
-            Store <small>coming soon</small>
-          </a>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <main>
-        <ComicReader />
+        <ComicReader episode={latest} />
 
         <CastDeck />
 
@@ -66,10 +49,19 @@ export default function Home() {
             <h2 id="archive-title">The short archive</h2>
           </header>
           <ol>
-            <li><a href="?comic=the-honest-demo#latest-comic"><span>04</span><strong>The Honest Demo</strong><small>Latest comic</small></a></li>
-            <li><a href="?comic=vibe-coding-in-your-sleep#latest-comic"><span>03</span><strong>Vibe Coding in Your Sleep</strong><small>Comic 003</small></a></li>
-            <li><a href="?comic=undefeated#latest-comic"><span>02</span><strong>Undefeated</strong><small>Comic 002</small></a></li>
-            <li><a href="?comic=executive-twin#latest-comic"><span>01</span><strong>Executive Twin</strong><small>Comic 001</small></a></li>
+            {episodes.map((episode, index) => (
+              <li key={episode.slug}>
+                <a href={`${sitePath(episodePath(episode.slug))}#comic`}>
+                  <span>{String(episode.publicNumber).padStart(2, "0")}</span>
+                  <strong>{episode.title}</strong>
+                  <small>
+                    {index === 0
+                      ? "Latest comic"
+                      : `Comic ${String(episode.publicNumber).padStart(3, "0")}`}
+                  </small>
+                </a>
+              </li>
+            ))}
           </ol>
         </section>
 
@@ -81,13 +73,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site-footer">
-        <a href="#latest-comic">Latest</a>
-        <a href="#characters">Characters</a>
-        <a href="#about">About</a>
-        <a href="#archive">Archive</a>
-        <span>© Sorry, Tomorrow</span>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

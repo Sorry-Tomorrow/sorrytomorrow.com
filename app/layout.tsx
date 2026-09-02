@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible, Bowlby_One_SC } from "next/font/google";
+import { series } from "@/content/episodes";
+import { AnalyticsBeacon } from "./AnalyticsBeacon";
 import "./globals.css";
+import { siteUrl } from "./site";
 
 const bodyFont = Atkinson_Hyperlegible({
   variable: "--font-body",
@@ -14,17 +17,9 @@ const displayFont = Bowlby_One_SC({
   subsets: ["latin"],
 });
 
-const configuredSiteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const siteUrl = new URL(
-  configuredSiteUrl.endsWith("/")
-    ? configuredSiteUrl
-    : `${configuredSiteUrl}/`,
-);
 const faviconUrl = new URL("favicon.svg", siteUrl).toString();
 const socialImageUrl = new URL("og.png", siteUrl).toString();
-const description =
-  "Sorry, Tomorrow is a colorful workplace satire about Ahead AI—an agency that scales first and locates the intelligence later.";
+const description = series.description;
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -33,6 +28,12 @@ export const metadata: Metadata = {
     template: "%s | Sorry, Tomorrow",
   },
   description,
+  alternates: {
+    canonical: siteUrl,
+    types: {
+      "application/rss+xml": new URL("rss.xml", siteUrl).toString(),
+    },
+  },
   icons: {
     icon: faviconUrl,
   },
@@ -66,7 +67,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.variable} ${displayFont.variable}`}>{children}</body>
+      <body className={`${bodyFont.variable} ${displayFont.variable}`}>
+        {children}
+        <AnalyticsBeacon />
+      </body>
     </html>
   );
 }

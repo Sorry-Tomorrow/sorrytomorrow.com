@@ -2,7 +2,9 @@
 
 Website for *Sorry, Tomorrow*, a workplace satire about the fictional AI transformation agency Ahead AI.
 
-The homepage leads with **Vibe Coding in Your Sleep v0.0.3** and links the three approved *Sorry, Tomorrow* comics through older/newer navigation and the archive. Each exact publication asset renders at its natural aspect ratio in ordinary page flow, followed by the cast, about section, archive, and coming-soon store treatment.
+The homepage leads with **The Honest Demo** and links four published *Sorry, Tomorrow* comics through older/newer navigation and a generated archive. Every episode has a stable `/comics/<slug>` page with its own title, canonical URL, social preview, transcript, alternative text, sitemap entry, and RSS item. Approved publication assets render at their natural aspect ratio in ordinary page flow.
+
+The framework-independent public content source is [`content/episodes.json`](content/episodes.json). It drives the homepage, archive, episode routes, metadata, sitemap, RSS feed, and validation. Private production approvals and release authority remain in the separate Studio OS; this public repository never infers permission to release a new episode.
 
 ## Local development
 
@@ -17,6 +19,7 @@ Useful checks:
 
 ```bash
 npm run build
+npm run test:content
 npm run build:pages
 npm run prepare:pages
 npm run test:pages
@@ -26,6 +29,8 @@ npm run lint
 
 ## Deployment
 
-Pushes to `main` deploy a static export through GitHub Actions and GitHub Pages. The Pages build preserves the repository base path for assets and comic navigation.
+Pull requests run catalog, lint, server-render, and Pages-artifact checks. Pushes to `main` deploy a static export through GitHub Actions and GitHub Pages; production should also enable the repository/environment protections in [`docs/PRODUCTION-RELEASE-CHECKLIST.md`](docs/PRODUCTION-RELEASE-CHECKLIST.md). The Pages build preserves the configured repository base path for assets and comic navigation.
 
-GitHub Pages serves the site at `sorrytomorrow.com`. No social-account, publishing-service, or store integration is configured by this repository.
+Use [`docs/WEB-ASSET-BUDGET.md`](docs/WEB-ASSET-BUDGET.md) and `npm run report:payload` before adding a new episode. Web derivatives must be approved publication assets; deployment never improvises recompression.
+
+GitHub Pages serves the site at `sorrytomorrow.com`. Privacy-first Cloudflare Web Analytics can be enabled with `NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN`; no token is configured in source. No social-account, publishing-service, or store integration is configured by this repository.

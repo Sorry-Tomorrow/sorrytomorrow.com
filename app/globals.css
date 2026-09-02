@@ -1281,6 +1281,79 @@ summary {
   text-underline-offset: 0.2rem;
 }
 
+.site-disclosure {
+  flex: 1 1 100%;
+  padding-top: 0.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+  font-family: var(--font-body), Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.episode-disclosure {
+  padding: 1.25rem clamp(1rem, 3vw, 2.5rem);
+  border-top: 0.22rem solid var(--ink);
+  background: var(--folio);
+  text-align: center;
+}
+
+.episode-disclosure p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.information-page,
+.not-found-page {
+  width: min(100% - 2rem, 62rem);
+  min-height: 50vh;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 7rem) 0;
+}
+
+.information-page h2,
+.not-found-page h2 {
+  max-width: 13ch;
+  margin: 0.7rem 0 1.5rem;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+
+.information-page h3 {
+  margin: 2.5rem 0 0.5rem;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: 1.65rem;
+  text-transform: uppercase;
+}
+
+.information-page p,
+.not-found-page p {
+  max-width: 50rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.information-lead {
+  font-size: clamp(1.35rem, 3vw, 2rem) !important;
+  font-weight: 700;
+  line-height: 1.35 !important;
+}
+
+.not-found-page > a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border: 0.2rem solid var(--ink);
+  background: var(--coral);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0.3rem 0.3rem 0 var(--ink);
+}
+
 @media (max-width: 760px) {
   .art-first-episode-header {
     grid-template-columns: 1fr;

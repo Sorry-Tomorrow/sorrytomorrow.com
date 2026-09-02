@@ -1,4 +1,4 @@
-import { access, cp, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { access, cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const outputDirectory = path.resolve("dist/client");
@@ -23,6 +23,35 @@ if (pathSegment) {
   }
 
   await rm(nestedDirectory, { recursive: true, force: true });
+}
+
+async function stageDirectoryIndex(sourceHtml, destinationDirectory) {
+  await access(sourceHtml);
+  await mkdir(destinationDirectory, { recursive: true });
+  await cp(sourceHtml, path.join(destinationDirectory, "index.html"), {
+    force: true,
+  });
+}
+
+await Promise.all([
+  stageDirectoryIndex(
+    path.join(outputDirectory, "colophon.html"),
+    path.join(outputDirectory, "colophon"),
+  ),
+  stageDirectoryIndex(
+    path.join(outputDirectory, "privacy.html"),
+    path.join(outputDirectory, "privacy"),
+  ),
+]);
+
+const comicsDirectory = path.join(outputDirectory, "comics");
+for (const entry of await readdir(comicsDirectory)) {
+  if (!entry.endsWith(".html")) continue;
+  const slug = entry.slice(0, -".html".length);
+  await stageDirectoryIndex(
+    path.join(comicsDirectory, entry),
+    path.join(comicsDirectory, slug),
+  );
 }
 
 const indexPath = path.join(outputDirectory, "index.html");

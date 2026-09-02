@@ -1,0 +1,250 @@
+{
+  "series": {
+    "title": "Sorry, Tomorrow",
+    "description": "Sorry, Tomorrow is a colorful workplace satire about Ahead AI—an agency that scales first and locates the intelligence later.",
+    "canonicalOrigin": "https://sorrytomorrow.com",
+    "disclosure": "AI-assisted; human-written, directed, edited, and approved.",
+    "social": {
+      "x": {
+        "label": "X @sorrytomorrowco",
+        "url": "https://x.com/sorrytomorrowco"
+      },
+      "instagram": {
+        "label": "Instagram @sorrytomorrowcomic",
+        "url": "https://www.instagram.com/sorrytomorrowcomic/"
+      }
+    }
+  },
+  "episodes": [
+    {
+      "internalId": "ST-SCRATCH-004",
+      "slug": "the-honest-demo",
+      "title": "The Honest Demo",
+      "publicNumber": 4,
+      "publicVersion": "v0.0.4",
+      "label": "Comic 004 · Ahead AI",
+      "websitePublishedAt": "2026-09-01T18:16:50-04:00",
+      "displayDate": "September 2026",
+      "caption": "The Ahead AI Agent is live on the client’s servers. What could possibly be in the executive summary?",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/the-honest-demo/og.png",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Ahead AI begins The Honest Demo in a bright client conference room."
+      },
+      "art": [
+        {
+          "src": "comics/the-honest-demo/p1-lettered.svg",
+          "width": 1536,
+          "height": 1024,
+          "alt": "Ahead AI begins a live client demonstration. Dex says the Ahead AI Agent is live on the client’s servers, and the middle client CEO asks for the executive summary. Token watches from the left."
+        },
+        {
+          "src": "comics/the-honest-demo/p2-lettered.svg",
+          "width": 1536,
+          "height": 1024,
+          "alt": "The Agent reports that the lease payment is 38 days late and that a customer has been waiting on Line 2 for 36 hours. The room maintains its polite presentation composure."
+        },
+        {
+          "src": "comics/the-honest-demo/p3-lettered.svg",
+          "width": 1536,
+          "height": 1024,
+          "alt": "The Agent reports an empty toilet-paper roll in the lobby restroom and names Marcio, the cafeteria cashier, as top performer with zero missed deliveries. Every human stares in synchronized shock while Token remains dry."
+        },
+        {
+          "src": "comics/the-honest-demo/p4-lettered.svg",
+          "width": 1536,
+          "height": 1024,
+          "alt": "The display says Executive Summary Complete. The middle client CEO beams and says, Brilliant! Roll it out immediately. The clients are pleased, Ahead AI is stunned, and Token looks unimpressed."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            { "speaker": "Dex", "text": "The Ahead AI Agent is live on your servers." },
+            { "speaker": "Client CEO", "text": "Give me the executive summary." }
+          ],
+          "description": "Dex presents the live Agent while the middle client CEO requests its executive summary."
+        },
+        {
+          "lines": [
+            { "speaker": "Ahead AI Agent", "text": "Lease payment: 38 days late." },
+            { "speaker": "Ahead AI Agent", "text": "Customer has been waiting on Line 2 for 36 hours." }
+          ],
+          "description": "Finance and customer-support findings appear while everyone holds their presentation composure."
+        },
+        {
+          "lines": [
+            { "speaker": "Ahead AI Agent", "text": "Lobby restroom: out of toilet paper." },
+            { "speaker": "Ahead AI Agent", "text": "Marcio, cafeteria cashier. Zero missed deliveries." }
+          ],
+          "description": "The facilities finding and Marcio’s respectful top-performer result trigger synchronized human shock."
+        },
+        {
+          "lines": [
+            { "speaker": "Display", "text": "Executive summary complete." },
+            { "speaker": "Client CEO", "text": "Brilliant!! Roll it out immediately!" }
+          ],
+          "description": "The clients are delighted, Ahead AI remains stunned, and Token gives the reader a dry look."
+        }
+      ]
+    },
+    {
+      "internalId": "ST-SCRATCH-031",
+      "slug": "vibe-coding-in-your-sleep",
+      "title": "Vibe Coding in Your Sleep",
+      "publicNumber": 3,
+      "publicVersion": "v0.0.3",
+      "label": "Comic 003 · Ahead AI",
+      "websitePublishedAt": "2026-09-01T10:45:34-04:00",
+      "displayDate": "v0.0.3",
+      "caption": "Mina talks in her sleep. Token treats it as a requirements document.",
+      "shell": "classic",
+      "ogImage": {
+        "src": "comics/vibe-coding-in-your-sleep/og.png",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mina sleeps at her workstation while Token waits for accidental requirements."
+      },
+      "art": [
+        {
+          "src": "comics/vibe-coding-in-your-sleep/website-master.png",
+          "width": 1700,
+          "height": 1838,
+          "alt": "At 2:17 A.M., Mina has fallen asleep at her desk while Token waits beside her. Still asleep, she murmurs four disconnected fragments: “auto-magical…”, “add glitter…”, “add joy…”, and “make token pretty…”. Token treats the fragments as requirements. By morning, the workstation has become pastel and decorative under an enabled automated beauty profile. In the silent final panel, Token stands alone beneath a glittering halo, covered in fluffy trim and charms, visibly irritated by the makeover he executed."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [{ "speaker": "Clock", "text": "2:17 A.M." }],
+          "description": "Mina has fallen asleep at her desk while Token waits beside her in ambient listening mode."
+        },
+        {
+          "lines": [
+            { "speaker": "Mina", "text": "auto-magical…" },
+            { "speaker": "Mina", "text": "add glitter…" },
+            { "speaker": "Mina", "text": "add joy…" },
+            { "speaker": "Mina", "text": "make token pretty…" }
+          ],
+          "description": "Still asleep, Mina murmurs four disconnected fragments and Token treats them as requirements."
+        },
+        {
+          "lines": [{ "speaker": "System", "text": "AUTOMATED BEAUTY PROFILE ENABLED" }],
+          "description": "By morning, the same workstation has become pastel and decorative while Mina remains asleep."
+        },
+        {
+          "lines": [],
+          "description": "Token stands alone beneath a glittering halo, covered in fluffy trim and charms, visibly irritated by the makeover he executed."
+        }
+      ]
+    },
+    {
+      "internalId": "ST-SCRATCH-029",
+      "slug": "undefeated",
+      "title": "Undefeated",
+      "publicNumber": 2,
+      "publicVersion": "v0.0.2",
+      "label": "Comic 002 · Ahead AI",
+      "websitePublishedAt": "2026-09-01T10:45:34-04:00",
+      "displayDate": "v0.0.2",
+      "caption": "Zero mistakes. The methodology is flawless.",
+      "shell": "classic",
+      "ogImage": {
+        "src": "comics/undefeated/og.png",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Mina gives Token an unchecked launch checklist beside an untouched workstation."
+      },
+      "art": [
+        {
+          "src": "comics/undefeated/website-master.png",
+          "width": 1700,
+          "height": 3398,
+          "alt": "Two-panel workplace comic. In Panel 1, Mina hands Token a substantial unchecked launch checklist beside a dark, untouched workstation and says, “And make no mistakes.” In Panel 2, the workstation is still untouched and the checklist remains empty. A small, smug Token stands on a tiny podium holding an enormous gold trophy while a scoreboard reads zero mistakes and zero tasks attempted. Mina throws up her hands in stunned disbelief. Token says, “Undefeated.”"
+        }
+      ],
+      "panels": [
+        {
+          "lines": [{ "speaker": "Mina", "text": "And make no mistakes." }],
+          "description": "Mina hands Token a substantial unchecked launch checklist beside a dark, untouched workstation. The checklist is labeled LAUNCH CHECKLIST."
+        },
+        {
+          "lines": [{ "speaker": "Token", "text": "Undefeated." }],
+          "description": "The workstation remains untouched and the checklist remains empty. Token stands on a tiny podium holding an enormous gold trophy while a scoreboard reads MISTAKES: 0 and TASKS ATTEMPTED: 0. Mina throws up her hands in stunned disbelief."
+        }
+      ]
+    },
+    {
+      "internalId": "ST-REF-000",
+      "slug": "executive-twin",
+      "title": "Executive Twin",
+      "publicNumber": 1,
+      "publicVersion": "v0.0.1",
+      "label": "Comic 001 · Ahead AI",
+      "websitePublishedAt": "2026-08-28T17:39:26-04:00",
+      "displayDate": "v0.0.1",
+      "caption": "Leadership at machine speed. Accountability sold separately.",
+      "shell": "classic",
+      "ogImage": {
+        "src": "comics/executive-twin/og.png",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Dex Vane presents his new digital executive twin."
+      },
+      "art": [
+        {
+          "src": "comics/executive-twin/p1-lettered.svg",
+          "width": 1700,
+          "height": 1620,
+          "alt": "Panel 1. Dex says, “I trained a digital twin on my entire leadership style.” Clara says, “Were outcomes included?” Dex presents a miniature holographic copy while Clara tests the premise."
+        },
+        {
+          "src": "comics/executive-twin/p2-lettered.svg",
+          "width": 1700,
+          "height": 1560,
+          "alt": "Panel 2. Mina says, “It can now make executive decisions at machine speed.” Wes says, “Can it explain one?” Mina celebrates the working prototype as Wes reaches toward rollback."
+        },
+        {
+          "src": "comics/executive-twin/p3-lettered.svg",
+          "width": 1700,
+          "height": 1570,
+          "alt": "Panel 3. AI Dex says, “My recommendation: delegate all accountability.” Dex says, “See? It understands management.” The digital twin reproduces Dex’s blind spot perfectly."
+        },
+        {
+          "src": "comics/executive-twin/p4-lettered.svg",
+          "width": 1700,
+          "height": 1240,
+          "alt": "Panel 4. Four holographic Dexes route accountability clockwise around the proudly posing original as Clara and Token stare, Mina applauds, and Wes reaches for rollback."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            { "speaker": "Dex", "text": "I trained a digital twin on my entire leadership style." },
+            { "speaker": "Clara", "text": "Were outcomes included?" }
+          ],
+          "description": "Dex presents a miniature holographic copy while Clara tests the premise."
+        },
+        {
+          "lines": [
+            { "speaker": "Mina", "text": "It can now make executive decisions at machine speed." },
+            { "speaker": "Wes", "text": "Can it explain one?" }
+          ],
+          "description": "Mina celebrates the working prototype as Wes reaches toward rollback."
+        },
+        {
+          "lines": [
+            { "speaker": "AI Dex", "text": "My recommendation: delegate all accountability." },
+            { "speaker": "Dex", "text": "See? It understands management." }
+          ],
+          "description": "The digital twin reproduces Dex’s blind spot perfectly."
+        },
+        {
+          "lines": [],
+          "description": "Four holographic Dexes route accountability clockwise around the proudly posing original as Clara and Token stare, Mina applauds, and Wes reaches for rollback."
+        }
+      ]
+    }
+  ]
+}

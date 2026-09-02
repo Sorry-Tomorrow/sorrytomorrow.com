@@ -6,13 +6,18 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "predev": "node scripts/generate-discovery.mjs",
     "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
+    "prebuild": "node scripts/generate-discovery.mjs",
     "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+    "prebuild:pages": "node scripts/generate-discovery.mjs",
     "build:pages": "GITHUB_PAGES=true WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
     "prepare:pages": "node scripts/prepare-pages.mjs",
+    "report:payload": "node scripts/report-payload.mjs",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
-    "test:pages": "node --test tests/pages-output.test.mjs",
+    "test:content": "node scripts/generate-discovery.mjs && node --test tests/content-catalog.test.mjs",
+    "test:pages": "node --test tests/pages-output.test.mjs tests/content-catalog.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
   },
