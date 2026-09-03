@@ -15,6 +15,9 @@ const expectedSiteUrl = new URL(
 );
 const escapePattern = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const approvedComicAssets = {
+  "comics/founder-inc-llc/p1-lettered.svg": "ef0682973a709fb8392c6f13e5fd5585e56a420528d17bb74e4c2cab3aa2b026",
+  "comics/founder-inc-llc/p2-lettered.svg": "d2bf1dfb7ba644e059cb1b6bc5ee74299a396866e0924032ecc3836ae6b8c97d",
+  "comics/founder-inc-llc/og.png": "faab9db66afc262c5fcf1c777418f6b688889fdce13fc3dc52388e90fb2f2ae1",
   "comics/the-honest-demo/p1-lettered.svg": "6376b5919624454f8182d2a542f154460fd48503597b117d4a634b90e56c0655",
   "comics/the-honest-demo/p2-lettered.svg": "3af0ed4aa5262bbcc25419fc3e976ab69ce908262ead8e104f23f1b5497b20ea",
   "comics/the-honest-demo/p3-lettered.svg": "93caf73e720fa9f1d917628c5f512c8878825a74db7cc71e53f6ad0aa31cb5e5",
@@ -36,11 +39,16 @@ test("produces a complete GitHub Pages artifact", async () => {
 
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/);
   assert.match(html, /id="latest-comic"/);
+  assert.match(html, /Founder, Inc\. LLC/);
+  assert.match(html, /Comic 005 · Ahead AI/);
+  assert.match(html, /comics\/founder-inc-llc\/p1-lettered\.svg/);
   assert.match(html, /The Honest Demo/);
-  assert.match(html, /Comic 004 · Ahead AI/);
-  assert.match(html, /comics\/the-honest-demo\/p1-lettered\.svg/);
   assert.match(html, /Vibe Coding in Your Sleep/);
   assert.doesNotMatch(html, /Latest approved comic|production-ready pilot/i);
+  assert.match(
+    html,
+    new RegExp(`href="${escapedBasePath}/comics/founder-inc-llc/#comic"`),
+  );
   assert.match(
     html,
     new RegExp(`href="${escapedBasePath}/comics/the-honest-demo/#comic"`),
@@ -99,10 +107,12 @@ test("produces a complete GitHub Pages artifact", async () => {
     access(new URL("colophon/index.html", outputRoot)),
     access(new URL("privacy/index.html", outputRoot)),
     access(new URL("comics/the-honest-demo.html", outputRoot)),
+    access(new URL("comics/founder-inc-llc.html", outputRoot)),
     access(new URL("comics/vibe-coding-in-your-sleep.html", outputRoot)),
     access(new URL("comics/undefeated.html", outputRoot)),
     access(new URL("comics/executive-twin.html", outputRoot)),
     access(new URL("comics/the-honest-demo/index.html", outputRoot)),
+    access(new URL("comics/founder-inc-llc/index.html", outputRoot)),
     access(new URL("comics/vibe-coding-in-your-sleep/index.html", outputRoot)),
     access(new URL("comics/undefeated/index.html", outputRoot)),
     access(new URL("comics/executive-twin/index.html", outputRoot)),
@@ -137,8 +147,25 @@ test("produces a complete GitHub Pages artifact", async () => {
   );
   assert.match(executiveHtml, /I trained a digital twin on my entire leadership style/);
 
+  const founderHtml = await readFile(
+    new URL("comics/founder-inc-llc/index.html", outputRoot),
+    "utf8",
+  );
+  assert.match(founderHtml, /<title>Founder, Inc\. LLC \| Sorry, Tomorrow<\/title>/);
+  assert.match(
+    founderHtml,
+    new RegExp(
+      escapePattern(new URL("comics/founder-inc-llc/og.png", expectedSiteUrl).toString()),
+    ),
+  );
+  assert.match(founderHtml, /AI CONFERENCE — BADGE PICKUP/);
+
   const sitemap = await readFile(new URL("sitemap.xml", outputRoot), "utf8");
   const rss = await readFile(new URL("rss.xml", outputRoot), "utf8");
+  assert.match(
+    sitemap,
+    new RegExp(escapePattern(new URL("comics/founder-inc-llc/", expectedSiteUrl).toString())),
+  );
   assert.match(
     sitemap,
     new RegExp(escapePattern(new URL("comics/the-honest-demo/", expectedSiteUrl).toString())),
@@ -147,6 +174,7 @@ test("produces a complete GitHub Pages artifact", async () => {
     sitemap,
     new RegExp(escapePattern(new URL("comics/executive-twin/", expectedSiteUrl).toString())),
   );
+  assert.match(rss, /<title>Founder, Inc\. LLC<\/title>/);
   assert.match(rss, /<title>The Honest Demo<\/title>/);
   assert.match(rss, /<title>Executive Twin<\/title>/);
 });

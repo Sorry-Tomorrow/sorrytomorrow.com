@@ -17,6 +17,51 @@
   },
   "episodes": [
     {
+      "internalId": "ST-SCRATCH-015",
+      "slug": "founder-inc-llc",
+      "title": "Founder, Inc. LLC",
+      "publicNumber": 5,
+      "publicVersion": "v0.0.5",
+      "label": "Comic 005 · Ahead AI",
+      "websitePublishedAt": "2026-09-05T09:00:00-04:00",
+      "displayDate": "v0.0.5",
+      "caption": "At first, the badge felt exclusive. Then the mixer doors opened.",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/founder-inc-llc/og.png",
+        "width": 1080,
+        "height": 1350,
+        "alt": "A conference mixer is filled with nearly identical sunglasses-wearing founders in matching coral shirts."
+      },
+      "art": [
+        {
+          "src": "comics/founder-inc-llc/p1-lettered.svg",
+          "width": 1700,
+          "height": 806,
+          "alt": "At an AI conference badge-pickup table, a confident young man in sunglasses and a coral patterned camp shirt holds a tropical cocktail and proudly displays an oversized gold star labeled FOUNDER."
+        },
+        {
+          "src": "comics/founder-inc-llc/p2-lettered.svg",
+          "width": 1700,
+          "height": 1991,
+          "alt": "A high, wide view reveals about forty nearly identical copies of the same man standing in pairs and small groups, facing one another in animated conversation while gold founder stars and tropical cocktails repeat across the room."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            { "speaker": "Registration sign", "text": "AI CONFERENCE — BADGE PICKUP" },
+            { "speaker": "Founder star", "text": "FOUNDER" }
+          ],
+          "description": "A confident young man in sunglasses and a coral patterned camp shirt stands beside the registration table, holding a tropical cocktail and proudly displaying an oversized founder star. There is no spoken dialogue."
+        },
+        {
+          "lines": [{ "speaker": "Founder stars", "text": "FOUNDER" }],
+          "description": "A high, wide view reveals about forty nearly identical copies of the same man socializing in pairs and small groups. FOUNDER appears on 32 visible gold stars. There is no spoken dialogue."
+        }
+      ]
+    },
+    {
       "internalId": "ST-SCRATCH-004",
       "slug": "the-honest-demo",
       "title": "The Honest Demo",

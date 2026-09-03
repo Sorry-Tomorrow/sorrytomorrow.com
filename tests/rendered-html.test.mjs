@@ -44,14 +44,16 @@ test("server-renders the data-driven homepage and archive", async () => {
   const html = await response.text();
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/i);
   assert.match(html, /id="latest-comic"/);
+  assert.match(html, /Founder, Inc\. LLC/);
+  assert.match(html, /Comic 005 · Ahead AI/);
+  assert.match(html, /AI CONFERENCE — BADGE PICKUP/);
+  assert.match(html, /comics\/founder-inc-llc\/p1-lettered\.svg/);
   assert.match(html, /The Honest Demo/);
-  assert.match(html, /Comic 004 · Ahead AI/);
-  assert.match(html, /The Ahead AI Agent is live on your servers/);
-  assert.match(html, /comics\/the-honest-demo\/p1-lettered\.svg/);
   assert.match(html, /Vibe Coding in Your Sleep/);
   assert.match(html, /Executive Twin/);
   assert.match(html, /Undefeated/);
   assert.match(html, /href="\/comics\/the-honest-demo\/#comic"/);
+  assert.match(html, /href="\/comics\/founder-inc-llc\/#comic"/);
   assert.match(html, /href="\/comics\/vibe-coding-in-your-sleep\/#comic"/);
   assert.match(html, /href="\/comics\/undefeated\/#comic"/);
   assert.match(html, /href="\/comics\/executive-twin\/#comic"/);
@@ -117,7 +119,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 4);
+  assert.equal(JSON.parse(catalog).episodes.length, 5);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);

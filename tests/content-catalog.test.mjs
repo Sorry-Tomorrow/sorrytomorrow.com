@@ -8,13 +8,13 @@ const catalog = JSON.parse(
 );
 
 test("keeps one ordered public episode catalog", async () => {
-  assert.equal(catalog.episodes.length, 4);
+  assert.equal(catalog.episodes.length, 5);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [4, 3, 2, 1],
+    [5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 4);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 4);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 5);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 5);
 
   for (const episode of catalog.episodes) {
     assert.match(episode.slug, /^[-a-z0-9]+$/);
