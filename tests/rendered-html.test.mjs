@@ -4,6 +4,17 @@ import test from "node:test";
 
 const previewRoot = new URL("../app/_sites-preview/", import.meta.url);
 
+async function readDirectoryIfPresent(directory) {
+  try {
+    return await (await import("node:fs/promises")).readdir(directory);
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+      return [];
+    }
+    throw error;
+  }
+}
+
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${pathname}`);
@@ -141,5 +152,5 @@ test("keeps the finished surface free of starter residue", async () => {
     access(new URL("../content/episodes.ts", import.meta.url)),
   ]);
 
-  assert.deepEqual(await (await import("node:fs/promises")).readdir(previewRoot), []);
+  assert.deepEqual(await readDirectoryIfPresent(previewRoot), []);
 });
