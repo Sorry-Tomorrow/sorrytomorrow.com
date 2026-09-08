@@ -1,16 +1,16 @@
-import { episodes, series } from "@/content/episodes";
+import { publishedEpisodes as episodes, series } from "@/content/episodes";
 import { sitePath } from "./site";
 
-export function SiteHeader() {
+export function SiteHeader({ preview = false }: { preview?: boolean } = {}) {
   const latest = episodes[0];
 
   return (
     <header className="masthead">
       <div className="folio" aria-label="Issue details">
-        <span>The Saturday edition</span>
-        <span>Ahead AI public deliverable</span>
+        <span>{preview ? "Private preview" : "The Saturday edition"}</span>
+        <span>{preview ? "Ahead AI comic collection" : "Ahead AI public deliverable"}</span>
         <span>
-          Issue {String(latest.publicNumber).padStart(2, "0")} · {latest.displayDate}
+          {preview ? "Website review" : <>Issue {String(latest.publicNumber).padStart(2, "0")} · {latest.displayDate}</>}
         </span>
       </div>
 
@@ -24,6 +24,7 @@ export function SiteHeader() {
       </div>
 
       <nav className="primary-nav" aria-label="Primary navigation">
+        {preview && <a href={sitePath("review/")}>Comic previews</a>}
         <a href={`${sitePath("/")}#latest-comic`}>Latest</a>
         <a href={`${sitePath("/")}#characters`}>Characters</a>
         <a href={`${sitePath("/")}#about`}>About</a>

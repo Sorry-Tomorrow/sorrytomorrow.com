@@ -44,16 +44,15 @@ test("server-renders the data-driven homepage and archive", async () => {
   const html = await response.text();
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/i);
   assert.match(html, /id="latest-comic"/);
+  assert.doesNotMatch(html, /Not-So-Smart Thermostat|Oops… I Drifted Again|The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
   assert.match(html, /Comic 005 · Ahead AI/);
-  assert.match(html, /AI CONFERENCE — BADGE PICKUP/);
   assert.match(html, /comics\/founder-inc-llc\/p1-lettered\.svg/);
   assert.match(html, /The Honest Demo/);
   assert.match(html, /Vibe Coding in Your Sleep/);
   assert.match(html, /Executive Twin/);
   assert.match(html, /Undefeated/);
   assert.match(html, /href="\/comics\/the-honest-demo\/#comic"/);
-  assert.match(html, /href="\/comics\/founder-inc-llc\/#comic"/);
   assert.match(html, /href="\/comics\/vibe-coding-in-your-sleep\/#comic"/);
   assert.match(html, /href="\/comics\/undefeated\/#comic"/);
   assert.match(html, /href="\/comics\/executive-twin\/#comic"/);
@@ -119,7 +118,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 5);
+  assert.equal(JSON.parse(catalog).episodes.length, 8);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -155,4 +154,46 @@ test("keeps the finished surface free of starter residue", async () => {
   ]);
 
   assert.deepEqual(await readDirectoryIfPresent(previewRoot), []);
+});
+
+test("all three previews render exact panel sequences without publication claims", async () => {
+  const catalog = JSON.parse(await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"));
+  for (const episode of catalog.episodes.filter(item => item.previewOnly)) {
+    const response = await render(`/comics/${episode.slug}`);
+    assert.equal(response.status, 200, episode.slug);
+    const html = await response.text();
+    assert.ok(html.includes('content="noindex, nofollow"'), `Missing preview robots: ${episode.slug}`);
+    assert.ok(html.includes('href="/review/"'), `Missing collection link: ${episode.slug}`);
+    assert.ok(html.includes(episode.publicVersion), `Missing version: ${episode.slug}`);
+    assert.ok(!html.includes('property="article:published_time"'), `Publication date on preview: ${episode.slug}`);
+    const images = [...html.matchAll(/<img\b[^>]*class="comic-panel-art"[^>]*>/g)].map(match => match[0]);
+    assert.equal(images.length, episode.art.length, episode.slug);
+    episode.art.forEach((art, index) => {
+      assert.ok(images[index].includes(`src="/${art.src}"`), `Wrong image/order: ${art.src}`);
+      assert.ok(images[index].includes(`width="${art.width}"`) && images[index].includes(`height="${art.height}"`), `Wrong dimensions: ${art.src}`);
+    });
+    if (episode.readerLayout) assert.ok(html.includes(`reader-layout-${episode.readerLayout}`));
+  }
+});
+
+test("review collection offers all four comics in requested reading order", async () => {
+  const response = await render("/review");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.ok(html.includes('content="noindex, nofollow"'));
+  let last = -1;
+  for (const slug of ["founder-inc-llc", "not-so-smart-thermostat", "oops-i-drifted-again", "magnification-spiral"]) {
+    const current = html.indexOf(`href="/comics/${slug}/#comic"`);
+    assert.ok(current > last, `Preview link missing or out of order: ${slug}`);
+    last = current;
+  }
+  assert.ok(html.includes("Publication dates for those three are still open."));
+  assert.ok(html.includes("Published · website reference"));
+});
+
+test("published episode navigation does not lead into preview content", async () => {
+  const response = await render("/comics/founder-inc-llc");
+  const html = await response.text();
+  assert.ok(!html.includes('/comics/not-so-smart-thermostat/'));
+  assert.ok(html.includes("You’re at the latest comic"));
 });

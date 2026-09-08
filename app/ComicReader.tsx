@@ -1,7 +1,7 @@
 import {
   episodePath,
   episodes,
-  getEpisodeIndex,
+  publishedEpisodes,
   type Episode,
 } from "@/content/episodes";
 import { ComicKeyboardNavigation } from "./ComicKeyboardNavigation";
@@ -20,23 +20,31 @@ export function ComicReader({
   episode,
   anchorId = "latest-comic",
 }: ComicReaderProps) {
-  const episodeIndex = getEpisodeIndex(episode.slug);
+  const chronology = episode.previewOnly ? episodes : publishedEpisodes;
+  const episodeIndex = chronology.findIndex(item => item.slug === episode.slug);
   const artFirst = episode.shell === "art-first";
-  const older = episodes[episodeIndex + 1];
-  const newer = episodes[episodeIndex - 1];
+  const older = chronology[episodeIndex + 1];
+  const newer = chronology[episodeIndex - 1];
   const olderHref = older ? episodeHref(older) : undefined;
   const newerHref = newer ? episodeHref(newer) : undefined;
 
   return (
     <article
-      className={`reader${artFirst ? " reader-art-first" : ""}`}
+      className={`reader${artFirst ? " reader-art-first" : ""}${episode.readerLayout ? ` reader-layout-${episode.readerLayout}` : ""}`}
       id={anchorId}
     >
       <ComicKeyboardNavigation olderHref={olderHref} newerHref={newerHref} />
 
+      {episode.previewOnly && (
+        <nav className="preview-navigation" aria-label="Private preview navigation">
+          <a href={sitePath("review/")}>← Four-comic preview</a>
+          <span>Website preview · {episode.publicVersion}</span>
+        </nav>
+      )}
+
       {artFirst ? (
         <header className="art-first-episode-header">
-          <span>{episode.label}</span>
+          <span>{episode.previewOnly ? "Sorry, Tomorrow · Ahead AI" : episode.label}</span>
           <div>
             <h2>{episode.title}</h2>
             <p>{episode.caption}</p>
@@ -135,7 +143,7 @@ export function ComicReader({
         ) : (
           <span>First comic</span>
         )}
-        <a href={`${sitePath("/")}#archive`}>All strips</a>
+        <a href={episode.previewOnly ? sitePath("review/") : `${sitePath("/")}#archive`}>{episode.previewOnly ? "Preview collection" : "All strips"}</a>
         {newer && newerHref ? (
           <a href={newerHref}>Newer comic →</a>
         ) : (

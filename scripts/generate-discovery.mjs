@@ -41,7 +41,13 @@ function validateCatalog() {
     if (!episode.internalId || !episode.title || !episode.caption) {
       fail(`${episode.slug} is missing required identity fields`);
     }
-    if (!episode.websitePublishedAt || Number.isNaN(Date.parse(episode.websitePublishedAt))) {
+    if (episode.previewOnly !== undefined && typeof episode.previewOnly !== "boolean") {
+      fail(`${episode.slug} has an invalid previewOnly flag`);
+    }
+    if (episode.previewOnly && episode.websitePublishedAt !== null) {
+      fail(`${episode.slug} preview must not claim a publication time`);
+    }
+    if (!episode.previewOnly && (!episode.websitePublishedAt || Number.isNaN(Date.parse(episode.websitePublishedAt)))) {
       fail(`${episode.slug} has an invalid websitePublishedAt`);
     }
     if (!Array.isArray(episode.art) || episode.art.length === 0) {
@@ -65,17 +71,20 @@ function validateCatalog() {
 
 validateCatalog();
 
+const publishedEpisodes = catalog.episodes.filter(episode => !episode.previewOnly);
+if (!publishedEpisodes.length) fail("at least one published episode is required for discovery");
+
 const origin = (
   process.env.NEXT_PUBLIC_SITE_URL ?? catalog.series.canonicalOrigin
 ).replace(/\/$/, "");
 const pageRecords = [
-  { path: "/", lastmod: catalog.episodes[0].websitePublishedAt },
-  ...catalog.episodes.map((episode) => ({
+  { path: "/", lastmod: publishedEpisodes[0].websitePublishedAt },
+  ...publishedEpisodes.map((episode) => ({
     path: `/comics/${episode.slug}/`,
     lastmod: episode.websitePublishedAt,
   })),
-  { path: "/colophon/", lastmod: catalog.episodes[0].websitePublishedAt },
-  { path: "/privacy/", lastmod: catalog.episodes[0].websitePublishedAt },
+  { path: "/colophon/", lastmod: publishedEpisodes[0].websitePublishedAt },
+  { path: "/privacy/", lastmod: publishedEpisodes[0].websitePublishedAt },
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -91,7 +100,7 @@ ${pageRecords
 </urlset>
 `;
 
-const rssItems = catalog.episodes
+const rssItems = publishedEpisodes
   .map((episode) => {
     const link = `${origin}/comics/${episode.slug}/`;
     return `    <item>
@@ -111,7 +120,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <link>${escapeXml(`${origin}/`)}</link>
     <description>${escapeXml(catalog.series.description)}</description>
     <language>en-us</language>
-    <lastBuildDate>${escapeXml(new Date(catalog.episodes[0].websitePublishedAt).toUTCString())}</lastBuildDate>
+    <lastBuildDate>${escapeXml(new Date(publishedEpisodes[0].websitePublishedAt).toUTCString())}</lastBuildDate>
 ${rssItems}
   </channel>
 </rss>
@@ -129,4 +138,4 @@ await Promise.all([
   writeFile(path.join(publicRoot, "robots.txt"), robots, "utf8"),
 ]);
 
-console.log(`Generated discovery files for ${catalog.episodes.length} episodes.`);
+console.log(`Generated discovery for ${publishedEpisodes.length} published episodes; ${catalog.episodes.length - publishedEpisodes.length} private previews excluded.`);

@@ -1,0 +1,165 @@
+{
+  "kind": "private-website-preview",
+  "productionBaseline": "188bd5fab2412ff7f4d1ded46808438be4cca0d8",
+  "studioStateChanged": false,
+  "inputs": [
+    {
+      "internalId": "ST-SCRATCH-032",
+      "sourceRoot": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2",
+      "manifestSha256": "3d7dc9fcfc6911ec8d8d4eb4a79c76f5b79ec771effb24c84619b786816712e4",
+      "ownerReceipt": {
+        "path": "visual-development/private-pilots/st-scratch-032-not-so-smart-thermostat-v1/shell-v2-candidate-v2-owner-approval3-v1/OWNER-APPROVAL.md",
+        "sha256": "329b6e358e43d9c4c56ad7d6fac4487fb75685494e8d4abd1294eed7d3eb4f83"
+      },
+      "sealedFilesVerified": 79
+    },
+    {
+      "internalId": "ST-SCRATCH-033",
+      "sourceRoot": "deliverables/oops-i-drifted-again-v0.0.7-shell-v2-candidate-v5",
+      "manifestSha256": "b60e7d5d14aae0cb0baeed0f79468556b4e0980091ec2acfb0689aada7f39230",
+      "ownerReceipt": {
+        "path": "visual-development/private-pilots/st-scratch-033-just-one-purple-duck-v1/shell-v2-candidate-v5-owner-approval3-v1/OWNER-APPROVAL.md",
+        "sha256": "5576f576bf712d1bc7875fc75e9d01a08478c7c1858d7bcd1c82dd78e7503d61"
+      },
+      "sealedFilesVerified": 65
+    },
+    {
+      "internalId": "ST-SCRATCH-034",
+      "sourceRoot": "deliverables/magnification-spiral-v0.0.8-shell-v2-candidate-v1",
+      "manifestSha256": "c3b44b6cff8962c3c43061c03ebcb57e438a31d7068fb6a83d579e5388e69cb5",
+      "ownerReceipt": {
+        "path": "visual-development/private-pilots/st-scratch-034-magnification-spiral-v1/shell-v2-candidate-v1-owner-approval3-v1/OWNER-APPROVAL.md",
+        "sha256": "cae02c921c5191d09c3035b96fe41b2e84baa5675fec653de27d6f125b2e464f"
+      },
+      "sealedFilesVerified": 55
+    }
+  ],
+  "assets": [
+    {
+      "target": "comics/not-so-smart-thermostat/s1-lettered.svg",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/panels/s1-lettered.svg",
+      "sha256": "a8ed7312c3ee019853dd468e9460d0dc95534dc845d0594b5e4125a1581e1652",
+      "bytes": 3553689
+    },
+    {
+      "target": "comics/not-so-smart-thermostat/s2-lettered.svg",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/panels/s2-lettered.svg",
+      "sha256": "92708f6d7797ebe9d9b4f4d6fb2e2ddd723080ea229add42edbb52e393527471",
+      "bytes": 3521098
+    },
+    {
+      "target": "comics/not-so-smart-thermostat/s3-lettered.svg",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/panels/s3-lettered.svg",
+      "sha256": "4eedbbfeb50f100b82504be27ee98cc50dcd845c73ddfe4bf48880782b0ac3a3",
+      "bytes": 4013107
+    },
+    {
+      "target": "comics/not-so-smart-thermostat/s4-lettered.svg",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/panels/s4-lettered.svg",
+      "sha256": "3ff6637b2851e57addc7fdad12f77bb79976bdce5943bc11312d8caecf792988",
+      "bytes": 8469469
+    },
+    {
+      "target": "comics/not-so-smart-thermostat/s5-lettered.svg",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/panels/s5-lettered.svg",
+      "sha256": "f9f988fe693b11b36fbe70d6fe469c351050f10dcdfc9680636c8137501c3481",
+      "bytes": 3562101
+    },
+    {
+      "target": "comics/not-so-smart-thermostat/s6-lettered.svg",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/panels/s6-lettered.svg",
+      "sha256": "40bf3d9d4e2fafbe130c75b5c787aa8eae04b603c5f60eff1991a8654763d041",
+      "bytes": 3451748
+    },
+    {
+      "target": "comics/not-so-smart-thermostat/og.png",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/social/instagram-facebook/story/6-s6-token-payoff.png",
+      "sha256": "33846600703ef52f70c9ccbae7f4a46fea9910009b4cc9e5367d535ed2f905a0",
+      "bytes": 2636301
+    },
+    {
+      "target": "fonts/comic-shell/Bangers-Regular.ttf",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/fonts/Bangers-Regular.ttf",
+      "sha256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+      "bytes": 93148
+    },
+    {
+      "target": "fonts/comic-shell/Fredoka.ttf",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/fonts/Fredoka.ttf",
+      "sha256": "2ba02e68b152868aef9ba28e24b3648c7d457fe6f25c761f2c2c53fb61a73fc8",
+      "bytes": 159184
+    },
+    {
+      "target": "fonts/comic-shell/SpaceMono-Regular.ttf",
+      "source": "deliverables/not-so-smart-thermostat-v0.0.6-shell-v2-candidate-v2/website/fonts/SpaceMono-Regular.ttf",
+      "sha256": "95837e182baeeada83368f7748db28357f0a1b75c6b84ff7065b5edf933c8e18",
+      "bytes": 99356
+    },
+    {
+      "target": "comics/oops-i-drifted-again/p1-complete.svg",
+      "source": "deliverables/oops-i-drifted-again-v0.0.7-shell-v2-candidate-v5/website/panels/p1-complete.svg",
+      "sha256": "a0897a9ed78477d74b02470255b019ca4b37d72ec4491684b4ea4d55bb07e4dd",
+      "bytes": 3596145
+    },
+    {
+      "target": "comics/oops-i-drifted-again/p2-complete.svg",
+      "source": "deliverables/oops-i-drifted-again-v0.0.7-shell-v2-candidate-v5/website/panels/p2-complete.svg",
+      "sha256": "f72b3a43da36c078b8e3e02f40afa9bfec19e9d266e42a28ee29cf265a952a57",
+      "bytes": 3517289
+    },
+    {
+      "target": "comics/oops-i-drifted-again/p3-complete.svg",
+      "source": "deliverables/oops-i-drifted-again-v0.0.7-shell-v2-candidate-v5/website/panels/p3-complete.svg",
+      "sha256": "2686b92056df60c34dd53224cb2612c9249a7c3faea28e9070fe2b134df41f05",
+      "bytes": 3484075
+    },
+    {
+      "target": "comics/oops-i-drifted-again/p4-complete.svg",
+      "source": "deliverables/oops-i-drifted-again-v0.0.7-shell-v2-candidate-v5/website/panels/p4-complete.svg",
+      "sha256": "f32b6615809263ff30dd278489a809cf89c58d63ee672ed000e03fb9cf8d6f96",
+      "bytes": 3698077
+    },
+    {
+      "target": "comics/oops-i-drifted-again/og.png",
+      "source": "deliverables/oops-i-drifted-again-v0.0.7-shell-v2-candidate-v5/social/instagram-facebook/story/4-p4-cinematic-focus.png",
+      "sha256": "9288b3c58a39d0b6207a70a2a65b55e8a09a5943cad95a8c017ed5c1c8b97463",
+      "bytes": 2886369
+    },
+    {
+      "target": "comics/magnification-spiral/p1-approved.png",
+      "source": "deliverables/magnification-spiral-v0.0.8-shell-v2-candidate-v1/website/panels/p1-approved.png",
+      "sha256": "1b5da7d3658d4c21c216fd52917633d862effb5d3460c08eb67e27d232f332c3",
+      "bytes": 2515699
+    },
+    {
+      "target": "comics/magnification-spiral/p2-approved.png",
+      "source": "deliverables/magnification-spiral-v0.0.8-shell-v2-candidate-v1/website/panels/p2-approved.png",
+      "sha256": "0e176253d772fb1312da455b38fc0be2062ab60b3fa4821370b5514b10212810",
+      "bytes": 2898517
+    },
+    {
+      "target": "comics/magnification-spiral/p3-approved.png",
+      "source": "deliverables/magnification-spiral-v0.0.8-shell-v2-candidate-v1/website/panels/p3-approved.png",
+      "sha256": "01f17feafc112fc96273d02c91e59be01e164a9de81b36c4cdbd304d189759a0",
+      "bytes": 2989696
+    },
+    {
+      "target": "comics/magnification-spiral/p4-approved.png",
+      "source": "deliverables/magnification-spiral-v0.0.8-shell-v2-candidate-v1/website/panels/p4-approved.png",
+      "sha256": "840c28e3faf483ee7d45a08760c035889c7ea8202093be0d9b48fc6b96c96f83",
+      "bytes": 2578978
+    },
+    {
+      "target": "comics/magnification-spiral/p5-approved.png",
+      "source": "deliverables/magnification-spiral-v0.0.8-shell-v2-candidate-v1/website/panels/p5-approved.png",
+      "sha256": "a17b20a132ead45c5ee51b6658844f975f882549a8f59b0508486be78ae64622",
+      "bytes": 2710304
+    },
+    {
+      "target": "comics/magnification-spiral/og.png",
+      "source": "deliverables/magnification-spiral-v0.0.8-shell-v2-candidate-v1/social/instagram-facebook/story/5-p5-cinematic-focus.png",
+      "sha256": "4c498fe6dbd1101afd07ea04fb8f0a306296a7c9c332833895ab5452d511062b",
+      "bytes": 3090484
+    }
+  ]
+}

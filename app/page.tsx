@@ -1,6 +1,6 @@
 import { ComicReader } from "./ComicReader";
 import { CastDeck } from "./CastDeck";
-import { episodePath, episodes } from "@/content/episodes";
+import { episodePath, publishedEpisodes as episodes } from "@/content/episodes";
 import { LegacyComicRedirect } from "./LegacyComicRedirect";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import { publicBasePath, sitePath } from "./site";

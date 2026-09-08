@@ -17,13 +17,269 @@
   },
   "episodes": [
     {
+      "internalId": "ST-SCRATCH-034",
+      "slug": "magnification-spiral",
+      "title": "The Magnification Spiral",
+      "publicNumber": 8,
+      "publicVersion": "v0.0.8",
+      "label": "Comic 008 · Ahead AI",
+      "websitePublishedAt": null,
+      "displayDate": "v0.0.8",
+      "previewOnly": true,
+      "readerLayout": "magnification",
+      "caption": "Clara notices one tiny detail. Boomer helps her take a closer look.",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/magnification-spiral/og.png",
+        "width": 1080,
+        "height": 1350,
+        "alt": "The final lens reveals Token's upper inner cleaning chassis gripping an opaque teal curtain beneath shower jets, with intact cream casings arranged on a cleaning dock; Clara Fye averts her gaze and hugs her closed notebook while Boomer Slate looks away, pivots the lens, and raises an apologetic palm beside jagged silent-shock lines."
+      },
+      "art": [
+        {
+          "src": "comics/magnification-spiral/p1-approved.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "In a bright office, Clara Fye points to a tiny coral dot in a sparse wall diagram while Boomer Slate leans in; her closed tabbed notebook and his cognac organizer remain with them."
+        },
+        {
+          "src": "comics/magnification-spiral/p2-approved.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "At a desk, Clara Fye points with her right hand to a larger coral dot inside a supported lens filled with a dense diagram; the smaller source dot remains on the sparse wall board, Boomer Slate steadies the lens, and Clara's closed notebook rests alone on the desk."
+        },
+        {
+          "src": "comics/magnification-spiral/p3-approved.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "Boomer Slate pushes a human-height wheeled lens while Clara Fye holds her closed notebook and points to a dot in the denser web revealed by the glass."
+        },
+        {
+          "src": "comics/magnification-spiral/p4-approved.png",
+          "width": 1774,
+          "height": 887,
+          "alt": "Five wheeled lenses form a tunnel through an open office window; Boomer Slate pushes the largest foreground lens while Clara Fye points to the farthest speck."
+        },
+        {
+          "src": "comics/magnification-spiral/p5-approved.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "The final lens reveals Token's upper inner cleaning chassis gripping an opaque teal curtain beneath shower jets, with intact cream casings arranged on a cleaning dock; Clara Fye averts her gaze and hugs her closed notebook while Boomer Slate looks away, pivots the lens, and raises an apologetic palm beside jagged silent-shock lines."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [],
+          "description": "In a bright office, Clara Fye points to a tiny coral dot in a sparse wall diagram while Boomer Slate leans in; her closed tabbed notebook and his cognac organizer remain with them."
+        },
+        {
+          "lines": [],
+          "description": "At a desk, Clara Fye points with her right hand to a larger coral dot inside a supported lens filled with a dense diagram; the smaller source dot remains on the sparse wall board, Boomer Slate steadies the lens, and Clara's closed notebook rests alone on the desk."
+        },
+        {
+          "lines": [],
+          "description": "Boomer Slate pushes a human-height wheeled lens while Clara Fye holds her closed notebook and points to a dot in the denser web revealed by the glass."
+        },
+        {
+          "lines": [],
+          "description": "Five wheeled lenses form a tunnel through an open office window; Boomer Slate pushes the largest foreground lens while Clara Fye points to the farthest speck."
+        },
+        {
+          "lines": [],
+          "description": "The final lens reveals Token's upper inner cleaning chassis gripping an opaque teal curtain beneath shower jets, with intact cream casings arranged on a cleaning dock; Clara Fye averts her gaze and hugs her closed notebook while Boomer Slate looks away, pivots the lens, and raises an apologetic palm beside jagged silent-shock lines."
+        }
+      ]
+    },
+    {
+      "internalId": "ST-SCRATCH-033",
+      "slug": "oops-i-drifted-again",
+      "title": "Oops… I Drifted Again",
+      "publicNumber": 7,
+      "publicVersion": "v0.0.7",
+      "label": "Comic 007 · Ahead AI",
+      "websitePublishedAt": null,
+      "displayDate": "v0.0.7",
+      "previewOnly": true,
+      "readerLayout": "duck",
+      "caption": "One purple duck. A very simple request.",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/oops-i-drifted-again/og.png",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Yellow rubber ducks fill the office. Boomer stands on a meeting table, Clara stands on a separate pedestal and raises the sole purple duck, Token stands intact beside her, and Mina Sparks smiles safely from a dry duck pile."
+      },
+      "art": [
+        {
+          "src": "comics/oops-i-drifted-again/p1-complete.svg",
+          "width": 1596,
+          "height": 1084,
+          "alt": "Clara Fye shows an icon-only purple-duck card and points toward Token. One purple rubber duck sits in Token's open lower exterior tray while Boomer Slate positions one empty sorting bin."
+        },
+        {
+          "src": "comics/oops-i-drifted-again/p2-complete.svg",
+          "width": 1596,
+          "height": 1084,
+          "alt": "Token's tray contains several wrong yellow duck variants. Clara classifies them in a tabbed notebook while Boomer holds more sorting bins with warm logistical alarm."
+        },
+        {
+          "src": "comics/oops-i-drifted-again/p3-complete.svg",
+          "width": 1967,
+          "height": 885,
+          "alt": "A huge fountain of yellow rubber ducks rises from Token's lower tray and curves over his intact body while Clara and Boomer recoil from opposite sides."
+        },
+        {
+          "src": "comics/oops-i-drifted-again/p4-complete.svg",
+          "width": 1596,
+          "height": 1084,
+          "alt": "Yellow rubber ducks fill the office. Boomer stands on a meeting table, Clara stands on a separate pedestal and raises the sole purple duck, Token stands intact beside her, and Mina Sparks smiles safely from a dry duck pile."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [],
+          "description": "Clara Fye shows an icon-only purple-duck card and points toward Token. One purple rubber duck sits in Token's open lower exterior tray while Boomer Slate positions one empty sorting bin."
+        },
+        {
+          "lines": [],
+          "description": "Token's tray contains several wrong yellow duck variants. Clara classifies them in a tabbed notebook while Boomer holds more sorting bins with warm logistical alarm."
+        },
+        {
+          "lines": [],
+          "description": "A huge fountain of yellow rubber ducks rises from Token's lower tray and curves over his intact body while Clara and Boomer recoil from opposite sides."
+        },
+        {
+          "lines": [],
+          "description": "Yellow rubber ducks fill the office. Boomer stands on a meeting table, Clara stands on a separate pedestal and raises the sole purple duck, Token stands intact beside her, and Mina Sparks smiles safely from a dry duck pile."
+        }
+      ]
+    },
+    {
+      "internalId": "ST-SCRATCH-032",
+      "slug": "not-so-smart-thermostat",
+      "title": "Not-So-Smart Thermostat",
+      "publicNumber": 6,
+      "publicVersion": "v0.0.6",
+      "label": "Comic 006 · Ahead AI",
+      "websitePublishedAt": null,
+      "displayDate": "v0.0.6",
+      "previewOnly": true,
+      "readerLayout": "thermostat",
+      "caption": "The office gets a smart thermostat. Everyone has a request.",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/not-so-smart-thermostat/og.png",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Token cheerfully raises one finger and says, ‘NO HUMAN IN THE LOOP!’ Below, he lounges alone on a navy office couch eating popcorn while the wall thermostat projects a bright, intact city filled with trees, flowers, birds, and a rabbit. The scene is playful, not destructive."
+      },
+      "art": [
+        {
+          "src": "comics/not-so-smart-thermostat/s1-lettered.svg",
+          "width": 1361,
+          "height": 1156,
+          "alt": "Boomer Slate points proudly at a new wall thermostat while Wes, Clara, Mina, Dex, and Token gather around. Boomer says, ‘Good news—the new smart thermostat is installed. It can finally read the room.’"
+        },
+        {
+          "src": "comics/not-so-smart-thermostat/s2-lettered.svg",
+          "width": 1280,
+          "height": 1229,
+          "alt": "Mina Sparks works at her sticker-covered laptop beside Token while four playful text-free doodle bursts—spark, tangled knot, gears, and confetti—spill from the laptop. She says, ‘There… we… go. I connected the thermostat to Token. Now you can just ask him to change it to whatever you want!’ A cable and separate cyan signal show Token connected to the thermostat."
+        },
+        {
+          "src": "comics/not-so-smart-thermostat/s3-lettered.svg",
+          "width": 1361,
+          "height": 1156,
+          "alt": "Clara Fye rolls her eyes and says, ‘The beach.’ The rest of the office has become a sunny beach, with the team, Token, desks, computers, and chairs standing in sand and shallow water."
+        },
+        {
+          "src": "comics/not-so-smart-thermostat/s4-lettered.svg",
+          "width": 1780,
+          "height": 1437,
+          "alt": "Dex Vane excitedly says, ‘The aquarium!’ In the larger half, the office is underwater with fish, kelp, desks, chairs, and the thermostat; the five humans hold their breath while Token remains comfortable."
+        },
+        {
+          "src": "comics/not-so-smart-thermostat/s5-lettered.svg",
+          "width": 1360,
+          "height": 1156,
+          "alt": "Wes Rollback rolls his eyes and says, ‘The bar…’ In the bar-side outcome, Dex, Clara, Mina, Boomer, and Token celebrate while Wes sits apart at the counter, still unimpressed."
+        },
+        {
+          "src": "comics/not-so-smart-thermostat/s6-lettered.svg",
+          "width": 948,
+          "height": 1659,
+          "alt": "Token cheerfully raises one finger and says, ‘NO HUMAN IN THE LOOP!’ Below, he lounges alone on a navy office couch eating popcorn while the wall thermostat projects a bright, intact city filled with trees, flowers, birds, and a rabbit. The scene is playful, not destructive."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Boomer",
+              "text": "Good news—the new smart thermostat is installed. It can finally read the room."
+            }
+          ],
+          "description": ""
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Mina",
+              "text": "There… we… go."
+            },
+            {
+              "speaker": "Mina",
+              "text": "I connected the thermostat to Token. Now you can just ask him to change it to whatever you want!"
+            }
+          ],
+          "description": "Four playful, nonverbal doodle bursts emerge from Mina’s laptop."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Clara",
+              "text": "The beach."
+            }
+          ],
+          "description": ""
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "The aquarium!"
+            }
+          ],
+          "description": ""
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Wes",
+              "text": "The bar…"
+            }
+          ],
+          "description": ""
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Token",
+              "text": "NO HUMAN IN THE LOOP!"
+            }
+          ],
+          "description": ""
+        }
+      ]
+    },
+    {
       "internalId": "ST-SCRATCH-015",
       "slug": "founder-inc-llc",
       "title": "Founder, Inc. LLC",
       "publicNumber": 5,
       "publicVersion": "v0.0.5",
       "label": "Comic 005 · Ahead AI",
-      "websitePublishedAt": "2026-09-12T09:00:00-04:00",
+      "websitePublishedAt": "2026-09-08T16:08:44Z",
       "displayDate": "v0.0.5",
       "caption": "At first, the badge felt exclusive. Then the mixer doors opened.",
       "shell": "art-first",
@@ -50,13 +306,24 @@
       "panels": [
         {
           "lines": [
-            { "speaker": "Registration sign", "text": "AI CONFERENCE — BADGE PICKUP" },
-            { "speaker": "Founder star", "text": "FOUNDER" }
+            {
+              "speaker": "Registration sign",
+              "text": "AI CONFERENCE — BADGE PICKUP"
+            },
+            {
+              "speaker": "Founder star",
+              "text": "FOUNDER"
+            }
           ],
           "description": "A confident young man in sunglasses and a coral patterned camp shirt stands beside the registration table, holding a tropical cocktail and proudly displaying an oversized founder star. There is no spoken dialogue."
         },
         {
-          "lines": [{ "speaker": "Founder stars", "text": "FOUNDER" }],
+          "lines": [
+            {
+              "speaker": "Founder stars",
+              "text": "FOUNDER"
+            }
+          ],
           "description": "A high, wide view reveals about forty nearly identical copies of the same man socializing in pairs and small groups. FOUNDER appears on 32 visible gold stars. There is no spoken dialogue."
         }
       ]
@@ -107,29 +374,53 @@
       "panels": [
         {
           "lines": [
-            { "speaker": "Dex", "text": "The Ahead AI Agent is live on your servers." },
-            { "speaker": "Client CEO", "text": "Give me the executive summary." }
+            {
+              "speaker": "Dex",
+              "text": "The Ahead AI Agent is live on your servers."
+            },
+            {
+              "speaker": "Client CEO",
+              "text": "Give me the executive summary."
+            }
           ],
           "description": "Dex presents the live Agent while the middle client CEO requests its executive summary."
         },
         {
           "lines": [
-            { "speaker": "Ahead AI Agent", "text": "Lease payment: 38 days late." },
-            { "speaker": "Ahead AI Agent", "text": "Customer has been waiting on Line 2 for 36 hours." }
+            {
+              "speaker": "Ahead AI Agent",
+              "text": "Lease payment: 38 days late."
+            },
+            {
+              "speaker": "Ahead AI Agent",
+              "text": "Customer has been waiting on Line 2 for 36 hours."
+            }
           ],
           "description": "Finance and customer-support findings appear while everyone holds their presentation composure."
         },
         {
           "lines": [
-            { "speaker": "Ahead AI Agent", "text": "Lobby restroom: out of toilet paper." },
-            { "speaker": "Ahead AI Agent", "text": "Marcio, cafeteria cashier. Zero missed deliveries." }
+            {
+              "speaker": "Ahead AI Agent",
+              "text": "Lobby restroom: out of toilet paper."
+            },
+            {
+              "speaker": "Ahead AI Agent",
+              "text": "Marcio, cafeteria cashier. Zero missed deliveries."
+            }
           ],
           "description": "The facilities finding and Marcio’s respectful top-performer result trigger synchronized human shock."
         },
         {
           "lines": [
-            { "speaker": "Display", "text": "Executive summary complete." },
-            { "speaker": "Client CEO", "text": "Brilliant!! Roll it out immediately!" }
+            {
+              "speaker": "Display",
+              "text": "Executive summary complete."
+            },
+            {
+              "speaker": "Client CEO",
+              "text": "Brilliant!! Roll it out immediately!"
+            }
           ],
           "description": "The clients are delighted, Ahead AI remains stunned, and Token gives the reader a dry look."
         }
@@ -162,20 +453,42 @@
       ],
       "panels": [
         {
-          "lines": [{ "speaker": "Clock", "text": "2:17 A.M." }],
+          "lines": [
+            {
+              "speaker": "Clock",
+              "text": "2:17 A.M."
+            }
+          ],
           "description": "Mina has fallen asleep at her desk while Token waits beside her in ambient listening mode."
         },
         {
           "lines": [
-            { "speaker": "Mina", "text": "auto-magical…" },
-            { "speaker": "Mina", "text": "add glitter…" },
-            { "speaker": "Mina", "text": "add joy…" },
-            { "speaker": "Mina", "text": "make token pretty…" }
+            {
+              "speaker": "Mina",
+              "text": "auto-magical…"
+            },
+            {
+              "speaker": "Mina",
+              "text": "add glitter…"
+            },
+            {
+              "speaker": "Mina",
+              "text": "add joy…"
+            },
+            {
+              "speaker": "Mina",
+              "text": "make token pretty…"
+            }
           ],
           "description": "Still asleep, Mina murmurs four disconnected fragments and Token treats them as requirements."
         },
         {
-          "lines": [{ "speaker": "System", "text": "AUTOMATED BEAUTY PROFILE ENABLED" }],
+          "lines": [
+            {
+              "speaker": "System",
+              "text": "AUTOMATED BEAUTY PROFILE ENABLED"
+            }
+          ],
           "description": "By morning, the same workstation has become pastel and decorative while Mina remains asleep."
         },
         {
@@ -211,11 +524,21 @@
       ],
       "panels": [
         {
-          "lines": [{ "speaker": "Mina", "text": "And make no mistakes." }],
+          "lines": [
+            {
+              "speaker": "Mina",
+              "text": "And make no mistakes."
+            }
+          ],
           "description": "Mina hands Token a substantial unchecked launch checklist beside a dark, untouched workstation. The checklist is labeled LAUNCH CHECKLIST."
         },
         {
-          "lines": [{ "speaker": "Token", "text": "Undefeated." }],
+          "lines": [
+            {
+              "speaker": "Token",
+              "text": "Undefeated."
+            }
+          ],
           "description": "The workstation remains untouched and the checklist remains empty. Token stands on a tiny podium holding an enormous gold trophy while a scoreboard reads MISTAKES: 0 and TASKS ATTEMPTED: 0. Mina throws up her hands in stunned disbelief."
         }
       ]
@@ -266,22 +589,40 @@
       "panels": [
         {
           "lines": [
-            { "speaker": "Dex", "text": "I trained a digital twin on my entire leadership style." },
-            { "speaker": "Clara", "text": "Were outcomes included?" }
+            {
+              "speaker": "Dex",
+              "text": "I trained a digital twin on my entire leadership style."
+            },
+            {
+              "speaker": "Clara",
+              "text": "Were outcomes included?"
+            }
           ],
           "description": "Dex presents a miniature holographic copy while Clara tests the premise."
         },
         {
           "lines": [
-            { "speaker": "Mina", "text": "It can now make executive decisions at machine speed." },
-            { "speaker": "Wes", "text": "Can it explain one?" }
+            {
+              "speaker": "Mina",
+              "text": "It can now make executive decisions at machine speed."
+            },
+            {
+              "speaker": "Wes",
+              "text": "Can it explain one?"
+            }
           ],
           "description": "Mina celebrates the working prototype as Wes reaches toward rollback."
         },
         {
           "lines": [
-            { "speaker": "AI Dex", "text": "My recommendation: delegate all accountability." },
-            { "speaker": "Dex", "text": "See? It understands management." }
+            {
+              "speaker": "AI Dex",
+              "text": "My recommendation: delegate all accountability."
+            },
+            {
+              "speaker": "Dex",
+              "text": "See? It understands management."
+            }
           ],
           "description": "The digital twin reproduces Dex’s blind spot perfectly."
         },

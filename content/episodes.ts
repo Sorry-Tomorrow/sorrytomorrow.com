@@ -24,7 +24,9 @@ export type Episode = {
   publicNumber: number;
   publicVersion: string;
   label: string;
-  websitePublishedAt: string;
+  websitePublishedAt: string | null;
+  previewOnly?: boolean;
+  readerLayout?: "thermostat" | "duck" | "magnification";
   displayDate: string;
   caption: string;
   shell: "art-first" | "classic";
@@ -42,7 +44,9 @@ export type SeriesCatalog = {
 };
 
 export const series = catalog.series satisfies SeriesCatalog;
-export const episodes = catalog.episodes satisfies Episode[];
+export const episodes: Episode[] = catalog.episodes;
+export const publishedEpisodes = episodes.filter(episode => !episode.previewOnly);
+export const previewEpisodes = episodes.filter(episode => episode.previewOnly);
 
 export function getEpisode(slug: string) {
   return episodes.find((episode) => episode.slug === slug);

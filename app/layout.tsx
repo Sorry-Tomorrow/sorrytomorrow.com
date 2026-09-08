@@ -3,7 +3,7 @@ import { Atkinson_Hyperlegible, Bowlby_One_SC } from "next/font/google";
 import { series } from "@/content/episodes";
 import { AnalyticsBeacon } from "./AnalyticsBeacon";
 import "./globals.css";
-import { siteUrl } from "./site";
+import { publicAssetPath, siteUrl } from "./site";
 
 const bodyFont = Atkinson_Hyperlegible({
   variable: "--font-body",
@@ -68,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bodyFont.variable} ${displayFont.variable}`}>
+        <style>{`@font-face{font-family:ComicBangers;src:url("${publicAssetPath("fonts/comic-shell/Bangers-Regular.ttf")}") format("truetype");font-display:swap}`}</style>
         {children}
         <AnalyticsBeacon />
       </body>

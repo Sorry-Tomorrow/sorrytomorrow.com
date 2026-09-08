@@ -33,6 +33,7 @@ export async function generateMetadata({
   return {
     title: episode.title,
     description: episode.caption,
+    ...(episode.previewOnly ? { robots: { index: false, follow: false } } : {}),
     alternates: {
       canonical,
       types: {
@@ -45,7 +46,7 @@ export async function generateMetadata({
       siteName: series.title,
       title: `${episode.title} | ${series.title}`,
       description: episode.caption,
-      publishedTime: episode.websitePublishedAt,
+      ...(!episode.previewOnly && episode.websitePublishedAt ? { publishedTime: episode.websitePublishedAt } : {}),
       images: [
         {
           url: image,
@@ -74,7 +75,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
     "@type": "CreativeWork",
     name: episode.title,
     description: episode.caption,
-    datePublished: episode.websitePublishedAt,
+    ...(!episode.previewOnly && episode.websitePublishedAt ? { datePublished: episode.websitePublishedAt } : {}),
     url: absolutePageUrl(episodePath(episode.slug)).toString(),
     image: absolutePublicUrl(episode.ogImage.src),
     isPartOf: {
@@ -89,7 +90,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
       <a className="skip-link" href="#comic">
         Skip to comic
       </a>
-      <SiteHeader />
+      <SiteHeader preview={episode.previewOnly} />
       <main>
         <ComicReader episode={episode} anchorId="comic" />
         <section className="episode-disclosure" aria-label="Production note">

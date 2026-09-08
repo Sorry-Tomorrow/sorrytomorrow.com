@@ -1,6 +1,12 @@
 import { access, cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+const catalog = JSON.parse(await readFile("content/episodes.json", "utf8"));
+const hasPrivatePreviews = catalog.episodes.some(episode => episode.previewOnly);
+if (hasPrivatePreviews && process.env.SORRY_TOMORROW_LOCAL_PREVIEW !== "true") {
+  throw new Error("Private comic previews are present. Publication is not authorized; use SORRY_TOMORROW_LOCAL_PREVIEW=true only to prepare a local review artifact.");
+}
+
 const outputDirectory = path.resolve("dist/client");
 const configuredBasePath = process.env.PAGES_BASE_PATH ?? "";
 const pathSegment = configuredBasePath.replace(/^\/+|\/+$/g, "");
@@ -34,6 +40,10 @@ async function stageDirectoryIndex(sourceHtml, destinationDirectory) {
 }
 
 await Promise.all([
+  ...(hasPrivatePreviews ? [stageDirectoryIndex(
+    path.join(outputDirectory, "review.html"),
+    path.join(outputDirectory, "review"),
+  )] : []),
   stageDirectoryIndex(
     path.join(outputDirectory, "colophon.html"),
     path.join(outputDirectory, "colophon"),
@@ -64,3 +74,6 @@ if (basePath && !indexHtml.includes(`${basePath}/_next/`)) {
 await access(path.join(outputDirectory, "_next"));
 await access(path.join(outputDirectory, "og.png"));
 await writeFile(path.join(outputDirectory, ".nojekyll"), "", "utf8");
+if (hasPrivatePreviews) {
+  await writeFile(path.join(outputDirectory, "robots.txt"), "User-agent: *\nDisallow: /\n", "utf8");
+}
