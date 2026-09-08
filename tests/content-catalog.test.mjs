@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all eight released episodes in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 8);
+test("keeps all nine released episodes in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 9);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [8, 7, 6, 5, 4, 3, 2, 1],
+    [9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 8);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 8);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 9);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 9);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -73,6 +73,24 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 8);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 9);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
+});
+
+test("imports the approved vibe-coded comic with attribution and exact copy", async () => {
+  const ledger = JSON.parse(await readFile(new URL("../content/approved-vibecoded-assets.json", import.meta.url), "utf8"));
+  assert.equal(ledger.attributionStandard, "ST-ATTRIBUTION-1");
+  assert.equal(ledger.assets.length, 5);
+  for (const asset of ledger.assets) {
+    const bytes = await readFile(new URL(`../public/${asset.target}`, import.meta.url));
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
+  }
+  const episode = catalog.episodes[0];
+  assert.equal(episode.internalId, "ST-SCRATCH-035");
+  assert.equal(episode.title, "So You Vibe-Coded an App…");
+  assert.equal(episode.art.length, 4);
+  assert.equal(episode.panels[0].lines[0].text, "It’s done! Our first vibe-coded app!");
+  assert.equal(episode.panels[1].lines[1].text, "The other “5%…”");
+  assert.deepEqual(episode.panels[2].lines, []);
+  assert.equal(episode.panels[3].lines.at(-1).text, "0 users");
 });

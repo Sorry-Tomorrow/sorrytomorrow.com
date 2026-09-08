@@ -48,8 +48,9 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 008 · Ahead AI/);
-  assert.match(html, /comics\/magnification-spiral\/p1-approved\.png/);
+  assert.match(html, /Comic 009 · Ahead AI/);
+  assert.match(html, /So You Vibe-Coded an App…/);
+  assert.match(html, /comics\/so-you-vibe-coded-an-app\/p1\.png/);
   assert.match(html, /The Honest Demo/);
   assert.match(html, /Vibe Coding in Your Sleep/);
   assert.match(html, /Executive Twin/);
@@ -120,7 +121,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 8);
+  assert.equal(JSON.parse(catalog).episodes.length, 9);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -158,7 +159,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.deepEqual(await readDirectoryIfPresent(previewRoot), []);
 });
 
-test("all three released comics render exact panels, versions and publication metadata", async () => {
+test("released layout-specific comics render exact panels, versions and publication metadata", async () => {
   const catalog = JSON.parse(await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"));
   for (const episode of catalog.episodes.filter(item => item.publicNumber >= 6)) {
     const response = await render(`/comics/${episode.slug}`);
@@ -190,7 +191,8 @@ test("published navigation connects Founder through the three new releases", asy
     ["founder-inc-llc", "the-honest-demo", "not-so-smart-thermostat"],
     ["not-so-smart-thermostat", "founder-inc-llc", "oops-i-drifted-again"],
     ["oops-i-drifted-again", "not-so-smart-thermostat", "magnification-spiral"],
-    ["magnification-spiral", "oops-i-drifted-again", null],
+    ["magnification-spiral", "oops-i-drifted-again", "so-you-vibe-coded-an-app"],
+    ["so-you-vibe-coded-an-app", "magnification-spiral", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);

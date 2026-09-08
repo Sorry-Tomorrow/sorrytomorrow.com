@@ -17,6 +17,145 @@
   },
   "episodes": [
     {
+      "internalId": "ST-SCRATCH-035",
+      "slug": "so-you-vibe-coded-an-app",
+      "title": "So You Vibe-Coded an App…",
+      "publicNumber": 9,
+      "publicVersion": "v0.0.9",
+      "label": "Comic 009 · Ahead AI",
+      "readerLayout": "vibecoded",
+      "caption": "A first vibe-coded app. Just a few finishing touches.",
+      "shell": "art-first",
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Clara",
+              "text": "It’s done! Our first vibe-coded app!"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Eh…."
+            },
+            {
+              "speaker": "Display",
+              "text": "AUTONOMOUS PRODUCT / 95% DONE"
+            }
+          ],
+          "description": "Clara and Wes stand beside the progress display in a bright office."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Clara",
+              "text": "Wait, what’s that?"
+            },
+            {
+              "speaker": "Wes",
+              "text": "The other “5%…”"
+            },
+            {
+              "speaker": "Hatch label",
+              "text": "5%"
+            }
+          ],
+          "description": "Both indicate the tiny closed hatch at floor level."
+        },
+        {
+          "lines": [],
+          "description": "Clara and Wes crouch and open the hatch together, each gripping a separate leaf. A walkway recedes into a larger interior. No dialogue or reaction bubble."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Clara’s reaction bubble",
+              "text": "!"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Testing"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Test Environments"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Security"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Telemetry"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Analytics"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Marketing"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Social Media"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Disaster recovery"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Support"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Updates"
+            },
+            {
+              "speaker": "Wes",
+              "text": "0 users"
+            }
+          ],
+          "description": "Enormous stacks of unchecked work and plans fill a deep room. Clara holds her open notebook; Wes rolls a sleeve. The last, separate task-list bubble reads 0 users."
+        }
+      ],
+      "websitePublishedAt": "2026-09-08T22:41:39Z",
+      "displayDate": "v0.0.9",
+      "previewOnly": false,
+      "ogImage": {
+        "src": "comics/so-you-vibe-coded-an-app/og.png",
+        "width": 1860,
+        "height": 845,
+        "alt": "Clara Fye announces, ‘It’s done! Our first vibe-coded app!’ Wes Rollback hesitates: ‘Eh….’ A display reads AUTONOMOUS PRODUCT and 95% DONE above an almost-full progress bar."
+      },
+      "art": [
+        {
+          "src": "comics/so-you-vibe-coded-an-app/p1.png",
+          "width": 1860,
+          "height": 845,
+          "alt": "Clara Fye announces, ‘It’s done! Our first vibe-coded app!’ Wes Rollback hesitates: ‘Eh….’ A display reads AUTONOMOUS PRODUCT and 95% DONE above an almost-full progress bar."
+        },
+        {
+          "src": "comics/so-you-vibe-coded-an-app/p2.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "Clara asks, ‘Wait, what’s that?’ Wes answers, ‘The other “5%…”’ They indicate a tiny floor-level double hatch marked 5%."
+        },
+        {
+          "src": "comics/so-you-vibe-coded-an-app/p3.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "In a silent panel, Clara and Wes crouch and open opposite leaves of the tiny hatch. A receding walkway inside hints at a much larger space."
+        },
+        {
+          "src": "comics/so-you-vibe-coded-an-app/p4.png",
+          "width": 1374,
+          "height": 1145,
+          "alt": "Towering work queues dwarf Clara and Wes. A lone exclamation-point bubble sits above Clara. Wes’s many speech bubbles list Testing, Test Environments, Security, Telemetry, Analytics, Marketing, Social Media, Disaster recovery, Support, Updates, and finally 0 users."
+        }
+      ]
+    },
+    {
       "internalId": "ST-SCRATCH-034",
       "slug": "magnification-spiral",
       "title": "The Magnification Spiral",

@@ -47,8 +47,9 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 008 · Ahead AI/);
-  assert.match(html, /comics\/magnification-spiral\/p1-approved\.png/);
+  assert.match(html, /Comic 009 · Ahead AI/);
+  assert.match(html, /So You Vibe-Coded an App…/);
+  assert.match(html, /comics\/so-you-vibe-coded-an-app\/p1\.png/);
   assert.match(html, /The Honest Demo/);
   assert.match(html, /Vibe Coding in Your Sleep/);
   assert.doesNotMatch(html, /Latest approved comic|production-ready pilot/i);
@@ -185,6 +186,7 @@ test("produces a complete GitHub Pages artifact", async () => {
 test("release export has complete episode pages and exact approved assets", async () => {
   const catalog = JSON.parse(await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"));
   const ledger = JSON.parse(await readFile(new URL("../content/approved-slate-assets.json", import.meta.url), "utf8"));
+  const vibeLedger = JSON.parse(await readFile(new URL("../content/approved-vibecoded-assets.json", import.meta.url), "utf8"));
   await assert.rejects(access(new URL("review/index.html", outputRoot)));
   await assert.rejects(access(new URL("review.html", outputRoot)));
   for (const episode of catalog.episodes.filter(item => item.publicNumber >= 6)) {
@@ -194,7 +196,7 @@ test("release export has complete episode pages and exact approved assets", asyn
     for (const art of episode.art) assert.ok(html.includes(`${basePath}/${art.src}`), art.src);
     assert.ok(!html.includes('href="/review/"'), episode.slug);
   }
-  for (const asset of ledger.assets) {
+  for (const asset of [...ledger.assets, ...vibeLedger.assets]) {
     const bytes = await readFile(new URL(asset.target, outputRoot));
     assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
   }

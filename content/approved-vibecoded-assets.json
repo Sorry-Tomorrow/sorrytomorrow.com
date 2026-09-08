@@ -1,0 +1,44 @@
+{
+  "episode": "ST-SCRATCH-035",
+  "title": "So You Vibe-Coded an App…",
+  "sourcePackage": "so-you-vibe-coded-an-app-v0.0.9-marked-v1",
+  "assetManifestSha256": "d9b66e7902abd9fb68a9851f7e73a929a608bf5fd6164fded0fb347443e9ab62",
+  "attributionStandard": "ST-ATTRIBUTION-1",
+  "assets": [
+    {
+      "target": "comics/so-you-vibe-coded-an-app/p1.png",
+      "sha256": "e222a3a769593e291c30c7e574732950d98c2f5e26390271c1061c0de28877c2",
+      "width": 1860,
+      "height": 845,
+      "sourceSvgSha256": "3a47f9bcb89181db6e7bc00a149bba2cf59f08738a8bb64bbc99355e96362444"
+    },
+    {
+      "target": "comics/so-you-vibe-coded-an-app/p2.png",
+      "sha256": "9ff33939d3dace70b03e5a6686894aa87b678959ef3c03226459f60a7ef2e732",
+      "width": 1536,
+      "height": 1024,
+      "sourceSvgSha256": "f7fcb5263c9989c7dba628d392924362757663b2d5f46dfd92d2e5fbbdaa9f35"
+    },
+    {
+      "target": "comics/so-you-vibe-coded-an-app/p3.png",
+      "sha256": "8f82185b094727690b8570d095fd680a491add7308a1fe8c5f920ab6b7d2d728",
+      "width": 1536,
+      "height": 1024,
+      "sourceSvgSha256": "d7696c2f10d14d39daa3fb0c27ef039169fc5ff5d02cc917daf9ca681723a429"
+    },
+    {
+      "target": "comics/so-you-vibe-coded-an-app/p4.png",
+      "sha256": "ac8bb4e77e5d369706212b78ec346701c6006b4b29dba59997cd84fa304dc8e7",
+      "width": 1374,
+      "height": 1145,
+      "sourceSvgSha256": "435a73504d8d087d96af2a6a370e04cc7e5f3a9cc9f9632ce8efcf38963ea6fe"
+    },
+    {
+      "target": "comics/so-you-vibe-coded-an-app/og.png",
+      "sha256": "e222a3a769593e291c30c7e574732950d98c2f5e26390271c1061c0de28877c2",
+      "width": 1860,
+      "height": 845,
+      "sourceSvgSha256": "3a47f9bcb89181db6e7bc00a149bba2cf59f08738a8bb64bbc99355e96362444"
+    }
+  ]
+}

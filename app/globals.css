@@ -442,6 +442,23 @@ summary {
 .reader-layout-magnification .comic-panel-art:nth-child(4) { width: 96%; }
 .reader-layout-magnification .comic-panel-art:nth-child(5) { margin-top: 8px; }
 
+.reader-layout-vibecoded .art-first-episode-header h2 {
+  font-family: ComicBangers, Impact, sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+.reader-layout-vibecoded .art-first-comic-page { max-width: 1260px; }
+.reader-layout-vibecoded .art-first-comic-art { align-items: start; gap: 22px; }
+.reader-layout-vibecoded .comic-panel-art:first-child,
+.reader-layout-vibecoded .comic-panel-art:last-child { grid-column: 1 / -1; }
+@media (max-width: 720px) {
+  .reader-layout-vibecoded .art-first-comic-art { grid-template-columns: 1fr; gap: 14px; }
+  .reader-layout-vibecoded .art-first-episode-header h2 { font-size: 3rem; }
+}
+
 .preview-collection {
   padding: clamp(1.25rem, 4vw, 3.5rem);
   background: var(--cream);

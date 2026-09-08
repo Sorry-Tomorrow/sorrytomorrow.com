@@ -26,7 +26,7 @@ export type Episode = {
   label: string;
   websitePublishedAt: string | null;
   previewOnly?: boolean;
-  readerLayout?: "thermostat" | "duck" | "magnification";
+  readerLayout?: "thermostat" | "duck" | "magnification" | "vibecoded";
   displayDate: string;
   caption: string;
   shell: "art-first" | "classic";
