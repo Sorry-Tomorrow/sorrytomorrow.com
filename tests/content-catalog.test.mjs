@@ -8,7 +8,7 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps ordered episodes with explicit private preview state", async () => {
+test("keeps all eight released episodes in public reading order", async () => {
   assert.equal(catalog.episodes.length, 8);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
@@ -16,9 +16,9 @@ test("keeps ordered episodes with explicit private preview state", async () => {
   );
   assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 8);
   assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 8);
-  assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 3);
-  for (const episode of catalog.episodes.filter(item => item.previewOnly)) {
-    assert.equal(episode.websitePublishedAt, null);
+  assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
+  for (const episode of catalog.episodes) {
+    assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
   }
 
   for (const episode of catalog.episodes) {
@@ -66,13 +66,13 @@ test("imports the approved slate without changing asset bytes or panel order", a
   }
 });
 
-test("unpublished previews stay out of RSS and sitemap", async () => {
+test("all released episodes enter RSS and sitemap", async () => {
   const [rss, sitemap] = await Promise.all(["rss.xml", "sitemap.xml"].map(file => readFile(new URL(`../public/${file}`, import.meta.url), "utf8")));
   for (const episode of catalog.episodes) {
     for (const output of [rss, sitemap]) {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 5);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 8);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
 });

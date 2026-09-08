@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import test from "node:test";
 
 const projectRoot = new URL("../", import.meta.url);
@@ -40,10 +43,12 @@ test("produces a complete GitHub Pages artifact", async () => {
 
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/);
   assert.match(html, /id="latest-comic"/);
-  assert.doesNotMatch(html, /Not-So-Smart Thermostat|Oops… I Drifted Again|The Magnification Spiral/);
+  assert.match(html, /Not-So-Smart Thermostat/);
+  assert.match(html, /Oops… I Drifted Again/);
+  assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 005 · Ahead AI/);
-  assert.match(html, /comics\/founder-inc-llc\/p1-lettered\.svg/);
+  assert.match(html, /Comic 008 · Ahead AI/);
+  assert.match(html, /comics\/magnification-spiral\/p1-approved\.png/);
   assert.match(html, /The Honest Demo/);
   assert.match(html, /Vibe Coding in Your Sleep/);
   assert.doesNotMatch(html, /Latest approved comic|production-ready pilot/i);
@@ -177,30 +182,38 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(rss, /<title>Executive Twin<\/title>/);
 });
 
-test("local preview export contains complete review pages and exact imported assets", async () => {
+test("release export has complete episode pages and exact approved assets", async () => {
   const catalog = JSON.parse(await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"));
   const ledger = JSON.parse(await readFile(new URL("../content/approved-slate-assets.json", import.meta.url), "utf8"));
-  const review = await readFile(new URL("review/index.html", outputRoot), "utf8");
-  assert.ok(review.includes("Four comics. Ready to read."));
-  for (const episode of catalog.episodes.filter(item => item.previewOnly)) {
+  await assert.rejects(access(new URL("review/index.html", outputRoot)));
+  await assert.rejects(access(new URL("review.html", outputRoot)));
+  for (const episode of catalog.episodes.filter(item => item.publicNumber >= 6)) {
     const html = await readFile(new URL(`comics/${episode.slug}/index.html`, outputRoot), "utf8");
-    assert.ok(html.includes('content="noindex, nofollow"'), episode.slug);
-    assert.ok(!html.includes('property="article:published_time"'), episode.slug);
+    assert.ok(!html.includes('content="noindex, nofollow"'), episode.slug);
+    assert.ok(html.includes('property="article:published_time"'), episode.slug);
     for (const art of episode.art) assert.ok(html.includes(`${basePath}/${art.src}`), art.src);
-    assert.ok(review.includes(`${basePath}/comics/${episode.slug}/#comic`), episode.slug);
+    assert.ok(!html.includes('href="/review/"'), episode.slug);
   }
   for (const asset of ledger.assets) {
     const bytes = await readFile(new URL(asset.target, outputRoot));
     assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
   }
   const robots = await readFile(new URL("robots.txt", outputRoot), "utf8");
-  assert.match(robots, /Disallow: \//);
+  assert.match(robots, /Allow: \//);
+  assert.doesNotMatch(robots, /Disallow: \//);
 });
 
-test("standard Pages preparation refuses a private-preview catalog", () => {
+test("standard Pages preparation still refuses an unapproved preview fixture", async () => {
+  const fixture = await mkdtemp(path.join(tmpdir(), "sorry-tomorrow-release-guard-"));
   const env = { ...process.env };
   delete env.SORRY_TOMORROW_LOCAL_PREVIEW;
-  const result = spawnSync(process.execPath, ["scripts/prepare-pages.mjs"], { cwd: projectRoot, env, encoding: "utf8" });
-  assert.equal(result.status, 1);
-  assert.ok(result.stderr.includes("Private comic previews are present. Publication is not authorized"));
+  try {
+    await mkdir(path.join(fixture, "content"));
+    await writeFile(path.join(fixture, "content/episodes.json"), JSON.stringify({ episodes: [{ previewOnly: true }] }));
+    const result = spawnSync(process.execPath, [fileURLToPath(new URL("scripts/prepare-pages.mjs", projectRoot))], { cwd: fixture, env, encoding: "utf8" });
+    assert.equal(result.status, 1);
+    assert.ok(result.stderr.includes("Private comic previews are present. Publication is not authorized"));
+  } finally {
+    await rm(fixture, { recursive: true });
+  }
 });

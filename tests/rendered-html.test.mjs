@@ -44,10 +44,12 @@ test("server-renders the data-driven homepage and archive", async () => {
   const html = await response.text();
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/i);
   assert.match(html, /id="latest-comic"/);
-  assert.doesNotMatch(html, /Not-So-Smart Thermostat|Oops… I Drifted Again|The Magnification Spiral/);
+  assert.match(html, /Not-So-Smart Thermostat/);
+  assert.match(html, /Oops… I Drifted Again/);
+  assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 005 · Ahead AI/);
-  assert.match(html, /comics\/founder-inc-llc\/p1-lettered\.svg/);
+  assert.match(html, /Comic 008 · Ahead AI/);
+  assert.match(html, /comics\/magnification-spiral\/p1-approved\.png/);
   assert.match(html, /The Honest Demo/);
   assert.match(html, /Vibe Coding in Your Sleep/);
   assert.match(html, /Executive Twin/);
@@ -156,16 +158,18 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.deepEqual(await readDirectoryIfPresent(previewRoot), []);
 });
 
-test("all three previews render exact panel sequences without publication claims", async () => {
+test("all three released comics render exact panels, versions and publication metadata", async () => {
   const catalog = JSON.parse(await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"));
-  for (const episode of catalog.episodes.filter(item => item.previewOnly)) {
+  for (const episode of catalog.episodes.filter(item => item.publicNumber >= 6)) {
     const response = await render(`/comics/${episode.slug}`);
     assert.equal(response.status, 200, episode.slug);
     const html = await response.text();
-    assert.ok(html.includes('content="noindex, nofollow"'), `Missing preview robots: ${episode.slug}`);
-    assert.ok(html.includes('href="/review/"'), `Missing collection link: ${episode.slug}`);
+    assert.ok(!html.includes('content="noindex, nofollow"'), `Blocked indexing: ${episode.slug}`);
+    assert.ok(!html.includes('href="/review/"'), `Private review link: ${episode.slug}`);
     assert.ok(html.includes(episode.publicVersion), `Missing version: ${episode.slug}`);
-    assert.ok(!html.includes('property="article:published_time"'), `Publication date on preview: ${episode.slug}`);
+    assert.ok(html.includes('property="article:published_time"'), `Missing publication date: ${episode.slug}`);
+    assert.ok(html.includes(`href="https://sorrytomorrow.com/comics/${episode.slug}/"`), `Wrong canonical: ${episode.slug}`);
+    assert.ok(!html.includes("Website preview") && !html.includes("Private preview"), episode.slug);
     const images = [...html.matchAll(/<img\b[^>]*class="comic-panel-art"[^>]*>/g)].map(match => match[0]);
     assert.equal(images.length, episode.art.length, episode.slug);
     episode.art.forEach((art, index) => {
@@ -176,24 +180,23 @@ test("all three previews render exact panel sequences without publication claims
   }
 });
 
-test("review collection offers all four comics in requested reading order", async () => {
+test("private review collection is not exposed by the released site", async () => {
   const response = await render("/review");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.ok(html.includes('content="noindex, nofollow"'));
-  let last = -1;
-  for (const slug of ["founder-inc-llc", "not-so-smart-thermostat", "oops-i-drifted-again", "magnification-spiral"]) {
-    const current = html.indexOf(`href="/comics/${slug}/#comic"`);
-    assert.ok(current > last, `Preview link missing or out of order: ${slug}`);
-    last = current;
-  }
-  assert.ok(html.includes("Publication dates for those three are still open."));
-  assert.ok(html.includes("Published · website reference"));
+  assert.equal(response.status, 404);
 });
 
-test("published episode navigation does not lead into preview content", async () => {
-  const response = await render("/comics/founder-inc-llc");
-  const html = await response.text();
-  assert.ok(!html.includes('/comics/not-so-smart-thermostat/'));
-  assert.ok(html.includes("You’re at the latest comic"));
+test("published navigation connects Founder through the three new releases", async () => {
+  for (const [slug, older, newer] of [
+    ["founder-inc-llc", "the-honest-demo", "not-so-smart-thermostat"],
+    ["not-so-smart-thermostat", "founder-inc-llc", "oops-i-drifted-again"],
+    ["oops-i-drifted-again", "not-so-smart-thermostat", "magnification-spiral"],
+    ["magnification-spiral", "oops-i-drifted-again", null],
+  ]) {
+    const response = await render(`/comics/${slug}`);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.ok(html.includes(`href="/comics/${older}/#comic"`), slug);
+    if (newer) assert.ok(html.includes(`href="/comics/${newer}/#comic"`), slug);
+    else assert.ok(html.includes("You’re at the latest comic"), slug);
+  }
 });

@@ -44,7 +44,7 @@ export function ComicReader({
 
       {artFirst ? (
         <header className="art-first-episode-header">
-          <span>{episode.previewOnly ? "Sorry, Tomorrow · Ahead AI" : episode.label}</span>
+          <span>{episode.previewOnly ? "Sorry, Tomorrow · Ahead AI" : `${episode.label}${episode.readerLayout ? ` · ${episode.publicVersion}` : ""}`}</span>
           <div>
             <h2>{episode.title}</h2>
             <p>{episode.caption}</p>
