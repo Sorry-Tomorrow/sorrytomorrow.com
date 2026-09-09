@@ -73,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bodyFont.variable} ${displayFont.variable}`}>
-        <style>{`@font-face{font-family:ComicBangers;src:url("${publicAssetPath("fonts/comic-shell/Bangers-Regular.ttf")}") format("truetype");font-display:swap}`}</style>
+        <style>{`@font-face{font-family:ComicBangers;src:url("${publicAssetPath("fonts/comic-shell/Bangers-Regular.ttf")}") format("truetype");font-display:swap}@font-face{font-family:ComicBowlby;src:url("${publicAssetPath("fonts/comic-shell/BowlbyOneSC-Regular.ttf")}") format("truetype");font-weight:400;font-display:swap}`}</style>
         {children}
         <AnalyticsBeacon />
         <ComicAnalytics

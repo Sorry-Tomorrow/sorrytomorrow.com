@@ -83,9 +83,10 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 010 · Ahead AI/);
+  assert.match(html, /Comic 011 · Ahead AI/);
+  assert.match(html, /Incognito Mode/);
   assert.match(html, /Work Life Balance/);
-  assert.match(html, /comics\/work-life-balance\/p1\.png/);
+  assert.match(html, /comics\/incognito-mode\/p1\.png/);
   assert.match(html, /So You Vibe-Coded an App…/);
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/so-you-vibe-coded-an-app/#comic"`));
   assert.match(html, /The Honest Demo/);

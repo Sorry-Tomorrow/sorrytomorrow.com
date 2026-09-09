@@ -453,6 +453,19 @@ summary {
 .reader-layout-vibecoded .art-first-comic-page { max-width: 1260px; }
 .reader-layout-work-life-balance .art-first-comic-page { max-width: 1120px; }
 .reader-layout-work-life-balance .art-first-comic-art { grid-template-columns: 1fr; }
+.reader-layout-incognito .art-first-comic-page { max-width: 1600px; }
+.reader-layout-incognito .art-first-episode-header h2 { font-family: ComicBowlby, sans-serif; font-weight: 400; font-size: clamp(34px, 6vw, 72px); line-height: 1.1; letter-spacing: normal; }
+.reader-layout-incognito .art-first-comic-art { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 22px; }
+.reader-layout-incognito .art-first-comic-art .comic-panel-art { width: 100%; height: auto; transform: none; border: 0; box-shadow: none; }
+@media (min-width: 980px) {
+  .reader-layout-incognito .art-first-comic-art { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
+  .reader-layout-incognito .comic-panel-art:nth-child(3) { grid-column: 1 / -1; width: 72%; justify-self: center; }
+  .reader-layout-incognito .comic-panel-art:last-child { grid-column: 1 / -1; }
+}
+@media (min-width: 1540px) {
+  .reader-layout-incognito .art-first-comic-art { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .reader-layout-incognito .comic-panel-art:nth-child(3) { grid-column: auto; width: 100%; }
+}
 .reader-layout-vibecoded .art-first-comic-art { align-items: start; gap: 22px; }
 .reader-layout-vibecoded .comic-panel-art:first-child,
 .reader-layout-vibecoded .comic-panel-art:last-child { grid-column: 1 / -1; }

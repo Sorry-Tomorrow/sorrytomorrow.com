@@ -1,0 +1,17 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-09-09",
+  "internalId": "ST-INCOGNITO-MODE",
+  "title": "Incognito Mode",
+  "ownerInstruction": "perform all next steps, i just created a new comic called \"Incognito Mode\" as the title, you can use that to test all the implementations for social medium",
+  "resolvedQuestion": "May I create high-quality JPEG copies for Instagram, preserving the artwork/layout and original PNGs, and use Incognito Mode + the comic link + our standard AI-assisted disclosure as the launch caption across all three platforms?",
+  "ownerAnswer": "yes do what you need to",
+  "destinations": ["website", "x", "instagram", "facebook"],
+  "approval3ReceiptSha256": "cffff64dad094e68665a01d63657c82b774fe0f5a1e88d0a61f7f735824df407",
+  "sourceManifestSha256": "4126e6e716f743d6ae51118250c26afd7c825ed1b691d70c9d53136bff2238e0",
+  "compatibilityGrant": "High-quality Instagram JPEG encoding of the selected complete carousel slides, preserving dimensions, art, lettering and attribution; retain sealed PNGs and masters. No crop, redraw, relettering or new creative caption.",
+  "captionSelection": "Approved title, actual comic link with organic attribution parameters, and the existing AI-assisted disclosure. Do not select an optional joke-caption suggestion.",
+  "standingAutomation": "Automatically publish newly shipped and destination-approved comics to the three named accounts after verified website deployment. Respect later website-only/no-social holds. No backfill of already-live comics.",
+  "exclusions": ["LinkedIn", "paid ads", "new artwork", "old-comic backfill", "new account permissions", "X spending beyond the existing $5 cap"],
+  "publicationClaim": "This is owner authority, not evidence of a completed deployment or social post."
+}

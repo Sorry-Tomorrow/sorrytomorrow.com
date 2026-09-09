@@ -17,6 +17,98 @@
   },
   "episodes": [
     {
+      "internalId": "ST-INCOGNITO-MODE",
+      "slug": "incognito-mode",
+      "title": "Incognito Mode",
+      "publicNumber": 11,
+      "publicVersion": "v0.0.11",
+      "label": "Comic 011 · Ahead AI",
+      "websitePublishedAt": "2026-09-09T20:12:46.072Z",
+      "displayDate": "v0.0.11",
+      "previewOnly": false,
+      "readerLayout": "incognito",
+      "caption": "A four-panel Sorry, Tomorrow comic.",
+      "shell": "art-first",
+      "art": [
+        {
+          "src": "comics/incognito-mode/p1.png",
+          "width": 1480,
+          "height": 1186,
+          "alt": "In a sunny office, Mina sits at a desk facing a smiling cyan AI face projected above the monitor labeled AI 1. Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.”"
+        },
+        {
+          "src": "comics/incognito-mode/p2.png",
+          "width": 1480,
+          "height": 1334,
+          "alt": "Hidden behind a large plant, Mina wears sunglasses and a fake mustache, cupping her hand beside her mouth toward a laptop labeled AI 2 resting on her lap. Token watches an approaching Wes through binoculars. Mina: “Check this code. I don't believe a word it said.”"
+        },
+        {
+          "src": "comics/incognito-mode/p3.png",
+          "width": 1480,
+          "height": 1420,
+          "alt": "Wes parts the plant's leaves and bends toward Mina. Startled, she grasps his collar; the AI 2 laptop remains on her lap. Wes: “Why are you wearing a disguise?”"
+        },
+        {
+          "src": "comics/incognito-mode/p4.png",
+          "width": 1480,
+          "height": 1350,
+          "alt": "Mina whispers to Wes beside the plant: “My other AI thinks we’re exclusive.” Across the office, AI 1's face now glows red with an angry frown. Token holds his lowered binoculars and says, “You know it can hear you, right?”"
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Original AI",
+              "text": "I've checked your code. Everything is correct."
+            },
+            {
+              "speaker": "Mina",
+              "text": "Perfect. I trust you."
+            }
+          ],
+          "description": "In a sunny office, Mina sits at a desk facing a smiling cyan AI face projected above the monitor labeled AI 1. Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.”"
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Mina",
+              "text": "Check this code. I don't believe a word it said."
+            }
+          ],
+          "description": "Hidden behind a large plant, Mina wears sunglasses and a fake mustache, cupping her hand beside her mouth toward a laptop labeled AI 2 resting on her lap. Token watches an approaching Wes through binoculars. Mina: “Check this code. I don't believe a word it said.”"
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Wes",
+              "text": "Why are you wearing a disguise?"
+            }
+          ],
+          "description": "Wes parts the plant's leaves and bends toward Mina. Startled, she grasps his collar; the AI 2 laptop remains on her lap. Wes: “Why are you wearing a disguise?”"
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Mina",
+              "text": "My other AI thinks we’re exclusive."
+            },
+            {
+              "speaker": "Token",
+              "text": "You know it can hear you, right?"
+            }
+          ],
+          "description": "Mina whispers to Wes beside the plant: “My other AI thinks we’re exclusive.” Across the office, AI 1's face now glows red with an angry frown. Token holds his lowered binoculars and says, “You know it can hear you, right?”"
+        }
+      ],
+      "ogImage": {
+        "src": "comics/incognito-mode/p1.png",
+        "width": 1480,
+        "height": 1186,
+        "alt": "In a sunny office, Mina sits at a desk facing a smiling cyan AI face projected above the monitor labeled AI 1. Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.”"
+      }
+    },
+    {
       "internalId": "ST-PROGRESS-BAR",
       "slug": "work-life-balance",
       "title": "Work Life Balance",
