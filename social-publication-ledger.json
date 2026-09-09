@@ -1,0 +1,18 @@
+{
+  "schema": "sorry-tomorrow-social-ledger-v1",
+  "initializedAt": "2026-09-09T20:49:35.497Z",
+  "baselineCommit": "d1796e78ac1be622c6cc7ee86d951455c057d2a9",
+  "baselineExcludedIds": [
+    "ST-PROGRESS-BAR",
+    "ST-REF-000",
+    "ST-SCRATCH-004",
+    "ST-SCRATCH-015",
+    "ST-SCRATCH-029",
+    "ST-SCRATCH-031",
+    "ST-SCRATCH-032",
+    "ST-SCRATCH-033",
+    "ST-SCRATCH-034",
+    "ST-SCRATCH-035"
+  ],
+  "releases": {}
+}
