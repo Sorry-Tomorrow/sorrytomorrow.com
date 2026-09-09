@@ -1,0 +1,49 @@
+name: Check social account connections (read only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/social-publishing-analytics]
+    paths:
+      - .github/workflows/social-connection-check.yml
+      - scripts/social-connections.mjs
+      - tests/social-connections.test.mjs
+
+permissions:
+  contents: read
+
+concurrency:
+  group: social-connection-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.repository == 'Sorry-Tomorrow/sorrytomorrow.com' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out trusted diagnostic code only
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/social-connections.mjs
+            tests/social-connections.test.mjs
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22.13.0
+
+      - name: Verify diagnostic safety and signing offline
+        run: node --test tests/social-connections.test.mjs
+
+      - name: Check only the three intended account identities
+        run: node scripts/social-connections.mjs --live
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
