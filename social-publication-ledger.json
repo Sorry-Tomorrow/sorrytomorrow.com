@@ -62,6 +62,10 @@
                 "id": "2097790860565909506"
               },
               "completedAt": "2026-09-09T20:54:53.554Z"
+            },
+            "post-0-image-2": {
+              "status": "in-flight",
+              "startedAt": "2026-09-09T20:54:54.563Z"
             }
           },
           "results": [],
