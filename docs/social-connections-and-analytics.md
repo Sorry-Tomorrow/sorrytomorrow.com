@@ -34,9 +34,11 @@ branch. Fork/PR events cannot invoke the live diagnostic.
 
 `NEXT_PUBLIC_POSTHOG_KEY` is a **public, write-only ingestion token** (`phc_…`),
 stored as a repository variable and passed only to the static website build.
-It is not a personal/admin API key. The server rejects other token prefixes before
-serializing browser props. An absent/invalid value disables this optional tracker
-without blocking a comic release.
+It is not a personal/admin API key. Dev/build preflight rejects other token
+prefixes before bundling begins, without printing the value; the server also
+filters browser props. An absent/blank value disables this optional tracker
+without blocking a comic release. A non-public value deliberately fails the build
+to prevent a credential exposure.
 
 Project `601496` is on PostHog US Cloud. Both project-side cookieless tracking and
 IP discard are enabled. The SDK is pinned in the lockfile. The initial free plan

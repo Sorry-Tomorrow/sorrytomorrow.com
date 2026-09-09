@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { analyticsAllowed, campaignProperties, publicProjectToken, safeAnalyticsProperties } from "../app/analytics-policy.mjs";
+import { validatePublicAnalyticsEnv } from "../scripts/validate-public-analytics-env.mjs";
 
 const comics = [
   { id: "ST-ONE", slug: "one", number: 1 },
@@ -14,6 +15,21 @@ test("personal/admin API tokens can never enter browser-facing props", () => {
   assert.equal(publicProjectToken(publicToken), publicToken);
   for (const value of [undefined, "", "phx_personal-secret", "EAA-private-token", ` ${publicToken}`, `${publicToken}\n`]) {
     assert.equal(publicProjectToken(value), "");
+  }
+});
+
+test("a non-public token stops bundling without echoing its value", async () => {
+  const privateValue = "phx_private-canary-do-not-expose";
+  assert.throws(() => validatePublicAnalyticsEnv({ NEXT_PUBLIC_POSTHOG_KEY: privateValue }), error => {
+    assert.ok(!error.message.includes(privateValue));
+    return /public phc_/.test(error.message);
+  });
+  assert.doesNotThrow(() => validatePublicAnalyticsEnv({}));
+  assert.doesNotThrow(() => validatePublicAnalyticsEnv({ NEXT_PUBLIC_POSTHOG_KEY: "" }));
+  assert.doesNotThrow(() => validatePublicAnalyticsEnv({ NEXT_PUBLIC_POSTHOG_KEY: `phc_${"a".repeat(40)}` }));
+  const pkg = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
+  for (const script of ["predev", "prebuild", "prebuild:pages"]) {
+    assert.ok(pkg.scripts[script].startsWith("node scripts/validate-public-analytics-env.mjs &&"));
   }
 });
 
