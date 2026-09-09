@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all nine released episodes in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 9);
+test("keeps all ten released episodes in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 10);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 9);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 9);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 10);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 10);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -73,7 +73,7 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 9);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 10);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
 });
 
@@ -85,7 +85,7 @@ test("imports the approved vibe-coded comic with attribution and exact copy", as
     const bytes = await readFile(new URL(`../public/${asset.target}`, import.meta.url));
     assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
   }
-  const episode = catalog.episodes[0];
+  const episode = catalog.episodes.find(item => item.internalId === "ST-SCRATCH-035");
   assert.equal(episode.internalId, "ST-SCRATCH-035");
   assert.equal(episode.title, "So You Vibe-Coded an App…");
   assert.equal(episode.art.length, 4);
@@ -93,4 +93,31 @@ test("imports the approved vibe-coded comic with attribution and exact copy", as
   assert.equal(episode.panels[1].lines[1].text, "The other “5%…”");
   assert.deepEqual(episode.panels[2].lines, []);
   assert.equal(episode.panels[3].lines.at(-1).text, "0 users");
+});
+
+test("releases Work Life Balance with exact approved panels and dialogue", async () => {
+  const ledger = JSON.parse(await readFile(new URL("../content/approved-work-life-balance-assets.json", import.meta.url), "utf8"));
+  assert.equal(ledger.assets.length, 4);
+  assert.equal(ledger.attributionLayout, "ST-ATTRIBUTION-LAYOUT-2");
+  for (const asset of ledger.assets) {
+    const bytes = await readFile(new URL(`../public/${asset.target}`, import.meta.url));
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
+    assert.equal(bytes.length, asset.bytes, asset.target);
+  }
+  const episode = catalog.episodes[0];
+  assert.equal(episode.internalId, "ST-PROGRESS-BAR");
+  assert.equal(episode.title, "Work Life Balance");
+  assert.equal(episode.publicNumber, 10);
+  assert.equal(episode.publicVersion, "v0.0.10");
+  assert.equal(episode.readerLayout, "work-life-balance");
+  assert.equal(episode.art.length, 3);
+  assert.deepEqual(episode.art.map(a => a.src), [1,2,3].map(n => `comics/work-life-balance/p${n}.png`));
+  assert.deepEqual(episode.ogImage, episode.art[0]);
+  assert.deepEqual(episode.panels.map(p => p.description), episode.art.map(a => a.alt));
+  assert.deepEqual(episode.panels.map(p => p.lines[0]), [
+    { speaker: "Mina", text: "This new AI makes the whole client presentation for me. Two hours of work—one click." },
+    { speaker: "Wes", text: "So… what’ll you do with all this newfound free time?" },
+    { speaker: "Mina", text: "Shh. This is the good part." },
+  ]);
+  assert.equal(episode.panels[2].lines[1].text, "MAKING PRESENTATION / 99%");
 });

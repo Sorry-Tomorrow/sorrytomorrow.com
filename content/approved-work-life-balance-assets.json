@@ -1,0 +1,13 @@
+{
+  "episode": "Work Life Balance",
+  "internalId": "ST-PROGRESS-BAR",
+  "attributionStandard": "ST-ATTRIBUTION-1",
+  "attributionLayout": "ST-ATTRIBUTION-LAYOUT-2",
+  "sourcePackageSha256": "41baf64d4dbb0da6d69605552273e8ba5aee1e792b7dd441267604fa313e01a2",
+  "assets": [
+    {"target":"comics/work-life-balance/p1.png","bytes":2273208,"sha256":"2dcc251ec2c01b626464b9e142b894399bcb8ce0e24bda9fd80a869552bbd1e2"},
+    {"target":"comics/work-life-balance/p2.png","bytes":2369828,"sha256":"2c4df69bb258473cb942cfef544d226e553de9cb0b303270147d7c5dd7d2b6a8"},
+    {"target":"comics/work-life-balance/p3.png","bytes":2175727,"sha256":"cca8eab4da699b78ae508e9c492c9b96dd906088cde59583f9d346fc26a9c1cc"},
+    {"target":"comics/work-life-balance/complete.png","bytes":5558940,"sha256":"656f6ad26c49b925a40c21e93c3ae66b21fa98dd7352bd015d4b7f807ea6573f"}
+  ]
+}
