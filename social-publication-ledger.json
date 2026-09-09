@@ -100,8 +100,13 @@
               "completedAt": "2026-09-09T20:55:02.952Z"
             },
             "post-0-publish": {
-              "status": "in-flight",
-              "startedAt": "2026-09-09T20:55:04.214Z"
+              "status": "done",
+              "startedAt": "2026-09-09T20:55:04.214Z",
+              "result": {
+                "id": "2097790920527663356",
+                "url": "https://x.com/sorrytomorrowco/status/2097790920527663356"
+              },
+              "completedAt": "2026-09-09T20:55:05.541Z"
             }
           },
           "results": [],
