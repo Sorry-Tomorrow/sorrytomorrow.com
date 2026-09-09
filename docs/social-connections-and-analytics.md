@@ -62,8 +62,13 @@ excluded. Existing Cloudflare aggregate/performance analytics remains unchanged.
 The filter allows only those events and known comic IDs/slugs/numbers. It strips
 person updates, arbitrary attributes, form contents, full query strings,
 fragments, ad click IDs, and SDK initial-URL properties. Referrers are reduced to
-their origins. Coarse device/browser/OS categories are retained, not detailed
-versions. PostHog still receives technical connection information; cookieless is
+their origins. Coarse device/browser/OS categories are retained for reporting.
+The SDK's bounded `$raw_user_agent` field must reach PostHog to compute the
+cookieless hash; omitting it causes `cookieless_missing_user_agent` and the event
+is discarded. PostHog's cookieless ingestion step strips the raw user agent and
+IP before storage. It must not be copied into person properties or other fields.
+Both project-side cookieless mode and IP discard must remain enabled. PostHog
+still receives technical connection information; cookieless is
 not a claim that no data is processed or a blanket legal-compliance guarantee.
 The current server-hash mode removes IPs before GeoIP/bot enrichment, so do not
 promise geographic analytics from these events.
@@ -95,7 +100,9 @@ reproduces them; this change adds none. The existing build and runtime tests pas
 
 After a separately confirmed production deployment, verify delivery in PostHog
 using a real production visit, then configure the small reporting dashboard.
-Do not mark website tracking active from a build alone. Automatic social posting
+Check both the persisted Events view and ingestion warnings: Live can show an
+event before ingestion rejects it. Do not mark website tracking active from a
+build or the Live stream alone. Automatic social posting
 still needs its approved-media manifest, release trigger, durable deduplication,
 reconciliation behavior, and activation baseline. None of the existing comics is
 implicitly queued by this diagnostic or analytics patch.

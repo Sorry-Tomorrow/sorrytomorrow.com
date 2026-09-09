@@ -54,12 +54,19 @@ export function campaignProperties(search) {
 export function safeAnalyticsProperties(eventName, raw, href, referrer, comics) {
   if (!eventNames.has(eventName) || raw.$cookieless_mode !== true) return null;
   if (typeof raw.token !== "string" || typeof raw.distinct_id !== "string") return null;
+  // PostHog requires this SDK transport field to compute its cookieless hash.
+  // Its cookieless ingestion step strips the raw UA and IP before storage.
+  // Omitting it drops the event with cookieless_missing_user_agent.
+  const userAgent = raw.$raw_user_agent;
+  if (typeof userAgent !== "string" || !userAgent.length || userAgent.length > 2048
+    || [...userAgent].some(character => character.charCodeAt(0) < 32 || character.charCodeAt(0) === 127)) return null;
   const url = new URL(href);
   /** @type {Record<string, unknown>} */
   const properties = {
     token: raw.token,
     distinct_id: raw.distinct_id,
     $cookieless_mode: true,
+    $raw_user_agent: userAgent,
     $process_person_profile: false,
     $current_url: `${url.origin}${url.pathname}`,
     $pathname: url.pathname,

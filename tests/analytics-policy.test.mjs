@@ -8,7 +8,27 @@ const comics = [
   { id: "ST-ONE", slug: "one", number: 1 },
   { id: "ST-TWO", slug: "two", number: 2 },
 ];
-const raw = { token: "phc_test", distinct_id: "cookieless-test-marker", $cookieless_mode: true };
+const raw = {
+  token: "phc_test", distinct_id: "$posthog_cookieless", $cookieless_mode: true,
+  $raw_user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36",
+};
+
+test("cookieless transport retains the required browser field without person updates", () => {
+  const properties = safeAnalyticsProperties("$pageview", {
+    ...raw, $ip: "192.0.2.1", $initial_raw_user_agent: "initial-private-value",
+    $set: { $raw_user_agent: raw.$raw_user_agent }, $set_once: { email: "private@example.com" },
+  }, "https://sorrytomorrow.com/", "", comics);
+  assert.equal(properties.$raw_user_agent, raw.$raw_user_agent);
+  assert.equal(properties.$cookieless_mode, true);
+  assert.equal(properties.$process_person_profile, false);
+  for (const key of ["$ip", "$initial_raw_user_agent", "$set", "$set_once"]) assert.equal(properties[key], undefined);
+});
+
+test("missing or malformed cookieless user agents fail closed", () => {
+  for (const value of [undefined, "", 42, "x".repeat(2049), "browser\nforged-value", "browser\u0000"]) {
+    assert.equal(safeAnalyticsProperties("$pageview", { ...raw, $raw_user_agent: value }, "https://sorrytomorrow.com/", "", comics), null);
+  }
+});
 
 test("personal/admin API tokens can never enter browser-facing props", () => {
   const publicToken = `phc_${"a".repeat(40)}`;
