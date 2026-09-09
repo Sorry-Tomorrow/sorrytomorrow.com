@@ -19,11 +19,13 @@ export function ComicKeyboardNavigation({
 
       if (event.key === "ArrowLeft" && olderHref) {
         event.preventDefault();
+        window.dispatchEvent(new CustomEvent("sorrytomorrow:navigation", { detail: { href: olderHref } }));
         window.location.assign(olderHref);
       }
 
       if (event.key === "ArrowRight" && newerHref) {
         event.preventDefault();
+        window.dispatchEvent(new CustomEvent("sorrytomorrow:navigation", { detail: { href: newerHref } }));
         window.location.assign(newerHref);
       }
     }

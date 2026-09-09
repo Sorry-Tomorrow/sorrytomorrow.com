@@ -45,8 +45,8 @@ export function SiteFooter() {
       <a href={sitePath("rss.xml")}>RSS</a>
       <a href={sitePath("colophon/")}>Colophon</a>
       <a href={sitePath("privacy/")}>Privacy</a>
-      {Object.values(series.social).map((social) => (
-        <a key={social.url} href={social.url} rel="me noreferrer">
+      {Object.entries(series.social).map(([channel, social]) => (
+        <a key={social.url} href={social.url} rel="me noreferrer" data-social-channel={channel}>
           {social.label}
         </a>
       ))}

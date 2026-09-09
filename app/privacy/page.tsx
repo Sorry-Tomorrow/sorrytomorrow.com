@@ -20,12 +20,28 @@ export default function PrivacyPage() {
         </p>
         <p>
           The site uses Cloudflare Web Analytics to understand aggregate page
-          views, referral sources, and page performance. It does not use analytics
-          cookies or track individual visitors. We do not use this information to
-          build personal profiles or sell visitor data. Learn more about{" "}
+          views, referral sources, and page performance. Cloudflare does not use
+          analytics cookies. Learn more about{" "}
           <a href="https://developers.cloudflare.com/web-analytics/about/">
             Cloudflare Web Analytics
           </a>.
+        </p>
+        <p>
+          We also use PostHog US Cloud for cookieless website analytics: which
+          comics appear on screen, whether the end of a comic is reached, navigation
+          between comics, and clicks to our social profiles. Reaching the end is
+          a viewing signal, not proof that someone read the comic. Selected comic
+          campaign tags help us understand where visits come from.
+        </p>
+        <p>
+          PostHog receives technical connection information and uses a server-side
+          hash to estimate visitors without analytics cookies or browser storage.
+          We configure it to discard IP addresses, create no person profiles, and
+          record no sessions, form contents, or advertising click identifiers.
+          We do not send full query strings or URL fragments. We respect supported
+          Do Not Track and Global Privacy Control signals for this tracking, and
+          we do not sell visitor data. See{" "}
+          <a href="https://posthog.com/tutorials/cookieless-tracking">PostHog’s cookieless analytics documentation</a>.
         </p>
         <p>
           Links to social platforms are governed by those platforms’ own privacy
