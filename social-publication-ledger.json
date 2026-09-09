@@ -250,6 +250,12 @@
             }
           ],
           "verifiedAt": "2026-09-09T20:55:48.087Z"
+        },
+        "facebook": {
+          "status": "reserved",
+          "startedAt": "2026-09-09T20:55:48.935Z",
+          "steps": {},
+          "results": []
         }
       }
     }
