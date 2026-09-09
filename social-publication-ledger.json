@@ -256,8 +256,13 @@
           "startedAt": "2026-09-09T20:55:48.935Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-09-09T20:55:49.645Z"
+              "status": "done",
+              "startedAt": "2026-09-09T20:55:49.645Z",
+              "result": {
+                "id": "122107583415458114",
+                "sha256": "9e7424f561b186f39a4d8cbbbd9417498f61f960a6968690c38d28e38c5d7d83"
+              },
+              "completedAt": "2026-09-09T20:55:52.408Z"
             }
           },
           "results": []
