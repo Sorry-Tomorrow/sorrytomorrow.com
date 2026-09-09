@@ -353,10 +353,20 @@
                 "122107583505458114",
                 "122107583637458114"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-09-09T20:56:03.000Z"
             }
           ],
-          "verifiedAt": "2026-09-09T20:56:09.913Z"
+          "verifiedAt": "2026-09-09T20:56:09.913Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-09T21:28:53.444Z",
+            "posts": [
+              {
+                "id": "1380120908509290_122107583667458114",
+                "status": "observed"
+              }
+            ]
+          }
         }
       }
     }
