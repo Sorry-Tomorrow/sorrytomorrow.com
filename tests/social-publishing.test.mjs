@@ -9,6 +9,7 @@ import { makeApi, xAuthorization, safeError, SocialError, publishPlatform } from
 import { executeRelease, reconcileRelease, loadLedger, recoverRecordedResults } from "../scripts/social/ledger.mjs";
 import { trustedContext, verifiedDeployment, verifyLiveRelease, run } from "../scripts/social/run.mjs";
 import { collectMetrics } from "../scripts/social/metrics.mjs";
+import { metricEvents, reportMetricsToPostHog, reportingStatus } from "../scripts/social/reporting.mjs";
 
 const digest="a".repeat(64), commit="b".repeat(40);
 const env={X_API_KEY:"test-key",X_API_SECRET:"secret-canary",X_ACCESS_TOKEN:"test-token",X_ACCESS_TOKEN_SECRET:"test-secret"};
@@ -148,4 +149,45 @@ test("metrics keeps missing counts unavailable and never reads unverified posts"
   };
   let calls=0;const api={request:async(_p,method)=>{assert.equal(method,"GET");calls++;return{data:{public_metrics:{like_count:0,reply_count:-1}}};}};
   const result=await collectMetrics({ledger,api});assert.equal(calls,1);assert.equal(result[0].posts[0].metrics.like_count,0);assert.equal(result[0].posts[0].metrics.impression_count,null);assert.equal(result[0].posts[0].metrics.reply_count,null);
+  assert.equal(ledger.data.releases["ST-TEST"].platforms.x.metrics,undefined);
+  assert.ok(!JSON.stringify(ledger.data).includes("impression_count"));
+});
+
+test("PostHog receives only anonymous aggregate service events, not private provider data",async()=>{
+  const snapshots=[{slug:"test",platform:"x",observedAt:new Date().toISOString(),posts:[{id:"102",status:"observed",metrics:{like_count:0,impression_count:null,email:"private@example.com",access_token:"private-canary"}}]}];
+  const events=metricEvents(snapshots);assert.equal(events.length,1);assert.equal(events[0].event,"social_post_metrics");assert.equal(events[0].properties.$process_person_profile,false);assert.equal(events[0].properties.like_count,0);assert.equal(events[0].properties.impression_count,null);assert.ok(!JSON.stringify(events).includes("private"));
+  let calls=0;
+  const result=await reportMetricsToPostHog({snapshots,token:`phc_${"a".repeat(40)}`,fetchImpl:async(url,options)=>{calls++;assert.equal(url,"https://us.i.posthog.com/batch/");assert.equal(options.redirect,"error");assert.equal(options.method,"POST");return new Response("",{status:200});}});
+  assert.equal(calls,1);assert.equal(result.events,1);
+  await reportMetricsToPostHog({snapshots,token:"phx_private-canary",fetchImpl:async()=>{throw Error("Must not be called");}});
+});
+
+test("unknown metrics delivery is never retried or confused with a visitor event",async()=>{
+  let calls=0;const snapshots=[{slug:"test",platform:"facebook",observedAt:new Date().toISOString(),posts:[{id:"123_456",status:"observed",metrics:{reactions:2}}]}];
+  const result=await reportMetricsToPostHog({snapshots,token:`phc_${"a".repeat(40)}`,fetchImpl:async()=>{calls++;throw Error("private-canary");}});
+  assert.equal(result.status,"delivery-unknown-no-retry");assert.equal(calls,1);assert.ok(!JSON.stringify(result).includes("private-canary"));
+});
+
+test("legacy private counts are scrubbed from unselected records before any ledger save",async()=>{
+  const ledger={data:{releases:{old:{slug:"old",platforms:{x:{status:"published",metrics:[{secret_count:123}]}}}}},save:async()=>{assert.ok(!JSON.stringify(ledger.data).includes("secret_count"));}};
+  await collectMetrics({ledger,selected:"another-comic",api:{request:async()=>{throw Error("No request expected");}}});
+  assert.equal(ledger.data.releases.old.platforms.x.metrics,undefined);
+});
+
+test("all-null provider counts are unavailable and reporting failures cannot stay green",async()=>{
+  const ledger={data:{releases:{one:{slug:"one",createdAt:new Date().toISOString(),platforms:{x:{status:"published",verified:[{id:"123",url:"https://x.com/sorrytomorrowco/status/123"}]}}}}},save:async()=>{}};
+  const snapshots=await collectMetrics({ledger,api:{request:async()=>({data:{}})}});
+  assert.equal(snapshots[0].posts[0].status,"unavailable");
+  assert.equal(reportingStatus(snapshots,{status:"accepted-persistence-not-yet-verified"}),"attention-required");
+  assert.equal(reportingStatus([{posts:[{status:"observed"}]}],{status:"unavailable"}),"attention-required");
+  assert.equal(reportingStatus([{posts:[{status:"observed"}]}],{status:"accepted-persistence-not-yet-verified"}),"passed");
+});
+
+test("Facebook uses own-post aggregate insights and records provider publication time",async()=>{
+  const id=`${accounts.facebookPageId}_123`;
+  const state={status:"published",verified:[{id,url:"https://www.facebook.com/test/posts/123"}]};
+  const ledger={data:{releases:{one:{slug:"one",createdAt:new Date().toISOString(),platforms:{facebook:state}}}},save:async()=>{}};
+  const api={request:async(platform,method,url)=>{assert.equal(platform,"facebook");assert.equal(method,"GET");return url.includes('/insights?')?{data:[{name:"post_media_view",values:[{value:0}]},{name:"post_reactions_like_total",values:[{value:3}]}]}:{id,created_time:"2026-09-09T20:56:04+0000"};}};
+  const result=await collectMetrics({ledger,api});assert.equal(result[0].posts[0].metrics.post_media_view,0);assert.equal(result[0].posts[0].metrics.post_reactions_like_total,3);assert.equal(state.verified[0].publishedAt,"2026-09-09T20:56:04.000Z");
+  assert.ok(!JSON.stringify(ledger.data).includes("post_media_view"));
 });
