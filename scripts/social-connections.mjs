@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 export const accounts = Object.freeze({
   repository: "Sorry-Tomorrow/sorrytomorrow.com",
   xHandle: "sorrytomorrowco",
+  xUserId: "2090544245585125376",
   facebookPageId: "1380120908509290",
   instagramId: "17841440843377082",
   instagramHandle: "sorrytomorrowcomic",
@@ -125,7 +126,7 @@ export async function checkConnections({ env, fetchImpl = fetch, now = new Date(
     const url = "https://api.x.com/2/users/me";
     const result = await get(url, xReadAuthorization(url, x));
     if (result?.data?.username?.toLowerCase() !== accounts.xHandle
-      || !/^\d{1,30}$/.test(result?.data?.id ?? "")) {
+      || result?.data?.id !== accounts.xUserId) {
       throw new DiagnosticFailure("unexpected_account");
     }
     return { id: result.data.id, handle: accounts.xHandle };

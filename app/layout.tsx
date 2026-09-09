@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible, Bowlby_One_SC } from "next/font/google";
-import { series } from "@/content/episodes";
+import { publishedEpisodes, series } from "@/content/episodes";
 import { AnalyticsBeacon } from "./AnalyticsBeacon";
+import { ComicAnalytics } from "./ComicAnalytics";
+import { publicProjectToken } from "./analytics-policy.mjs";
 import "./globals.css";
 import { publicAssetPath, siteUrl } from "./site";
 
@@ -74,6 +76,10 @@ export default function RootLayout({
         <style>{`@font-face{font-family:ComicBangers;src:url("${publicAssetPath("fonts/comic-shell/Bangers-Regular.ttf")}") format("truetype");font-display:swap}`}</style>
         {children}
         <AnalyticsBeacon />
+        <ComicAnalytics
+          projectToken={publicProjectToken(process.env.NEXT_PUBLIC_POSTHOG_KEY)}
+          comics={publishedEpisodes.map(episode => ({ id: episode.internalId, slug: episode.slug, number: episode.publicNumber }))}
+        />
       </body>
     </html>
   );

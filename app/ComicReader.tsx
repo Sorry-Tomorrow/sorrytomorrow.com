@@ -32,6 +32,7 @@ export function ComicReader({
     <article
       className={`reader${artFirst ? " reader-art-first" : ""}${episode.readerLayout ? ` reader-layout-${episode.readerLayout}` : ""}`}
       id={anchorId}
+      data-comic-slug={episode.previewOnly ? undefined : episode.slug}
     >
       <ComicKeyboardNavigation olderHref={olderHref} newerHref={newerHref} />
 
@@ -65,6 +66,7 @@ export function ComicReader({
               className="edge-navigation older"
               href={olderHref}
               aria-keyshortcuts="ArrowLeft"
+              data-comic-navigation="older"
             >
               <span aria-hidden="true">←</span>
               <strong>Older comic</strong>
@@ -120,6 +122,7 @@ export function ComicReader({
               className="edge-navigation newer"
               href={newerHref}
               aria-keyshortcuts="ArrowRight"
+              data-comic-navigation="newer"
             >
               <span aria-hidden="true">→</span>
               <strong>Newer comic</strong>
@@ -137,15 +140,15 @@ export function ComicReader({
           ))}
       </div>
 
-      <nav className="comic-navigation" aria-label="Comic chronology">
+      <nav className="comic-navigation" aria-label="Comic chronology" data-comic-end>
         {older && olderHref ? (
-          <a href={olderHref}>← Older comic</a>
+          <a href={olderHref} data-comic-navigation="older">← Older comic</a>
         ) : (
           <span>First comic</span>
         )}
         <a href={episode.previewOnly ? sitePath("review/") : `${sitePath("/")}#archive`}>{episode.previewOnly ? "Preview collection" : "All strips"}</a>
         {newer && newerHref ? (
-          <a href={newerHref}>Newer comic →</a>
+          <a href={newerHref} data-comic-navigation="newer">Newer comic →</a>
         ) : (
           <span>You’re at the latest comic</span>
         )}

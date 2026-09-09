@@ -9,7 +9,7 @@ const env = {
   META_PAGE_ACCESS_TOKEN: "test-page-token",
 };
 
-function fixtureFetch({ xHandle = accounts.xHandle, pageId = accounts.facebookPageId } = {}) {
+function fixtureFetch({ xHandle = accounts.xHandle, xId = accounts.xUserId, pageId = accounts.facebookPageId } = {}) {
   const calls = [];
   return {
     calls,
@@ -21,7 +21,7 @@ function fixtureFetch({ xHandle = accounts.xHandle, pageId = accounts.facebookPa
       let body;
       if (url === "https://api.x.com/2/users/me") {
         assert.match(options.headers.Authorization, /^OAuth /);
-        body = { data: { id: "1234567890", username: xHandle } };
+        body = { data: { id: xId, username: xHandle } };
       } else if (url === "https://graph.facebook.com/v26.0/me?fields=id,name,instagram_business_account") {
         assert.equal(options.headers.Authorization, `Bearer ${env.META_PAGE_ACCESS_TOKEN}`);
         body = { id: pageId, instagram_business_account: { id: accounts.instagramId } };
@@ -75,6 +75,12 @@ test("an incorrect Page token blocks the Instagram query", async () => {
   assert.equal(result.status, "failed");
   assert.equal(result.requestCount, 2);
   assert.equal(result.checks[2].status, "blocked");
+});
+
+test("a matching X handle cannot substitute a different underlying account", async () => {
+  const fixture = fixtureFetch({ xId: "999" });
+  const result = await checkConnections({ env, fetchImpl: fixture.fetchImpl });
+  assert.equal(result.checks[0].error, "unexpected_account");
 });
 
 test("missing secrets prevent every network request", async () => {

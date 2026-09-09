@@ -6,6 +6,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
+import { publicProjectToken } from "../app/analytics-policy.mjs";
 
 const projectRoot = new URL("../", import.meta.url);
 const outputRoot = new URL("../dist/client/", import.meta.url);
@@ -55,6 +56,22 @@ test("Pages output retains search verification and the configured single analyti
       assert.deepEqual(JSON.parse(config.replaceAll("&quot;", '"')), { token }, file);
     }
   }
+});
+
+test("optional PostHog configuration reaches every public comic without altering art", async () => {
+  const catalog = JSON.parse(await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"));
+  const rawToken = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+  const token = publicProjectToken(rawToken);
+  for (const episode of catalog.episodes) {
+    const html = await readFile(new URL(`comics/${episode.slug}/index.html`, outputRoot), "utf8");
+    assert.ok(html.includes(`data-comic-slug="${episode.slug}"`), episode.slug);
+    assert.ok(html.includes("data-comic-end="), episode.slug);
+    if (token) assert.ok(html.includes(token), "Public project key missing from browser props");
+    else if (rawToken) assert.ok(!html.includes(rawToken), "Non-public token must not enter HTML");
+  }
+  const privacy = await readFile(new URL("privacy/index.html", outputRoot), "utf8");
+  assert.match(privacy, /PostHog US Cloud/);
+  assert.match(privacy, /not proof that someone read the comic/);
 });
 
 test("produces a complete GitHub Pages artifact", async () => {

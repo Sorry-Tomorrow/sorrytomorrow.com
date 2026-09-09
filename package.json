@@ -15,7 +15,7 @@
     "prepare:pages": "node scripts/prepare-pages.mjs",
     "report:payload": "node scripts/report-payload.mjs",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/analytics-policy.test.mjs tests/social-connections.test.mjs",
     "test:content": "node scripts/generate-discovery.mjs && node --test tests/content-catalog.test.mjs",
     "test:pages": "node --test tests/pages-output.test.mjs tests/content-catalog.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
+    "posthog-js": "1.428.11",
     "react": "19.2.6",
     "react-dom": "19.2.6"
   },
