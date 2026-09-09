@@ -6,6 +6,7 @@ import { hash, json, loadReleases, ORIGIN, slugValid, safeRead } from "./policy.
 import { makeApi, safeError, SocialError } from "./adapters.mjs";
 import { githubApi, loadLedger, executeRelease, reconcileRelease } from "./ledger.mjs";
 import { collectMetrics } from "./metrics.mjs";
+import { reportMetricsToPostHog, reportingStatus } from "./reporting.mjs";
 
 export function trustedContext(env,event) {
   if(env.GITHUB_ACTIONS!=="true"||env.GITHUB_REPOSITORY!==accounts.repository||env.GITHUB_REF!=="refs/heads/main")return false;
@@ -68,8 +69,11 @@ export async function run({root=process.cwd(),env=process.env,mode="validate",se
     if(accountChecks.status!=="passed")return {...report,status:"attention-required"};
     if(!Number.isFinite(days)||days<=14)return {...report,status:"renew-meta-data-access"};
     const ledger=await loadLedger(githubApi(env,fetchImpl));
-    report.metrics=await collectMetrics({ledger,api,selected});
-    return {...report,status:"passed"};
+    const snapshots=await collectMetrics({ledger,api,selected});
+    report.posthog=await reportMetricsToPostHog({snapshots,token:env.POSTHOG_PROJECT_TOKEN,fetchImpl});
+    // GitHub Actions logs are public; the dashboard, not logs, owns the counts.
+    report.metrics=snapshots.map(s=>({slug:s.slug,platform:s.platform,observedAt:s.observedAt,posts:s.posts.map(p=>({id:p.id,status:p.status,...(p.unavailableMetrics?{unavailableMetrics:p.unavailableMetrics}:{}),...(p.error?{error:p.error}:{})}))}));
+    return {...report,status:reportingStatus(snapshots,report.posthog)};
   }
   const loaded=await loadReleases(root);
   const entries=selected?loaded.releases.filter(e=>e.release.slug===selected):loaded.releases;

@@ -51,6 +51,16 @@ The optional `metrics` mode only reads verified own posts and records counts.
 Missing/hidden/unsupported metrics are null/unavailable, never fabricated zero.
 No follower lists, comments, DMs or individual audience records are collected.
 
+Aggregate metric snapshots are also sent to PostHog project 601496 using its
+existing public write-only project token. The service event `social_post_metrics`
+is separate from visitor pageviews and disables person-profile processing.
+It contains public post IDs, comic/channel identifiers and allowlisted counts,
+not viewer identities, comment bodies or account credentials. The public GitHub
+ledger and job log retain collection/delivery status, not ongoing private insight
+counts. A failed analytics delivery leaves a reporting gap and does not affect
+the published post or trigger a duplicate publication. Use the most recent
+snapshot per post; summing cumulative snapshots would overcount engagement.
+
 Meta's current data access expires December 8, 2026; a Page token with no scheduled
 token expiry can still be revoked. Reauthorization is an owner browser handoff.
 X retains the provider-enforced $5 billing-cycle cap and auto-recharge off. Local
@@ -83,5 +93,10 @@ of causal attribution, unique cross-platform people, or comic quality.
   owner, alt text, caption, AI label and aggregate own-media counters.
 - [Facebook Page photos](https://developers.facebook.com/docs/graph-api/reference/page/photos/):
   unpublished images with custom alt text, followed by one multi-photo feed post.
+- [Facebook Insights](https://developers.facebook.com/docs/graph-api/reference/insights/):
+  current `post_media_view` and `post_reactions_like_total` lifetime metrics use
+  the already granted aggregate-insight permission. Facebook's like metric also
+  includes care reactions. Deprecated impressions and user-generated comment
+  edges are not substitutes; broader comment permissions are not requested.
 
 These references describe capabilities, not permission to expand this workflow.

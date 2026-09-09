@@ -33,7 +33,8 @@ export function makeApi({ env, fetchImpl = fetch }) {
       :[`/v26.0/${accounts.facebookPageId}/photos`,`/v26.0/${accounts.facebookPageId}/feed`,`/v26.0/${accounts.instagramId}/media`,`/v26.0/${accounts.instagramId}/media_publish`];
     if(method==="POST")assert.ok(allowedPost.includes(url.pathname),"Unrequested mutation endpoint");
     else assert.ok(platform==="x"?/^\/2\/(users\/me|tweets\/[0-9]+)$/.test(url.pathname)
-      :/^\/v26\.0\/[0-9]+(?:_[0-9]+)?$/.test(url.pathname)||url.pathname===`/v26.0/${accounts.instagramId}/content_publishing_limit`,"Unrequested read endpoint");
+      :/^\/v26\.0\/[0-9]+(?:_[0-9]+)?$/.test(url.pathname)||url.pathname===`/v26.0/${accounts.instagramId}/content_publishing_limit`
+        ||platform==="facebook"&&new RegExp(`^/v26\\.0/${accounts.facebookPageId}_[0-9]+/insights$`).test(url.pathname),"Unrequested read endpoint");
     const authorization = platform === "x" ? xAuthorization(method, url.href, env) : `Bearer ${env.META_PAGE_ACCESS_TOKEN}`;
     assert.ok(platform === "x" || env.META_PAGE_ACCESS_TOKEN);
     let response;
