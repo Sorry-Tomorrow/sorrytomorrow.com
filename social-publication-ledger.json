@@ -28,8 +28,14 @@
           "startedAt": "2026-09-09T20:54:44.095Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-09-09T20:54:44.887Z"
+              "status": "done",
+              "startedAt": "2026-09-09T20:54:44.887Z",
+              "result": {
+                "id": "2097790840655548419",
+                "mediaKey": "3_2097790840655548419",
+                "sha256": "054f49ba702643cb04cd080401a8ed9383945b053b41b5b20c623785d5ceed43"
+              },
+              "completedAt": "2026-09-09T20:54:46.686Z"
             }
           },
           "results": [],
