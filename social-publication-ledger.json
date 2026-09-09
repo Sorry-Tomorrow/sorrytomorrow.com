@@ -256,10 +256,20 @@
                 "18128352601777261"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18089256140361446"
+              "containerId": "18089256140361446",
+              "publishedAt": "2026-09-09T20:55:42.000Z"
             }
           ],
-          "verifiedAt": "2026-09-09T20:55:48.087Z"
+          "verifiedAt": "2026-09-09T20:55:48.087Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-09T21:28:53.444Z",
+            "posts": [
+              {
+                "id": "18174420499376737",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
