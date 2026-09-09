@@ -19,9 +19,13 @@ export default function PrivacyPage() {
           forms, or a comment system.
         </p>
         <p>
-          The site can optionally use privacy-first aggregate web analytics to
-          understand page views and performance. It does not use that information
-          to build personal profiles or sell visitor data.
+          The site uses Cloudflare Web Analytics to understand aggregate page
+          views, referral sources, and page performance. It does not use analytics
+          cookies or track individual visitors. We do not use this information to
+          build personal profiles or sell visitor data. Learn more about{" "}
+          <a href="https://developers.cloudflare.com/web-analytics/about/">
+            Cloudflare Web Analytics
+          </a>.
         </p>
         <p>
           Links to social platforms are governed by those platforms’ own privacy

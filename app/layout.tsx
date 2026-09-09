@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     template: "%s | Sorry, Tomorrow",
   },
   description,
+  verification: {
+    google: "IcrV7AVagPbGnDhPwGSqlYrOaD0xk8vabpn0yyJKunI",
+  },
   alternates: {
     canonical: siteUrl,
     types: {

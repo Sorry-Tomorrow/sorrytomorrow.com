@@ -38,6 +38,25 @@ const approvedComicAssets = {
   "comics/the-honest-demo/og.png": "10c0c4aedc695c563a00217b3af22a7ab8c3a9059c4cdf474a91fe1a810343ce",
 };
 
+test("Pages output retains search verification and the configured single analytics beacon", async () => {
+  const catalog = JSON.parse(await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"));
+  const paths = ["index.html", ...catalog.episodes.map(episode => `comics/${episode.slug}/index.html`)];
+  const token = process.env.NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN;
+  for (const file of paths) {
+    const html = await readFile(new URL(file, outputRoot), "utf8");
+    const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] ?? "";
+    assert.match(head, /<meta name="google-site-verification" content="IcrV7AVagPbGnDhPwGSqlYrOaD0xk8vabpn0yyJKunI"/, file);
+    const beacons = [...html.matchAll(/<script\b[^>]*src="https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js"[^>]*>/g)];
+    assert.equal(beacons.length, token ? 1 : 0, file);
+    if (token) {
+      assert.match(beacons[0][0], /type="module"/, file);
+      const config = beacons[0][0].match(/data-cf-beacon="([^"]*)"/)?.[1];
+      assert.ok(config, file);
+      assert.deepEqual(JSON.parse(config.replaceAll("&quot;", '"')), { token }, file);
+    }
+  }
+});
+
 test("produces a complete GitHub Pages artifact", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
 
