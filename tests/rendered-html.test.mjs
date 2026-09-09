@@ -43,6 +43,7 @@ test("server-renders the data-driven homepage and archive", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Sorry, Tomorrow<\/title>/i);
+  assert.match(html, /<meta name="google-site-verification" content="IcrV7AVagPbGnDhPwGSqlYrOaD0xk8vabpn0yyJKunI"/);
   assert.match(html, /id="latest-comic"/);
   assert.match(html, /Not-So-Smart Thermostat/);
   assert.match(html, /Oops… I Drifted Again/);
