@@ -98,6 +98,10 @@
                 "id": "2097790900323643399"
               },
               "completedAt": "2026-09-09T20:55:02.952Z"
+            },
+            "post-0-publish": {
+              "status": "in-flight",
+              "startedAt": "2026-09-09T20:55:04.214Z"
             }
           },
           "results": [],
