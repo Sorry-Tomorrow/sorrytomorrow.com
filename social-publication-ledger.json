@@ -151,7 +151,28 @@
               "copyAndAltVerified": true
             }
           ],
-          "verifiedAt": "2026-09-09T20:55:07.634Z"
+          "verifiedAt": "2026-09-09T20:55:07.634Z",
+          "metrics": [
+            {
+              "observedAt": "2026-09-09T21:00:16.268Z",
+              "platform": "x",
+              "posts": [
+                {
+                  "id": "2097790920527663356",
+                  "url": "https://x.com/sorrytomorrowco/status/2097790920527663356",
+                  "status": "observed",
+                  "metrics": {
+                    "impression_count": 1,
+                    "like_count": 0,
+                    "reply_count": 0,
+                    "retweet_count": 0,
+                    "quote_count": 0,
+                    "bookmark_count": 0
+                  }
+                }
+              ]
+            }
+          ]
         },
         "instagram": {
           "status": "published",
