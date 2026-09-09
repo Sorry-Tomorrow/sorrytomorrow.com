@@ -49,9 +49,10 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 010 · Ahead AI/);
+  assert.match(html, /Comic 011 · Ahead AI/);
+  assert.match(html, /Incognito Mode/);
   assert.match(html, /Work Life Balance/);
-  assert.match(html, /comics\/work-life-balance\/p1\.png/);
+  assert.match(html, /comics\/incognito-mode\/p1\.png/);
   assert.match(html, /So You Vibe-Coded an App…/);
   assert.match(html, /href="\/comics\/so-you-vibe-coded-an-app\/#comic"/);
   assert.match(html, /The Honest Demo/);
@@ -124,7 +125,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 10);
+  assert.equal(JSON.parse(catalog).episodes.length, 11);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -196,7 +197,8 @@ test("published navigation connects Founder through the three new releases", asy
     ["oops-i-drifted-again", "not-so-smart-thermostat", "magnification-spiral"],
     ["magnification-spiral", "oops-i-drifted-again", "so-you-vibe-coded-an-app"],
     ["so-you-vibe-coded-an-app", "magnification-spiral", "work-life-balance"],
-    ["work-life-balance", "so-you-vibe-coded-an-app", null],
+    ["work-life-balance", "so-you-vibe-coded-an-app", "incognito-mode"],
+    ["incognito-mode", "work-life-balance", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);

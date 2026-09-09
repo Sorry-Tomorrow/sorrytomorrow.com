@@ -1,0 +1,9 @@
+{
+  "incognito-mode": {
+    "internalId": "ST-INCOGNITO-MODE",
+    "manifestSha256": "a578d810f0391e2f927db23172c4839080449cb65e1555854151cb390fd685b8",
+    "approval3Sha256": "cffff64dad094e68665a01d63657c82b774fe0f5a1e88d0a61f7f735824df407",
+    "sourceManifestSha256": "4126e6e716f743d6ae51118250c26afd7c825ed1b691d70c9d53136bff2238e0",
+    "releaseAuthoritySha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  }
+}

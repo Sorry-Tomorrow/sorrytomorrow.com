@@ -1,0 +1,72 @@
+name: Publish approved comic to social accounts
+
+on:
+  workflow_run:
+    workflows: [Deploy site to GitHub Pages]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Dry-run first; publish never retries an attempted destination
+        type: choice
+        options: [dry-run, initialize, publish, reconcile, health, metrics]
+        default: dry-run
+      release:
+        description: Optional exact comic slug (blank checks all approved manifests)
+        type: string
+        default: ''
+  schedule:
+    - cron: '17 14 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sorry-tomorrow-social-publication-ledger
+  cancel-in-progress: false
+
+jobs:
+  social:
+    if: >-
+      github.repository == 'Sorry-Tomorrow/sorrytomorrow.com' &&
+      (github.event_name != 'workflow_run' ||
+       (github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_repository.full_name == github.repository &&
+        github.event.workflow_run.head_branch == 'main' &&
+        (github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch')))
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out trusted default branch, never an upstream artifact
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.13.0
+      - name: Validate publisher without account credentials
+        env:
+          SOCIAL_MODE: ${{ github.event_name == 'schedule' && 'health' || github.event_name == 'workflow_run' && 'publish' || inputs.mode }}
+        run: |
+          node --test tests/social-publishing.test.mjs
+          if [ "$SOCIAL_MODE" != "health" ] && [ "$SOCIAL_MODE" != "metrics" ]; then
+            node scripts/social/run.mjs validate
+          fi
+          echo "CHECKED_OUT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Verify release and perform the selected bounded operation
+        env:
+          SOCIAL_MODE: ${{ github.event_name == 'schedule' && 'health' || github.event_name == 'workflow_run' && 'publish' || inputs.mode }}
+          SOCIAL_RELEASE: ${{ inputs.release || '' }}
+          SOCIAL_PUBLISHING_ENABLED: ${{ vars.SOCIAL_PUBLISHING_ENABLED }}
+          GITHUB_TOKEN: ${{ github.token }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: node scripts/social/run.mjs "$SOCIAL_MODE" "$SOCIAL_RELEASE"

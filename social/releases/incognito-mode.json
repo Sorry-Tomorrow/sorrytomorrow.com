@@ -1,0 +1,193 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-INCOGNITO-MODE",
+  "slug": "incognito-mode",
+  "title": "Incognito Mode",
+  "number": 11,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/incognito-mode/",
+  "approval3Sha256": "cffff64dad094e68665a01d63657c82b774fe0f5a1e88d0a61f7f735824df407",
+  "sourceManifestSha256": "4126e6e716f743d6ae51118250c26afd7c825ed1b691d70c9d53136bff2238e0",
+  "releaseAuthoritySha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Incognito Mode\n\nhttps://sorrytomorrow.com/comics/incognito-mode/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-011-incognito-mode&utm_content=panels\n\nAI-assisted; human-written, directed, edited, and approved.",
+          "media": [
+            {
+              "path": "public/social/incognito-mode/x/p1.png",
+              "bytes": 2881102,
+              "sha256": "054f49ba702643cb04cd080401a8ed9383945b053b41b5b20c623785d5ceed43",
+              "width": 1480,
+              "height": 1186,
+              "type": "image/png",
+              "alt": "In a sunny office, Mina sits at a desk facing a smiling cyan AI face projected above the monitor labeled AI 1. Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/x/p2.png",
+              "bytes": 3434780,
+              "sha256": "d877b98b1d3471e1ea4c0fc412e76ba1104445a29bf94d584f6957176b531a4e",
+              "width": 1480,
+              "height": 1334,
+              "type": "image/png",
+              "alt": "Hidden behind a large plant, Mina wears sunglasses and a fake mustache, cupping her hand beside her mouth toward a laptop labeled AI 2 resting on her lap. Token watches an approaching Wes through binoculars. Mina: “Check this code. I don't believe a word it said.”",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/x/p3.png",
+              "bytes": 3682698,
+              "sha256": "7a74bf977d51fd355315eac437bd3ffda3c13c7ddf12d43db9223531edf92d6a",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/png",
+              "alt": "Wes parts the plant's leaves and bends toward Mina. Startled, she grasps his collar; the AI 2 laptop remains on her lap. Wes: “Why are you wearing a disguise?”",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/x/p4.png",
+              "bytes": 3467991,
+              "sha256": "f7a6380aa123d022b399dc05fefde18288ede9351f5bec4ff7d6b982d4a18479",
+              "width": 1480,
+              "height": 1350,
+              "type": "image/png",
+              "alt": "Mina whispers to Wes beside the plant: “My other AI thinks we’re exclusive.” Across the office, AI 1's face now glows red with an angry frown. Token holds his lowered binoculars and says, “You know it can hear you, right?”",
+              "panelIds": [
+                "p4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Incognito Mode\n\nhttps://sorrytomorrow.com/comics/incognito-mode/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-011-incognito-mode&utm_content=carousel\n\nAI-assisted; human-written, directed, edited, and approved.",
+          "media": [
+            {
+              "path": "public/social/incognito-mode/instagram/p1.jpg",
+              "bytes": 1059050,
+              "sha256": "617133a78bb3428149d93b48ed8ddba1860fcfc9909819f47ef25b952e4e76ea",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/jpeg",
+              "alt": "In a sunny office, Mina sits at a desk facing a smiling cyan AI face projected above the monitor labeled AI 1. Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/instagram/p2.jpg",
+              "bytes": 1107632,
+              "sha256": "d3f15fb659806722bfe83d7f387716126a918882df72b294a5ff0e657ff58c7e",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/jpeg",
+              "alt": "Hidden behind a large plant, Mina wears sunglasses and a fake mustache, cupping her hand beside her mouth toward a laptop labeled AI 2 resting on her lap. Token watches an approaching Wes through binoculars. Mina: “Check this code. I don't believe a word it said.”",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/instagram/p3.jpg",
+              "bytes": 1218456,
+              "sha256": "a935170f2b77236df33afa4e955c9935f6d886683651386ea87b4325d87591b2",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/jpeg",
+              "alt": "Wes parts the plant's leaves and bends toward Mina. Startled, she grasps his collar; the AI 2 laptop remains on her lap. Wes: “Why are you wearing a disguise?”",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/instagram/p4.jpg",
+              "bytes": 1354423,
+              "sha256": "1321ee0ad5ebb71924b94fcfdfa45ed9c12c6af5c9e54c541f713361e23ba004",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/jpeg",
+              "alt": "Mina whispers to Wes beside the plant: “My other AI thinks we’re exclusive.” Across the office, AI 1's face now glows red with an angry frown. Token holds his lowered binoculars and says, “You know it can hear you, right?”",
+              "panelIds": [
+                "p4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Incognito Mode\n\nhttps://sorrytomorrow.com/comics/incognito-mode/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-011-incognito-mode&utm_content=carousel\n\nAI-assisted; human-written, directed, edited, and approved.",
+          "media": [
+            {
+              "path": "public/social/incognito-mode/facebook/p1.png",
+              "bytes": 2888790,
+              "sha256": "9e7424f561b186f39a4d8cbbbd9417498f61f960a6968690c38d28e38c5d7d83",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/png",
+              "alt": "In a sunny office, Mina sits at a desk facing a smiling cyan AI face projected above the monitor labeled AI 1. Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/facebook/p2.png",
+              "bytes": 3436449,
+              "sha256": "96dd324b9dea3f92ed92f0dc1871631f3ab5e03878a10b56c98a9d5b11c2f7e7",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/png",
+              "alt": "Hidden behind a large plant, Mina wears sunglasses and a fake mustache, cupping her hand beside her mouth toward a laptop labeled AI 2 resting on her lap. Token watches an approaching Wes through binoculars. Mina: “Check this code. I don't believe a word it said.”",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/facebook/p3.png",
+              "bytes": 3682698,
+              "sha256": "7a74bf977d51fd355315eac437bd3ffda3c13c7ddf12d43db9223531edf92d6a",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/png",
+              "alt": "Wes parts the plant's leaves and bends toward Mina. Startled, she grasps his collar; the AI 2 laptop remains on her lap. Wes: “Why are you wearing a disguise?”",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/incognito-mode/facebook/p4.png",
+              "bytes": 3469927,
+              "sha256": "589d9686f2c549f4a55dceef599caa97793909dbf6f6d86aefd91b4ceb484458",
+              "width": 1480,
+              "height": 1420,
+              "type": "image/png",
+              "alt": "Mina whispers to Wes beside the plant: “My other AI thinks we’re exclusive.” Across the office, AI 1's face now glows red with an angry frown. Token holds his lowered binoculars and says, “You know it can hear you, right?”",
+              "panelIds": [
+                "p4"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

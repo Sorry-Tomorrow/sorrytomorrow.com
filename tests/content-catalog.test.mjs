@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all ten released episodes in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 10);
+test("keeps all eleven released episodes in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 11);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 10);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 10);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 11);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 11);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -73,7 +73,7 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 10);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 11);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
 });
 
@@ -104,7 +104,7 @@ test("releases Work Life Balance with exact approved panels and dialogue", async
     assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
     assert.equal(bytes.length, asset.bytes, asset.target);
   }
-  const episode = catalog.episodes[0];
+  const episode = catalog.episodes.find(item => item.internalId === "ST-PROGRESS-BAR");
   assert.equal(episode.internalId, "ST-PROGRESS-BAR");
   assert.equal(episode.title, "Work Life Balance");
   assert.equal(episode.publicNumber, 10);
@@ -120,4 +120,16 @@ test("releases Work Life Balance with exact approved panels and dialogue", async
     { speaker: "Mina", text: "Shh. This is the good part." },
   ]);
   assert.equal(episode.panels[2].lines[1].text, "MAKING PRESENTATION / 99%");
+});
+
+test("Incognito Mode retains its approved native images, exact transcript and four-slide social story", async () => {
+  const episode = catalog.episodes.find(item => item.internalId === "ST-INCOGNITO-MODE");
+  assert.equal(episode.title, "Incognito Mode");
+  assert.equal(episode.publicNumber, 11);
+  assert.equal(episode.readerLayout, "incognito");
+  assert.equal(episode.art.length, 4);
+  const hashes = ["054f49ba702643cb04cd080401a8ed9383945b053b41b5b20c623785d5ceed43", "d877b98b1d3471e1ea4c0fc412e76ba1104445a29bf94d584f6957176b531a4e", "7a74bf977d51fd355315eac437bd3ffda3c13c7ddf12d43db9223531edf92d6a", "f7a6380aa123d022b399dc05fefde18288ede9351f5bec4ff7d6b982d4a18479"];
+  for (const [i,art] of episode.art.entries()) assert.equal(createHash("sha256").update(await readFile(new URL(`../public/${art.src}`, import.meta.url))).digest("hex"),hashes[i]);
+  assert.deepEqual(episode.panels.flatMap(p=>p.lines.map(l=>l.text)), ["I've checked your code. Everything is correct.", "Perfect. I trust you.", "Check this code. I don't believe a word it said.", "Why are you wearing a disguise?", "My other AI thinks we’re exclusive.", "You know it can hear you, right?"]);
+  assert.deepEqual(episode.ogImage,episode.art[0]);
 });

@@ -1,0 +1,23 @@
+{
+  "schema": "sorry-tomorrow-social-policy-v1",
+  "repository": "Sorry-Tomorrow/sorrytomorrow.com",
+  "ownerDirection": "Automatically post newly shipped, destination-approved comics to X, Instagram and the Sorry, Tomorrow Facebook Page. Incognito Mode is the owner-authorized first live test. A later website-only or no-social instruction overrides this default.",
+  "xMonthlyCapUsd": 5,
+  "xReservePerPostUsd": 0.5,
+  "metaDataAccessExpiresAt": "2026-12-08T15:46:27Z",
+  "baselineCommit": "d1e12418d097dcc4893f9945176c061dce753831",
+  "baselineExcludedIds": [
+    "ST-PROGRESS-BAR",
+    "ST-SCRATCH-035",
+    "ST-SCRATCH-034",
+    "ST-SCRATCH-033",
+    "ST-SCRATCH-032",
+    "ST-SCRATCH-015",
+    "ST-SCRATCH-004",
+    "ST-SCRATCH-031",
+    "ST-SCRATCH-029",
+    "ST-REF-000"
+  ],
+  "ledgerBranch": "social-publication-state",
+  "ledgerPath": "social-publication-ledger.json"
+}
