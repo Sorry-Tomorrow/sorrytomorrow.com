@@ -376,7 +376,25 @@
               "copyAndAltVerified": true
             }
           ],
-          "verifiedAt": "2026-09-09T20:56:09.913Z"
+          "verifiedAt": "2026-09-09T20:56:09.913Z",
+          "metrics": [
+            {
+              "observedAt": "2026-09-09T21:00:16.268Z",
+              "platform": "facebook",
+              "posts": [
+                {
+                  "id": "1380120908509290_122107583667458114",
+                  "url": "https://www.facebook.com/122107583679458114/posts/122107583667458114",
+                  "status": "unavailable",
+                  "error": {
+                    "code": "provider_rejected_request",
+                    "httpStatus": 400,
+                    "providerCode": 10
+                  }
+                }
+              ]
+            }
+          ]
         }
       }
     }
