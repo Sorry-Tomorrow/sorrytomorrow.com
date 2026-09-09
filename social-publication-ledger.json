@@ -200,6 +200,10 @@
                 "id": "18089256140361446"
               },
               "completedAt": "2026-09-09T20:55:40.176Z"
+            },
+            "post-0-publish": {
+              "status": "in-flight",
+              "startedAt": "2026-09-09T20:55:41.566Z"
             }
           },
           "results": []
