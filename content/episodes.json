@@ -17,6 +17,83 @@
   },
   "episodes": [
     {
+      "internalId": "ST-PROGRESS-BAR",
+      "slug": "work-life-balance",
+      "title": "Work Life Balance",
+      "publicNumber": 10,
+      "publicVersion": "v0.0.10",
+      "label": "Comic 010 · Ahead AI",
+      "websitePublishedAt": "2026-09-09T12:56:57Z",
+      "displayDate": "v0.0.10",
+      "previewOnly": false,
+      "readerLayout": "work-life-balance",
+      "caption": "Mina finds a very comfortable use for the time her new AI saves.",
+      "shell": "art-first",
+      "art": [
+        {
+          "src": "comics/work-life-balance/p1.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "In a warm office, Mina sits in a normal black office chair with one hand on the mouse. She turns toward standing Wes with an exaggerated proud grin. Her monitor offers to make a presentation from a client brief."
+        },
+        {
+          "src": "comics/work-life-balance/p2.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "A closer two-shot holds their eye contact. Wes smiles and opens one hand as he asks his question. Mina looks up at him while reaching down beside her chair, out of view."
+        },
+        {
+          "src": "comics/work-life-balance/p3.png",
+          "width": 1536,
+          "height": 1024,
+          "alt": "The office is subtly dimmed, but the monitor remains bright. Mina is now cocooned in a huge teal recliner and a coral-and-cream blanket, surrounded by a giant popcorn bucket, a large soda, and an excessive candy stash. She looks toward Wes and presses a finger to her lips, treating the presentation's 99% progress as a movie climax. Wes looks mildly taken aback."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Mina",
+              "text": "This new AI makes the whole client presentation for me. Two hours of work—one click."
+            },
+            {
+              "speaker": "Screen",
+              "text": "CLIENT BRIEF / MAKE PRESENTATION"
+            }
+          ],
+          "description": "In a warm office, Mina sits in a normal black office chair with one hand on the mouse. She turns toward standing Wes with an exaggerated proud grin. Her monitor offers to make a presentation from a client brief."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Wes",
+              "text": "So… what’ll you do with all this newfound free time?"
+            }
+          ],
+          "description": "A closer two-shot holds their eye contact. Wes smiles and opens one hand as he asks his question. Mina looks up at him while reaching down beside her chair, out of view."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Mina",
+              "text": "Shh. This is the good part."
+            },
+            {
+              "speaker": "Screen",
+              "text": "MAKING PRESENTATION / 99%"
+            }
+          ],
+          "description": "The office is subtly dimmed, but the monitor remains bright. Mina is now cocooned in a huge teal recliner and a coral-and-cream blanket, surrounded by a giant popcorn bucket, a large soda, and an excessive candy stash. She looks toward Wes and presses a finger to her lips, treating the presentation's 99% progress as a movie climax. Wes looks mildly taken aback."
+        }
+      ],
+      "ogImage": {
+        "src": "comics/work-life-balance/p1.png",
+        "width": 1536,
+        "height": 1024,
+        "alt": "In a warm office, Mina sits in a normal black office chair with one hand on the mouse. She turns toward standing Wes with an exaggerated proud grin. Her monitor offers to make a presentation from a client brief."
+      }
+    },
+    {
       "internalId": "ST-SCRATCH-035",
       "slug": "so-you-vibe-coded-an-app",
       "title": "So You Vibe-Coded an App…",

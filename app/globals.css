@@ -451,6 +451,8 @@ summary {
   text-transform: none;
 }
 .reader-layout-vibecoded .art-first-comic-page { max-width: 1260px; }
+.reader-layout-work-life-balance .art-first-comic-page { max-width: 1120px; }
+.reader-layout-work-life-balance .art-first-comic-art { grid-template-columns: 1fr; }
 .reader-layout-vibecoded .art-first-comic-art { align-items: start; gap: 22px; }
 .reader-layout-vibecoded .comic-panel-art:first-child,
 .reader-layout-vibecoded .comic-panel-art:last-child { grid-column: 1 / -1; }
