@@ -53,11 +53,29 @@ export function campaignUrl(slug, number, platform) {
   return url.href;
 }
 
-function validateText(text, platform, release) {
-  assert.ok(typeof text === "string" && text.trim() === text && text.includes(release.title) && text.includes(DISCLOSURE), "Missing approved title/disclosure");
+function validateText(text, platform, release, policy) {
+  assert.ok(typeof text === "string" && text.trim() === text && text.includes(release.title), "Missing approved title/disclosure");
+  const exactCaption = Object.hasOwn(policy.exactApprovedCaptions ?? {}, release.internalId)
+    ? policy.exactApprovedCaptions[release.internalId] : undefined;
+  if (exactCaption !== undefined) {
+    // An exact owner-selected package may replace the default copy, never the
+    // account, mention, length, media, or release-authority safeguards.
+    assert.ok(exactCaption && typeof exactCaption.text === "string", "Invalid exact approved caption");
+    assert.equal(exactCaption.approval3.sha256, release.approval3Sha256, "Exact caption Approval 3 differs");
+    assert.equal(exactCaption.sourceManifest.sha256, release.sourceManifestSha256, "Exact caption source manifest differs");
+    assert.equal(exactCaption.title, release.title, "Exact caption title differs");
+    assert.equal(exactCaption.text.split("\n")[0], release.title, "Exact caption title differs");
+    assert.ok(sha(exactCaption.textSha256) && sha(exactCaption.sourceCaption.sha256), "Missing exact caption hashes");
+    assert.equal(hash(exactCaption.text), exactCaption.textSha256, "Exact caption record changed");
+    // The sealed UTF-8 source includes one terminal LF; post text omits only it.
+    assert.equal(hash(`${exactCaption.text}\n`), exactCaption.sourceCaption.sha256, "Exact caption source bytes differ");
+    assert.equal(text, exactCaption.text, "Caption differs from exact owner approval");
+  } else {
+    assert.ok(text.includes(DISCLOSURE), "Missing approved title/disclosure");
+  }
   assert.ok(!/@[a-zA-Z0-9_]/.test(text), "Unapproved mention");
   const links = text.match(/https?:\/\/[^\s]+/g) ?? [];
-  assert.deepEqual(links, [campaignUrl(release.slug, release.number, platform)], "Unexpected campaign link");
+  assert.deepEqual(links, [exactCaption ? ORIGIN : campaignUrl(release.slug, release.number, platform)], "Unexpected campaign link");
   const count = platform === "x"
     ? [...text.replace(links[0], "")].reduce((n, c) => n + (c.codePointAt(0) <= 0x10ff ? 1 : 2), 23)
     : [...text].length;
@@ -88,7 +106,7 @@ export function validateManifest(release, approved, catalog, policy) {
     assert.ok(Array.isArray(destination.posts) && destination.posts.length > 0 && destination.posts.length <= (platform === "x" ? 3 : 1));
     const order = [];
     for (const post of destination.posts) {
-      validateText(post.text, platform, release);
+      validateText(post.text, platform, release, policy);
       assert.ok(Array.isArray(post.media) && post.media.length > 0 && post.media.length <= (platform === "x" ? 4 : 10));
       const shapes = [];
       for (const media of post.media) {
