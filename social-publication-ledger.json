@@ -411,8 +411,12 @@
               "completedAt": "2026-09-14T20:29:28.138Z"
             },
             "post-0-alt-1": {
-              "status": "in-flight",
-              "startedAt": "2026-09-14T20:29:29.036Z"
+              "status": "done",
+              "startedAt": "2026-09-14T20:29:29.036Z",
+              "result": {
+                "id": "2099596409787817985"
+              },
+              "completedAt": "2026-09-14T20:29:30.190Z"
             }
           },
           "results": [],
