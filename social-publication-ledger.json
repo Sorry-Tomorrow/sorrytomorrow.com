@@ -609,7 +609,12 @@
         "facebook": {
           "status": "reserved",
           "startedAt": "2026-09-14T20:30:38.516Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-09-14T20:30:39.530Z"
+            }
+          },
           "results": []
         }
       }
