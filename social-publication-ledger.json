@@ -605,6 +605,12 @@
             }
           ],
           "verifiedAt": "2026-09-14T20:30:37.660Z"
+        },
+        "facebook": {
+          "status": "reserved",
+          "startedAt": "2026-09-14T20:30:38.516Z",
+          "steps": {},
+          "results": []
         }
       }
     }
