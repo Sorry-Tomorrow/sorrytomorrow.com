@@ -509,7 +509,7 @@
           "verifiedAt": "2026-09-14T20:29:46.621Z"
         },
         "instagram": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-09-14T20:29:47.560Z",
           "steps": {
             "post-0-image-0": {
@@ -566,7 +566,30 @@
               "completedAt": "2026-09-14T20:30:35.057Z"
             }
           },
-          "results": []
+          "results": [
+            {
+              "id": "18114359429091342",
+              "containerId": "18090368120361446",
+              "images": [
+                {
+                  "id": "18090367958361446",
+                  "sha256": "d75efbc2da0d97d91e16a66cf7fc2e32d3dd91f4a9726c09296c3a5836709a48"
+                },
+                {
+                  "id": "18090368021361446",
+                  "sha256": "4526c76b27ffee62729ad91e71dde98f85d21d4a0faa19a9b0ac291ff8ebde43"
+                },
+                {
+                  "id": "18090368060361446",
+                  "sha256": "92003d7e2b7a4431c83f547d6c4d2ced506b855f0ffbf444785ee7647b4316d8"
+                },
+                {
+                  "id": "18090368099361446",
+                  "sha256": "08db3b77c08a8cba5ac60bf6c6a0032a100b443fee4887b9343c218a80279b23"
+                }
+              ]
+            }
+          ]
         }
       }
     }
