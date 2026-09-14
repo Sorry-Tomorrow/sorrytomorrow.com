@@ -369,6 +369,15 @@
           }
         }
       }
+    },
+    "ST-ASSISTANTS-ASSISTANT": {
+      "slug": "the-assistants-assistant",
+      "title": "The Assistant’s Assistant",
+      "manifestSha256": "5c541809eecdb09a2ac3c9fb2b8f489f47a6c563048c540124703343fd5ec037",
+      "sourceCommit": "13fa60877f2228b91c747ad00cb0f3445007c4e2",
+      "runId": "34893168073",
+      "createdAt": "2026-09-14T20:29:17.355Z",
+      "platforms": {}
     }
   }
 }
