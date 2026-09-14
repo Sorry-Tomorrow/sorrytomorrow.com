@@ -20,6 +20,10 @@ const expectedSiteUrl = new URL(
 );
 const escapePattern = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const approvedComicAssets = {
+  "comics/the-assistants-assistant/p1.png": "df5c133294f0a93983f652003133ca49a3be7113da4146e2aced67e6fb4660d8",
+  "comics/the-assistants-assistant/p2.png": "e6acda0e55d019216d67463ee0760b23d2adf73766901be97d3b06c8d9819c15",
+  "comics/the-assistants-assistant/p3.png": "0577f1eb4f868b5bae46eac3dcf575d6bd4e7db34026e27483ca5869a3c42a1d",
+  "comics/the-assistants-assistant/p4.png": "852c869b0d0f586bbcaa6c7f697bbfb65c9ef41be2d5c2bd61c3326d682d9c7c",
   "comics/founder-inc-llc/p1-lettered.svg": "ef0682973a709fb8392c6f13e5fd5585e56a420528d17bb74e4c2cab3aa2b026",
   "comics/founder-inc-llc/p2-lettered.svg": "d2bf1dfb7ba644e059cb1b6bc5ee74299a396866e0924032ecc3836ae6b8c97d",
   "comics/founder-inc-llc/og.png": "faab9db66afc262c5fcf1c777418f6b688889fdce13fc3dc52388e90fb2f2ae1",
@@ -83,10 +87,12 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 011 · Ahead AI/);
+  assert.match(html, /Comic 012 · Ahead AI/);
+  assert.match(html, /The Assistant’s Assistant/);
+  assert.match(html, /comics\/the-assistants-assistant\/p1\.png/);
   assert.match(html, /Incognito Mode/);
   assert.match(html, /Work Life Balance/);
-  assert.match(html, /comics\/incognito-mode\/p1\.png/);
+  assert.match(html, new RegExp('href="' + escapedBasePath + '/comics/incognito-mode/#comic"'));
   assert.match(html, /So You Vibe-Coded an App…/);
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/so-you-vibe-coded-an-app/#comic"`));
   assert.match(html, /The Honest Demo/);
@@ -159,6 +165,8 @@ test("produces a complete GitHub Pages artifact", async () => {
     access(new URL("comics/vibe-coding-in-your-sleep/index.html", outputRoot)),
     access(new URL("comics/undefeated/index.html", outputRoot)),
     access(new URL("comics/executive-twin/index.html", outputRoot)),
+    access(new URL("comics/the-assistants-assistant.html", outputRoot)),
+    access(new URL("comics/the-assistants-assistant/index.html", outputRoot)),
     access(new URL("characters/dex-vane.png", outputRoot)),
     access(new URL("characters/clara-fye.png", outputRoot)),
     access(new URL("characters/mina-sparks.png", outputRoot)),
@@ -220,6 +228,7 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(rss, /<title>Founder, Inc\. LLC<\/title>/);
   assert.match(rss, /<title>The Honest Demo<\/title>/);
   assert.match(rss, /<title>Executive Twin<\/title>/);
+  assert.match(rss, /<title>The Assistant’s Assistant<\/title>/);
 });
 
 test("release export has complete episode pages and exact approved assets", async () => {
