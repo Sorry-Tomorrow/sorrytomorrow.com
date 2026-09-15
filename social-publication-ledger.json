@@ -1210,8 +1210,13 @@
               "completedAt": "2026-09-15T20:53:31.614Z"
             },
             "post-0-publish": {
-              "status": "in-flight",
-              "startedAt": "2026-09-15T20:53:33.169Z"
+              "status": "done",
+              "startedAt": "2026-09-15T20:53:33.169Z",
+              "result": {
+                "id": "18111782363134667",
+                "containerId": "18090607757361446"
+              },
+              "completedAt": "2026-09-15T20:53:36.755Z"
             }
           },
           "results": []
