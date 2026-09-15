@@ -1129,6 +1129,15 @@
         "supersedesManifestSha256": "5c541809eecdb09a2ac3c9fb2b8f489f47a6c563048c540124703343fd5ec037",
         "withdrawalSha256": "7adc28adbfaca7dbd15238c2a87c309b50d5f272cc34f606571e7510202ba556"
       }
+    },
+    "ST-SIX-FIGURE-GROWTH": {
+      "slug": "six-figure-growth",
+      "title": "Six-Figure Growth?",
+      "manifestSha256": "cc5b0b14a06d0c222867ec8fe60a608413e4ba5dc734a72c010939c1669d35b8",
+      "sourceCommit": "7386d8e6dbf56048b7ebb33c4d09d7b417434eae",
+      "runId": "35022307005",
+      "createdAt": "2026-09-15T20:53:13.511Z",
+      "platforms": {}
     }
   }
 }
