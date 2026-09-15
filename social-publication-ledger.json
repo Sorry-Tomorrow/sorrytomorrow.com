@@ -1031,7 +1031,7 @@
           "verifiedAt": "2026-09-15T13:41:31.736Z"
         },
         "facebook": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-09-15T13:41:32.653Z",
           "steps": {
             "post-0-image-0": {
@@ -1079,7 +1079,29 @@
               "completedAt": "2026-09-15T13:41:53.540Z"
             }
           },
-          "results": []
+          "results": [
+            {
+              "id": "1380120908509290_122109917931458114",
+              "images": [
+                {
+                  "id": "122109917697458114",
+                  "sha256": "388b5e43f0f900cac44206a24a1a04fcc6508a4bcdf429ca8b4a5c715d4e1e86"
+                },
+                {
+                  "id": "122109917751458114",
+                  "sha256": "1e399ffad58fb5819abb3c2708396e6eaf15995d7954f499747e7c588160a0f9"
+                },
+                {
+                  "id": "122109917829458114",
+                  "sha256": "92003d7e2b7a4431c83f547d6c4d2ced506b855f0ffbf444785ee7647b4316d8"
+                },
+                {
+                  "id": "122109917877458114",
+                  "sha256": "08db3b77c08a8cba5ac60bf6c6a0032a100b443fee4887b9343c218a80279b23"
+                }
+              ]
+            }
+          ]
         }
       },
       "internalId": "ST-ASSISTANTS-ASSISTANT",
