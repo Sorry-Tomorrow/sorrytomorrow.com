@@ -801,7 +801,15 @@
       "sourceCommit": "ea355eeea2c6633f5f5070bdd8731825d5fe333c",
       "runId": "34976480927",
       "createdAt": "2026-09-15T13:40:25.316Z",
-      "platforms": {},
+      "platforms": {
+        "x": {
+          "status": "reserved",
+          "startedAt": "2026-09-15T13:40:26.273Z",
+          "steps": {},
+          "results": [],
+          "xReservedUsd": 0.5
+        }
+      },
       "internalId": "ST-ASSISTANTS-ASSISTANT",
       "correction": {
         "schema": "sorry-tomorrow-corrected-release-v1",
