@@ -12,5 +12,12 @@
     "approval3Sha256": "9563913a8bd68d0c1f717377350c0a219190efc5f2dad6d6406d8758551745cd",
     "sourceManifestSha256": "578d0bb92b46f40985b002840f07ce2a38ad89a91cae01929523cead5f10a36e",
     "releaseAuthoritySha256": "9c85570cbd2bd663437d0550ad611205da7a9498d419b6f6afda0e8ff379cb7c"
+  },
+  "six-figure-growth": {
+    "internalId": "ST-SIX-FIGURE-GROWTH",
+    "manifestSha256": "cc5b0b14a06d0c222867ec8fe60a608413e4ba5dc734a72c010939c1669d35b8",
+    "approval3Sha256": "c6ad080b1ad9ad0e213baed3100a544c9992cad526cb4991a1e6998447bfbcf9",
+    "sourceManifestSha256": "63a27081fd7539bd5fc76397ac604f8d822b482583ee6a7c385ab1e16d2faa18",
+    "releaseAuthoritySha256": "ad04fe460f821ab2674c007c595cfbfbad75412596cbb689ccb2ec283b9088dd"
   }
 }

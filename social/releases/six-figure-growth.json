@@ -1,0 +1,82 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-SIX-FIGURE-GROWTH",
+  "slug": "six-figure-growth",
+  "title": "Six-Figure Growth?",
+  "number": 13,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/six-figure-growth/",
+  "approval3Sha256": "c6ad080b1ad9ad0e213baed3100a544c9992cad526cb4991a1e6998447bfbcf9",
+  "sourceManifestSha256": "63a27081fd7539bd5fc76397ac604f8d822b482583ee6a7c385ab1e16d2faa18",
+  "releaseAuthoritySha256": "ad04fe460f821ab2674c007c595cfbfbad75412596cbb689ccb2ec283b9088dd",
+  "panelOrder": [
+    "p1"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Six-Figure Growth?\n\nhttps://sorrytomorrow.com/comics/six-figure-growth/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/six-figure-growth/x/p1.png",
+              "bytes": 3240225,
+              "sha256": "fc1417ff6de2d238544761d0a93c40a51eb5ce10bf27ed5dfb22047277f5259d",
+              "width": 1193,
+              "height": 1318,
+              "type": "image/png",
+              "alt": "The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Six-Figure Growth?\n\nhttps://sorrytomorrow.com/comics/six-figure-growth/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/six-figure-growth/instagram/p1.jpg",
+              "bytes": 736071,
+              "sha256": "ac4b8b26b983502f8027296fbd5f36a993c528fcab7d153122ad9b8089dd077c",
+              "width": 1193,
+              "height": 1318,
+              "type": "image/jpeg",
+              "alt": "The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Six-Figure Growth?\n\nhttps://sorrytomorrow.com/comics/six-figure-growth/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/six-figure-growth/facebook/p1.jpg",
+              "bytes": 736071,
+              "sha256": "ac4b8b26b983502f8027296fbd5f36a993c528fcab7d153122ad9b8089dd077c",
+              "width": 1193,
+              "height": 1318,
+              "type": "image/jpeg",
+              "alt": "The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
