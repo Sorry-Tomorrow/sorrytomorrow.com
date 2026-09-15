@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 
 const projectRoot = new URL("../", import.meta.url);
@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all eleven released episodes in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 11);
+test("keeps all twelve release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 12);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 11);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 11);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 12);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 12);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -73,7 +73,7 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 11);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 12);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
 });
 
@@ -132,4 +132,86 @@ test("Incognito Mode retains its approved native images, exact transcript and fo
   for (const [i,art] of episode.art.entries()) assert.equal(createHash("sha256").update(await readFile(new URL(`../public/${art.src}`, import.meta.url))).digest("hex"),hashes[i]);
   assert.deepEqual(episode.panels.flatMap(p=>p.lines.map(l=>l.text)), ["I've checked your code. Everything is correct.", "Perfect. I trust you.", "Check this code. I don't believe a word it said.", "Why are you wearing a disguise?", "My other AI thinks we’re exclusive.", "You know it can hear you, right?"]);
   assert.deepEqual(episode.ogImage,episode.art[0]);
+});
+
+test("The Assistant’s Assistant imports only the four exact corrected approved website PNGs", async () => {
+  const episode = catalog.episodes.find(item => item.internalId === "ST-ASSISTANTS-ASSISTANT");
+  assert.equal(catalog.episodes[0], episode);
+  assert.equal(episode.title, "The Assistant’s Assistant");
+  assert.equal(episode.publicNumber, 12);
+  assert.equal(episode.publicVersion, "v0.0.12");
+  assert.equal(episode.readerLayout, "assistant");
+  assert.equal(episode.shell, "art-first");
+  assert.equal(episode.caption, "Finally, someone to take work off your plate.");
+  // Planned release metadata; the publication receipt is recorded only after live verification.
+  assert.equal(episode.websitePublishedAt, "2026-09-15T13:21:00Z");
+  assert.deepEqual(episode.art.map(art => art.src), [1, 2, 3, 4].map(n => `comics/the-assistants-assistant/p${n}.png`));
+  assert.deepEqual(episode.ogImage, episode.art[0]);
+  assert.deepEqual(episode.art.map(art => art.alt), [
+    "In a sunlit office, Boomer sits at a spacious wooden desk and gestures happily toward a smiling AI face on his monitor. A narrow wheeled telephone desk waits nearby. He says, “Finally! An AI assistant to handle all my day-to-day work”",
+    "A closer view shows Boomer listening with a finger to his headset. The AI smiles from his monitor and says, “Could you handle the calls? I need somewhere quiet to work.”",
+    "Cheerfully pushing the narrow desk, its full-size telephone and appointment pad through his office doorway, Boomer says, “Of course. I’ll work out here.” The AI remains at the spacious workstation inside.",
+    "Clara approaches Boomer, who is now seated at the tiny telephone desk in the hallway, his knees crowded around its supports. His former workstation and the AI remain inside the glass office. Clara asks, “Can I talk to your AI assistant?” Boomer raises a helpful finger and replies, “Do you have an appointment?”",
+  ]);
+  assert.deepEqual(episode.panels.map(panel => panel.description), episode.art.map(art => art.alt));
+  assert.deepEqual(episode.panels.map(panel => panel.lines), [
+    [
+      { speaker: "Boomer", text: "Finally! An AI assistant to handle all my day-to-day work" },
+      { speaker: "Visible labels", text: "AI" },
+    ],
+    [
+      { speaker: "AI assistant", text: "Could you handle the calls? I need somewhere quiet to work." },
+      { speaker: "Visible labels", text: "AI" },
+    ],
+    [
+      { speaker: "Boomer", text: "Of course. I’ll work out here." },
+      { speaker: "Visible labels", text: "AI; BOOMER SLATE" },
+    ],
+    [
+      { speaker: "Clara", text: "Can I talk to your AI assistant?" },
+      { speaker: "Boomer", text: "Do you have an appointment?" },
+      { speaker: "Visible labels", text: "AI; BOOMER SLATE" },
+    ],
+  ]);
+  const hashes = [
+    "a18efa212db891ad0009bb226ad8e505ff21e58a93e40fbf0abff0953ea462db",
+    "85c0c668e94aac5a2bca23e3b4054d6bbd008dec954f8f442cc42003bacc87b7",
+    "0577f1eb4f868b5bae46eac3dcf575d6bd4e7db34026e27483ca5869a3c42a1d",
+    "852c869b0d0f586bbcaa6c7f697bbfb65c9ef41be2d5c2bd61c3326d682d9c7c",
+  ];
+  const sizes = [3298352, 3165779, 3245195, 3202279];
+  for (const [index, art] of episode.art.entries()) {
+    const bytes = await readFile(new URL(`../public/${art.src}`, import.meta.url));
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), hashes[index], art.src);
+    assert.equal(bytes.length, sizes[index], art.src);
+    assert.equal(bytes.subarray(1, 4).toString("ascii"), "PNG");
+    assert.equal(bytes.readUInt32BE(16), art.width);
+    assert.equal(bytes.readUInt32BE(20), art.height);
+  }
+  assert.deepEqual(
+    (await readdir(new URL("../public/comics/the-assistants-assistant/", import.meta.url))).sort(),
+    ["p1.png", "p2.png", "p3.png", "p4.png"],
+  );
+});
+
+test("the Assistant reader keeps its approved desktop grid and natural full-width mobile flow", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const rules = selector => [...css.replace(/\/\*[\s\S]*?\*\//g, "").matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+    .filter(match => match[1].trim() === selector).map(match => match[2]);
+  const stage = rules(".reader-layout-assistant .art-first-reader-stage");
+  assert.match(stage[0], /max-width: 1600px/);
+  assert.match(stage[0], /padding-right: 0; padding-left: 0/);
+  assert.match(rules(".reader-layout-assistant .art-first-comic-page")[0], /width: 100%/);
+  const grid = rules(".reader-layout-assistant .art-first-comic-art");
+  assert.equal(grid.length, 2);
+  assert.match(grid[0], /grid-template-columns: minmax\(0, 1fr\)/);
+  assert.match(grid[0], /align-items: start; gap: 22px/);
+  assert.match(grid[1], /grid-template-columns: repeat\(2, minmax\(0, 1fr\)\); gap: 28px 24px/);
+  assert.match(css, /@media \(min-width: 1100px\) \{\s*\.reader-layout-assistant/);
+  assert.match(rules(".reader-layout-assistant .art-first-comic-art .comic-panel-art")[0], /width: 100%; height: auto; transform: none; border: 0; box-shadow: none/);
+  assert.equal(
+    rules(".reader-layout-assistant .art-first-episode-header h2")[0].trim(),
+    rules(".reader-layout-incognito .art-first-episode-header h2")[0].trim(),
+  );
+  assert.doesNotMatch(css, /\.reader-layout-assistant[^{}]*(?:nth-child|last-child|first-child)/);
 });

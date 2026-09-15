@@ -5,5 +5,12 @@
     "approval3Sha256": "cffff64dad094e68665a01d63657c82b774fe0f5a1e88d0a61f7f735824df407",
     "sourceManifestSha256": "4126e6e716f743d6ae51118250c26afd7c825ed1b691d70c9d53136bff2238e0",
     "releaseAuthoritySha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "the-assistants-assistant": {
+    "internalId": "ST-ASSISTANTS-ASSISTANT",
+    "manifestSha256": "0514c1e89c6b1a2b05b379cc356632dfecca6b9c54eafcbfae0e1a1fe910a585",
+    "approval3Sha256": "9563913a8bd68d0c1f717377350c0a219190efc5f2dad6d6406d8758551745cd",
+    "sourceManifestSha256": "578d0bb92b46f40985b002840f07ce2a38ad89a91cae01929523cead5f10a36e",
+    "releaseAuthoritySha256": "9c85570cbd2bd663437d0550ad611205da7a9498d419b6f6afda0e8ff379cb7c"
   }
 }
