@@ -737,7 +737,16 @@
               "providerAcknowledgedDeletion": true,
               "httpStatus": 200
             },
-            "completedAt": "2026-09-15T01:22:27.356Z"
+            "completedAt": "2026-09-15T01:22:27.356Z",
+            "verification": {
+              "status": "unavailable-or-read-failed",
+              "error": {
+                "code": "provider_rejected_request",
+                "httpStatus": 400,
+                "providerCode": 10
+              }
+            },
+            "verifiedAt": "2026-09-15T01:22:28.487Z"
           }
         }
       }
