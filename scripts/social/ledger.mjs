@@ -52,6 +52,7 @@ export async function executeRelease({entry,ledger,api,root,commit,runId,policy,
   const {release,manifestSha256}=entry;
   assert.ok(!ledger.data.baselineExcludedIds.includes(release.internalId),"Backfill blocked by durable baseline");
   let record=ledger.data.releases[release.internalId];
+  if(record?.withdrawal)return [{platform:"all",status:"withdrawn-do-not-republish"}];
   if(record)assert.equal(record.manifestSha256,manifestSha256,"Previously attempted comic changed; reconcile without reposting");
   else {
     record=ledger.data.releases[release.internalId]={slug:release.slug,title:release.title,manifestSha256,sourceCommit:commit,runId,createdAt:now().toISOString(),platforms:{}};
@@ -110,6 +111,7 @@ export function recoverRecordedResults(state,destination) {
 
 export async function reconcileRelease({entry,ledger,api,now=()=>new Date()}) {
   const record=ledger.data.releases[entry.release.internalId];
+  if(record?.withdrawal)return [{platform:"all",status:"withdrawn-do-not-republish"}];
   assert.ok(record);assert.equal(record.manifestSha256,entry.manifestSha256);
   const report=[];
   for(const [platform,state]of Object.entries(record.platforms)) {
