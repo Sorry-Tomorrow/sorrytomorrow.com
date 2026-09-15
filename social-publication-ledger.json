@@ -1243,6 +1243,12 @@
             }
           ],
           "verifiedAt": "2026-09-15T20:53:38.977Z"
+        },
+        "facebook": {
+          "status": "reserved",
+          "startedAt": "2026-09-15T20:53:39.854Z",
+          "steps": {},
+          "results": []
         }
       }
     }
