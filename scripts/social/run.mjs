@@ -4,7 +4,7 @@ import { pathToFileURL } from "node:url";
 import { accounts } from "../social-connections.mjs";
 import { hash, json, loadReleases, ORIGIN, slugValid, safeRead } from "./policy.mjs";
 import { makeApi, safeError, SocialError } from "./adapters.mjs";
-import { githubApi, loadLedger, executeRelease, reconcileRelease } from "./ledger.mjs";
+import { githubApi, loadLedger, executeRelease, reconcileRelease, resolveReleaseKey } from "./ledger.mjs";
 import { collectMetrics } from "./metrics.mjs";
 import { reportMetricsToPostHog, reportingStatus } from "./reporting.mjs";
 
@@ -100,8 +100,15 @@ export async function run({root=process.cwd(),env=process.env,mode="validate",se
   if(report.metaDataAccessDaysRemaining<=0)throw new SocialError("meta_data_access_renewal_required");
   const ledger=await loadLedger(gh);
   for(const entry of entries) {
-    report.results.push({slug:entry.release.slug,live:await verifyLiveRelease(entry.release,fetchImpl),...(mode==="dry-run"?{status:"ready-no-writes"}:{platforms:mode==="reconcile"
-      ?await reconcileRelease({entry,ledger,api})
+    const {key,correction}=resolveReleaseKey({entry,ledger,policy:loaded.policy});
+    if(mode==="dry-run") {
+      const prior=ledger.data.releases[key];
+      assert.ok(!prior?.withdrawal,"Selected release is withdrawn, not ready for posting");
+      if(prior)assert.equal(prior.manifestSha256,entry.manifestSha256,"Previously attempted comic changed");
+      if(prior&&correction)assert.deepEqual(prior.correction,correction,"Saved correction authority changed");
+    }
+    report.results.push({slug:entry.release.slug,internalId:entry.release.internalId,ledgerKey:key,live:await verifyLiveRelease(entry.release,fetchImpl),...(mode==="dry-run"?{status:"ready-no-writes"}:{platforms:mode==="reconcile"
+      ?await reconcileRelease({entry,ledger,api,policy:loaded.policy})
       :await executeRelease({entry,ledger,api,root,commit:deployment.commit,runId:env.GITHUB_RUN_ID,policy:loaded.policy})})});
   }
   report.status=report.results.every(r=>!r.platforms||r.platforms.every(p=>["published","already-published"].includes(p.status)))?"passed":"attention-required";

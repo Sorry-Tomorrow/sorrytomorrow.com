@@ -53,15 +53,48 @@ export function campaignUrl(slug, number, platform) {
   return url.href;
 }
 
-function validateText(text, platform, release) {
-  assert.ok(typeof text === "string" && text.trim() === text && text.includes(release.title) && text.includes(DISCLOSURE), "Missing approved title/disclosure");
+function validateText(text, platform, release, policy) {
+  assert.ok(typeof text === "string" && text.trim() === text && text.includes(release.title), "Missing approved title/disclosure");
+  const exactCaption = Object.hasOwn(policy.exactApprovedCaptions ?? {}, release.internalId)
+    ? policy.exactApprovedCaptions[release.internalId] : undefined;
+  if (exactCaption !== undefined) {
+    assert.ok(exactCaption && typeof exactCaption.text === "string", "Invalid exact approved caption");
+    assert.equal(exactCaption.approval3.sha256, release.approval3Sha256, "Exact caption Approval 3 differs");
+    assert.equal(exactCaption.sourceManifest.sha256, release.sourceManifestSha256, "Exact caption source manifest differs");
+    assert.equal(exactCaption.releaseAuthority.sha256, release.releaseAuthoritySha256, "Exact caption release authority differs");
+    assert.equal(exactCaption.title, release.title, "Exact caption title differs");
+    assert.equal(exactCaption.text.split("\n")[0], release.title, "Exact caption title differs");
+    assert.ok(sha(exactCaption.textSha256) && sha(exactCaption.sourceCaption.sha256), "Missing exact caption hashes");
+    assert.equal(hash(exactCaption.text), exactCaption.textSha256, "Exact caption record changed");
+    assert.equal(hash(`${exactCaption.text}\n`), exactCaption.sourceCaption.sha256, "Exact caption source bytes differ");
+    assert.equal(text, exactCaption.text, "Caption differs from exact owner approval");
+  } else assert.ok(text.includes(DISCLOSURE), "Missing approved title/disclosure");
   assert.ok(!/@[a-zA-Z0-9_]/.test(text), "Unapproved mention");
   const links = text.match(/https?:\/\/[^\s]+/g) ?? [];
-  assert.deepEqual(links, [campaignUrl(release.slug, release.number, platform)], "Unexpected campaign link");
+  assert.deepEqual(links, [exactCaption ? ORIGIN : campaignUrl(release.slug, release.number, platform)], "Unexpected campaign link");
   const count = platform === "x"
     ? [...text.replace(links[0], "")].reduce((n, c) => n + (c.codePointAt(0) <= 0x10ff ? 1 : 2), 23)
     : [...text].length;
   assert.ok(count <= (platform === "x" ? 280 : 2200), "Caption exceeds limit");
+}
+
+// This allowlist is reviewed with the exact new owner authority and manifest.
+// It never accepts a caller-chosen ledger key, resets attempts, or lifts a hold.
+export function correctedReleaseBinding({release, manifestSha256}, policy = {}) {
+  const grants = policy.correctedReleases ?? {};
+  if (!Object.hasOwn(grants, manifestSha256)) return null;
+  const grant = grants[manifestSha256];
+  assert.equal(grant.schema, "sorry-tomorrow-corrected-release-v1");
+  assert.equal(grant.internalId, release.internalId);
+  assert.equal(grant.slug, release.slug);
+  for (const field of ["approval3Sha256", "sourceManifestSha256", "releaseAuthoritySha256"]) {
+    assert.ok(sha(grant[field]));
+    assert.equal(grant[field], release[field], `Corrected release ${field} differs`);
+  }
+  assert.ok(sha(manifestSha256) && sha(grant.supersedesManifestSha256) && sha(grant.withdrawalSha256));
+  assert.notEqual(grant.supersedesManifestSha256, manifestSha256, "Cannot reauthorize the withdrawn manifest itself");
+  assert.ok(!policy.baselineExcludedIds?.includes(release.internalId), "Correction cannot bypass backfill baseline");
+  return grant;
 }
 
 export function validateManifest(release, approved, catalog, policy) {
@@ -79,6 +112,7 @@ export function validateManifest(release, approved, catalog, policy) {
   assert.equal(approved.sourceManifestSha256, release.sourceManifestSha256);
   assert.equal(approved.releaseAuthoritySha256, release.releaseAuthoritySha256);
   assert.equal(approved.internalId, release.internalId);
+  correctedReleaseBinding({release, manifestSha256:approved.manifestSha256}, policy);
   assert.ok(!policy.baselineExcludedIds.includes(release.internalId), "Existing comic excluded from backfill");
   assert.deepEqual(Object.keys(release.platforms).sort(), [...PLATFORMS].sort(), "Require each approved destination");
   assert.deepEqual(release.panelOrder, episode.art.map((_, i) => `p${i + 1}`), "Canonical panel order differs");
@@ -88,7 +122,7 @@ export function validateManifest(release, approved, catalog, policy) {
     assert.ok(Array.isArray(destination.posts) && destination.posts.length > 0 && destination.posts.length <= (platform === "x" ? 3 : 1));
     const order = [];
     for (const post of destination.posts) {
-      validateText(post.text, platform, release);
+      validateText(post.text, platform, release, policy);
       assert.ok(Array.isArray(post.media) && post.media.length > 0 && post.media.length <= (platform === "x" ? 4 : 10));
       const shapes = [];
       for (const media of post.media) {

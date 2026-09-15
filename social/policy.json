@@ -19,5 +19,40 @@
     "ST-REF-000"
   ],
   "ledgerBranch": "social-publication-state",
-  "ledgerPath": "social-publication-ledger.json"
+  "ledgerPath": "social-publication-ledger.json",
+  "correctedReleases": {
+    "0514c1e89c6b1a2b05b379cc356632dfecca6b9c54eafcbfae0e1a1fe910a585": {
+      "schema": "sorry-tomorrow-corrected-release-v1",
+      "internalId": "ST-ASSISTANTS-ASSISTANT",
+      "slug": "the-assistants-assistant",
+      "approval3Sha256": "9563913a8bd68d0c1f717377350c0a219190efc5f2dad6d6406d8758551745cd",
+      "sourceManifestSha256": "578d0bb92b46f40985b002840f07ce2a38ad89a91cae01929523cead5f10a36e",
+      "releaseAuthoritySha256": "9c85570cbd2bd663437d0550ad611205da7a9498d419b6f6afda0e8ff379cb7c",
+      "supersedesManifestSha256": "5c541809eecdb09a2ac3c9fb2b8f489f47a6c563048c540124703343fd5ec037",
+      "withdrawalSha256": "7adc28adbfaca7dbd15238c2a87c309b50d5f272cc34f606571e7510202ba556"
+    }
+  },
+  "exactApprovedCaptions": {
+    "ST-ASSISTANTS-ASSISTANT": {
+      "title": "The Assistant’s Assistant",
+      "text": "The Assistant’s Assistant\n\nFinally, someone to take work off your plate.\n\nMore comics: https://sorrytomorrow.com\n\nAI-assisted comic by Sorry, Tomorrow.",
+      "textSha256": "dc1cb37b29e2365e4488514263acfe3242705fb7b9a10ae81675b16d8a748689",
+      "sourceCaption": {
+        "path": "deliverables/the-assistants-assistant-v0.0.12-release-v2/caption.txt",
+        "sha256": "3e5f50a7e1142ce51e1d4d04a9d530aa39ec96800802eff2af8c55bfad45d6c5"
+      },
+      "approval3": {
+        "path": "visual-development/private-pilots/assistants-assistant-v1/copy-v1/OWNER-FINAL-APPROVAL.md",
+        "sha256": "9563913a8bd68d0c1f717377350c0a219190efc5f2dad6d6406d8758551745cd"
+      },
+      "sourceManifest": {
+        "path": "visual-development/private-pilots/assistants-assistant-v1/finishing/copy-v1-candidate/ASSET-MANIFEST.json",
+        "sha256": "578d0bb92b46f40985b002840f07ce2a38ad89a91cae01929523cead5f10a36e"
+      },
+      "releaseAuthority": {
+        "path": "studio/operations/assistants-assistant-republish-20260915/OWNER-RELEASE-AUTHORITY.json",
+        "sha256": "9c85570cbd2bd663437d0550ad611205da7a9498d419b6f6afda0e8ff379cb7c"
+      }
+    }
+  }
 }

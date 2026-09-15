@@ -53,7 +53,7 @@ jobs:
         env:
           SOCIAL_MODE: ${{ github.event_name == 'schedule' && 'health' || github.event_name == 'workflow_run' && 'publish' || inputs.mode }}
         run: |
-          node --test tests/social-publishing.test.mjs
+          node --test tests/social-publishing.test.mjs tests/social-corrections.test.mjs tests/social-withdrawal.test.mjs
           if [ "$SOCIAL_MODE" != "health" ] && [ "$SOCIAL_MODE" != "metrics" ]; then
             node scripts/social/run.mjs validate
           fi
