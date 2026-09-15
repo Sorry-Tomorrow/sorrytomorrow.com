@@ -97,6 +97,20 @@ export function correctedReleaseBinding({release, manifestSha256}, policy = {}) 
   return grant;
 }
 
+// `correction` comes only from resolveReleaseKey's exact policy/ledger checks.
+// There is no workflow input, manifest URL override, or random cache key.
+export function providerMediaUrl(media, platform, correction = null) {
+  assert.ok(PLATFORMS.includes(platform));
+  const url = new URL(media.path.replace(/^public\//,"/"), ORIGIN);
+  assert.equal(url.origin, ORIGIN);
+  if (correction !== null) {
+    assert.equal(correction.schema, "sorry-tomorrow-corrected-release-v1");
+    assert.ok(media.path.startsWith(`public/social/${correction.slug}/`) && sha(media.sha256));
+    if (platform !== "x") url.searchParams.set("v", media.sha256);
+  }
+  return url.href;
+}
+
 export function validateManifest(release, approved, catalog, policy) {
   assert.equal(release.schema, "sorry-tomorrow-social-release-v1");
   assert.ok(slugValid(release.slug) && typeof release.internalId === "string" && release.internalId.length <= 100);

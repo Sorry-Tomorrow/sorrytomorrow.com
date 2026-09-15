@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { appendFile, readFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 import { accounts } from "../social-connections.mjs";
-import { hash, json, loadReleases, ORIGIN, slugValid, safeRead } from "./policy.mjs";
+import { hash, json, loadReleases, ORIGIN, slugValid, safeRead, providerMediaUrl } from "./policy.mjs";
 import { makeApi, safeError, SocialError } from "./adapters.mjs";
 import { githubApi, loadLedger, executeRelease, reconcileRelease, resolveReleaseKey } from "./ledger.mjs";
 import { collectMetrics } from "./metrics.mjs";
@@ -44,13 +44,13 @@ async function fetchBounded(url,limit,fetchImpl=fetch) {
   return Buffer.concat(chunks);
 }
 
-export async function verifyLiveRelease(release,fetchImpl=fetch) {
+export async function verifyLiveRelease(release,fetchImpl=fetch,correction=null) {
   const html=(await fetchBounded(release.canonicalUrl,2_000_000,fetchImpl)).toString("utf8");
   assert.ok(html.includes(`data-comic-slug="${release.slug}"`),"Actual public comic not deployed");
   const unique=new Map();
-  for(const destination of Object.values(release.platforms))for(const post of destination.posts)for(const media of post.media)unique.set(media.path,media);
-  for(const media of unique.values()) {
-    const bytes=await fetchBounded(new URL(media.path.replace(/^public\//,"/"),ORIGIN),media.bytes,fetchImpl);
+  for(const [platform,destination] of Object.entries(release.platforms))for(const post of destination.posts)for(const media of post.media)unique.set(providerMediaUrl(media,platform,correction),media);
+  for(const [url,media] of unique) {
+    const bytes=await fetchBounded(url,media.bytes,fetchImpl);
     assert.equal(bytes.length,media.bytes);assert.equal(hash(bytes),media.sha256,"Public platform file differs from approved upload");
   }
   return {url:release.canonicalUrl,imagesVerified:unique.size};
@@ -107,7 +107,7 @@ export async function run({root=process.cwd(),env=process.env,mode="validate",se
       if(prior)assert.equal(prior.manifestSha256,entry.manifestSha256,"Previously attempted comic changed");
       if(prior&&correction)assert.deepEqual(prior.correction,correction,"Saved correction authority changed");
     }
-    report.results.push({slug:entry.release.slug,internalId:entry.release.internalId,ledgerKey:key,live:await verifyLiveRelease(entry.release,fetchImpl),...(mode==="dry-run"?{status:"ready-no-writes"}:{platforms:mode==="reconcile"
+    report.results.push({slug:entry.release.slug,internalId:entry.release.internalId,ledgerKey:key,live:await verifyLiveRelease(entry.release,fetchImpl,correction),...(mode==="dry-run"?{status:"ready-no-writes"}:{platforms:mode==="reconcile"
       ?await reconcileRelease({entry,ledger,api,policy:loaded.policy})
       :await executeRelease({entry,ledger,api,root,commit:deployment.commit,runId:env.GITHUB_RUN_ID,policy:loaded.policy})})});
   }

@@ -101,7 +101,7 @@ export async function executeRelease({entry,ledger,api,root,commit,runId,policy,
       return result;
     };
     try {
-      state.results=await publishPlatform({platform,destination:release.platforms[platform],root,api,step,sleep});
+      state.results=await publishPlatform({platform,destination:release.platforms[platform],root,api,step,sleep,correction});
       state.status="posted-awaiting-verification";await ledger.save();
       state.verified=await verifyPlatform({platform,destination:release.platforms[platform],results:state.results,api});
       state.status="published";state.verifiedAt=now().toISOString();await ledger.save();

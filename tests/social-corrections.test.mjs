@@ -4,9 +4,10 @@ import { readFile, mkdtemp, mkdir, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { accounts } from "../scripts/social-connections.mjs";
-import { hash, json, correctedReleaseBinding, validateManifest, campaignUrl, DISCLOSURE } from "../scripts/social/policy.mjs";
+import { hash, json, correctedReleaseBinding, validateManifest, campaignUrl, DISCLOSURE, providerMediaUrl } from "../scripts/social/policy.mjs";
 import { executeRelease, reconcileRelease, resolveReleaseKey } from "../scripts/social/ledger.mjs";
-import { SocialError } from "../scripts/social/adapters.mjs";
+import { SocialError, publishPlatform } from "../scripts/social/adapters.mjs";
+import { verifyLiveRelease } from "../scripts/social/run.mjs";
 
 const selectedPolicy = JSON.parse(await readFile(new URL("../social/policy.json", import.meta.url)));
 const manifestSha256 = "0514c1e89c6b1a2b05b379cc356632dfecca6b9c54eafcbfae0e1a1fe910a585";
@@ -117,4 +118,47 @@ test("other episodes retain default campaign/disclosure rules",()=>{
   assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));
   for(const [platform,p]of Object.entries(f.release.platforms))p.posts[0].text=`${f.release.title}\n${campaignUrl(slug,12,platform)}\n${DISCLOSURE}`;
   assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);
+});
+test("only resolved correction versions Meta fetch URLs with exact bound media hash",()=>{
+  const f=fixture(),{correction}=resolveReleaseKey(f);
+  for(const platform of ["x","instagram","facebook"]) {
+    const media=f.release.platforms[platform].posts[0].media[0],base=`https://sorrytomorrow.com/${media.path.slice(7)}`;
+    assert.equal(providerMediaUrl(media,platform),base);
+    assert.equal(providerMediaUrl(media,platform,correction),base+(platform==="x"?"":`?v=${media.sha256}`));
+    assert.throws(()=>providerMediaUrl(media,platform,true));
+  }
+  const media=f.release.platforms.facebook.posts[0].media[0];
+  assert.throws(()=>providerMediaUrl({...media,path:"public/social/other/facebook/p1.jpg"},"facebook",correction));
+  assert.throws(()=>providerMediaUrl({...media,sha256:"arbitrary"},"facebook",correction));
+  const unbound=resolveReleaseKey({...f,policy:{}});
+  assert.equal(new URL(providerMediaUrl(media,"facebook",unbound.correction)).search,"");
+});
+for(const platform of ["instagram","facebook"])test(`${platform} upload preserves alt and order while using versioned correction URLs`,async()=>{
+  const f=fixture(),{correction}=resolveReleaseKey(f),destination=f.release.platforms[platform];
+  destination.posts[0].media.push({...destination.posts[0].media[0],path:`public/social/${slug}/${platform}/p2.jpg`,sha256:"b".repeat(64),alt:"Second corrected panel.",panelIds:["p2"]});
+  for(const resolved of [null,correction]) {
+    const calls=[];let id=100;
+    const api={request:async(_p,method,url,body)=>{calls.push({method,url,body});return method==="GET"?{status_code:"FINISHED"}:{id:url.endsWith("/feed")?`${accounts.facebookPageId}_999`:String(id++)};}};
+    await publishPlatform({platform,destination,api,step:async(_name,operation)=>operation(),correction:resolved});
+    const uploaded=calls.filter(c=>c.body?.image_url||c.body?.url);
+    assert.equal(uploaded.length,2);
+    for(const [i,call]of uploaded.entries()) {
+      const media=destination.posts[0].media[i];
+      assert.equal(call.body.image_url??call.body.url,providerMediaUrl(media,platform,resolved));
+      assert.equal(call.body.alt_text??call.body.alt_text_custom,media.alt);
+    }
+    if(platform==="facebook")assert.deepEqual(calls.at(-1).body.attached_media,[{media_fbid:"100"},{media_fbid:"101"}]);
+    else assert.deepEqual(calls.find(c=>c.body?.media_type==="CAROUSEL").body.children,["100","101"]);
+  }
+});
+test("preflight verifies exact effective Meta source URLs, and rejects stale bytes there",async()=>{
+  const f=fixture(),{correction}=resolveReleaseKey(f),payload=Buffer.from("selected test bytes");
+  for(const destination of Object.values(f.release.platforms))for(const media of destination.posts[0].media)Object.assign(media,{bytes:payload.length,sha256:hash(payload)});
+  for(const resolved of [null,correction]) {
+    const urls=[];
+    const response=async url=>{urls.push(url);return new Response(url===f.release.canonicalUrl?`<article data-comic-slug="${slug}">`:payload);};
+    assert.equal((await verifyLiveRelease(f.release,response,resolved)).imagesVerified,3);
+    assert.deepEqual(urls.slice(1),Object.entries(f.release.platforms).map(([platform,d])=>providerMediaUrl(d.posts[0].media[0],platform,resolved)));
+  }
+  await assert.rejects(verifyLiveRelease(f.release,async url=>new Response(url===f.release.canonicalUrl?`<article data-comic-slug="${slug}">`:url.includes("?v=")?Buffer.from("stale wrong payload"):payload),correction),/Public platform file differs/);
 });
