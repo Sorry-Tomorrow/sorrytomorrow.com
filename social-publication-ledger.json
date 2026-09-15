@@ -693,6 +693,20 @@
           ],
           "verifiedAt": "2026-09-14T20:31:07.258Z"
         }
+      },
+      "withdrawal": {
+        "schema": "sorry-tomorrow-exact-withdrawal-v1",
+        "status": "withdrawn-do-not-republish",
+        "requestedAt": "2026-09-15T01:22:17.051Z",
+        "runId": "34916964202",
+        "authority": "Owner: take everything down and fix the comic; The Assistant’s Assistant, September 14, 2026",
+        "reason": "Owner-reported material anatomy defect; replacement requires new creative approval",
+        "preflight": {
+          "accountCaptionMediaAndAltVerified": true,
+          "manifestSha256": "5c541809eecdb09a2ac3c9fb2b8f489f47a6c563048c540124703343fd5ec037"
+        },
+        "instagram": "separate-owner-authorized-UI-withdrawal-by-root",
+        "operations": {}
       }
     }
   }
