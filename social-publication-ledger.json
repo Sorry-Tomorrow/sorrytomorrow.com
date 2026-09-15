@@ -788,7 +788,10 @@
             },
             "checkedAt": "2026-09-15T01:22:33.135Z"
           }
-        }
+        },
+        "executionStatus": "post-deletions-provider-confirmed",
+        "failures": [],
+        "completedAt": "2026-09-15T01:22:34.084Z"
       }
     }
   }
