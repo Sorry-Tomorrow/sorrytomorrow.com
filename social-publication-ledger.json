@@ -871,8 +871,12 @@
               "completedAt": "2026-09-15T13:40:42.410Z"
             },
             "post-0-alt-3": {
-              "status": "in-flight",
-              "startedAt": "2026-09-15T13:40:43.594Z"
+              "status": "done",
+              "startedAt": "2026-09-15T13:40:43.594Z",
+              "result": {
+                "id": "2099855930099683328"
+              },
+              "completedAt": "2026-09-15T13:40:44.507Z"
             }
           },
           "results": [],
