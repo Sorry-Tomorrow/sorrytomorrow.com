@@ -708,10 +708,16 @@
         "instagram": "separate-owner-authorized-UI-withdrawal-by-root",
         "operations": {
           "x:2099596479601975452": {
-            "status": "in-flight",
+            "status": "provider-confirmed-deleted",
             "platform": "x",
             "id": "2099596479601975452",
-            "startedAt": "2026-09-15T01:22:17.820Z"
+            "startedAt": "2026-09-15T01:22:17.820Z",
+            "result": {
+              "id": "2099596479601975452",
+              "providerAcknowledgedDeletion": true,
+              "httpStatus": 200
+            },
+            "completedAt": "2026-09-15T01:22:19.138Z"
           }
         }
       }
