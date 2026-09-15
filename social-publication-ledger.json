@@ -1245,7 +1245,7 @@
           "verifiedAt": "2026-09-15T20:53:38.977Z"
         },
         "facebook": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-09-15T20:53:39.854Z",
           "steps": {
             "post-0-image-0": {
@@ -1276,7 +1276,18 @@
                 }
               ]
             }
-          ]
+          ],
+          "verified": [
+            {
+              "id": "1380120908509290_122110011129458114",
+              "url": "https://www.facebook.com/122107583679458114/posts/122110011129458114",
+              "attachmentIds": [
+                "122110011081458114"
+              ],
+              "copyAndAltVerified": true
+            }
+          ],
+          "verifiedAt": "2026-09-15T20:53:53.509Z"
         }
       }
     }
