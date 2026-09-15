@@ -931,6 +931,12 @@
             }
           ],
           "verifiedAt": "2026-09-15T13:40:48.340Z"
+        },
+        "instagram": {
+          "status": "reserved",
+          "startedAt": "2026-09-15T13:40:49.129Z",
+          "steps": {},
+          "results": []
         }
       },
       "internalId": "ST-ASSISTANTS-ASSISTANT",
