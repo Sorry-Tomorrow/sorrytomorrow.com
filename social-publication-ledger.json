@@ -728,10 +728,16 @@
             "verifiedAt": "2026-09-15T01:22:20.102Z"
           },
           "facebook:1380120908509290_122109675897458114": {
-            "status": "in-flight",
+            "status": "provider-confirmed-deleted",
             "platform": "facebook",
             "id": "1380120908509290_122109675897458114",
-            "startedAt": "2026-09-15T01:22:20.837Z"
+            "startedAt": "2026-09-15T01:22:20.837Z",
+            "result": {
+              "id": "1380120908509290_122109675897458114",
+              "providerAcknowledgedDeletion": true,
+              "httpStatus": 200
+            },
+            "completedAt": "2026-09-15T01:22:27.356Z"
           }
         }
       }
