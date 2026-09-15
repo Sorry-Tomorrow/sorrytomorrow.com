@@ -807,8 +807,14 @@
           "startedAt": "2026-09-15T13:40:26.273Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-09-15T13:40:27.134Z"
+              "status": "done",
+              "startedAt": "2026-09-15T13:40:27.134Z",
+              "result": {
+                "id": "2099855873300467712",
+                "mediaKey": "3_2099855873300467712",
+                "sha256": "a18efa212db891ad0009bb226ad8e505ff21e58a93e40fbf0abff0953ea462db"
+              },
+              "completedAt": "2026-09-15T13:40:29.158Z"
             }
           },
           "results": [],
