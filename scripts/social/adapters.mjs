@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { createHmac, randomBytes } from "node:crypto";
 import { accounts, checkConnections } from "../social-connections.mjs";
-import { ORIGIN, numericId, safeRead } from "./policy.mjs";
+import { numericId, safeRead, providerMediaUrl } from "./policy.mjs";
 
 export class SocialError extends Error {
   constructor(code, status, providerCode) { super(code); this.code = code; this.status = status; this.providerCode = providerCode; }
@@ -51,10 +51,9 @@ export function makeApi({ env, fetchImpl = fetch }) {
 
 const idFrom = data => { assert.ok(numericId(data?.id), "Missing provider identifier"); return data.id; };
 const postIdFrom = data => { assert.ok(typeof data?.id === "string" && /^[0-9]+_[0-9]+$/.test(data.id), "Invalid Facebook post identifier"); return data.id; };
-const mediaUrl = media => new URL(media.path.replace(/^public\//,"/"), ORIGIN).href;
 const sleepDefault = ms => new Promise(resolve=>setTimeout(resolve,ms));
 
-export async function publishPlatform({ platform, destination, root, api, step, sleep = sleepDefault }) {
+export async function publishPlatform({ platform, destination, root, api, step, correction = null, sleep = sleepDefault }) {
   const results = [];
   for (const [p, post] of destination.posts.entries()) {
     if (platform === "x") {
@@ -82,7 +81,7 @@ export async function publishPlatform({ platform, destination, root, api, step, 
       const images = [];
       for (const [i,media] of post.media.entries()) {
         images.push(await step(`post-${p}-image-${i}`,async()=>{
-          const data=await api.request("facebook","POST",`/v26.0/${accounts.facebookPageId}/photos`,{url:mediaUrl(media),published:false,alt_text_custom:media.alt});
+          const data=await api.request("facebook","POST",`/v26.0/${accounts.facebookPageId}/photos`,{url:providerMediaUrl(media,platform,correction),published:false,alt_text_custom:media.alt});
           return {id:idFrom(data),sha256:media.sha256};
         }));
       }
@@ -96,7 +95,7 @@ export async function publishPlatform({ platform, destination, root, api, step, 
       const containers=[];
       for (const [i,media] of post.media.entries()) {
         containers.push(await step(`post-${p}-image-${i}`,async()=>{
-          const data=await api.request("instagram","POST",`/v26.0/${accounts.instagramId}/media`,{image_url:mediaUrl(media),is_carousel_item:post.media.length>1,alt_text:media.alt,...(post.media.length===1?{caption:post.text,is_ai_generated:true}:{})});
+          const data=await api.request("instagram","POST",`/v26.0/${accounts.instagramId}/media`,{image_url:providerMediaUrl(media,platform,correction),is_carousel_item:post.media.length>1,alt_text:media.alt,...(post.media.length===1?{caption:post.text,is_ai_generated:true}:{})});
           return {id:idFrom(data),sha256:media.sha256};
         }));
       }

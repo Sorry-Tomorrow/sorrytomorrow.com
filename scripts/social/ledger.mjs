@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { accounts } from "../social-connections.mjs";
-import { json } from "./policy.mjs";
+import { json, hash, correctedReleaseBinding } from "./policy.mjs";
 import { safeError, SocialError, publishPlatform, verifyPlatform } from "./adapters.mjs";
 
 export const LEDGER_BRANCH="social-publication-state";
@@ -48,14 +48,33 @@ export async function loadLedger(gh,{initialize=false,commit,policy,catalog,rele
   }};
 }
 
+export function resolveReleaseKey({entry, ledger, policy}) {
+  const {release, manifestSha256} = entry;
+  const correction = correctedReleaseBinding(entry, policy);
+  if (!correction) return {key:release.internalId, correction:null};
+  assert.ok(!ledger.data.baselineExcludedIds.includes(release.internalId), "Correction cannot bypass durable baseline");
+  const original = ledger.data.releases[release.internalId];
+  assert.ok(original, "Correction requires the original durable record");
+  assert.equal(original.slug, release.slug);
+  assert.equal(original.manifestSha256, correction.supersedesManifestSha256);
+  assert.equal(original.withdrawal?.status, "withdrawn-do-not-republish");
+  assert.equal(original.withdrawal?.executionStatus, "post-deletions-provider-confirmed");
+  assert.equal(hash(json(original.withdrawal)), correction.withdrawalSha256, "Original withdrawal differs from correction authority");
+  return {key:`${release.internalId}@${manifestSha256}`, correction};
+}
+
 export async function executeRelease({entry,ledger,api,root,commit,runId,policy,now=()=>new Date(),sleep}) {
   const {release,manifestSha256}=entry;
   assert.ok(!ledger.data.baselineExcludedIds.includes(release.internalId),"Backfill blocked by durable baseline");
-  let record=ledger.data.releases[release.internalId];
+  const {key, correction}=resolveReleaseKey({entry,ledger,policy});
+  let record=ledger.data.releases[key];
   if(record?.withdrawal)return [{platform:"all",status:"withdrawn-do-not-republish"}];
-  if(record)assert.equal(record.manifestSha256,manifestSha256,"Previously attempted comic changed; reconcile without reposting");
+  if(record){
+    assert.equal(record.manifestSha256,manifestSha256,"Previously attempted comic changed; reconcile without reposting");
+    if(correction)assert.deepEqual(record.correction,correction,"Saved correction authority changed");
+  }
   else {
-    record=ledger.data.releases[release.internalId]={slug:release.slug,title:release.title,manifestSha256,sourceCommit:commit,runId,createdAt:now().toISOString(),platforms:{}};
+    record=ledger.data.releases[key]={slug:release.slug,title:release.title,manifestSha256,sourceCommit:commit,runId,createdAt:now().toISOString(),platforms:{},...(correction?{internalId:release.internalId,correction}: {})};
     await ledger.save();
   }
   const report=[];
@@ -82,7 +101,7 @@ export async function executeRelease({entry,ledger,api,root,commit,runId,policy,
       return result;
     };
     try {
-      state.results=await publishPlatform({platform,destination:release.platforms[platform],root,api,step,sleep});
+      state.results=await publishPlatform({platform,destination:release.platforms[platform],root,api,step,sleep,correction});
       state.status="posted-awaiting-verification";await ledger.save();
       state.verified=await verifyPlatform({platform,destination:release.platforms[platform],results:state.results,api});
       state.status="published";state.verifiedAt=now().toISOString();await ledger.save();
@@ -109,10 +128,12 @@ export function recoverRecordedResults(state,destination) {
   return results;
 }
 
-export async function reconcileRelease({entry,ledger,api,now=()=>new Date()}) {
-  const record=ledger.data.releases[entry.release.internalId];
+export async function reconcileRelease({entry,ledger,api,policy,now=()=>new Date()}) {
+  const {key,correction}=resolveReleaseKey({entry,ledger,policy});
+  const record=ledger.data.releases[key];
   if(record?.withdrawal)return [{platform:"all",status:"withdrawn-do-not-republish"}];
   assert.ok(record);assert.equal(record.manifestSha256,entry.manifestSha256);
+  if(correction)assert.deepEqual(record.correction,correction,"Saved correction authority changed");
   const report=[];
   for(const [platform,state]of Object.entries(record.platforms)) {
     if(state.status==="published"){report.push({platform,status:"already-published",posts:state.verified});continue;}

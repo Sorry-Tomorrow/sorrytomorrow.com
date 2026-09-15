@@ -1,0 +1,58 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-09-15",
+  "internalId": "ST-ASSISTANTS-ASSISTANT",
+  "title": "The Assistant’s Assistant",
+  "ownerInstruction": "approved, in the uture for lessons learned we ned to ensure we are always checking arm and hand anatomy. this is approved though. we could lock this as officially approved and confirmed and you can re-publish it live",
+  "resolvedContext": "Final owner approval of exact corrected copy-v1 package and renewed publication to the same withdrawn website, X, Instagram and Facebook destinations.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "9563913a8bd68d0c1f717377350c0a219190efc5f2dad6d6406d8758551745cd",
+  "sourceManifestSha256": "578d0bb92b46f40985b002840f07ce2a38ad89a91cae01929523cead5f10a36e",
+  "publicIdentityPlan": {
+    "episodeNumber": 12,
+    "displayVersion": "v0.0.12",
+    "slug": "the-assistants-assistant",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/the-assistants-assistant/",
+    "plannedWebsiteReleaseMetadata": "2026-09-15T13:21:00Z",
+    "basis": "Retain reserved Comic012 and canonical URL; this is planned corrected-edition catalog metadata, not an observed deployment timestamp. Prior publication and withdrawal remain historical."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "assetRule": "Copy exact approved marked PNGs/JPEGs byte-identically. No generation, editing, rendering, crop, relettering, encoding, font or watermark change.",
+  "captionRule": "Exact approved caption/homepage/disclosure, omit file-terminal newline for API text only; preserve approved per-panel alt. Permit only exact-hash-bound compatibility rule, not broader default relaxation.",
+  "correctionRule": {
+    "originalReleaseManifestSha256": "5c541809eecdb09a2ac3c9fb2b8f489f47a6c563048c540124703343fd5ec037",
+    "originalLedgerKey": "ST-ASSISTANTS-ASSISTANT",
+    "originalWithdrawalSha256": "7adc28adbfaca7dbd15238c2a87c309b50d5f272cc34f606571e7510202ba556",
+    "action": "Preserve original withdrawn entry and attempts; authorize one exact corrected-release record derived from canonical internal ID and new social-manifest hash. Verify exact original manifest before execution. No arbitrary alias/reset."
+  },
+  "budgetRule": "No ads, purchases, new permissions, auto-recharge or cap increase. Retain existing X monthly5USD provider cap, aggregate prior+corrected reservations and no uncertain-publication retry.",
+  "executionRule": "Existing GitHub Pages and trusted-main social outbox. Revalidate current ledger/accounts, independently review code/assets, deploy once and observe results before claiming publication. Preserve old successful/withdrawn receipts and every other episode.",
+  "exclusions": [
+    "LinkedIn",
+    "new destinations/accounts",
+    "new artwork/derivatives",
+    "other-comic backfill",
+    "analytics redesign",
+    "host/DNS/security changes"
+  ],
+  "publicationClaim": "This records renewed authority, not an observed successful republication."
+}
+

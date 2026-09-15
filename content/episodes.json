@@ -17,6 +17,110 @@
   },
   "episodes": [
     {
+      "internalId": "ST-ASSISTANTS-ASSISTANT",
+      "slug": "the-assistants-assistant",
+      "title": "The Assistant’s Assistant",
+      "publicNumber": 12,
+      "publicVersion": "v0.0.12",
+      "label": "Comic 012 · Ahead AI",
+      "websitePublishedAt": "2026-09-15T13:21:00Z",
+      "displayDate": "v0.0.12",
+      "previewOnly": false,
+      "readerLayout": "assistant",
+      "caption": "Finally, someone to take work off your plate.",
+      "shell": "art-first",
+      "art": [
+        {
+          "src": "comics/the-assistants-assistant/p1.png",
+          "width": 1480,
+          "height": 1390,
+          "alt": "In a sunlit office, Boomer sits at a spacious wooden desk and gestures happily toward a smiling AI face on his monitor. A narrow wheeled telephone desk waits nearby. He says, “Finally! An AI assistant to handle all my day-to-day work”"
+        },
+        {
+          "src": "comics/the-assistants-assistant/p2.png",
+          "width": 1480,
+          "height": 1430,
+          "alt": "A closer view shows Boomer listening with a finger to his headset. The AI smiles from his monitor and says, “Could you handle the calls? I need somewhere quiet to work.”"
+        },
+        {
+          "src": "comics/the-assistants-assistant/p3.png",
+          "width": 1480,
+          "height": 1380,
+          "alt": "Cheerfully pushing the narrow desk, its full-size telephone and appointment pad through his office doorway, Boomer says, “Of course. I’ll work out here.” The AI remains at the spacious workstation inside."
+        },
+        {
+          "src": "comics/the-assistants-assistant/p4.png",
+          "width": 1480,
+          "height": 1390,
+          "alt": "Clara approaches Boomer, who is now seated at the tiny telephone desk in the hallway, his knees crowded around its supports. His former workstation and the AI remain inside the glass office. Clara asks, “Can I talk to your AI assistant?” Boomer raises a helpful finger and replies, “Do you have an appointment?”"
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Boomer",
+              "text": "Finally! An AI assistant to handle all my day-to-day work"
+            },
+            {
+              "speaker": "Visible labels",
+              "text": "AI"
+            }
+          ],
+          "description": "In a sunlit office, Boomer sits at a spacious wooden desk and gestures happily toward a smiling AI face on his monitor. A narrow wheeled telephone desk waits nearby. He says, “Finally! An AI assistant to handle all my day-to-day work”"
+        },
+        {
+          "lines": [
+            {
+              "speaker": "AI assistant",
+              "text": "Could you handle the calls? I need somewhere quiet to work."
+            },
+            {
+              "speaker": "Visible labels",
+              "text": "AI"
+            }
+          ],
+          "description": "A closer view shows Boomer listening with a finger to his headset. The AI smiles from his monitor and says, “Could you handle the calls? I need somewhere quiet to work.”"
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Boomer",
+              "text": "Of course. I’ll work out here."
+            },
+            {
+              "speaker": "Visible labels",
+              "text": "AI; BOOMER SLATE"
+            }
+          ],
+          "description": "Cheerfully pushing the narrow desk, its full-size telephone and appointment pad through his office doorway, Boomer says, “Of course. I’ll work out here.” The AI remains at the spacious workstation inside."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Clara",
+              "text": "Can I talk to your AI assistant?"
+            },
+            {
+              "speaker": "Boomer",
+              "text": "Do you have an appointment?"
+            },
+            {
+              "speaker": "Visible labels",
+              "text": "AI; BOOMER SLATE"
+            }
+          ],
+          "description": "Clara approaches Boomer, who is now seated at the tiny telephone desk in the hallway, his knees crowded around its supports. His former workstation and the AI remain inside the glass office. Clara asks, “Can I talk to your AI assistant?” Boomer raises a helpful finger and replies, “Do you have an appointment?”"
+        }
+      ],
+      "ogImage": {
+        "src": "comics/the-assistants-assistant/p1.png",
+        "width": 1480,
+        "height": 1390,
+        "alt": "In a sunlit office, Boomer sits at a spacious wooden desk and gestures happily toward a smiling AI face on his monitor. A narrow wheeled telephone desk waits nearby. He says, “Finally! An AI assistant to handle all my day-to-day work”"
+      }
+    },
+    {
       "internalId": "ST-INCOGNITO-MODE",
       "slug": "incognito-mode",
       "title": "Incognito Mode",
