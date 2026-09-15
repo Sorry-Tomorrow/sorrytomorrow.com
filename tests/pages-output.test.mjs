@@ -20,6 +20,10 @@ const expectedSiteUrl = new URL(
 );
 const escapePattern = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const approvedComicAssets = {
+  "comics/six-figure-growth/p1.png": "fc1417ff6de2d238544761d0a93c40a51eb5ce10bf27ed5dfb22047277f5259d",
+  "comics/six-figure-growth/p1.webp": "d0c19cf0136bba011606f08ea1b543d13de0a191565735069dc328c1eef4fc6f",
+  "comics/six-figure-growth/complete.png": "c8aedfcd3d49107282df2e0c182920eb18f6c378fe34996d09a6e852a86240b8",
+  "comics/six-figure-growth/complete.jpg": "a90ce5853bbe43aadf2b24f247ffb6c5b35461db7e6dee35e79b9ae42f24b52c",
   "comics/the-assistants-assistant/p1.png": "a18efa212db891ad0009bb226ad8e505ff21e58a93e40fbf0abff0953ea462db",
   "comics/the-assistants-assistant/p2.png": "85c0c668e94aac5a2bca23e3b4054d6bbd008dec954f8f442cc42003bacc87b7",
   "comics/the-assistants-assistant/p3.png": "0577f1eb4f868b5bae46eac3dcf575d6bd4e7db34026e27483ca5869a3c42a1d",
@@ -87,9 +91,10 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 012 · Ahead AI/);
+  assert.match(html, /Comic 013 · Ahead AI/);
+  assert.match(html, /Six-Figure Growth\?/);
+  assert.match(html, /comics\/six-figure-growth\/p1\.webp/);
   assert.match(html, /The Assistant’s Assistant/);
-  assert.match(html, /comics\/the-assistants-assistant\/p1\.png/);
   assert.match(html, /Incognito Mode/);
   assert.match(html, /Work Life Balance/);
   assert.match(html, new RegExp('href="' + escapedBasePath + '/comics/incognito-mode/#comic"'));

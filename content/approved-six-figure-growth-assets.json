@@ -1,0 +1,42 @@
+{
+  "episode": "Six-Figure Growth?",
+  "internalId": "ST-SIX-FIGURE-GROWTH",
+  "attributionStandard": "ST-ATTRIBUTION-1",
+  "attributionLayout": "ST-ATTRIBUTION-LAYOUT-2",
+  "sourcePackageSha256": "63a27081fd7539bd5fc76397ac604f8d822b482583ee6a7c385ab1e16d2faa18",
+  "approval3Sha256": "c6ad080b1ad9ad0e213baed3100a544c9992cad526cb4991a1e6998447bfbcf9",
+  "releaseAuthoritySha256": "ad04fe460f821ab2674c007c595cfbfbad75412596cbb689ccb2ec283b9088dd",
+  "approvedCopySha256": "6329322c3206387db4fd1d189854826934a425f3250d7f0e349ef52c9d386b99",
+  "sourcePackage": "studio/editorial/six-figure-growth-board-v1/finish-v2",
+  "releaseMetadataNote": "The catalog date is planned release metadata, not a claim of observed publication. The release executor records the actual deployment separately.",
+  "assets": [
+    {
+      "source": "website/p1.webp",
+      "target": "comics/six-figure-growth/p1.webp",
+      "role": "approved lossless native reader source",
+      "bytes": 1675222,
+      "sha256": "d0c19cf0136bba011606f08ea1b543d13de0a191565735069dc328c1eef4fc6f"
+    },
+    {
+      "source": "website/p1.png",
+      "target": "comics/six-figure-growth/p1.png",
+      "role": "approved native PNG fallback",
+      "bytes": 3240225,
+      "sha256": "fc1417ff6de2d238544761d0a93c40a51eb5ce10bf27ed5dfb22047277f5259d"
+    },
+    {
+      "source": "reading-edition/comic.png",
+      "target": "comics/six-figure-growth/complete.png",
+      "role": "approved titled complete-comic download",
+      "bytes": 2405802,
+      "sha256": "c8aedfcd3d49107282df2e0c182920eb18f6c378fe34996d09a6e852a86240b8"
+    },
+    {
+      "source": "reading-edition/comic.jpg",
+      "target": "comics/six-figure-growth/complete.jpg",
+      "role": "approved titled complete-comic download and link preview",
+      "bytes": 647157,
+      "sha256": "a90ce5853bbe43aadf2b24f247ffb6c5b35461db7e6dee35e79b9ae42f24b52c"
+    }
+  ]
+}

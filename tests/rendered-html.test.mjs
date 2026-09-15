@@ -49,9 +49,10 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 012 · Ahead AI/);
+  assert.match(html, /Comic 013 · Ahead AI/);
+  assert.match(html, /Six-Figure Growth\?/);
+  assert.match(html, /comics\/six-figure-growth\/p1\.webp/);
   assert.match(html, /The Assistant’s Assistant/);
-  assert.match(html, /comics\/the-assistants-assistant\/p1\.png/);
   assert.match(html, /Incognito Mode/);
   assert.match(html, /Work Life Balance/);
   assert.match(html, /href="\/comics\/incognito-mode\/#comic"/);
@@ -143,7 +144,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 12);
+  assert.equal(JSON.parse(catalog).episodes.length, 13);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -217,7 +218,8 @@ test("published navigation connects Founder through the three new releases", asy
     ["so-you-vibe-coded-an-app", "magnification-spiral", "work-life-balance"],
     ["work-life-balance", "so-you-vibe-coded-an-app", "incognito-mode"],
     ["incognito-mode", "work-life-balance", "the-assistants-assistant"],
-    ["the-assistants-assistant", "incognito-mode", null],
+    ["the-assistants-assistant", "incognito-mode", "six-figure-growth"],
+    ["six-figure-growth", "the-assistants-assistant", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);
@@ -226,4 +228,20 @@ test("published navigation connects Founder through the three new releases", asy
     if (newer) assert.ok(html.includes(`href="/comics/${newer}/#comic"`), slug);
     else assert.ok(html.includes("You’re at the latest comic"), slug);
   }
+});
+
+test("single-panel release renders approved WebP with PNG fallback, exact transcript and social preview", async () => {
+  const response = await render("/comics/six-figure-growth");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<title>Six-Figure Growth\? \| Sorry, Tomorrow<\/title>/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/sorrytomorrow\.com\/comics\/six-figure-growth\/"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/six-figure-growth\/complete\.jpg"/);
+  assert.match(html, /reader-layout-single-panel/);
+  assert.match(html, /<source type="image\/webp" srcSet="\/comics\/six-figure-growth\/p1\.webp"/);
+  assert.match(html, /<img class="comic-panel-art" src="\/comics\/six-figure-growth\/p1\.png" width="1193" height="1318"/);
+  assert.match(html, /aria-label="Six-Figure Growth\?, 1 panel"/);
+  assert.match(html, /Screen: MONTHLY AI BILL Screen: \$128,640/);
+  assert.match(html, /No dialogue\./);
+  assert.doesNotMatch(html, /<p>Six-Figure Growth\?<\/p>/);
 });

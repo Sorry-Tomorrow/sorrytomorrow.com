@@ -33,6 +33,28 @@
     }
   },
   "exactApprovedCaptions": {
+    "ST-SIX-FIGURE-GROWTH": {
+      "title": "Six-Figure Growth?",
+      "text": "Six-Figure Growth?\n\nhttps://sorrytomorrow.com/comics/six-figure-growth/\n\nAI-assisted comic by Sorry, Tomorrow.",
+      "textSha256": "f4eb48b5603fb32fdc70c2cdd648811a3025380e19566ae30e4f171addddcbd3",
+      "canonicalUrl": "https://sorrytomorrow.com/comics/six-figure-growth/",
+      "sourceCaption": {
+        "path": "deliverables/six-figure-growth-v0.0.13-release-v1/caption.txt",
+        "sha256": "460e505ecc7030153eac80b68482cd1c1c84f4935f18c864d18f03fc40b0ac68"
+      },
+      "approval3": {
+        "path": "studio/editorial/six-figure-growth-board-v1/OWNER-FINAL-APPROVAL.md",
+        "sha256": "c6ad080b1ad9ad0e213baed3100a544c9992cad526cb4991a1e6998447bfbcf9"
+      },
+      "sourceManifest": {
+        "path": "studio/editorial/six-figure-growth-board-v1/finish-v2/ASSET-MANIFEST.json",
+        "sha256": "63a27081fd7539bd5fc76397ac604f8d822b482583ee6a7c385ab1e16d2faa18"
+      },
+      "releaseAuthority": {
+        "path": "studio/operations/six-figure-growth-release-20260915/OWNER-RELEASE-AUTHORITY.json",
+        "sha256": "ad04fe460f821ab2674c007c595cfbfbad75412596cbb689ccb2ec283b9088dd"
+      }
+    },
     "ST-ASSISTANTS-ASSISTANT": {
       "title": "The Assistant’s Assistant",
       "text": "The Assistant’s Assistant\n\nFinally, someone to take work off your plate.\n\nMore comics: https://sorrytomorrow.com\n\nAI-assisted comic by Sorry, Tomorrow.",

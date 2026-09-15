@@ -48,7 +48,7 @@ export function ComicReader({
           <span>{episode.previewOnly ? "Sorry, Tomorrow · Ahead AI" : `${episode.label}${episode.readerLayout ? ` · ${episode.publicVersion}` : ""}`}</span>
           <div>
             <h2>{episode.title}</h2>
-            <p>{episode.caption}</p>
+            {!(episode.readerLayout === "single-panel" && episode.caption === episode.title) && <p>{episode.caption}</p>}
           </div>
         </header>
       ) : (
@@ -89,24 +89,32 @@ export function ComicReader({
           <div
             className={`comic-art${artFirst ? " art-first-comic-art" : ""}`}
             role="group"
-            aria-label={`${episode.title}, ${episode.panels.length} panels`}
+            aria-label={`${episode.title}, ${episode.panels.length} ${episode.panels.length === 1 ? "panel" : "panels"}`}
           >
-            {episode.art.map((art, index) => (
+            {episode.art.map((art, index) => {
               // Approved comic assets are served as approved; web-optimized derivatives
               // must enter through a later publication-candidate review.
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                className="comic-panel-art"
-                key={art.src}
-                src={publicAssetPath(art.src)}
-                width={art.width}
-                height={art.height}
-                alt={art.alt}
-                loading={index === 0 ? "eager" : "lazy"}
-                fetchPriority={index === 0 ? "high" : "auto"}
-                decoding="async"
-              />
-            ))}
+              const image = (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  className="comic-panel-art"
+                  key={art.src}
+                  src={publicAssetPath(art.src)}
+                  width={art.width}
+                  height={art.height}
+                  alt={art.alt}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
+                />
+              );
+              return art.webpSrc ? (
+                <picture className="comic-panel-picture" key={art.src}>
+                  <source type="image/webp" srcSet={publicAssetPath(art.webpSrc)} />
+                  {image}
+                </picture>
+              ) : image;
+            })}
           </div>
           {!artFirst && (
             <figcaption>

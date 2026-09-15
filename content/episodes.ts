@@ -7,6 +7,7 @@ export type Line = {
 
 export type ComicArt = {
   src: string;
+  webpSrc?: string;
   width: number;
   height: number;
   alt: string;
@@ -26,7 +27,7 @@ export type Episode = {
   label: string;
   websitePublishedAt: string | null;
   previewOnly?: boolean;
-  readerLayout?: "thermostat" | "duck" | "magnification" | "vibecoded" | "work-life-balance" | "incognito" | "assistant";
+  readerLayout?: "thermostat" | "duck" | "magnification" | "vibecoded" | "work-life-balance" | "incognito" | "assistant" | "single-panel";
   displayDate: string;
   caption: string;
   shell: "art-first" | "classic";

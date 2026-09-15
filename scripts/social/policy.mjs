@@ -57,6 +57,7 @@ function validateText(text, platform, release, policy) {
   assert.ok(typeof text === "string" && text.trim() === text && text.includes(release.title), "Missing approved title/disclosure");
   const exactCaption = Object.hasOwn(policy.exactApprovedCaptions ?? {}, release.internalId)
     ? policy.exactApprovedCaptions[release.internalId] : undefined;
+  let approvedLink = campaignUrl(release.slug, release.number, platform);
   if (exactCaption !== undefined) {
     assert.ok(exactCaption && typeof exactCaption.text === "string", "Invalid exact approved caption");
     assert.equal(exactCaption.approval3.sha256, release.approval3Sha256, "Exact caption Approval 3 differs");
@@ -68,10 +69,15 @@ function validateText(text, platform, release, policy) {
     assert.equal(hash(exactCaption.text), exactCaption.textSha256, "Exact caption record changed");
     assert.equal(hash(`${exactCaption.text}\n`), exactCaption.sourceCaption.sha256, "Exact caption source bytes differ");
     assert.equal(text, exactCaption.text, "Caption differs from exact owner approval");
+    approvedLink = ORIGIN;
+    if (Object.hasOwn(exactCaption, "canonicalUrl")) {
+      assert.equal(exactCaption.canonicalUrl, release.canonicalUrl, "Exact caption canonical URL differs");
+      approvedLink = exactCaption.canonicalUrl;
+    }
   } else assert.ok(text.includes(DISCLOSURE), "Missing approved title/disclosure");
   assert.ok(!/@[a-zA-Z0-9_]/.test(text), "Unapproved mention");
   const links = text.match(/https?:\/\/[^\s]+/g) ?? [];
-  assert.deepEqual(links, [exactCaption ? ORIGIN : campaignUrl(release.slug, release.number, platform)], "Unexpected campaign link");
+  assert.deepEqual(links, [approvedLink], "Unexpected campaign link");
   const count = platform === "x"
     ? [...text.replace(links[0], "")].reduce((n, c) => n + (c.codePointAt(0) <= 0x10ff ? 1 : 2), 23)
     : [...text].length;

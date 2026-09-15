@@ -4,7 +4,7 @@ import { mkdtemp, writeFile, mkdir, symlink } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { accounts, xReadAuthorization } from "../scripts/social-connections.mjs";
-import { campaignUrl, DISCLOSURE, validateManifest, imageDimensions, safeRead } from "../scripts/social/policy.mjs";
+import { campaignUrl, DISCLOSURE, ORIGIN, hash, validateManifest, imageDimensions, safeRead } from "../scripts/social/policy.mjs";
 import { makeApi, xAuthorization, safeError, SocialError, publishPlatform } from "../scripts/social/adapters.mjs";
 import { executeRelease, reconcileRelease, loadLedger, recoverRecordedResults } from "../scripts/social/ledger.mjs";
 import { trustedContext, verifiedDeployment, verifyLiveRelease, run } from "../scripts/social/run.mjs";
@@ -19,7 +19,76 @@ function fixture(){
   const approved={manifestSha256:digest,approval3Sha256:digest,sourceManifestSha256:digest,releaseAuthoritySha256:digest,internalId:"ST-TEST"};
   return {release,approved,catalog:{episodes:[{internalId:"ST-TEST",slug:"test",title:"Test",publicNumber:11,art:[{}]}]},policy:{baselineExcludedIds:[],xMonthlyCapUsd:5,xReservePerPostUsd:0.5}};
 }
+function exactCaptionFixture(link=ORIGIN, fields={}){
+  const f=fixture(),text=`Test\n\n${link}\n\nAI-assisted comic by Sorry, Tomorrow.`;
+  const caption={title:f.release.title,text,textSha256:hash(text),sourceCaption:{sha256:hash(`${text}\n`)},approval3:{sha256:f.release.approval3Sha256},sourceManifest:{sha256:f.release.sourceManifestSha256},releaseAuthority:{sha256:f.release.releaseAuthoritySha256},...fields};
+  f.policy.exactApprovedCaptions={[f.release.internalId]:caption};
+  for(const destination of Object.values(f.release.platforms))destination.posts[0].text=caption.text;
+  return {...f,caption};
+}
 test("approved manifest binds complete story, exact account and campaign URLs",()=>{const f=fixture();assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);});
+test("exact owner-approved canonical caption is accepted unchanged on every destination",()=>{
+  const canonicalUrl=fixture().release.canonicalUrl,f=exactCaptionFixture(canonicalUrl,{canonicalUrl});
+  assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);
+  for(const destination of Object.values(f.release.platforms))assert.equal(destination.posts[0].text,f.caption.text);
+});
+test("exact homepage caption remains valid without a canonical URL declaration",()=>{
+  const f=exactCaptionFixture();assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);
+  const unbound=exactCaptionFixture(f.release.canonicalUrl);
+  assert.throws(()=>validateManifest(unbound.release,unbound.approved,unbound.catalog,unbound.policy),/Unexpected campaign link/);
+});
+for(const [name,url] of [
+  ["unrelated same-origin URL",`${ORIGIN}/about/`],
+  ["offsite URL","https://elsewhere.example/comics/test/"],
+  ["mismatched comic slug",`${ORIGIN}/comics/another-comic/`],
+  ["homepage",ORIGIN],
+  ["tracking query",`${ORIGIN}/comics/test/?utm_source=x`],
+  ["null",null],
+  ["undefined",undefined],
+  ["empty string",""],
+])test(`exact canonical caption rejects ${name} in the URL declaration`,()=>{
+  const f=exactCaptionFixture(fixture().release.canonicalUrl,{canonicalUrl:url});
+  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),/Exact caption canonical URL differs/);
+});
+for(const [name,link] of [
+  ["unrelated same-origin URL",`${ORIGIN}/about/`],
+  ["offsite URL","https://elsewhere.example/comics/test/"],
+  ["mismatched comic slug",`${ORIGIN}/comics/another-comic/`],
+  ["additional URL",`${ORIGIN}/comics/test/\n${ORIGIN}`],
+])test(`exact canonical caption rejects ${name} even when caption hashes match`,()=>{
+  const f=exactCaptionFixture(link,{canonicalUrl:fixture().release.canonicalUrl});
+  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),/Unexpected campaign link/);
+});
+for(const url of ["https://elsewhere.example/comics/test/",`${ORIGIN}/comics/another-comic/`])test(`release canonical binding cannot be redirected to ${url}`,()=>{
+  const f=exactCaptionFixture(url,{canonicalUrl:url});f.release.canonicalUrl=url;
+  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));
+});
+for(const [field,message] of [
+  ["textSha256",/Exact caption record changed/],
+  ["sourceCaption",/Exact caption source bytes differ/],
+  ["approval3",/Exact caption Approval 3 differs/],
+  ["sourceManifest",/Exact caption source manifest differs/],
+  ["releaseAuthority",/Exact caption release authority differs/],
+])test(`exact canonical caption rejects changed ${field}`,()=>{
+  const canonicalUrl=fixture().release.canonicalUrl,f=exactCaptionFixture(canonicalUrl,{canonicalUrl});
+  if(field==="textSha256")f.caption[field]="c".repeat(64);else f.caption[field].sha256="c".repeat(64);
+  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),message);
+});
+for(const platform of ["x","instagram","facebook"])test(`exact canonical caption rejects changed ${platform} post text`,()=>{
+  const canonicalUrl=fixture().release.canonicalUrl,f=exactCaptionFixture(canonicalUrl,{canonicalUrl});
+  f.release.platforms[platform].posts[0].text+=" Changed.";
+  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),/Caption differs from exact owner approval/);
+});
+test("default captions still require the disclosure and exact per-platform campaign URL",()=>{
+  for(const platform of ["x","instagram","facebook"]){
+    const missingDisclosure=fixture();missingDisclosure.release.platforms[platform].posts[0].text=`Test\n${campaignUrl("test",11,platform)}`;
+    assert.throws(()=>validateManifest(missingDisclosure.release,missingDisclosure.approved,missingDisclosure.catalog,missingDisclosure.policy),/Missing approved title\/disclosure/);
+    const missingTracking=fixture();missingTracking.release.platforms[platform].posts[0].text=`Test\n${missingTracking.release.canonicalUrl}\n${DISCLOSURE}`;
+    assert.throws(()=>validateManifest(missingTracking.release,missingTracking.approved,missingTracking.catalog,missingTracking.policy),/Unexpected campaign link/);
+    const wrongPlatform=fixture();wrongPlatform.release.platforms[platform].posts[0].text=`Test\n${campaignUrl("test",11,platform==="x"?"facebook":"x")}\n${DISCLOSURE}`;
+    assert.throws(()=>validateManifest(wrongPlatform.release,wrongPlatform.approved,wrongPlatform.catalog,wrongPlatform.policy),/Unexpected campaign link/);
+  }
+});
 for(const [name,change]of [
   ["wrong account",r=>r.platforms.x.accountId="999"],
   ["missing panel",r=>r.platforms.facebook.posts[0].media[0].panelIds=[]],

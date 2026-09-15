@@ -1,0 +1,52 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-09-15",
+  "internalId": "ST-SIX-FIGURE-GROWTH",
+  "title": "Six-Figure Growth?",
+  "ownerInstruction": "approved, deploy n publish live",
+  "continuationInstruction": "try again",
+  "resolvedContext": "Owner final-approved the exact finish-v2 package and requests deployment/publication to the existing website, X, Instagram and Facebook. Continuation does not authorize duplicates; preflight found no earlier entry or deployment.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "c6ad080b1ad9ad0e213baed3100a544c9992cad526cb4991a1e6998447bfbcf9",
+  "sourceManifestSha256": "63a27081fd7539bd5fc76397ac604f8d822b482583ee6a7c385ab1e16d2faa18",
+  "publicIdentityPlan": {
+    "episodeNumber": 13,
+    "displayVersion": "v0.0.13",
+    "slug": "six-figure-growth",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/six-figure-growth/",
+    "plannedWebsiteReleaseMetadata": "2026-09-15T20:35:00Z",
+    "basis": "Next available number after fetched 12-episode origin/main ea355ee; catalog date is planned metadata, not observed publication."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "assetRule": "Byte-identical approved native PNG/WebP and sRGB JPEG. No regeneration, font, crop, pixel or watermark changes.",
+  "captionRule": "Preserve exact finish-v2 copy.json caption and canonical URL; add exact hash-bound canonical-link compatibility to existing validator if needed. No caption rewriting or general disclosure/URL relaxation.",
+  "budgetRule": "No new spend approval; retain existing X $5 monthly provider cap, existing per-post reservation, no recharge/limit increase, no uncertain-publication retry.",
+  "executionRule": "Existing GitHub Pages followed by trusted-main social outbox; verify ledger/current accounts and exact assets, deploy, observe post receipts, avoid duplicates.",
+  "exclusions": [
+    "LinkedIn",
+    "new accounts/destinations",
+    "paid promotions",
+    "other-comic backfill",
+    "new artwork or encoding",
+    "host/DNS/security changes"
+  ],
+  "publicationClaim": "Authority only, not an observed successful release."
+}
