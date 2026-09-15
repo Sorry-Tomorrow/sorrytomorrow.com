@@ -1199,7 +1199,12 @@
         "instagram": {
           "status": "reserved",
           "startedAt": "2026-09-15T20:53:24.880Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-09-15T20:53:25.707Z"
+            }
+          },
           "results": []
         }
       }
