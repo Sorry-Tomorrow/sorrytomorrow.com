@@ -747,6 +747,16 @@
               }
             },
             "verifiedAt": "2026-09-15T01:22:28.487Z"
+          },
+          "facebook:122109675621458114": {
+            "status": "no-delete-photo-unavailable-or-read-failed",
+            "id": "122109675621458114",
+            "error": {
+              "code": "provider_rejected_request",
+              "httpStatus": 400,
+              "providerCode": 100
+            },
+            "checkedAt": "2026-09-15T01:22:29.797Z"
           }
         }
       }
