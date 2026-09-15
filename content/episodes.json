@@ -17,6 +17,50 @@
   },
   "episodes": [
     {
+      "internalId": "ST-SIX-FIGURE-GROWTH",
+      "slug": "six-figure-growth",
+      "title": "Six-Figure Growth?",
+      "publicNumber": 13,
+      "publicVersion": "v0.0.13",
+      "label": "Comic 013 · Ahead AI",
+      "websitePublishedAt": "2026-09-15T20:35:00Z",
+      "displayDate": "v0.0.13",
+      "previewOnly": false,
+      "readerLayout": "single-panel",
+      "caption": "Six-Figure Growth?",
+      "shell": "art-first",
+      "art": [
+        {
+          "src": "comics/six-figure-growth/p1.png",
+          "webpSrc": "comics/six-figure-growth/p1.webp",
+          "width": 1193,
+          "height": 1318,
+          "alt": "The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Screen",
+              "text": "MONTHLY AI BILL"
+            },
+            {
+              "speaker": "Screen",
+              "text": "$128,640"
+            }
+          ],
+          "description": "The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue."
+        }
+      ],
+      "ogImage": {
+        "src": "comics/six-figure-growth/complete.jpg",
+        "width": 1080,
+        "height": 1350,
+        "alt": "The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue."
+      }
+    },
+    {
       "internalId": "ST-ASSISTANTS-ASSISTANT",
       "slug": "the-assistants-assistant",
       "title": "The Assistant’s Assistant",

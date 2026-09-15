@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all twelve release entries in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 12);
+test("keeps all thirteen release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 13);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 12);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 12);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 13);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 13);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -29,6 +29,7 @@ test("keeps all twelve release entries in public reading order", async () => {
     await access(new URL(`../public/${episode.ogImage.src}`, import.meta.url));
     for (const art of episode.art) {
       await access(new URL(`../public/${art.src}`, import.meta.url));
+      if (art.webpSrc) await access(new URL(`../public/${art.webpSrc}`, import.meta.url));
     }
   }
 
@@ -73,7 +74,7 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 12);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 13);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
 });
 
@@ -136,7 +137,7 @@ test("Incognito Mode retains its approved native images, exact transcript and fo
 
 test("The Assistant’s Assistant imports only the four exact corrected approved website PNGs", async () => {
   const episode = catalog.episodes.find(item => item.internalId === "ST-ASSISTANTS-ASSISTANT");
-  assert.equal(catalog.episodes[0], episode);
+  assert.equal(catalog.episodes[1], episode);
   assert.equal(episode.title, "The Assistant’s Assistant");
   assert.equal(episode.publicNumber, 12);
   assert.equal(episode.publicVersion, "v0.0.12");
@@ -214,4 +215,41 @@ test("the Assistant reader keeps its approved desktop grid and natural full-widt
     rules(".reader-layout-incognito .art-first-episode-header h2")[0].trim(),
   );
   assert.doesNotMatch(css, /\.reader-layout-assistant[^{}]*(?:nth-child|last-child|first-child)/);
+});
+
+test("Six-Figure Growth preserves its exact approved single panel, copy and reading edition", async () => {
+  const episode = catalog.episodes[0];
+  assert.equal(episode.internalId, "ST-SIX-FIGURE-GROWTH");
+  assert.equal(episode.title, "Six-Figure Growth?");
+  assert.equal(episode.publicNumber, 13);
+  assert.equal(episode.publicVersion, "v0.0.13");
+  assert.equal(episode.readerLayout, "single-panel");
+  assert.equal(episode.caption, episode.title);
+  // Planned release metadata; actual publication is recorded after live verification.
+  assert.equal(episode.websitePublishedAt, "2026-09-15T20:35:00Z");
+  assert.equal(episode.art.length, 1);
+  assert.equal(episode.panels.length, 1);
+  assert.equal(episode.art[0].src, "comics/six-figure-growth/p1.png");
+  assert.equal(episode.art[0].webpSrc, "comics/six-figure-growth/p1.webp");
+  assert.deepEqual([episode.art[0].width, episode.art[0].height], [1193, 1318]);
+  assert.equal(episode.art[0].alt, "The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue.");
+  assert.equal(episode.panels[0].description, episode.art[0].alt);
+  assert.deepEqual(episode.panels[0].lines, [
+    { speaker: "Screen", text: "MONTHLY AI BILL" },
+    { speaker: "Screen", text: "$128,640" },
+  ]);
+  assert.equal(episode.ogImage.src, "comics/six-figure-growth/complete.jpg");
+  const ledger = JSON.parse(await readFile(new URL("../content/approved-six-figure-growth-assets.json", import.meta.url), "utf8"));
+  assert.equal(ledger.attributionLayout, "ST-ATTRIBUTION-LAYOUT-2");
+  assert.match(ledger.approval3Sha256, /^[a-f0-9]{64}$/);
+  assert.equal(ledger.assets.length, 4);
+  for (const asset of ledger.assets) {
+    const bytes = await readFile(new URL(`../public/${asset.target}`, import.meta.url));
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
+    assert.equal(bytes.length, asset.bytes, asset.target);
+  }
+  assert.deepEqual((await readdir(new URL("../public/comics/six-figure-growth/", import.meta.url))).sort(), ["complete.jpg", "complete.png", "p1.png", "p1.webp"]);
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.reader-layout-single-panel \.art-first-comic-art \{ grid-template-columns: minmax\(0, 1fr\); \}/);
+  assert.match(css, /\.reader-layout-single-panel \.art-first-comic-art \.comic-panel-art \{ width: 100%; height: auto; transform: none; border: 0; box-shadow: none; \}/);
 });
