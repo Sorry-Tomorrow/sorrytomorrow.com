@@ -823,6 +823,10 @@
                 "id": "2099855873300467712"
               },
               "completedAt": "2026-09-15T13:40:30.931Z"
+            },
+            "post-0-image-1": {
+              "status": "in-flight",
+              "startedAt": "2026-09-15T13:40:31.736Z"
             }
           },
           "results": [],
