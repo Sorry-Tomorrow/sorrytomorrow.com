@@ -793,6 +793,26 @@
         "failures": [],
         "completedAt": "2026-09-15T01:22:34.084Z"
       }
+    },
+    "ST-ASSISTANTS-ASSISTANT@0514c1e89c6b1a2b05b379cc356632dfecca6b9c54eafcbfae0e1a1fe910a585": {
+      "slug": "the-assistants-assistant",
+      "title": "The Assistant’s Assistant",
+      "manifestSha256": "0514c1e89c6b1a2b05b379cc356632dfecca6b9c54eafcbfae0e1a1fe910a585",
+      "sourceCommit": "ea355eeea2c6633f5f5070bdd8731825d5fe333c",
+      "runId": "34976480927",
+      "createdAt": "2026-09-15T13:40:25.316Z",
+      "platforms": {},
+      "internalId": "ST-ASSISTANTS-ASSISTANT",
+      "correction": {
+        "schema": "sorry-tomorrow-corrected-release-v1",
+        "internalId": "ST-ASSISTANTS-ASSISTANT",
+        "slug": "the-assistants-assistant",
+        "approval3Sha256": "9563913a8bd68d0c1f717377350c0a219190efc5f2dad6d6406d8758551745cd",
+        "sourceManifestSha256": "578d0bb92b46f40985b002840f07ce2a38ad89a91cae01929523cead5f10a36e",
+        "releaseAuthoritySha256": "9c85570cbd2bd663437d0550ad611205da7a9498d419b6f6afda0e8ff379cb7c",
+        "supersedesManifestSha256": "5c541809eecdb09a2ac3c9fb2b8f489f47a6c563048c540124703343fd5ec037",
+        "withdrawalSha256": "7adc28adbfaca7dbd15238c2a87c309b50d5f272cc34f606571e7510202ba556"
+      }
     }
   }
 }
