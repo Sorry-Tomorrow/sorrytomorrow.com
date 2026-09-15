@@ -803,7 +803,7 @@
       "createdAt": "2026-09-15T13:40:25.316Z",
       "platforms": {
         "x": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-09-15T13:40:26.273Z",
           "steps": {
             "post-0-image-0": {
@@ -888,7 +888,34 @@
               "completedAt": "2026-09-15T13:40:46.583Z"
             }
           },
-          "results": [],
+          "results": [
+            {
+              "id": "2099855948558786995",
+              "url": "https://x.com/sorrytomorrowco/status/2099855948558786995",
+              "images": [
+                {
+                  "id": "2099855873300467712",
+                  "mediaKey": "3_2099855873300467712",
+                  "sha256": "a18efa212db891ad0009bb226ad8e505ff21e58a93e40fbf0abff0953ea462db"
+                },
+                {
+                  "id": "2099855892590080000",
+                  "mediaKey": "3_2099855892590080000",
+                  "sha256": "85c0c668e94aac5a2bca23e3b4054d6bbd008dec954f8f442cc42003bacc87b7"
+                },
+                {
+                  "id": "2099855911485394944",
+                  "mediaKey": "3_2099855911485394944",
+                  "sha256": "0577f1eb4f868b5bae46eac3dcf575d6bd4e7db34026e27483ca5869a3c42a1d"
+                },
+                {
+                  "id": "2099855930099683328",
+                  "mediaKey": "3_2099855930099683328",
+                  "sha256": "852c869b0d0f586bbcaa6c7f697bbfb65c9ef41be2d5c2bd61c3326d682d9c7c"
+                }
+              ]
+            }
+          ],
           "xReservedUsd": 0.5
         }
       },
