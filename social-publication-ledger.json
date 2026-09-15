@@ -973,8 +973,12 @@
               "completedAt": "2026-09-15T13:41:12.651Z"
             },
             "post-0-carousel": {
-              "status": "in-flight",
-              "startedAt": "2026-09-15T13:41:13.607Z"
+              "status": "done",
+              "startedAt": "2026-09-15T13:41:13.607Z",
+              "result": {
+                "id": "18090521516361446"
+              },
+              "completedAt": "2026-09-15T13:41:20.660Z"
             }
           },
           "results": []
