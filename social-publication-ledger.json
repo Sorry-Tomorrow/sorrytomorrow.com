@@ -706,7 +706,14 @@
           "manifestSha256": "5c541809eecdb09a2ac3c9fb2b8f489f47a6c563048c540124703343fd5ec037"
         },
         "instagram": "separate-owner-authorized-UI-withdrawal-by-root",
-        "operations": {}
+        "operations": {
+          "x:2099596479601975452": {
+            "status": "in-flight",
+            "platform": "x",
+            "id": "2099596479601975452",
+            "startedAt": "2026-09-15T01:22:17.820Z"
+          }
+        }
       }
     }
   }
