@@ -825,8 +825,14 @@
               "completedAt": "2026-09-15T13:40:30.931Z"
             },
             "post-0-image-1": {
-              "status": "in-flight",
-              "startedAt": "2026-09-15T13:40:31.736Z"
+              "status": "done",
+              "startedAt": "2026-09-15T13:40:31.736Z",
+              "result": {
+                "id": "2099855892590080000",
+                "mediaKey": "3_2099855892590080000",
+                "sha256": "85c0c668e94aac5a2bca23e3b4054d6bbd008dec954f8f442cc42003bacc87b7"
+              },
+              "completedAt": "2026-09-15T13:40:33.439Z"
             }
           },
           "results": [],
