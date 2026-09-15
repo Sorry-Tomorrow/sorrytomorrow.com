@@ -1197,7 +1197,7 @@
           "verifiedAt": "2026-09-15T20:53:23.837Z"
         },
         "instagram": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-09-15T20:53:24.880Z",
           "steps": {
             "post-0-image-0": {
@@ -1219,7 +1219,18 @@
               "completedAt": "2026-09-15T20:53:36.755Z"
             }
           },
-          "results": []
+          "results": [
+            {
+              "id": "18111782363134667",
+              "containerId": "18090607757361446",
+              "images": [
+                {
+                  "id": "18090607757361446",
+                  "sha256": "ac4b8b26b983502f8027296fbd5f36a993c528fcab7d153122ad9b8089dd077c"
+                }
+              ]
+            }
+          ]
         }
       }
     }
