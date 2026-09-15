@@ -1,10 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { mkdtemp, readFile, writeFile, mkdir, symlink } from "node:fs/promises";
+import { mkdtemp, writeFile, mkdir, symlink } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { accounts, xReadAuthorization } from "../scripts/social-connections.mjs";
-import { campaignUrl, DISCLOSURE, hash, validateManifest, imageDimensions, safeRead } from "../scripts/social/policy.mjs";
+import { campaignUrl, DISCLOSURE, validateManifest, imageDimensions, safeRead } from "../scripts/social/policy.mjs";
 import { makeApi, xAuthorization, safeError, SocialError, publishPlatform } from "../scripts/social/adapters.mjs";
 import { executeRelease, reconcileRelease, loadLedger, recoverRecordedResults } from "../scripts/social/ledger.mjs";
 import { trustedContext, verifiedDeployment, verifyLiveRelease, run } from "../scripts/social/run.mjs";
@@ -33,74 +33,6 @@ for(const [name,change]of [
 ])test(`rejects ${name}`,()=>{const f=fixture();change(f.release);assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));});
 test("baseline blocks old comics regardless of a new manifest",()=>{const f=fixture();f.policy.baselineExcludedIds.push("ST-TEST");assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));});
 test("approval mismatch is not an approved boolean",()=>{const f=fixture();f.approved.approval3Sha256="c".repeat(64);assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));});
-
-const exactCaptionPolicy=JSON.parse(await readFile(new URL("../social/policy.json",import.meta.url),"utf8")).exactApprovedCaptions;
-function exactCaptionFixture(){
-  const f=fixture(),internalId="ST-ASSISTANTS-ASSISTANT",slug="the-assistants-assistant";
-  f.policy.exactApprovedCaptions=structuredClone(exactCaptionPolicy);
-  const caption=f.policy.exactApprovedCaptions[internalId];
-  Object.assign(f.release,{internalId,slug,title:caption.title,canonicalUrl:`https://sorrytomorrow.com/comics/${slug}/`,approval3Sha256:caption.approval3.sha256,sourceManifestSha256:caption.sourceManifest.sha256});
-  Object.assign(f.approved,{internalId,approval3Sha256:caption.approval3.sha256,sourceManifestSha256:caption.sourceManifest.sha256});
-  Object.assign(f.catalog.episodes[0],{internalId,slug,title:caption.title});
-  for(const destination of Object.values(f.release.platforms)){
-    destination.posts[0].text=caption.text;
-    destination.posts[0].media[0].path=destination.posts[0].media[0].path.replace("/test/",`/${slug}/`);
-  }
-  return f;
-}
-test("the sole exact caption record binds the reviewed source and final approval",()=>{
-  assert.deepEqual(Object.keys(exactCaptionPolicy),["ST-ASSISTANTS-ASSISTANT"]);
-  const caption=exactCaptionPolicy["ST-ASSISTANTS-ASSISTANT"];
-  assert.equal(caption.approval3.sha256,"4f44f09f3d737d76ec9bc6c5fed55b3911e11a771b94e288c1105614751e012e");
-  assert.equal(caption.sourceManifest.sha256,"98d117a21785f17c25844ea4e76045691b53f6d0ffbf9bfca127953231fc6e2c");
-  assert.equal(caption.sourceCaption.sha256,"3e5f50a7e1142ce51e1d4d04a9d530aa39ec96800802eff2af8c55bfad45d6c5");
-  assert.equal(caption.textSha256,"dc1cb37b29e2365e4488514263acfe3242705fb7b9a10ae81675b16d8a748689");
-  assert.equal(hash(caption.text),caption.textSha256);
-  assert.equal(hash(`${caption.text}\n`),caption.sourceCaption.sha256);
-});
-test("exact owner-approved homepage caption passes on every established destination",()=>{
-  const f=exactCaptionFixture();
-  assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);
-});
-for(const [name,change]of [
-  ["changed caption",f=>f.release.platforms.x.posts[0].text=f.release.platforms.x.posts[0].text.replace("Finally","At last")],
-  ["added terminal LF",f=>f.release.platforms.x.posts[0].text+="\n"],
-  ["changed Approval 3 even with matching index",f=>f.release.approval3Sha256=f.approved.approval3Sha256=digest],
-  ["changed source manifest even with matching index",f=>f.release.sourceManifestSha256=f.approved.sourceManifestSha256=digest],
-  ["extra link",f=>f.release.platforms.instagram.posts[0].text+=" https://elsewhere.example/"],
-  ["extra mention",f=>f.release.platforms.facebook.posts[0].text+=" @someone"],
-  ["changed title even with matching catalog",f=>f.release.title=f.catalog.episodes[0].title="Changed title"],
-  ["changed stored caption",f=>f.policy.exactApprovedCaptions[f.release.internalId].text+=" Changed"],
-  ["changed source caption hash",f=>f.policy.exactApprovedCaptions[f.release.internalId].sourceCaption.sha256=digest],
-  ["default-template substitution",f=>f.release.platforms.x.posts[0].text=`${f.release.title}\n${campaignUrl(f.release.slug,f.release.number,"x")}\n${DISCLOSURE}`],
-])test(`exact caption rejects ${name}`,()=>{
-  const f=exactCaptionFixture();change(f);assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));
-});
-test("another episode cannot inherit the exact-caption exception",()=>{
-  const f=exactCaptionFixture();f.release.internalId=f.approved.internalId=f.catalog.episodes[0].internalId="ST-OTHER";
-  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),/Missing approved title\/disclosure/);
-});
-test("default campaign/disclosure policy is unchanged when an exact record exists",()=>{
-  const f=fixture();f.policy.exactApprovedCaptions=structuredClone(exactCaptionPolicy);
-  assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);
-  f.release.platforms.x.posts[0].text=f.release.platforms.x.posts[0].text.replace(campaignUrl("test",11,"x"),"https://sorrytomorrow.com");
-  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),/Unexpected campaign link/);
-});
-for(const platform of ["x","instagram","facebook"])test(`caption length limit remains enforced for ${platform}`,()=>{
-  const f=fixture();f.policy.exactApprovedCaptions=structuredClone(exactCaptionPolicy);
-  f.release.platforms[platform].posts[0].text+="x".repeat(platform==="x"?281:2201);
-  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),/Caption exceeds limit/);
-});
-for(const [name,suffix,error]of [
-  ["mentions"," @someone",/Unapproved mention/],
-  ["additional links"," https://elsewhere.example/",/Unexpected campaign link/],
-  ["X length","x".repeat(281),/Caption exceeds limit/],
-])test(`exact-caption records cannot exempt ${name} even if rehashed`,()=>{
-  const f=exactCaptionFixture(),caption=f.policy.exactApprovedCaptions[f.release.internalId];
-  caption.text+=suffix;caption.textSha256=hash(caption.text);caption.sourceCaption.sha256=hash(`${caption.text}\n`);
-  for(const destination of Object.values(f.release.platforms))destination.posts[0].text=caption.text;
-  assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),error);
-});
 test("OAuth JSON POST signs a method-specific base; GET matches existing independent implementation",()=>{
   const opt={nonce:"fixed",timestamp:"1"},url="https://api.x.com/2/users/me";
   assert.equal(xAuthorization("GET",url,env,opt),xReadAuthorization(url,{apiKey:env.X_API_KEY,apiSecret:env.X_API_SECRET,accessToken:env.X_ACCESS_TOKEN,accessTokenSecret:env.X_ACCESS_TOKEN_SECRET},opt));

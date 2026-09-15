@@ -49,12 +49,10 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 012 · Ahead AI/);
-  assert.match(html, /The Assistant’s Assistant/);
-  assert.match(html, /comics\/the-assistants-assistant\/p1\.png/);
+  assert.match(html, /Comic 011 · Ahead AI/);
   assert.match(html, /Incognito Mode/);
   assert.match(html, /Work Life Balance/);
-  assert.match(html, /href="\/comics\/incognito-mode\/#comic"/);
+  assert.match(html, /comics\/incognito-mode\/p1\.png/);
   assert.match(html, /So You Vibe-Coded an App…/);
   assert.match(html, /href="\/comics\/so-you-vibe-coded-an-app\/#comic"/);
   assert.match(html, /The Honest Demo/);
@@ -104,22 +102,6 @@ test("server-renders a unique canonical episode page", async () => {
   assert.doesNotMatch(html, /The Honest Demo, 4 panels/);
 });
 
-test("server-renders the Assistant release with its approved title, preview and complete story", async () => {
-  const response = await render("/comics/the-assistants-assistant");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /<title>The Assistant’s Assistant \| Sorry, Tomorrow<\/title>/);
-  assert.match(html, /<link rel="canonical" href="https:\/\/sorrytomorrow\.com\/comics\/the-assistants-assistant\/"/);
-  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/the-assistants-assistant\/p1\.png"/);
-  assert.match(html, /reader-layout-assistant/);
-  assert.match(html, /Finally\. An AI assistant to handle my calls and calendar\./);
-  assert.match(html, /Could you handle the calls\? I need somewhere quiet to work\./);
-  assert.match(html, /Of course\. I’ll work out here\./);
-  assert.match(html, /Can I talk to your AI assistant\?/);
-  assert.match(html, /Do you have an appointment\?/);
-  assert.match(html, /Visible labels: AI; BOOMER SLATE/);
-});
-
 test("keeps the finished surface free of starter residue", async () => {
   const [page, reader, castDeck, layout, packageJson, css, catalog, route] =
     await Promise.all([
@@ -143,7 +125,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 12);
+  assert.equal(JSON.parse(catalog).episodes.length, 11);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -216,8 +198,7 @@ test("published navigation connects Founder through the three new releases", asy
     ["magnification-spiral", "oops-i-drifted-again", "so-you-vibe-coded-an-app"],
     ["so-you-vibe-coded-an-app", "magnification-spiral", "work-life-balance"],
     ["work-life-balance", "so-you-vibe-coded-an-app", "incognito-mode"],
-    ["incognito-mode", "work-life-balance", "the-assistants-assistant"],
-    ["the-assistants-assistant", "incognito-mode", null],
+    ["incognito-mode", "work-life-balance", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);

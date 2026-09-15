@@ -18,25 +18,6 @@
     "ST-SCRATCH-029",
     "ST-REF-000"
   ],
-  "exactApprovedCaptions": {
-    "ST-ASSISTANTS-ASSISTANT": {
-      "title": "The Assistant’s Assistant",
-      "approval3": {
-        "path": "visual-development/private-pilots/assistants-assistant-v1/OWNER-FINAL-APPROVAL.md",
-        "sha256": "4f44f09f3d737d76ec9bc6c5fed55b3911e11a771b94e288c1105614751e012e"
-      },
-      "sourceManifest": {
-        "path": "visual-development/private-pilots/assistants-assistant-v1/finishing/candidate-v2/ASSET-MANIFEST.json",
-        "sha256": "98d117a21785f17c25844ea4e76045691b53f6d0ffbf9bfca127953231fc6e2c"
-      },
-      "sourceCaption": {
-        "path": "visual-development/private-pilots/assistants-assistant-v1/finishing/candidate-v2/copy/caption-draft.txt",
-        "sha256": "3e5f50a7e1142ce51e1d4d04a9d530aa39ec96800802eff2af8c55bfad45d6c5"
-      },
-      "textSha256": "dc1cb37b29e2365e4488514263acfe3242705fb7b9a10ae81675b16d8a748689",
-      "text": "The Assistant’s Assistant\n\nFinally, someone to take work off your plate.\n\nMore comics: https://sorrytomorrow.com\n\nAI-assisted comic by Sorry, Tomorrow."
-    }
-  },
   "ledgerBranch": "social-publication-state",
   "ledgerPath": "social-publication-ledger.json"
 }
