@@ -1,0 +1,42 @@
+{
+  "episode": "Working from Home, or Laundry from Work?",
+  "internalId": "ST-LAUNDRY-FROM-WORK",
+  "attributionStandard": "ST-ATTRIBUTION-1",
+  "attributionLayout": "ST-ATTRIBUTION-LAYOUT-2",
+  "sourcePackageSha256": "85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24",
+  "approval3Sha256": "9e763f9c57ae7929915e45cfad85d9987283c8a24224ba760f681f6742319a58",
+  "releaseAuthoritySha256": "bfd09888b5389e2731d8364565467f253c521fed5ccc4b27d474ad84247c094c",
+  "approvedCopySha256": "7ebd002c43dce3a16f6c6485d00b328ad518e30d15c6375c2db5ed7f0b3396fd",
+  "sourcePackage": "studio/editorial/laundry-from-work-board-v1/finish-v2",
+  "releaseMetadataNote": "The catalog date is planned release metadata, not a claim of observed publication. The release executor records the actual deployment separately.",
+  "assets": [
+    {
+      "source": "website/p1.webp",
+      "target": "comics/working-from-home-or-laundry-from-work/p1.webp",
+      "role": "approved lossless native reader source",
+      "bytes": 1947076,
+      "sha256": "46ea58e258afbcd8fff0c1e61cf572c651b1a97877ef7576eb49d44bff27f1c7"
+    },
+    {
+      "source": "website/p1.png",
+      "target": "comics/working-from-home-or-laundry-from-work/p1.png",
+      "role": "approved native PNG fallback",
+      "bytes": 3824696,
+      "sha256": "17578efefa4afb0b8a172a35c55b5eb9edbecad74881774a3fc75f53288331d3"
+    },
+    {
+      "source": "reading-edition/comic.png",
+      "target": "comics/working-from-home-or-laundry-from-work/complete.png",
+      "role": "approved titled complete-comic download",
+      "bytes": 3877217,
+      "sha256": "00c2a8e75c606ce74da6050e1421aaeab004ce2c79310985bba1789923377029"
+    },
+    {
+      "source": "reading-edition/comic.jpg",
+      "target": "comics/working-from-home-or-laundry-from-work/complete.jpg",
+      "role": "approved titled complete-comic download and link preview",
+      "bytes": 950320,
+      "sha256": "c763b2daa231667ba930ed12cbf816ff2bb32fa6dbaff78bcfec51248108a27e"
+    }
+  ]
+}

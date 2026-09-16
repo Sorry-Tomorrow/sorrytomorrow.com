@@ -17,6 +17,41 @@
   },
   "episodes": [
     {
+      "internalId": "ST-LAUNDRY-FROM-WORK",
+      "slug": "working-from-home-or-laundry-from-work",
+      "title": "Working from Home, or Laundry from Work?",
+      "publicNumber": 14,
+      "publicVersion": "v0.0.14",
+      "label": "Comic 014 · Ahead AI",
+      "websitePublishedAt": "2026-09-16T00:25:00Z",
+      "displayDate": "v0.0.14",
+      "previewOnly": false,
+      "readerLayout": "single-panel",
+      "caption": "Working from Home, or Laundry from Work?",
+      "shell": "art-first",
+      "art": [
+        {
+          "src": "comics/working-from-home-or-laundry-from-work/p1.png",
+          "webpSrc": "comics/working-from-home-or-laundry-from-work/p1.webp",
+          "width": 1351,
+          "height": 1244,
+          "alt": "Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [],
+          "description": "Single panel: Miles wears a green hoodie, cream shirt, dark trousers and a headset. Seated in an office chair, he holds a blue T-shirt across his lap to fold it. Clothes fill baskets, spill across the floor, rise behind him and crowd the laptop table and shelf. A washer and dryer are stacked at the left. The laptop shows his own matching face, hoodie and headset in a spacious, tidy office with city-view windows and bookshelves. Small call and enhancement icons appear, without words. No dialogue. Attribution: © SORRY, TOMORROW."
+        }
+      ],
+      "ogImage": {
+        "src": "comics/working-from-home-or-laundry-from-work/complete.jpg",
+        "width": 1440,
+        "height": 1560,
+        "alt": "Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office."
+      }
+    },
+    {
       "internalId": "ST-SIX-FIGURE-GROWTH",
       "slug": "six-figure-growth",
       "title": "Six-Figure Growth?",

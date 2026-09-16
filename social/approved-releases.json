@@ -19,5 +19,12 @@
     "approval3Sha256": "c6ad080b1ad9ad0e213baed3100a544c9992cad526cb4991a1e6998447bfbcf9",
     "sourceManifestSha256": "63a27081fd7539bd5fc76397ac604f8d822b482583ee6a7c385ab1e16d2faa18",
     "releaseAuthoritySha256": "ad04fe460f821ab2674c007c595cfbfbad75412596cbb689ccb2ec283b9088dd"
+  },
+  "working-from-home-or-laundry-from-work": {
+    "internalId": "ST-LAUNDRY-FROM-WORK",
+    "manifestSha256": "cb8f25d34cabbef2526d5b2c6d85355234205304f799677a9b7b169b1e76589d",
+    "approval3Sha256": "9e763f9c57ae7929915e45cfad85d9987283c8a24224ba760f681f6742319a58",
+    "sourceManifestSha256": "85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24",
+    "releaseAuthoritySha256": "bfd09888b5389e2731d8364565467f253c521fed5ccc4b27d474ad84247c094c"
   }
 }

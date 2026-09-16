@@ -49,9 +49,12 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 013 · Ahead AI/);
+  assert.match(html, /Comic 014 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="working-from-home-or-laundry-from-work"/);
+  assert.match(html, /Working from Home, or Laundry from Work\?/);
+  assert.match(html, /comics\/working-from-home-or-laundry-from-work\/p1\.webp/);
   assert.match(html, /Six-Figure Growth\?/);
-  assert.match(html, /comics\/six-figure-growth\/p1\.webp/);
+  assert.match(html, /href="\/comics\/six-figure-growth\/#comic"/);
   assert.match(html, /The Assistant’s Assistant/);
   assert.match(html, /Incognito Mode/);
   assert.match(html, /Work Life Balance/);
@@ -144,7 +147,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 13);
+  assert.equal(JSON.parse(catalog).episodes.length, 14);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -209,7 +212,7 @@ test("private review collection is not exposed by the released site", async () =
   assert.equal(response.status, 404);
 });
 
-test("published navigation connects Founder through the three new releases", async () => {
+test("published navigation connects Founder through the latest release", async () => {
   for (const [slug, older, newer] of [
     ["founder-inc-llc", "the-honest-demo", "not-so-smart-thermostat"],
     ["not-so-smart-thermostat", "founder-inc-llc", "oops-i-drifted-again"],
@@ -219,7 +222,8 @@ test("published navigation connects Founder through the three new releases", asy
     ["work-life-balance", "so-you-vibe-coded-an-app", "incognito-mode"],
     ["incognito-mode", "work-life-balance", "the-assistants-assistant"],
     ["the-assistants-assistant", "incognito-mode", "six-figure-growth"],
-    ["six-figure-growth", "the-assistants-assistant", null],
+    ["six-figure-growth", "the-assistants-assistant", "working-from-home-or-laundry-from-work"],
+    ["working-from-home-or-laundry-from-work", "six-figure-growth", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);
@@ -244,4 +248,24 @@ test("single-panel release renders approved WebP with PNG fallback, exact transc
   assert.match(html, /Screen: MONTHLY AI BILL Screen: \$128,640/);
   assert.match(html, /No dialogue\./);
   assert.doesNotMatch(html, /<p>Six-Figure Growth\?<\/p>/);
+});
+
+test("Laundry from Work renders one complete silent panel, exact transcript and titled link preview", async () => {
+  const response = await render("/comics/working-from-home-or-laundry-from-work");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<title>Working from Home, or Laundry from Work\? \| Sorry, Tomorrow<\/title>/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/sorrytomorrow\.com\/comics\/working-from-home-or-laundry-from-work\/"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/working-from-home-or-laundry-from-work\/complete\.jpg"/);
+  assert.match(html, /reader-layout-single-panel/);
+  assert.match(html, /Comic 014 · Ahead AI · v0\.0\.14/);
+  assert.match(html, /<source type="image\/webp" srcSet="\/comics\/working-from-home-or-laundry-from-work\/p1\.webp"/);
+  assert.match(html, /<img class="comic-panel-art" src="\/comics\/working-from-home-or-laundry-from-work\/p1\.png" width="1351" height="1244"/);
+  assert.equal([...html.matchAll(/<img\b[^>]*class="comic-panel-art"/g)].length, 1);
+  assert.match(html, /aria-label="Working from Home, or Laundry from Work\?, 1 panel"/);
+  assert.match(html, /Single panel: Miles wears a green hoodie, cream shirt, dark trousers and a headset\./);
+  assert.match(html, /The laptop shows his own matching face, hoodie and headset in a spacious, tidy office with city-view windows and bookshelves\./);
+  assert.match(html, /Small call and enhancement icons appear, without words\. No dialogue\. Attribution: © SORRY, TOMORROW\./);
+  assert.doesNotMatch(html, /<p>Working from Home, or Laundry from Work\?<\/p>/);
+  assert.doesNotMatch(html, /Screen:|Visible labels:/);
 });

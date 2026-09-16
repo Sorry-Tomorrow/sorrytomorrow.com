@@ -33,6 +33,28 @@
     }
   },
   "exactApprovedCaptions": {
+    "ST-LAUNDRY-FROM-WORK": {
+      "title": "Working from Home, or Laundry from Work?",
+      "text": "Working from Home, or Laundry from Work?\n\nhttps://sorrytomorrow.com/comics/working-from-home-or-laundry-from-work/\n\nAI-assisted comic by Sorry, Tomorrow.",
+      "textSha256": "ea9f06f6e8380488775427e0de27eb19f53ef22125e579e29e6f812aae6cb8a7",
+      "canonicalUrl": "https://sorrytomorrow.com/comics/working-from-home-or-laundry-from-work/",
+      "sourceCaption": {
+        "path": "deliverables/laundry-from-work-v0.0.14-release-v1/caption.txt",
+        "sha256": "c04079c63c83afa386a036cabe50b013bc61fb674185f270a9b8e294ba364866"
+      },
+      "approval3": {
+        "path": "studio/operations/laundry-from-work-release-20260916/OWNER-FINAL-APPROVAL.md",
+        "sha256": "9e763f9c57ae7929915e45cfad85d9987283c8a24224ba760f681f6742319a58"
+      },
+      "sourceManifest": {
+        "path": "studio/editorial/laundry-from-work-board-v1/finish-v2/ASSET-MANIFEST.json",
+        "sha256": "85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24"
+      },
+      "releaseAuthority": {
+        "path": "studio/operations/laundry-from-work-release-20260916/OWNER-RELEASE-AUTHORITY.json",
+        "sha256": "bfd09888b5389e2731d8364565467f253c521fed5ccc4b27d474ad84247c094c"
+      }
+    },
     "ST-SIX-FIGURE-GROWTH": {
       "title": "Six-Figure Growth?",
       "text": "Six-Figure Growth?\n\nhttps://sorrytomorrow.com/comics/six-figure-growth/\n\nAI-assisted comic by Sorry, Tomorrow.",

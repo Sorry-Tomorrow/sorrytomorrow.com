@@ -1,0 +1,35 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-09-15",
+  "recordedAt": "2026-09-16T00:24:30Z",
+  "internalId": "ST-LAUNDRY-FROM-WORK",
+  "title": "Working from Home, or Laundry from Work?",
+  "ownerInstruction": "approved. publish it live",
+  "resolvedContext": "Owner approved the exact displayed finish-v2 publication candidate and requested live publication. Existing website release plus standing automation applies to this destination-approved X, Instagram and Facebook package; no later destination hold applies.",
+  "destinations": ["website", "x", "instagram", "facebook"],
+  "approval3ReceiptSha256": "9e763f9c57ae7929915e45cfad85d9987283c8a24224ba760f681f6742319a58",
+  "sourceManifestSha256": "85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentityPlan": {
+    "episodeNumber": 14,
+    "displayVersion": "v0.0.14",
+    "slug": "working-from-home-or-laundry-from-work",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/working-from-home-or-laundry-from-work/",
+    "plannedWebsiteReleaseMetadata": "2026-09-16T00:25:00Z",
+    "basis": "Next available number after freshly fetched origin/main 7386d8e6dbf56048b7ebb33c4d09d7b417434eae with 13 catalog entries and maximum public number 13. Planned catalog date is not observed publication."
+  },
+  "accounts": {
+    "x": {"id": "2090544245585125376", "handle": "sorrytomorrowco"},
+    "instagram": {"id": "17841440843377082", "handle": "sorrytomorrowcomic"},
+    "facebook": {"id": "1380120908509290", "name": "Sorry, Tomorrow"}
+  },
+  "assetRule": "Byte-identical approved native PNG/lossless WebP and exact Instagram/Facebook sRGB JPEG. Additional titled reading edition is not substituted for social art. No regeneration, crop, pixel, font, watermark or encoding change.",
+  "captionRule": "Preserve exact finish-v2 copy.json caption, canonical URL, alt text and transcript. Add only the scoped hash-bound caption policy entry under existing canonical-link validation; no copy rewriting or general policy relaxation.",
+  "budgetRule": "No new spend approval. Preserve existing X $5 provider cap, existing per-post reservation and no-auto-recharge setting; no budget increase or uncertain-publication retry.",
+  "executionRule": "Existing GitHub Pages followed by trusted-main social outbox. Check ledger/accounts and exact assets, deploy, observe durable post receipts, verify live outputs and avoid duplicates.",
+  "exclusions": ["LinkedIn", "new accounts/destinations", "paid promotions", "other-comic backfill", "new artwork or encoding", "host/DNS/security changes"],
+  "publicationClaim": "Authority only, not an observed successful release."
+}

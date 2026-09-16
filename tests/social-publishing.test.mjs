@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { mkdtemp, writeFile, mkdir, symlink } from "node:fs/promises";
+import { mkdtemp, readFile, writeFile, mkdir, symlink } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { accounts, xReadAuthorization } from "../scripts/social-connections.mjs";
@@ -88,6 +88,51 @@ test("default captions still require the disclosure and exact per-platform campa
     const wrongPlatform=fixture();wrongPlatform.release.platforms[platform].posts[0].text=`Test\n${campaignUrl("test",11,platform==="x"?"facebook":"x")}\n${DISCLOSURE}`;
     assert.throws(()=>validateManifest(wrongPlatform.release,wrongPlatform.approved,wrongPlatform.catalog,wrongPlatform.policy),/Unexpected campaign link/);
   }
+});
+test("Laundry from Work pins its exact approved caption and native destination media without a titled-edition substitution",async()=>{
+  const slug="working-from-home-or-laundry-from-work",internalId="ST-LAUNDRY-FROM-WORK";
+  const title="Working from Home, or Laundry from Work?",canonicalUrl=`${ORIGIN}/comics/${slug}/`;
+  const expectedCaption=`${title}\n\n${canonicalUrl}\n\nAI-assisted comic by Sorry, Tomorrow.`;
+  const expectedAlt="Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office.";
+  const manifestBytes=await readFile(new URL(`../social/releases/${slug}.json`,import.meta.url));
+  const release=JSON.parse(manifestBytes);
+  const [policy,catalog,approvedIndex]=await Promise.all(["social/policy.json","content/episodes.json","social/approved-releases.json"].map(async file=>JSON.parse(await readFile(new URL(`../${file}`,import.meta.url),"utf8"))));
+  const approved=approvedIndex[slug],caption=policy.exactApprovedCaptions[internalId];
+  assert.equal(hash(manifestBytes),approved.manifestSha256);
+  assert.equal(validateManifest(release,approved,catalog,policy),release);
+  assert.equal(release.internalId,internalId);
+  assert.equal(release.title,title);
+  assert.equal(release.number,14);
+  assert.equal(release.canonicalUrl,canonicalUrl);
+  assert.equal(release.sourceManifestSha256,"85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24");
+  assert.deepEqual(release.panelOrder,["p1"]);
+  assert.equal(caption.text,expectedCaption);
+  assert.equal(caption.textSha256,hash(expectedCaption));
+  assert.equal(caption.sourceCaption.sha256,hash(`${expectedCaption}\n`));
+  assert.equal(caption.canonicalUrl,canonicalUrl);
+  for(const platform of ["x","instagram","facebook"]){
+    const destination=release.platforms[platform],isX=platform==="x";
+    assert.equal(destination.posts.length,1,platform);
+    const post=destination.posts[0];
+    assert.equal(post.text,expectedCaption,platform);
+    assert.equal(post.media.length,1,platform);
+    const media=post.media[0],bytes=await readFile(new URL(`../${media.path}`,import.meta.url));
+    assert.equal(media.path,`public/social/${slug}/${platform}/p1.${isX?"png":"jpg"}`);
+    assert.equal(media.sha256,isX?"17578efefa4afb0b8a172a35c55b5eb9edbecad74881774a3fc75f53288331d3":"8ae37da5f888979b260b74845141c5bd93228dc5458dc98fb94c95684baa700a");
+    assert.equal(hash(bytes),media.sha256,platform);
+    assert.equal(bytes.length,isX?3824696:864970,platform);
+    assert.equal(media.bytes,bytes.length,platform);
+    assert.deepEqual(imageDimensions(bytes),{type:isX?"image/png":"image/jpeg",width:1351,height:1244});
+    assert.deepEqual([media.width,media.height],[1351,1244]);
+    assert.equal(media.alt,expectedAlt);
+    assert.deepEqual(media.panelIds,["p1"]);
+    const changed=structuredClone(release);
+    changed.platforms[platform].posts[0].text+= " Changed.";
+    assert.throws(()=>validateManifest(changed,approved,catalog,policy),/Caption differs from exact owner approval/);
+  }
+  const withoutExactApproval=structuredClone(policy);
+  delete withoutExactApproval.exactApprovedCaptions[internalId];
+  assert.throws(()=>validateManifest(release,approved,catalog,withoutExactApproval),/Missing approved title\/disclosure/);
 });
 for(const [name,change]of [
   ["wrong account",r=>r.platforms.x.accountId="999"],

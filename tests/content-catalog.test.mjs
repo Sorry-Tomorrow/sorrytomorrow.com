@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all thirteen release entries in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 13);
+test("keeps all fourteen release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 14);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 13);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 13);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 14);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 14);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -74,7 +74,7 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 13);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 14);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
 });
 
@@ -137,7 +137,7 @@ test("Incognito Mode retains its approved native images, exact transcript and fo
 
 test("The Assistant’s Assistant imports only the four exact corrected approved website PNGs", async () => {
   const episode = catalog.episodes.find(item => item.internalId === "ST-ASSISTANTS-ASSISTANT");
-  assert.equal(catalog.episodes[1], episode);
+  assert.equal(catalog.episodes[2], episode);
   assert.equal(episode.title, "The Assistant’s Assistant");
   assert.equal(episode.publicNumber, 12);
   assert.equal(episode.publicVersion, "v0.0.12");
@@ -218,7 +218,8 @@ test("the Assistant reader keeps its approved desktop grid and natural full-widt
 });
 
 test("Six-Figure Growth preserves its exact approved single panel, copy and reading edition", async () => {
-  const episode = catalog.episodes[0];
+  const episode = catalog.episodes.find(item => item.internalId === "ST-SIX-FIGURE-GROWTH");
+  assert.equal(catalog.episodes[1], episode);
   assert.equal(episode.internalId, "ST-SIX-FIGURE-GROWTH");
   assert.equal(episode.title, "Six-Figure Growth?");
   assert.equal(episode.publicNumber, 13);
@@ -252,4 +253,54 @@ test("Six-Figure Growth preserves its exact approved single panel, copy and read
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /\.reader-layout-single-panel \.art-first-comic-art \{ grid-template-columns: minmax\(0, 1fr\); \}/);
   assert.match(css, /\.reader-layout-single-panel \.art-first-comic-art \.comic-panel-art \{ width: 100%; height: auto; transform: none; border: 0; box-shadow: none; \}/);
+});
+
+test("Laundry from Work releases the exact approved silent panel, accessibility copy and reading edition", async () => {
+  const episode = catalog.episodes[0];
+  const prefix = "comics/working-from-home-or-laundry-from-work/";
+  assert.equal(episode.internalId, "ST-LAUNDRY-FROM-WORK");
+  assert.equal(episode.slug, "working-from-home-or-laundry-from-work");
+  assert.equal(episode.title, "Working from Home, or Laundry from Work?");
+  assert.equal(episode.caption, episode.title);
+  assert.equal(episode.publicNumber, 14);
+  assert.equal(episode.publicVersion, "v0.0.14");
+  assert.equal(episode.readerLayout, "single-panel");
+  assert.equal(episode.shell, "art-first");
+  assert.equal(episode.art.length, 1);
+  assert.equal(episode.panels.length, 1);
+  assert.equal(episode.art[0].src, `${prefix}p1.png`);
+  assert.equal(episode.art[0].webpSrc, `${prefix}p1.webp`);
+  assert.deepEqual([episode.art[0].width, episode.art[0].height], [1351, 1244]);
+  assert.equal(episode.art[0].alt, "Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office.");
+  assert.equal(episode.panels[0].description, "Single panel: Miles wears a green hoodie, cream shirt, dark trousers and a headset. Seated in an office chair, he holds a blue T-shirt across his lap to fold it. Clothes fill baskets, spill across the floor, rise behind him and crowd the laptop table and shelf. A washer and dryer are stacked at the left. The laptop shows his own matching face, hoodie and headset in a spacious, tidy office with city-view windows and bookshelves. Small call and enhancement icons appear, without words. No dialogue. Attribution: © SORRY, TOMORROW.");
+  assert.deepEqual(episode.panels[0].lines, []);
+  assert.equal(episode.ogImage.src, `${prefix}complete.jpg`);
+  assert.deepEqual([episode.ogImage.width, episode.ogImage.height], [1440, 1560]);
+
+  const ledger = JSON.parse(await readFile(new URL("../content/approved-laundry-from-work-assets.json", import.meta.url), "utf8"));
+  assert.equal(ledger.internalId, episode.internalId);
+  assert.equal(ledger.attributionStandard, "ST-ATTRIBUTION-1");
+  assert.equal(ledger.attributionLayout, "ST-ATTRIBUTION-LAYOUT-2");
+  assert.equal(ledger.sourcePackageSha256, "85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24");
+  assert.equal(ledger.approvedCopySha256, "7ebd002c43dce3a16f6c6485d00b328ad518e30d15c6375c2db5ed7f0b3396fd");
+  assert.match(ledger.approval3Sha256, /^[a-f0-9]{64}$/);
+  assert.match(ledger.releaseAuthoritySha256, /^[a-f0-9]{64}$/);
+  const approvedHashes = {
+    "p1.png": "17578efefa4afb0b8a172a35c55b5eb9edbecad74881774a3fc75f53288331d3",
+    "p1.webp": "46ea58e258afbcd8fff0c1e61cf572c651b1a97877ef7576eb49d44bff27f1c7",
+    "complete.png": "00c2a8e75c606ce74da6050e1421aaeab004ce2c79310985bba1789923377029",
+    "complete.jpg": "c763b2daa231667ba930ed12cbf816ff2bb32fa6dbaff78bcfec51248108a27e",
+  };
+  assert.deepEqual(ledger.assets.map(asset => asset.target).sort(), Object.keys(approvedHashes).map(file => prefix + file).sort());
+  for (const asset of ledger.assets) {
+    const bytes = await readFile(new URL(`../public/${asset.target}`, import.meta.url));
+    assert.equal(asset.sha256, approvedHashes[asset.target.slice(prefix.length)], asset.target);
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
+    assert.equal(bytes.length, asset.bytes, asset.target);
+    if (asset.target.endsWith(".png")) {
+      assert.equal(bytes.subarray(1, 4).toString("ascii"), "PNG");
+      assert.deepEqual([bytes.readUInt32BE(16), bytes.readUInt32BE(20)], asset.target.endsWith("/p1.png") ? [1351, 1244] : [1440, 1560]);
+    }
+  }
+  assert.deepEqual((await readdir(new URL(`../public/${prefix}`, import.meta.url))).sort(), Object.keys(approvedHashes).sort());
 });
