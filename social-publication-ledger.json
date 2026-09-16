@@ -1356,6 +1356,12 @@
             }
           ],
           "verifiedAt": "2026-09-16T00:35:46.055Z"
+        },
+        "instagram": {
+          "status": "reserved",
+          "startedAt": "2026-09-16T00:35:47.103Z",
+          "steps": {},
+          "results": []
         }
       }
     }
