@@ -1,0 +1,82 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-LAUNDRY-FROM-WORK",
+  "slug": "working-from-home-or-laundry-from-work",
+  "title": "Working from Home, or Laundry from Work?",
+  "number": 14,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/working-from-home-or-laundry-from-work/",
+  "approval3Sha256": "9e763f9c57ae7929915e45cfad85d9987283c8a24224ba760f681f6742319a58",
+  "sourceManifestSha256": "85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24",
+  "releaseAuthoritySha256": "bfd09888b5389e2731d8364565467f253c521fed5ccc4b27d474ad84247c094c",
+  "panelOrder": [
+    "p1"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Working from Home, or Laundry from Work?\n\nhttps://sorrytomorrow.com/comics/working-from-home-or-laundry-from-work/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/working-from-home-or-laundry-from-work/x/p1.png",
+              "bytes": 3824696,
+              "sha256": "17578efefa4afb0b8a172a35c55b5eb9edbecad74881774a3fc75f53288331d3",
+              "type": "image/png",
+              "width": 1351,
+              "height": 1244,
+              "alt": "Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Working from Home, or Laundry from Work?\n\nhttps://sorrytomorrow.com/comics/working-from-home-or-laundry-from-work/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/working-from-home-or-laundry-from-work/instagram/p1.jpg",
+              "bytes": 864970,
+              "sha256": "8ae37da5f888979b260b74845141c5bd93228dc5458dc98fb94c95684baa700a",
+              "type": "image/jpeg",
+              "width": 1351,
+              "height": 1244,
+              "alt": "Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Working from Home, or Laundry from Work?\n\nhttps://sorrytomorrow.com/comics/working-from-home-or-laundry-from-work/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/working-from-home-or-laundry-from-work/facebook/p1.jpg",
+              "bytes": 864970,
+              "sha256": "8ae37da5f888979b260b74845141c5bd93228dc5458dc98fb94c95684baa700a",
+              "type": "image/jpeg",
+              "width": 1351,
+              "height": 1244,
+              "alt": "Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

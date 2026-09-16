@@ -96,7 +96,7 @@ test("new corrected withdrawal remains a stop",async()=>{
 });
 test("only exact new approval, source and renewed authority accept the approved caption",()=>{
   const f=fixture();assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);
-  assert.deepEqual(Object.keys(selectedPolicy.exactApprovedCaptions).sort(),[internalId,"ST-SIX-FIGURE-GROWTH"]);
+  assert.deepEqual(Object.keys(selectedPolicy.exactApprovedCaptions).sort(),[internalId,"ST-LAUNDRY-FROM-WORK","ST-SIX-FIGURE-GROWTH"]);
   const c=selectedPolicy.exactApprovedCaptions[internalId];assert.equal(hash(c.text),c.textSha256);assert.equal(hash(c.text+"\n"),c.sourceCaption.sha256);
 });
 for(const field of ["approval3Sha256","sourceManifestSha256","releaseAuthoritySha256"])test(`caption rejects changed ${field} even with matching release index`,()=>{

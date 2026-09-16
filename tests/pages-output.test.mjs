@@ -20,6 +20,10 @@ const expectedSiteUrl = new URL(
 );
 const escapePattern = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const approvedComicAssets = {
+  "comics/working-from-home-or-laundry-from-work/p1.png": "17578efefa4afb0b8a172a35c55b5eb9edbecad74881774a3fc75f53288331d3",
+  "comics/working-from-home-or-laundry-from-work/p1.webp": "46ea58e258afbcd8fff0c1e61cf572c651b1a97877ef7576eb49d44bff27f1c7",
+  "comics/working-from-home-or-laundry-from-work/complete.png": "00c2a8e75c606ce74da6050e1421aaeab004ce2c79310985bba1789923377029",
+  "comics/working-from-home-or-laundry-from-work/complete.jpg": "c763b2daa231667ba930ed12cbf816ff2bb32fa6dbaff78bcfec51248108a27e",
   "comics/six-figure-growth/p1.png": "fc1417ff6de2d238544761d0a93c40a51eb5ce10bf27ed5dfb22047277f5259d",
   "comics/six-figure-growth/p1.webp": "d0c19cf0136bba011606f08ea1b543d13de0a191565735069dc328c1eef4fc6f",
   "comics/six-figure-growth/complete.png": "c8aedfcd3d49107282df2e0c182920eb18f6c378fe34996d09a6e852a86240b8",
@@ -91,9 +95,12 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 013 · Ahead AI/);
+  assert.match(html, /Comic 014 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="working-from-home-or-laundry-from-work"/);
+  assert.match(html, /Working from Home, or Laundry from Work\?/);
+  assert.match(html, /comics\/working-from-home-or-laundry-from-work\/p1\.webp/);
   assert.match(html, /Six-Figure Growth\?/);
-  assert.match(html, /comics\/six-figure-growth\/p1\.webp/);
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/six-figure-growth/#comic"`));
   assert.match(html, /The Assistant’s Assistant/);
   assert.match(html, /Incognito Mode/);
   assert.match(html, /Work Life Balance/);
@@ -172,6 +179,8 @@ test("produces a complete GitHub Pages artifact", async () => {
     access(new URL("comics/executive-twin/index.html", outputRoot)),
     access(new URL("comics/the-assistants-assistant.html", outputRoot)),
     access(new URL("comics/the-assistants-assistant/index.html", outputRoot)),
+    access(new URL("comics/working-from-home-or-laundry-from-work.html", outputRoot)),
+    access(new URL("comics/working-from-home-or-laundry-from-work/index.html", outputRoot)),
     access(new URL("characters/dex-vane.png", outputRoot)),
     access(new URL("characters/clara-fye.png", outputRoot)),
     access(new URL("characters/mina-sparks.png", outputRoot)),
@@ -234,6 +243,8 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(rss, /<title>The Honest Demo<\/title>/);
   assert.match(rss, /<title>Executive Twin<\/title>/);
   assert.match(rss, /<title>The Assistant’s Assistant<\/title>/);
+  assert.match(rss, /<title>Working from Home, or Laundry from Work\?<\/title>/);
+  assert.match(sitemap, new RegExp(escapePattern(new URL("comics/working-from-home-or-laundry-from-work/", expectedSiteUrl).toString())));
 });
 
 test("release export has complete episode pages and exact approved assets", async () => {
@@ -241,6 +252,7 @@ test("release export has complete episode pages and exact approved assets", asyn
   const ledger = JSON.parse(await readFile(new URL("../content/approved-slate-assets.json", import.meta.url), "utf8"));
   const vibeLedger = JSON.parse(await readFile(new URL("../content/approved-vibecoded-assets.json", import.meta.url), "utf8"));
   const workLifeLedger = JSON.parse(await readFile(new URL("../content/approved-work-life-balance-assets.json", import.meta.url), "utf8"));
+  const laundryLedger = JSON.parse(await readFile(new URL("../content/approved-laundry-from-work-assets.json", import.meta.url), "utf8"));
   await assert.rejects(access(new URL("review/index.html", outputRoot)));
   await assert.rejects(access(new URL("review.html", outputRoot)));
   for (const episode of catalog.episodes.filter(item => item.publicNumber >= 6)) {
@@ -250,13 +262,28 @@ test("release export has complete episode pages and exact approved assets", asyn
     for (const art of episode.art) assert.ok(html.includes(`${basePath}/${art.src}`), art.src);
     assert.ok(!html.includes('href="/review/"'), episode.slug);
   }
-  for (const asset of [...ledger.assets, ...vibeLedger.assets, ...workLifeLedger.assets]) {
+  for (const asset of [...ledger.assets, ...vibeLedger.assets, ...workLifeLedger.assets, ...laundryLedger.assets]) {
     const bytes = await readFile(new URL(asset.target, outputRoot));
     assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
   }
   const robots = await readFile(new URL("robots.txt", outputRoot), "utf8");
   assert.match(robots, /Allow: \//);
   assert.doesNotMatch(robots, /Disallow: \//);
+});
+
+test("Laundry from Work Pages export preserves the silent comic and native reader dimensions", async () => {
+  const html = await readFile(new URL("comics/working-from-home-or-laundry-from-work/index.html", outputRoot), "utf8");
+  const comicPath = `${escapedBasePath}/comics/working-from-home-or-laundry-from-work`;
+  assert.match(html, /<title>Working from Home, or Laundry from Work\? \| Sorry, Tomorrow<\/title>/);
+  assert.match(html, new RegExp(`<source type="image/webp" srcSet="${comicPath}/p1\\.webp"`));
+  assert.match(html, new RegExp(`<img class="comic-panel-art" src="${comicPath}/p1\\.png" width="1351" height="1244"`));
+  assert.equal([...html.matchAll(/<img\b[^>]*class="comic-panel-art"/g)].length, 1);
+  assert.match(html, /Single panel: Miles wears a green hoodie, cream shirt, dark trousers and a headset\./);
+  assert.match(html, /No dialogue\. Attribution: © SORRY, TOMORROW\./);
+  assert.match(html, new RegExp(escapePattern(new URL("comics/working-from-home-or-laundry-from-work/complete.jpg", expectedSiteUrl).toString())));
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/six-figure-growth/#comic"`));
+  assert.match(html, /You’re at the latest comic/);
+  assert.doesNotMatch(html, /<p>Working from Home, or Laundry from Work\?<\/p>|Screen:|Visible labels:/);
 });
 
 test("standard Pages preparation still refuses an unapproved preview fixture", async () => {
