@@ -1290,6 +1290,15 @@
           "verifiedAt": "2026-09-15T20:53:53.509Z"
         }
       }
+    },
+    "ST-LAUNDRY-FROM-WORK": {
+      "slug": "working-from-home-or-laundry-from-work",
+      "title": "Working from Home, or Laundry from Work?",
+      "manifestSha256": "cb8f25d34cabbef2526d5b2c6d85355234205304f799677a9b7b169b1e76589d",
+      "sourceCommit": "bfca336cff0909946713969841704ae100349bd2",
+      "runId": "35040609470",
+      "createdAt": "2026-09-16T00:35:35.524Z",
+      "platforms": {}
     }
   }
 }
