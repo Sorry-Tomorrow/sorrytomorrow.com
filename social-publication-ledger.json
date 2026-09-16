@@ -1320,6 +1320,10 @@
                 "id": "2100020754024902656"
               },
               "completedAt": "2026-09-16T00:35:41.727Z"
+            },
+            "post-0-publish": {
+              "status": "in-flight",
+              "startedAt": "2026-09-16T00:35:42.682Z"
             }
           },
           "results": [],
