@@ -1404,6 +1404,12 @@
             }
           ],
           "verifiedAt": "2026-09-16T00:36:06.619Z"
+        },
+        "facebook": {
+          "status": "reserved",
+          "startedAt": "2026-09-16T00:36:07.545Z",
+          "steps": {},
+          "results": []
         }
       }
     }
