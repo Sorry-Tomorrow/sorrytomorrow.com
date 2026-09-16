@@ -1358,7 +1358,7 @@
           "verifiedAt": "2026-09-16T00:35:46.055Z"
         },
         "instagram": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-09-16T00:35:47.103Z",
           "steps": {
             "post-0-image-0": {
@@ -1391,7 +1391,19 @@
                 }
               ]
             }
-          ]
+          ],
+          "verified": [
+            {
+              "id": "18083750918316401",
+              "url": "https://www.instagram.com/p/DdVAwzjmwFX/",
+              "attachmentIds": [
+                "18083750918316401"
+              ],
+              "copyAndAltVerified": true,
+              "containerId": "18090630236361446"
+            }
+          ],
+          "verifiedAt": "2026-09-16T00:36:06.619Z"
         }
       }
     }
