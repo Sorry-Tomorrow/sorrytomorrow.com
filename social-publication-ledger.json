@@ -1249,10 +1249,20 @@
                 "18111782363134667"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18090607757361446"
+              "containerId": "18090607757361446",
+              "publishedAt": "2026-09-15T20:53:34.000Z"
             }
           ],
-          "verifiedAt": "2026-09-15T20:53:38.977Z"
+          "verifiedAt": "2026-09-15T20:53:38.977Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "18111782363134667",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
