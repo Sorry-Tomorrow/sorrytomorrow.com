@@ -506,7 +506,20 @@
               "copyAndAltVerified": true
             }
           ],
-          "verifiedAt": "2026-09-14T20:29:46.621Z"
+          "verifiedAt": "2026-09-14T20:29:46.621Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "2099596479601975452",
+                "status": "unavailable",
+                "error": {
+                  "code": "provider_rejected_request",
+                  "httpStatus": 200
+                }
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
