@@ -1304,10 +1304,20 @@
               "attachmentIds": [
                 "122110011081458114"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-09-15T20:53:46.000Z"
             }
           ],
-          "verifiedAt": "2026-09-15T20:53:53.509Z"
+          "verifiedAt": "2026-09-15T20:53:53.509Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "1380120908509290_122110011129458114",
+                "status": "observed"
+              }
+            ]
+          }
         }
       }
     },
