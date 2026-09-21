@@ -927,10 +927,20 @@
                 "2099855911485394944",
                 "2099855930099683328"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-09-15T13:40:46.000Z"
             }
           ],
-          "verifiedAt": "2026-09-15T13:40:48.340Z"
+          "verifiedAt": "2026-09-15T13:40:48.340Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "2099855948558786995",
+                "status": "observed"
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
