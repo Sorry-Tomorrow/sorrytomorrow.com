@@ -617,7 +617,21 @@
               "containerId": "18090368120361446"
             }
           ],
-          "verifiedAt": "2026-09-14T20:30:37.660Z"
+          "verifiedAt": "2026-09-14T20:30:37.660Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "18114359429091342",
+                "status": "unavailable",
+                "error": {
+                  "code": "provider_rejected_request",
+                  "httpStatus": 400,
+                  "providerCode": 100
+                }
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
