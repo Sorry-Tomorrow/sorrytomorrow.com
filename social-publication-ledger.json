@@ -1132,10 +1132,20 @@
                 "122109917829458114",
                 "122109917877458114"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-09-15T13:41:49.000Z"
             }
           ],
-          "verifiedAt": "2026-09-15T13:41:58.225Z"
+          "verifiedAt": "2026-09-15T13:41:58.225Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "1380120908509290_122109917931458114",
+                "status": "observed"
+              }
+            ]
+          }
         }
       },
       "internalId": "ST-ASSISTANTS-ASSISTANT",
