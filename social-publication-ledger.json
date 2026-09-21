@@ -1191,10 +1191,20 @@
               "attachmentIds": [
                 "2099964792442163200"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-09-15T20:53:21.000Z"
             }
           ],
-          "verifiedAt": "2026-09-15T20:53:23.837Z"
+          "verifiedAt": "2026-09-15T20:53:23.837Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "2099964813082272160",
+                "status": "observed"
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
