@@ -1410,10 +1410,20 @@
                 "18083750918316401"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18090630236361446"
+              "containerId": "18090630236361446",
+              "publishedAt": "2026-09-16T00:36:01.000Z"
             }
           ],
-          "verifiedAt": "2026-09-16T00:36:06.619Z"
+          "verifiedAt": "2026-09-16T00:36:06.619Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "18083750918316401",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
