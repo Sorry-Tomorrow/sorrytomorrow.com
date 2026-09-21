@@ -1035,10 +1035,20 @@
                 "18093531095406154"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18090521516361446"
+              "containerId": "18090521516361446",
+              "publishedAt": "2026-09-15T13:41:24.000Z"
             }
           ],
-          "verifiedAt": "2026-09-15T13:41:31.736Z"
+          "verifiedAt": "2026-09-15T13:41:31.736Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-21T19:24:20.750Z",
+            "posts": [
+              {
+                "id": "18211818991363847",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
