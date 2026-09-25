@@ -1780,6 +1780,12 @@
             }
           ],
           "verifiedAt": "2026-09-25T12:57:00.895Z"
+        },
+        "facebook": {
+          "status": "reserved",
+          "startedAt": "2026-09-25T12:57:01.962Z",
+          "steps": {},
+          "results": []
         }
       }
     }
