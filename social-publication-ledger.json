@@ -1784,7 +1784,12 @@
         "facebook": {
           "status": "reserved",
           "startedAt": "2026-09-25T12:57:01.962Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-09-25T12:57:03.081Z"
+            }
+          },
           "results": []
         }
       }
