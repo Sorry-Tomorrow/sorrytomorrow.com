@@ -1,0 +1,59 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-09-25",
+  "recordedAt": "2026-09-25T12:24:23Z",
+  "internalId": "ST-CHIEF-BABYSITTING-ENGINEER",
+  "title": "Chief Babysitting Engineer",
+  "ownerInstruction": "I approve the comic, mark it as approved and publish it",
+  "resolvedContext": "Approval 3 was granted for the exact finish-v2 candidate. This instruction authorizes the scoped website, X, Instagram, and Facebook release of those exact approved files after repository, publisher, and live verification checks.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "4424b49a76c019b539ae94715e73402e5a0749770ddd9b89dd89b0a99a1707b5",
+  "sourceManifestSha256": "5f36414d1e0c96a3a94dfbe04909c1c247712f221e2358c5b1673836bb39adca",
+  "readerSharingManifestSha256": "f5b26c7634ca2d9d7a478ead0855bc087db2a94e460061f6b5b99e019e4a3e01",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentityPlan": {
+    "episodeNumber": 15,
+    "displayVersion": "v0.0.15",
+    "slug": "chief-babysitting-engineer",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/chief-babysitting-engineer/",
+    "plannedWebsiteReleaseMetadata": "2026-09-25T12:24:00Z",
+    "basis": "Freshly fetched origin/main bfca336cff0909946713969841704ae100349bd2 contains 14 public comic entries with maximum number 14; slug is unused."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "captionRule": {
+    "source": "finish-v2/copy.json",
+    "text": "Chief Babysitting Engineer\n\nhttps://sorrytomorrow.com/comics/chief-babysitting-engineer/\n\nAI-assisted comic by Sorry, Tomorrow.",
+    "policy": "Exact Approval 3 caption including canonical link and AI-assisted disclosure; do not rewrite."
+  },
+  "assetRule": "Use the bound native website/X PNGs, lossless WebPs, approved three-image sRGB Instagram/Facebook carousel, and reader-sharing preview/download exactly as bound. No crop, new encoding, redraw, relettering, or image generation.",
+  "budgetRule": "No new paid spend. Retain the existing X $5 provider cap and auto-recharge off.",
+  "executionRule": "Stage the approved preview/download and website/social assets through the existing helpers, create a reviewable main-based website change, merge only under this owner instruction, then verify the deployed page and automatic social operation receipts. Do not blindly retry an uncertain destination.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "new account/permission",
+    "other channels or comic backfill"
+  ],
+  "publicationClaim": "Authority only; publication is not claimed until actual live deployment and social receipts are verified."
+}

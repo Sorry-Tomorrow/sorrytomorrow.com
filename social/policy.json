@@ -97,6 +97,28 @@
         "path": "studio/operations/assistants-assistant-republish-20260915/OWNER-RELEASE-AUTHORITY.json",
         "sha256": "9c85570cbd2bd663437d0550ad611205da7a9498d419b6f6afda0e8ff379cb7c"
       }
+    },
+    "ST-CHIEF-BABYSITTING-ENGINEER": {
+      "title": "Chief Babysitting Engineer",
+      "text": "Chief Babysitting Engineer\n\nhttps://sorrytomorrow.com/comics/chief-babysitting-engineer/\n\nAI-assisted comic by Sorry, Tomorrow.",
+      "textSha256": "1578e76c830981e25e8179b7ff2ec859599aa4aaa47219e890d12ee1abdd1ff3",
+      "canonicalUrl": "https://sorrytomorrow.com/comics/chief-babysitting-engineer/",
+      "sourceCaption": {
+        "path": "deliverables/chief-babysitting-engineer-v0.0.15-release-v1/caption.txt",
+        "sha256": "401cc040d2bc0147f06860af85d5de22aa28a0a45c56e22b19da5191f1dbd9f0"
+      },
+      "approval3": {
+        "path": "studio/operations/chief-babysitting-engineer-release-20260925/OWNER-FINAL-APPROVAL.md",
+        "sha256": "4424b49a76c019b539ae94715e73402e5a0749770ddd9b89dd89b0a99a1707b5"
+      },
+      "sourceManifest": {
+        "path": "studio/editorial/chief-babysitting-engineer-board-v4/g2-art-candidate-v6/finish-v2/ASSET-MANIFEST.json",
+        "sha256": "5f36414d1e0c96a3a94dfbe04909c1c247712f221e2358c5b1673836bb39adca"
+      },
+      "releaseAuthority": {
+        "path": "studio/operations/chief-babysitting-engineer-release-20260925/OWNER-RELEASE-AUTHORITY.json",
+        "sha256": "7de4d1b724e6fdba0a983b206fa006a8fc77ef4bbd51374ea6c0e273993fccfa"
+      }
     }
   }
 }

@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all fourteen release entries in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 14);
+test("keeps all fifteen release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 15);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 14);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 14);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 15);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 15);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -74,8 +74,63 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 14);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 15);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
+});
+
+test("Chief Babysitting Engineer ships the exact approved panels, copy and reader-sharing files", async () => {
+  const episode = catalog.episodes[0];
+  assert.equal(episode.internalId, "ST-CHIEF-BABYSITTING-ENGINEER");
+  assert.equal(episode.slug, "chief-babysitting-engineer");
+  assert.equal(episode.title, "Chief Babysitting Engineer");
+  assert.equal(episode.publicNumber, 15);
+  assert.equal(episode.publicVersion, "v0.0.15");
+  assert.equal(episode.readerLayout, "single-panel");
+  assert.equal(episode.shell, "art-first");
+  assert.equal(episode.art.length, 3);
+  assert.equal(episode.panels.length, 3);
+  assert.equal(episode.ogImage.src, "comics/chief-babysitting-engineer/sharing/v1/preview.jpg");
+  assert.deepEqual(episode.art.map(art => art.src), [1, 2, 3].map(n => `comics/chief-babysitting-engineer/p${n}.png`));
+  assert.deepEqual(episode.art.map(art => art.webpSrc), [1, 2, 3].map(n => `comics/chief-babysitting-engineer/p${n}.webp`));
+  assert.ok(episode.panels.every(panel => panel.description.length > 0));
+  assert.ok(episode.art.every(art => art.alt.length > 0));
+  assert.deepEqual(episode.panels.map(panel => panel.lines), [
+    [{ speaker: "Dex", text: "The board wants us to be 10,000% more efficient with AI." }],
+    [{ speaker: "Dex", text: "We’ll add more agents! Then agents can manage more agents!" }],
+    [
+      { speaker: "Caption", text: "Later…" },
+      { speaker: "Crying robot", text: "I’m out of tokens!" },
+      { speaker: "Angry robot", text: "I can’t proceed without your approval!" },
+      { speaker: "Hungry robot", text: "I need your permission to eat!" },
+      { speaker: "Wes", text: "Congratulations, Mina. You’ve been promoted to Chief Babysitting Engineer." },
+    ],
+  ]);
+
+  const expectedHashes = [
+    "7df18a1a86da3cc4e706454501af62203f62763150a639bb6a9e7c760a32c8e2",
+    "db48f313a7d3606db41c6244b1b43515337e9422ae9c6cdb1f55ddba5a570374",
+    "86eac61faf02092b7d3fc697372e34403393f6bdb9d896e06a5c25456caa2cf5",
+  ];
+  for (const [index, art] of episode.art.entries()) {
+    const bytes = await readFile(new URL(`../public/${art.src}`, import.meta.url));
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), expectedHashes[index], art.src);
+    assert.equal(bytes.subarray(1, 4).toString("ascii"), "PNG");
+    assert.deepEqual([bytes.readUInt32BE(16), bytes.readUInt32BE(20)], [art.width, art.height]);
+  }
+
+  const sharing = JSON.parse(await readFile(new URL("../content/reader-sharing.json", import.meta.url), "utf8"));
+  const release = sharing.episodes[episode.slug];
+  assert.equal(release.status, "approved");
+  assert.equal(release.preview.sha256, "cd1d876e4361f242041fea231b9a8289b6e28ec746cc90a7e02776e27dc9a6cb");
+  assert.equal(release.download.sha256, "b8088fa971f75dcd33b863b637501010d14e3886cb965e709cb672671ce9000d");
+  assert.equal(release.download.width, 1440);
+  assert.equal(release.download.height, 3600);
+  assert.match(release.download.alt, /Dex announces.*agents managing agents.*three baby robots/s);
+  for (const item of [release.preview, release.download]) {
+    const bytes = await readFile(new URL(`../public${item.src}`, import.meta.url));
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), item.sha256, item.src);
+    assert.equal(bytes.length, item.bytes, item.src);
+  }
 });
 
 test("imports the approved vibe-coded comic with attribution and exact copy", async () => {
@@ -137,7 +192,7 @@ test("Incognito Mode retains its approved native images, exact transcript and fo
 
 test("The Assistant’s Assistant imports only the four exact corrected approved website PNGs", async () => {
   const episode = catalog.episodes.find(item => item.internalId === "ST-ASSISTANTS-ASSISTANT");
-  assert.equal(catalog.episodes[2], episode);
+  assert.equal(catalog.episodes[3], episode);
   assert.equal(episode.title, "The Assistant’s Assistant");
   assert.equal(episode.publicNumber, 12);
   assert.equal(episode.publicVersion, "v0.0.12");
@@ -219,7 +274,7 @@ test("the Assistant reader keeps its approved desktop grid and natural full-widt
 
 test("Six-Figure Growth preserves its exact approved single panel, copy and reading edition", async () => {
   const episode = catalog.episodes.find(item => item.internalId === "ST-SIX-FIGURE-GROWTH");
-  assert.equal(catalog.episodes[1], episode);
+  assert.equal(catalog.episodes[2], episode);
   assert.equal(episode.internalId, "ST-SIX-FIGURE-GROWTH");
   assert.equal(episode.title, "Six-Figure Growth?");
   assert.equal(episode.publicNumber, 13);
@@ -256,7 +311,7 @@ test("Six-Figure Growth preserves its exact approved single panel, copy and read
 });
 
 test("Laundry from Work releases the exact approved silent panel, accessibility copy and reading edition", async () => {
-  const episode = catalog.episodes[0];
+  const episode = catalog.episodes[1];
   const prefix = "comics/working-from-home-or-laundry-from-work/";
   assert.equal(episode.internalId, "ST-LAUNDRY-FROM-WORK");
   assert.equal(episode.slug, "working-from-home-or-laundry-from-work");

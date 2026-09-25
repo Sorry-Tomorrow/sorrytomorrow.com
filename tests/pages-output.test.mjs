@@ -20,6 +20,14 @@ const expectedSiteUrl = new URL(
 );
 const escapePattern = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const approvedComicAssets = {
+  "comics/chief-babysitting-engineer/p1.png": "7df18a1a86da3cc4e706454501af62203f62763150a639bb6a9e7c760a32c8e2",
+  "comics/chief-babysitting-engineer/p1.webp": "951565850558ba547dd448b325ce0bf27f17f8bf7051d76eba0076d97a89e2ea",
+  "comics/chief-babysitting-engineer/p2.png": "db48f313a7d3606db41c6244b1b43515337e9422ae9c6cdb1f55ddba5a570374",
+  "comics/chief-babysitting-engineer/p2.webp": "f487514a666fd90a0dbb51ebcf31c4250037b9ed46fc7d97d23f02f3c5289da9",
+  "comics/chief-babysitting-engineer/p3.png": "86eac61faf02092b7d3fc697372e34403393f6bdb9d896e06a5c25456caa2cf5",
+  "comics/chief-babysitting-engineer/p3.webp": "617ebf9469ccacc8124ebd76f893216856a378c31b3fdf28af89ae26acd35ff0",
+  "comics/chief-babysitting-engineer/sharing/v1/preview.jpg": "cd1d876e4361f242041fea231b9a8289b6e28ec746cc90a7e02776e27dc9a6cb",
+  "comics/chief-babysitting-engineer/sharing/v1/complete.jpg": "b8088fa971f75dcd33b863b637501010d14e3886cb965e709cb672671ce9000d",
   "comics/working-from-home-or-laundry-from-work/p1.png": "17578efefa4afb0b8a172a35c55b5eb9edbecad74881774a3fc75f53288331d3",
   "comics/working-from-home-or-laundry-from-work/p1.webp": "46ea58e258afbcd8fff0c1e61cf572c651b1a97877ef7576eb49d44bff27f1c7",
   "comics/working-from-home-or-laundry-from-work/complete.png": "00c2a8e75c606ce74da6050e1421aaeab004ce2c79310985bba1789923377029",
@@ -95,10 +103,11 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 014 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="working-from-home-or-laundry-from-work"/);
+  assert.match(html, /Comic 015 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="chief-babysitting-engineer"/);
+  assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/working-from-home-or-laundry-from-work\/p1\.webp/);
+  assert.match(html, /comics\/chief-babysitting-engineer\/p1\.webp/);
   assert.match(html, /Six-Figure Growth\?/);
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/six-figure-growth/#comic"`));
   assert.match(html, /The Assistant’s Assistant/);
@@ -244,7 +253,9 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(rss, /<title>Executive Twin<\/title>/);
   assert.match(rss, /<title>The Assistant’s Assistant<\/title>/);
   assert.match(rss, /<title>Working from Home, or Laundry from Work\?<\/title>/);
+  assert.match(rss, /<title>Chief Babysitting Engineer<\/title>/);
   assert.match(sitemap, new RegExp(escapePattern(new URL("comics/working-from-home-or-laundry-from-work/", expectedSiteUrl).toString())));
+  assert.match(sitemap, new RegExp(escapePattern(new URL("comics/chief-babysitting-engineer/", expectedSiteUrl).toString())));
 });
 
 test("release export has complete episode pages and exact approved assets", async () => {
@@ -271,18 +282,36 @@ test("release export has complete episode pages and exact approved assets", asyn
   assert.doesNotMatch(robots, /Disallow: \//);
 });
 
+test("Chief Babysitting Engineer Pages export preserves its approved comic and reader dimensions", async () => {
+  const html = await readFile(new URL("comics/chief-babysitting-engineer/index.html", outputRoot), "utf8");
+  const comicPath = `${escapedBasePath}/comics/chief-babysitting-engineer`;
+  assert.match(html, /<title>Chief Babysitting Engineer \| Sorry, Tomorrow<\/title>/);
+  assert.ok(html.includes('content="https://sorrytomorrow.com/comics/chief-babysitting-engineer/sharing/v1/preview.jpg"'));
+  for (const [index, size] of [[1, [1536, 1136]], [2, [1536, 1136]], [3, [1448, 1198]]]) {
+    assert.ok(html.includes('src="' + comicPath + '/p' + index + '.png" width="' + size[0] + '" height="' + size[1] + '"'));
+  }
+  assert.equal([...html.matchAll(/<img\b[^>]*class="comic-panel-art"/g)].length, 3);
+  assert.match(html, /The board wants us to be 10,000% more efficient with AI\./);
+  assert.match(html, /I’m out of tokens!/);
+  assert.match(html, /I can’t proceed without your approval!/);
+  assert.match(html, /I need your permission to eat!/);
+  assert.match(html, /Congratulations, Mina\. You’ve been promoted to Chief Babysitting Engineer\./);
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/working-from-home-or-laundry-from-work/#comic"`));
+  assert.match(html, /You’re at the latest comic/);
+});
+
 test("Laundry from Work Pages export preserves the silent comic and native reader dimensions", async () => {
   const html = await readFile(new URL("comics/working-from-home-or-laundry-from-work/index.html", outputRoot), "utf8");
   const comicPath = `${escapedBasePath}/comics/working-from-home-or-laundry-from-work`;
   assert.match(html, /<title>Working from Home, or Laundry from Work\? \| Sorry, Tomorrow<\/title>/);
   assert.match(html, new RegExp(`<source type="image/webp" srcSet="${comicPath}/p1\\.webp"`));
-  assert.match(html, new RegExp(`<img class="comic-panel-art" src="${comicPath}/p1\\.png" width="1351" height="1244"`));
+  assert.ok(html.includes('src="' + comicPath + '/p1.png" width="1351" height="1244"'));
   assert.equal([...html.matchAll(/<img\b[^>]*class="comic-panel-art"/g)].length, 1);
   assert.match(html, /Single panel: Miles wears a green hoodie, cream shirt, dark trousers and a headset\./);
   assert.match(html, /No dialogue\. Attribution: © SORRY, TOMORROW\./);
   assert.match(html, new RegExp(escapePattern(new URL("comics/working-from-home-or-laundry-from-work/complete.jpg", expectedSiteUrl).toString())));
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/six-figure-growth/#comic"`));
-  assert.match(html, /You’re at the latest comic/);
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/chief-babysitting-engineer/#comic"`));
   assert.doesNotMatch(html, /<p>Working from Home, or Laundry from Work\?<\/p>|Screen:|Visible labels:/);
 });
 

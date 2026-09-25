@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sorrytomorrow.com/</loc>
-    <lastmod>2026-09-16T00:25:00.000Z</lastmod>
+    <lastmod>2026-09-25T12:24:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sorrytomorrow.com/comics/chief-babysitting-engineer/</loc>
+    <lastmod>2026-09-25T12:24:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://sorrytomorrow.com/comics/working-from-home-or-laundry-from-work/</loc>
@@ -62,10 +66,10 @@
   </url>
   <url>
     <loc>https://sorrytomorrow.com/colophon/</loc>
-    <lastmod>2026-09-16T00:25:00.000Z</lastmod>
+    <lastmod>2026-09-25T12:24:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://sorrytomorrow.com/privacy/</loc>
-    <lastmod>2026-09-16T00:25:00.000Z</lastmod>
+    <lastmod>2026-09-25T12:24:00.000Z</lastmod>
   </url>
 </urlset>

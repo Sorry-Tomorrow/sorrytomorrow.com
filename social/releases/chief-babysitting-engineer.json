@@ -1,0 +1,156 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-CHIEF-BABYSITTING-ENGINEER",
+  "slug": "chief-babysitting-engineer",
+  "title": "Chief Babysitting Engineer",
+  "number": 15,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/chief-babysitting-engineer/",
+  "approval3Sha256": "4424b49a76c019b539ae94715e73402e5a0749770ddd9b89dd89b0a99a1707b5",
+  "sourceManifestSha256": "5f36414d1e0c96a3a94dfbe04909c1c247712f221e2358c5b1673836bb39adca",
+  "releaseAuthoritySha256": "7de4d1b724e6fdba0a983b206fa006a8fc77ef4bbd51374ea6c0e273993fccfa",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Chief Babysitting Engineer\n\nhttps://sorrytomorrow.com/comics/chief-babysitting-engineer/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/chief-babysitting-engineer/x/p1.png",
+              "bytes": 2890688,
+              "sha256": "7df18a1a86da3cc4e706454501af62203f62763150a639bb6a9e7c760a32c8e2",
+              "type": "image/png",
+              "width": 1536,
+              "height": 1136,
+              "alt": "Dex presents the board’s demand for 10,000% more efficiency while Mina listens at her laptop.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/chief-babysitting-engineer/x/p2.png",
+              "bytes": 2763718,
+              "sha256": "db48f313a7d3606db41c6244b1b43515337e9422ae9c6cdb1f55ddba5a570374",
+              "type": "image/png",
+              "width": 1536,
+              "height": 1136,
+              "alt": "Dex enthusiastically pitches adding agents to manage agents while Mina leans toward her laptop, excited.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/chief-babysitting-engineer/x/p3.png",
+              "bytes": 3428556,
+              "sha256": "86eac61faf02092b7d3fc697372e34403393f6bdb9d896e06a5c25456caa2cf5",
+              "type": "image/png",
+              "width": 1448,
+              "height": 1198,
+              "alt": "Mina, exhausted with a towel over her shoulder and bottle in hand, is surrounded by three baby robots asking for tokens, approval and permission to eat. Wes laughs beside the silent, gritted-teeth reaction from Clara.",
+              "panelIds": [
+                "p3"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Chief Babysitting Engineer\n\nhttps://sorrytomorrow.com/comics/chief-babysitting-engineer/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/chief-babysitting-engineer/instagram/p1.jpg",
+              "bytes": 614748,
+              "sha256": "9235ade93532013ceee3b818152e42b62c96dee3790ba90c079990ea96a2aa84",
+              "type": "image/jpeg",
+              "width": 1536,
+              "height": 1280,
+              "alt": "Dex presents the board’s demand for 10,000% more efficiency while Mina listens at her laptop.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/chief-babysitting-engineer/instagram/p2.jpg",
+              "bytes": 623542,
+              "sha256": "ac77ac40921f1a8a63d229e263d7176bc15a455fe2ca6632e982345d7f296564",
+              "type": "image/jpeg",
+              "width": 1536,
+              "height": 1280,
+              "alt": "Dex enthusiastically pitches adding agents to manage agents while Mina leans toward her laptop, excited.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/chief-babysitting-engineer/instagram/p3.jpg",
+              "bytes": 875638,
+              "sha256": "5042ee689049ced1702c89c0172af91ce4be15b24c76f59e53cc2df48569f0cc",
+              "type": "image/jpeg",
+              "width": 1536,
+              "height": 1280,
+              "alt": "Mina, exhausted with a towel over her shoulder and bottle in hand, is surrounded by three baby robots asking for tokens, approval and permission to eat. Wes laughs beside the silent, gritted-teeth reaction from Clara.",
+              "panelIds": [
+                "p3"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Chief Babysitting Engineer\n\nhttps://sorrytomorrow.com/comics/chief-babysitting-engineer/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/chief-babysitting-engineer/facebook/p1.jpg",
+              "bytes": 614748,
+              "sha256": "9235ade93532013ceee3b818152e42b62c96dee3790ba90c079990ea96a2aa84",
+              "type": "image/jpeg",
+              "width": 1536,
+              "height": 1280,
+              "alt": "Dex presents the board’s demand for 10,000% more efficiency while Mina listens at her laptop.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/chief-babysitting-engineer/facebook/p2.jpg",
+              "bytes": 623542,
+              "sha256": "ac77ac40921f1a8a63d229e263d7176bc15a455fe2ca6632e982345d7f296564",
+              "type": "image/jpeg",
+              "width": 1536,
+              "height": 1280,
+              "alt": "Dex enthusiastically pitches adding agents to manage agents while Mina leans toward her laptop, excited.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/chief-babysitting-engineer/facebook/p3.jpg",
+              "bytes": 875638,
+              "sha256": "5042ee689049ced1702c89c0172af91ce4be15b24c76f59e53cc2df48569f0cc",
+              "type": "image/jpeg",
+              "width": 1536,
+              "height": 1280,
+              "alt": "Mina, exhausted with a towel over her shoulder and bottle in hand, is surrounded by three baby robots asking for tokens, approval and permission to eat. Wes laughs beside the silent, gritted-teeth reaction from Clara.",
+              "panelIds": [
+                "p3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
