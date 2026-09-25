@@ -17,6 +17,94 @@
   },
   "episodes": [
     {
+      "internalId": "ST-CHIEF-BABYSITTING-ENGINEER",
+      "slug": "chief-babysitting-engineer",
+      "title": "Chief Babysitting Engineer",
+      "publicNumber": 15,
+      "publicVersion": "v0.0.15",
+      "label": "Comic 015 · Ahead AI",
+      "websitePublishedAt": "2026-09-25T12:24:00Z",
+      "previewOnly": false,
+      "readerLayout": "single-panel",
+      "displayDate": "v0.0.15",
+      "caption": "Chief Babysitting Engineer",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/chief-babysitting-engineer/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Link preview for Chief Babysitting Engineer: the complete opening panel shows Dex announcing the board’s efficiency target while Mina listens."
+      },
+      "art": [
+        {
+          "src": "comics/chief-babysitting-engineer/p1.png",
+          "webpSrc": "comics/chief-babysitting-engineer/p1.webp",
+          "width": 1536,
+          "height": 1136,
+          "alt": "Dex presents the board’s demand for 10,000% more efficiency while Mina listens at her laptop."
+        },
+        {
+          "src": "comics/chief-babysitting-engineer/p2.png",
+          "webpSrc": "comics/chief-babysitting-engineer/p2.webp",
+          "width": 1536,
+          "height": 1136,
+          "alt": "Dex enthusiastically pitches adding agents to manage agents while Mina leans toward her laptop, excited."
+        },
+        {
+          "src": "comics/chief-babysitting-engineer/p3.png",
+          "webpSrc": "comics/chief-babysitting-engineer/p3.webp",
+          "width": 1448,
+          "height": 1198,
+          "alt": "Mina, exhausted with a towel over her shoulder and bottle in hand, is surrounded by three baby robots asking for tokens, approval and permission to eat. Wes laughs beside Clara’s silent, gritted-teeth reaction."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "The board wants us to be 10,000% more efficient with AI."
+            }
+          ],
+          "description": "Mina listens with a curious spark beside her laptop."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "We’ll add more agents! Then agents can manage more agents!"
+            }
+          ],
+          "description": "Mina eagerly leans closer to her laptop, excited by Dex’s plan."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Caption",
+              "text": "Later…"
+            },
+            {
+              "speaker": "Crying robot",
+              "text": "I’m out of tokens!"
+            },
+            {
+              "speaker": "Angry robot",
+              "text": "I can’t proceed without your approval!"
+            },
+            {
+              "speaker": "Hungry robot",
+              "text": "I need your permission to eat!"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Congratulations, Mina. You’ve been promoted to Chief Babysitting Engineer."
+            }
+          ],
+          "description": "Mina tends the three needy baby robots in the office. Clara watches silently with a strained expression."
+        }
+      ]
+    },
+    {
       "internalId": "ST-LAUNDRY-FROM-WORK",
       "slug": "working-from-home-or-laundry-from-work",
       "title": "Working from Home, or Laundry from Work?",

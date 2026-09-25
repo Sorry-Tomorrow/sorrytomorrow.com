@@ -26,5 +26,12 @@
     "approval3Sha256": "9e763f9c57ae7929915e45cfad85d9987283c8a24224ba760f681f6742319a58",
     "sourceManifestSha256": "85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24",
     "releaseAuthoritySha256": "bfd09888b5389e2731d8364565467f253c521fed5ccc4b27d474ad84247c094c"
+  },
+  "chief-babysitting-engineer": {
+    "internalId": "ST-CHIEF-BABYSITTING-ENGINEER",
+    "manifestSha256": "773e350d026b89c24a915078056c0b928680be7c3056c53464ce03ec598ece2a",
+    "approval3Sha256": "4424b49a76c019b539ae94715e73402e5a0749770ddd9b89dd89b0a99a1707b5",
+    "sourceManifestSha256": "5f36414d1e0c96a3a94dfbe04909c1c247712f221e2358c5b1673836bb39adca",
+    "releaseAuthoritySha256": "7de4d1b724e6fdba0a983b206fa006a8fc77ef4bbd51374ea6c0e273993fccfa"
   }
 }

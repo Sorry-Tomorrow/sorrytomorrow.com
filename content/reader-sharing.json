@@ -1,0 +1,33 @@
+{
+  "schema": "sorry-tomorrow-reader-sharing-public-v1",
+  "status": "approved",
+  "manifestSha256": "f5b26c7634ca2d9d7a478ead0855bc087db2a94e460061f6b5b99e019e4a3e01",
+  "approvalReceiptSha256": "756583882ca2351d62295899ea953927068d9947c8f698971c5cba731a307d4e",
+  "episodes": {
+    "chief-babysitting-engineer": {
+      "status": "approved",
+      "manifestSha256": "f5b26c7634ca2d9d7a478ead0855bc087db2a94e460061f6b5b99e019e4a3e01",
+      "approvalReceiptSha256": "756583882ca2351d62295899ea953927068d9947c8f698971c5cba731a307d4e",
+      "preview": {
+        "src": "/comics/chief-babysitting-engineer/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Link preview for Chief Babysitting Engineer: the complete opening panel shows Dex announcing the board's efficiency target while Mina listens.",
+        "sha256": "cd1d876e4361f242041fea231b9a8289b6e28ec746cc90a7e02776e27dc9a6cb",
+        "bytes": 201117,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/chief-babysitting-engineer/sharing/v1/complete.jpg",
+        "width": 1440,
+        "height": 3600,
+        "alt": "At Ahead AI, Dex announces the board wants them to be 10,000% more efficient with AI, then excitedly pitches agents managing agents while Mina lights up. Later, Mina looks exhausted as three baby robots ask for tokens, approval, and permission to eat. Wes laughs and promotes her to Chief Babysitting Engineer while Clara grimaces.",
+        "sha256": "b8088fa971f75dcd33b863b637501010d14e3886cb965e709cb672671ce9000d",
+        "bytes": 1951457,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-chief-babysitting-engineer-complete.jpg"
+      },
+      "shareText": "Chief Babysitting Engineer\n\nhttps://sorrytomorrow.com/comics/chief-babysitting-engineer/\n\nAI-assisted comic by Sorry, Tomorrow."
+    }
+  }
+}
