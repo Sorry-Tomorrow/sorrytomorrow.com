@@ -1782,7 +1782,7 @@
           "verifiedAt": "2026-09-25T12:57:00.895Z"
         },
         "facebook": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-09-25T12:57:01.962Z",
           "steps": {
             "post-0-image-0": {
@@ -1839,7 +1839,20 @@
                 }
               ]
             }
-          ]
+          ],
+          "verified": [
+            {
+              "id": "1380120908509290_122113618251458114",
+              "url": "https://www.facebook.com/122107583679458114/posts/122113618251458114",
+              "attachmentIds": [
+                "122113618029458114",
+                "122113618077458114",
+                "122113618125458114"
+              ],
+              "copyAndAltVerified": true
+            }
+          ],
+          "verifiedAt": "2026-09-25T12:57:22.984Z"
         }
       }
     }
