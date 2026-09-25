@@ -1813,8 +1813,12 @@
               "completedAt": "2026-09-25T12:57:11.990Z"
             },
             "post-0-publish": {
-              "status": "in-flight",
-              "startedAt": "2026-09-25T12:57:13.132Z"
+              "status": "done",
+              "startedAt": "2026-09-25T12:57:13.132Z",
+              "result": {
+                "id": "1380120908509290_122113618251458114"
+              },
+              "completedAt": "2026-09-25T12:57:18.739Z"
             }
           },
           "results": []
