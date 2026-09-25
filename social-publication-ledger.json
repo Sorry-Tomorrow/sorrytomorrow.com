@@ -1582,6 +1582,15 @@
           }
         }
       }
+    },
+    "ST-CHIEF-BABYSITTING-ENGINEER": {
+      "slug": "chief-babysitting-engineer",
+      "title": "Chief Babysitting Engineer",
+      "manifestSha256": "773e350d026b89c24a915078056c0b928680be7c3056c53464ce03ec598ece2a",
+      "sourceCommit": "5d46c2a0eb45928ea4ffafc6b788f934dddf7113",
+      "runId": "36137764940",
+      "createdAt": "2026-09-25T12:55:57.432Z",
+      "platforms": {}
     }
   }
 }
