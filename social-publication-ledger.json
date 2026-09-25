@@ -1648,6 +1648,10 @@
                 "id": "2103468614170918912"
               },
               "completedAt": "2026-09-25T12:56:15.758Z"
+            },
+            "post-0-publish": {
+              "status": "in-flight",
+              "startedAt": "2026-09-25T12:56:16.857Z"
             }
           },
           "results": [],
