@@ -1698,7 +1698,7 @@
           "verifiedAt": "2026-09-25T12:56:21.494Z"
         },
         "instagram": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-09-25T12:56:22.721Z",
           "steps": {
             "post-0-image-0": {
@@ -1765,7 +1765,21 @@
                 }
               ]
             }
-          ]
+          ],
+          "verified": [
+            {
+              "id": "17861965866696895",
+              "url": "https://www.instagram.com/p/DdtgtQiDWhU/",
+              "attachmentIds": [
+                "18104318735214365",
+                "18057771977581528",
+                "18100551677637773"
+              ],
+              "copyAndAltVerified": true,
+              "containerId": "18092655839361446"
+            }
+          ],
+          "verifiedAt": "2026-09-25T12:57:00.895Z"
         }
       }
     }
