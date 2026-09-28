@@ -1786,10 +1786,20 @@
                 "18100551677637773"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18092655839361446"
+              "containerId": "18092655839361446",
+              "publishedAt": "2026-09-25T12:56:53.000Z"
             }
           ],
-          "verifiedAt": "2026-09-25T12:57:00.895Z"
+          "verifiedAt": "2026-09-25T12:57:00.895Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-09-28T20:32:32.917Z",
+            "posts": [
+              {
+                "id": "17861965866696895",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
