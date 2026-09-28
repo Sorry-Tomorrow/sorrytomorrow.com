@@ -2027,7 +2027,12 @@
         "instagram": {
           "status": "reserved",
           "startedAt": "2026-09-28T23:26:02.085Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-09-28T23:26:03.053Z"
+            }
+          },
           "results": []
         }
       }
