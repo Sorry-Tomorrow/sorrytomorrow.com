@@ -2139,7 +2139,12 @@
         "facebook": {
           "status": "reserved",
           "startedAt": "2026-09-28T23:26:48.836Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-09-28T23:26:49.835Z"
+            }
+          },
           "results": []
         }
       }
