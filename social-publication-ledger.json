@@ -1927,8 +1927,12 @@
               "completedAt": "2026-09-28T23:25:45.104Z"
             },
             "post-0-alt-1": {
-              "status": "in-flight",
-              "startedAt": "2026-09-28T23:25:46.068Z"
+              "status": "done",
+              "startedAt": "2026-09-28T23:25:46.068Z",
+              "result": {
+                "id": "2104714203068002305"
+              },
+              "completedAt": "2026-09-28T23:25:47.068Z"
             }
           },
           "results": [],
