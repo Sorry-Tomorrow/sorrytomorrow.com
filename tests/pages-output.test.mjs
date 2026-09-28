@@ -103,11 +103,12 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 015 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="chief-babysitting-engineer"/);
+  assert.match(html, /Comic 016 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="up-up-and-out-of-tokens"/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/chief-babysitting-engineer\/p1\.webp/);
+  assert.match(html, /comics\/up-up-and-out-of-tokens\/p1\.webp/);
+  assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/six-figure-growth/#comic"`));
   assert.match(html, /The Assistant’s Assistant/);
@@ -186,6 +187,8 @@ test("produces a complete GitHub Pages artifact", async () => {
     access(new URL("comics/vibe-coding-in-your-sleep/index.html", outputRoot)),
     access(new URL("comics/undefeated/index.html", outputRoot)),
     access(new URL("comics/executive-twin/index.html", outputRoot)),
+    access(new URL("comics/up-up-and-out-of-tokens.html", outputRoot)),
+    access(new URL("comics/up-up-and-out-of-tokens/index.html", outputRoot)),
     access(new URL("comics/the-assistants-assistant.html", outputRoot)),
     access(new URL("comics/the-assistants-assistant/index.html", outputRoot)),
     access(new URL("comics/working-from-home-or-laundry-from-work.html", outputRoot)),
@@ -297,7 +300,8 @@ test("Chief Babysitting Engineer Pages export preserves its approved comic and r
   assert.match(html, /I need your permission to eat!/);
   assert.match(html, /Congratulations, Mina\. You’ve been promoted to Chief Babysitting Engineer\./);
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/working-from-home-or-laundry-from-work/#comic"`));
-  assert.match(html, /You’re at the latest comic/);
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/up-up-and-out-of-tokens/#comic"`));
+  assert.doesNotMatch(html, /You’re at the latest comic/);
 });
 
 test("Laundry from Work Pages export preserves the silent comic and native reader dimensions", async () => {
@@ -328,4 +332,31 @@ test("standard Pages preparation still refuses an unapproved preview fixture", a
   } finally {
     await rm(fixture, { recursive: true });
   }
+});
+
+test("Up, Up, and Out of Tokens Pages export preserves its approved five-panel release", async () => {
+  const approved = JSON.parse(await readFile(new URL("./fixtures/up-up-and-out-of-tokens-approved.json", import.meta.url), "utf8"));
+  const html = await readFile(new URL(`comics/${approved.slug}/index.html`, outputRoot), "utf8");
+  assert.match(html, /<title>Up, Up, and Out of Tokens \| Sorry, Tomorrow<\/title>/);
+  assert.match(html, /reader-layout-single-panel/);
+  assert.match(html, /You’re at the latest comic/);
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/chief-babysitting-engineer/#comic"`));
+  const images = [...html.matchAll(/<img\b[^>]*class="comic-panel-art"[^>]*>/g)].map(match => match[0]);
+  assert.equal(images.length, 5);
+  for (const [index, panel] of approved.panels.entries()) {
+    const prefix = `comics/${approved.slug}/${panel.id}`;
+    assert.ok(images[index].includes(`src="${basePath}/${prefix}.png"`), panel.id);
+    assert.ok(images[index].includes(`width="${panel.width}" height="${panel.height}"`), panel.id);
+    assert.ok(html.includes(`srcSet="${basePath}/${prefix}.webp"`), panel.id);
+    for (const kind of ["png", "webp"]) {
+      const bytes = await readFile(new URL(`${prefix}.${kind}`, outputRoot));
+      assert.equal(createHash("sha256").update(bytes).digest("hex"), panel[kind].sha256, `${prefix}.${kind}`);
+    }
+    for (const line of panel.lines) assert.ok(html.includes(line.text), `${panel.id}: ${line.text}`);
+  }
+  for (const kind of ["preview", "download"]) {
+    const file = `comics/${approved.slug}/sharing/v1/${kind === "preview" ? "preview" : "complete"}.jpg`;
+    assert.equal(createHash("sha256").update(await readFile(new URL(file, outputRoot))).digest("hex"), approved[kind].sha256, file);
+  }
+  assert.ok(html.includes(new URL(`comics/${approved.slug}/sharing/v1/preview.jpg`, expectedSiteUrl).toString()));
 });

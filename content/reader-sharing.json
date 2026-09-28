@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "f5b26c7634ca2d9d7a478ead0855bc087db2a94e460061f6b5b99e019e4a3e01",
-  "approvalReceiptSha256": "756583882ca2351d62295899ea953927068d9947c8f698971c5cba731a307d4e",
+  "manifestSha256": "1e286b5bb0606fdf545020c5024bc73b41dedabac88b4ed134628c08c7c2770e",
+  "approvalReceiptSha256": "b4fbe2ff0e2727a8f5f839e555462508b93e35ccbdf93c6556b8b0adeca27d28",
   "episodes": {
     "chief-babysitting-engineer": {
       "status": "approved",
@@ -28,6 +28,31 @@
         "filename": "sorry-tomorrow-chief-babysitting-engineer-complete.jpg"
       },
       "shareText": "Chief Babysitting Engineer\n\nhttps://sorrytomorrow.com/comics/chief-babysitting-engineer/\n\nAI-assisted comic by Sorry, Tomorrow."
+    },
+    "up-up-and-out-of-tokens": {
+      "status": "approved",
+      "manifestSha256": "1e286b5bb0606fdf545020c5024bc73b41dedabac88b4ed134628c08c7c2770e",
+      "approvalReceiptSha256": "b4fbe2ff0e2727a8f5f839e555462508b93e35ccbdf93c6556b8b0adeca27d28",
+      "preview": {
+        "src": "/comics/up-up-and-out-of-tokens/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Up, Up, and Out of Tokens: Mina activates Ultrafast while small Token celebrates and Dex and Wes watch.",
+        "sha256": "1bd569e98b03aaee8f15bbef050f772f093e255357967023fcaac2c940d39d90",
+        "bytes": 288312,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/up-up-and-out-of-tokens/sharing/v1/complete.jpg",
+        "width": 1440,
+        "height": 6451,
+        "alt": "In the sunlit Ahead AI office, Mina presses a console and says “Ultrafast is live.” Small Token celebrates with three glowing quota lights and a glowing T. Dex and Wes watch. A display reads “QUOTA — 100%”. Token tap-dances on a keyboard to answer emails, finishes a checked six-slide pitch deck with his trailing hand, and delivers a neat stack of clipped client packets. Three task labels name the completed work. Quota displays decline from three lit segments to one while Mina, Dex and Wes watch. Token’s head and hands droop and his knees buckle. His eyes, T and three quota windows are black. A large alarm reads “0 TOKENS”. His bright speed trail has broken off behind him; an intact printer lies ahead. “KRRRAAASH!” Token’s momentum bursts through a printer and a wooden desk brace, collapsing two desks and scattering chairs, paper and equipment. Mina, Dex and Wes react safely behind their workstation. The small robot remains intact and unpowered. Amid extensive wrecked desks, printer pieces, toppled chairs and paper drifts, Mina kneels beside small unpowered Token and steadies his head. Dex celebrates: “Boom! A thousand percent efficiency—in half the time!” Wes looks skeptical. Token’s UI reads “QUOTA EXHAUSTED — RESETS IN 7 DAYS”. Boomer adds “4. BUY A NEW PRINTER” after three existing project tasks on the whiteboard.",
+        "sha256": "b578b4fcc0c47e9df43c2fafc94fcba19cbe69e148faee85ba03af03264d5a19",
+        "bytes": 4801737,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-up-up-and-out-of-tokens-complete.jpg"
+      },
+      "shareText": "Up, Up, and Out of Tokens\n\nhttps://sorrytomorrow.com/comics/up-up-and-out-of-tokens/\n\nAI-assisted comic by Sorry, Tomorrow."
     }
   }
 }

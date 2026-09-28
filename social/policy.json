@@ -119,6 +119,28 @@
         "path": "studio/operations/chief-babysitting-engineer-release-20260925/OWNER-RELEASE-AUTHORITY.json",
         "sha256": "7de4d1b724e6fdba0a983b206fa006a8fc77ef4bbd51374ea6c0e273993fccfa"
       }
+    },
+    "ST-SCRATCH-007": {
+      "title": "Up, Up, and Out of Tokens",
+      "text": "Up, Up, and Out of Tokens\n\nhttps://sorrytomorrow.com/comics/up-up-and-out-of-tokens/\n\nAI-assisted comic by Sorry, Tomorrow.",
+      "textSha256": "5707f9771d759cb11c62a0b59ad6459a28c6226dd8433f3da9dd166a4a65d8ed",
+      "canonicalUrl": "https://sorrytomorrow.com/comics/up-up-and-out-of-tokens/",
+      "sourceCaption": {
+        "path": "deliverables/up-up-and-out-of-tokens-v0.0.16-release-v1/caption.txt",
+        "sha256": "f66d8971253f6f14e819628e7b8732f8848dad608d584517c66ea1b82f05dd42"
+      },
+      "approval3": {
+        "path": "studio/operations/up-up-and-out-of-tokens-release-20260928/OWNER-FINAL-APPROVAL.md",
+        "sha256": "e23cca05a2abfabb06689aba73f7012b4eab41b5ae63931bdc79dcd63d6ba9c7"
+      },
+      "sourceManifest": {
+        "path": "studio/editorial/ultrafast-rebuild-20260928-v6/art-pass-v1/finish-v1/ASSET-MANIFEST.json",
+        "sha256": "0315132755bb021234a305beda4f10d3049eea1c28c505805bd0f2e7226bd49a"
+      },
+      "releaseAuthority": {
+        "path": "studio/operations/up-up-and-out-of-tokens-release-20260928/OWNER-RELEASE-AUTHORITY.json",
+        "sha256": "2df636c19b448d50c7c5c8bcbc5607618f355070c2c5549ea46e7f91ccdf09e2"
+      }
     }
   }
 }

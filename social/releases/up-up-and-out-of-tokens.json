@@ -1,0 +1,219 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-SCRATCH-007",
+  "slug": "up-up-and-out-of-tokens",
+  "title": "Up, Up, and Out of Tokens",
+  "number": 16,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/up-up-and-out-of-tokens/",
+  "approval3Sha256": "e23cca05a2abfabb06689aba73f7012b4eab41b5ae63931bdc79dcd63d6ba9c7",
+  "sourceManifestSha256": "0315132755bb021234a305beda4f10d3049eea1c28c505805bd0f2e7226bd49a",
+  "releaseAuthoritySha256": "2df636c19b448d50c7c5c8bcbc5607618f355070c2c5549ea46e7f91ccdf09e2",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Up, Up, and Out of Tokens\n\nhttps://sorrytomorrow.com/comics/up-up-and-out-of-tokens/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/up-up-and-out-of-tokens/x/p1.png",
+              "bytes": 3719143,
+              "sha256": "3e11b1f809a286b3baae8ac2666e489365e09311fcd35385f76ae7767231c15a",
+              "type": "image/png",
+              "width": 1556,
+              "height": 1123,
+              "alt": "In the sunlit Ahead AI office, Mina presses a console and says “Ultrafast is live.” Small Token celebrates with three glowing quota lights and a glowing T. Dex and Wes watch. A display reads “QUOTA — 100%”.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/x/p2.png",
+              "bytes": 3678292,
+              "sha256": "de40dc398e9b4d859b79da050c76d897ae50aa8ab8bc728966e619e70f4c3806",
+              "type": "image/png",
+              "width": 1374,
+              "height": 1482,
+              "alt": "Token tap-dances on a keyboard to answer emails, finishes a checked six-slide pitch deck with his trailing hand, and delivers a neat stack of clipped client packets. Three task labels name the completed work. Quota displays decline from three lit segments to one while Mina, Dex and Wes watch.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/x/p3-p4.jpg",
+              "bytes": 1650907,
+              "sha256": "8df82643bb66befa81becae8824cd30931d00ab84a5c6652ffcf121bf0a6087f",
+              "type": "image/jpeg",
+              "width": 1448,
+              "height": 2343,
+              "alt": "Token’s head and hands droop and his knees buckle. His eyes, T and three quota windows are black. A large alarm reads “0 TOKENS”. His bright speed trail has broken off behind him; an intact printer lies ahead. “KRRRAAASH!” Token’s momentum bursts through a printer and a wooden desk brace, collapsing two desks and scattering chairs, paper and equipment. Mina, Dex and Wes react safely behind their workstation. The small robot remains intact and unpowered.",
+              "panelIds": [
+                "p3",
+                "p4"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/x/p5.png",
+              "bytes": 3554949,
+              "sha256": "5fc08631f2b6437e736548bb2dc8a9743485d4ab5538c2053351d54282dbfeac",
+              "type": "image/png",
+              "width": 1310,
+              "height": 1313,
+              "alt": "Amid extensive wrecked desks, printer pieces, toppled chairs and paper drifts, Mina kneels beside small unpowered Token and steadies his head. Dex celebrates: “Boom! A thousand percent efficiency—in half the time!” Wes looks skeptical. Token’s UI reads “QUOTA EXHAUSTED — RESETS IN 7 DAYS”. Boomer adds “4. BUY A NEW PRINTER” after three existing project tasks on the whiteboard.",
+              "panelIds": [
+                "p5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Up, Up, and Out of Tokens\n\nhttps://sorrytomorrow.com/comics/up-up-and-out-of-tokens/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/up-up-and-out-of-tokens/instagram/p1.jpg",
+              "bytes": 482483,
+              "sha256": "f99f32e9bd0e0fa8809f0f27bb1f28e4e2a11fa1d292c8c572d3d8621c6eb559",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "In the sunlit Ahead AI office, Mina presses a console and says “Ultrafast is live.” Small Token celebrates with three glowing quota lights and a glowing T. Dex and Wes watch. A display reads “QUOTA — 100%”.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/instagram/p2.jpg",
+              "bytes": 663704,
+              "sha256": "d55a336e40c98a305e1f9b31e11b540714607cbd182322583fbb354df7cf2427",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "Token tap-dances on a keyboard to answer emails, finishes a checked six-slide pitch deck with his trailing hand, and delivers a neat stack of clipped client packets. Three task labels name the completed work. Quota displays decline from three lit segments to one while Mina, Dex and Wes watch.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/instagram/p3.jpg",
+              "bytes": 402055,
+              "sha256": "dd203c437bd2289f46bfe0394e75cd5369c71896f695d1094b8941a4d455cb35",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "Token’s head and hands droop and his knees buckle. His eyes, T and three quota windows are black. A large alarm reads “0 TOKENS”. His bright speed trail has broken off behind him; an intact printer lies ahead.",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/instagram/p4.jpg",
+              "bytes": 621363,
+              "sha256": "610d63492ac396197e6e96bcf596af8312ba29cb6d3d925584d50fdc72659355",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "“KRRRAAASH!” Token’s momentum bursts through a printer and a wooden desk brace, collapsing two desks and scattering chairs, paper and equipment. Mina, Dex and Wes react safely behind their workstation. The small robot remains intact and unpowered.",
+              "panelIds": [
+                "p4"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/instagram/p5.jpg",
+              "bytes": 703603,
+              "sha256": "60974435c5735182b481c4adca349da80edf2daafd84f903f155e95f5a0cbabe",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "Amid extensive wrecked desks, printer pieces, toppled chairs and paper drifts, Mina kneels beside small unpowered Token and steadies his head. Dex celebrates: “Boom! A thousand percent efficiency—in half the time!” Wes looks skeptical. Token’s UI reads “QUOTA EXHAUSTED — RESETS IN 7 DAYS”. Boomer adds “4. BUY A NEW PRINTER” after three existing project tasks on the whiteboard.",
+              "panelIds": [
+                "p5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Up, Up, and Out of Tokens\n\nhttps://sorrytomorrow.com/comics/up-up-and-out-of-tokens/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/up-up-and-out-of-tokens/facebook/p1.jpg",
+              "bytes": 482483,
+              "sha256": "f99f32e9bd0e0fa8809f0f27bb1f28e4e2a11fa1d292c8c572d3d8621c6eb559",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "In the sunlit Ahead AI office, Mina presses a console and says “Ultrafast is live.” Small Token celebrates with three glowing quota lights and a glowing T. Dex and Wes watch. A display reads “QUOTA — 100%”.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/facebook/p2.jpg",
+              "bytes": 663704,
+              "sha256": "d55a336e40c98a305e1f9b31e11b540714607cbd182322583fbb354df7cf2427",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "Token tap-dances on a keyboard to answer emails, finishes a checked six-slide pitch deck with his trailing hand, and delivers a neat stack of clipped client packets. Three task labels name the completed work. Quota displays decline from three lit segments to one while Mina, Dex and Wes watch.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/facebook/p3.jpg",
+              "bytes": 402055,
+              "sha256": "dd203c437bd2289f46bfe0394e75cd5369c71896f695d1094b8941a4d455cb35",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "Token’s head and hands droop and his knees buckle. His eyes, T and three quota windows are black. A large alarm reads “0 TOKENS”. His bright speed trail has broken off behind him; an intact printer lies ahead.",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/facebook/p4.jpg",
+              "bytes": 621363,
+              "sha256": "610d63492ac396197e6e96bcf596af8312ba29cb6d3d925584d50fdc72659355",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "“KRRRAAASH!” Token’s momentum bursts through a printer and a wooden desk brace, collapsing two desks and scattering chairs, paper and equipment. Mina, Dex and Wes react safely behind their workstation. The small robot remains intact and unpowered.",
+              "panelIds": [
+                "p4"
+              ]
+            },
+            {
+              "path": "public/social/up-up-and-out-of-tokens/facebook/p5.jpg",
+              "bytes": 703603,
+              "sha256": "60974435c5735182b481c4adca349da80edf2daafd84f903f155e95f5a0cbabe",
+              "type": "image/jpeg",
+              "width": 1080,
+              "height": 1350,
+              "alt": "Amid extensive wrecked desks, printer pieces, toppled chairs and paper drifts, Mina kneels beside small unpowered Token and steadies his head. Dex celebrates: “Boom! A thousand percent efficiency—in half the time!” Wes looks skeptical. Token’s UI reads “QUOTA EXHAUSTED — RESETS IN 7 DAYS”. Boomer adds “4. BUY A NEW PRINTER” after three existing project tasks on the whiteboard.",
+              "panelIds": [
+                "p5"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

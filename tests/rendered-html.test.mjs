@@ -49,11 +49,12 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 015 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="chief-babysitting-engineer"/);
+  assert.match(html, /Comic 016 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="up-up-and-out-of-tokens"/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/chief-babysitting-engineer\/p1\.webp/);
+  assert.match(html, /comics\/up-up-and-out-of-tokens\/p1\.webp/);
+  assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
   assert.match(html, /href="\/comics\/six-figure-growth\/#comic"/);
   assert.match(html, /The Assistant’s Assistant/);
@@ -140,7 +141,8 @@ test("server-renders Chief Babysitting Engineer with the approved art, transcrip
   assert.match(html, /I need your permission to eat!/);
   assert.match(html, /Congratulations, Mina\. You’ve been promoted to Chief Babysitting Engineer\./);
   assert.match(html, /href="\/comics\/working-from-home-or-laundry-from-work\/#comic"/);
-  assert.match(html, /You’re at the latest comic/);
+  assert.match(html, /href="\/comics\/up-up-and-out-of-tokens\/#comic"/);
+  assert.doesNotMatch(html, /You’re at the latest comic/);
 });
 
 test("keeps the finished surface free of starter residue", async () => {
@@ -166,7 +168,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 15);
+  assert.equal(JSON.parse(catalog).episodes.length, 16);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -243,7 +245,8 @@ test("published navigation connects Founder through the latest release", async (
     ["the-assistants-assistant", "incognito-mode", "six-figure-growth"],
     ["six-figure-growth", "the-assistants-assistant", "working-from-home-or-laundry-from-work"],
     ["working-from-home-or-laundry-from-work", "six-figure-growth", "chief-babysitting-engineer"],
-    ["chief-babysitting-engineer", "working-from-home-or-laundry-from-work", null],
+    ["chief-babysitting-engineer", "working-from-home-or-laundry-from-work", "up-up-and-out-of-tokens"],
+    ["up-up-and-out-of-tokens", "chief-babysitting-engineer", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);

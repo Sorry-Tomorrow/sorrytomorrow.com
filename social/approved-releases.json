@@ -33,5 +33,12 @@
     "approval3Sha256": "4424b49a76c019b539ae94715e73402e5a0749770ddd9b89dd89b0a99a1707b5",
     "sourceManifestSha256": "5f36414d1e0c96a3a94dfbe04909c1c247712f221e2358c5b1673836bb39adca",
     "releaseAuthoritySha256": "7de4d1b724e6fdba0a983b206fa006a8fc77ef4bbd51374ea6c0e273993fccfa"
+  },
+  "up-up-and-out-of-tokens": {
+    "internalId": "ST-SCRATCH-007",
+    "manifestSha256": "9f68dafcf7cc5734a5f16d5970b0d280766896c554ad70727a0362bb8ac106d6",
+    "approval3Sha256": "e23cca05a2abfabb06689aba73f7012b4eab41b5ae63931bdc79dcd63d6ba9c7",
+    "sourceManifestSha256": "0315132755bb021234a305beda4f10d3049eea1c28c505805bd0f2e7226bd49a",
+    "releaseAuthoritySha256": "2df636c19b448d50c7c5c8bcbc5607618f355070c2c5549ea46e7f91ccdf09e2"
   }
 }
