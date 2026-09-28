@@ -2023,6 +2023,12 @@
             }
           ],
           "verifiedAt": "2026-09-28T23:26:01.045Z"
+        },
+        "instagram": {
+          "status": "reserved",
+          "startedAt": "2026-09-28T23:26:02.085Z",
+          "steps": {},
+          "results": []
         }
       }
     }
