@@ -1885,6 +1885,15 @@
           }
         }
       }
+    },
+    "ST-SCRATCH-007": {
+      "slug": "up-up-and-out-of-tokens",
+      "title": "Up, Up, and Out of Tokens",
+      "manifestSha256": "9f68dafcf7cc5734a5f16d5970b0d280766896c554ad70727a0362bb8ac106d6",
+      "sourceCommit": "bd94e2a35cffe1e6fb6d5dd9388482c7f71a2f05",
+      "runId": "36497871314",
+      "createdAt": "2026-09-28T23:25:35.815Z",
+      "platforms": {}
     }
   }
 }
