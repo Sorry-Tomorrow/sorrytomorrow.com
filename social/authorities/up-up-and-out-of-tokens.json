@@ -1,0 +1,59 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-09-28",
+  "recordedAt": "2026-09-28T23:10:38.757Z",
+  "internalId": "ST-SCRATCH-007",
+  "title": "Up, Up, and Out of Tokens",
+  "ownerInstruction": "approved, launch it",
+  "resolvedContext": "Approval 3 and release of the exact final v6 finish-v1 candidate through the established website and standing X, Instagram and Facebook automation.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "e23cca05a2abfabb06689aba73f7012b4eab41b5ae63931bdc79dcd63d6ba9c7",
+  "sourceManifestSha256": "0315132755bb021234a305beda4f10d3049eea1c28c505805bd0f2e7226bd49a",
+  "readerSharingManifestSha256": "1e286b5bb0606fdf545020c5024bc73b41dedabac88b4ed134628c08c7c2770e",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentityPlan": {
+    "episodeNumber": 16,
+    "displayVersion": "v0.0.16",
+    "slug": "up-up-and-out-of-tokens",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/up-up-and-out-of-tokens/",
+    "plannedWebsiteReleaseMetadata": "2026-09-28T23:10:38.757Z",
+    "basis": "Fresh origin/main 5d46c2a0eb45928ea4ffafc6b788f934dddf7113 contains 15 public comics, maximum 15; this slug and internal ID are unused."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "captionRule": {
+    "source": "studio/editorial/ultrafast-rebuild-20260928-v6/art-pass-v1/finish-v1/RELEASE-COPY.json",
+    "text": "Up, Up, and Out of Tokens\n\nhttps://sorrytomorrow.com/comics/up-up-and-out-of-tokens/\n\nAI-assisted comic by Sorry, Tomorrow.",
+    "policy": "Exact title, canonical link and AI-assisted disclosure; no rewrite."
+  },
+  "assetRule": "Copy the exact approved native PNGs, lossless WebPs, reader-sharing JPEGs, five-image Instagram/Facebook JPEG editions and four-attachment X edition. All five story panels exactly once per destination. No art edits or new encoding.",
+  "budgetRule": "No new paid spend; retain X existing $5 provider cap and auto-recharge off.",
+  "executionRule": "Stage through existing readers, validate scoped branch, merge under owner launch authority, verify Pages and automatic social receipts. Inspect uncertain outcomes before retrying.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "new accounts or permissions",
+    "other comic backfill"
+  ],
+  "publicationClaim": "Authority only; live publication is not yet claimed."
+}

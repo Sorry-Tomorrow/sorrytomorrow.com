@@ -17,6 +17,158 @@
   },
   "episodes": [
     {
+      "internalId": "ST-SCRATCH-007",
+      "slug": "up-up-and-out-of-tokens",
+      "title": "Up, Up, and Out of Tokens",
+      "publicNumber": 16,
+      "publicVersion": "v0.0.16",
+      "label": "Comic 016 · Ahead AI",
+      "websitePublishedAt": "2026-09-28T23:10:38.757Z",
+      "previewOnly": false,
+      "readerLayout": "single-panel",
+      "displayDate": "v0.0.16",
+      "caption": "Up, Up, and Out of Tokens",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/up-up-and-out-of-tokens/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Up, Up, and Out of Tokens: Mina activates Ultrafast while small Token celebrates and Dex and Wes watch."
+      },
+      "art": [
+        {
+          "src": "comics/up-up-and-out-of-tokens/p1.png",
+          "webpSrc": "comics/up-up-and-out-of-tokens/p1.webp",
+          "width": 1556,
+          "height": 1123,
+          "alt": "In the sunlit Ahead AI office, Mina presses a console and says “Ultrafast is live.” Small Token celebrates with three glowing quota lights and a glowing T. Dex and Wes watch. A display reads “QUOTA — 100%”."
+        },
+        {
+          "src": "comics/up-up-and-out-of-tokens/p2.png",
+          "webpSrc": "comics/up-up-and-out-of-tokens/p2.webp",
+          "width": 1374,
+          "height": 1482,
+          "alt": "Token tap-dances on a keyboard to answer emails, finishes a checked six-slide pitch deck with his trailing hand, and delivers a neat stack of clipped client packets. Three task labels name the completed work. Quota displays decline from three lit segments to one while Mina, Dex and Wes watch."
+        },
+        {
+          "src": "comics/up-up-and-out-of-tokens/p3.png",
+          "webpSrc": "comics/up-up-and-out-of-tokens/p3.webp",
+          "width": 1499,
+          "height": 1161,
+          "alt": "Token’s head and hands droop and his knees buckle. His eyes, T and three quota windows are black. A large alarm reads “0 TOKENS”. His bright speed trail has broken off behind him; an intact printer lies ahead."
+        },
+        {
+          "src": "comics/up-up-and-out-of-tokens/p4.png",
+          "webpSrc": "comics/up-up-and-out-of-tokens/p4.webp",
+          "width": 1448,
+          "height": 1198,
+          "alt": "“KRRRAAASH!” Token’s momentum bursts through a printer and a wooden desk brace, collapsing two desks and scattering chairs, paper and equipment. Mina, Dex and Wes react safely behind their workstation. The small robot remains intact and unpowered."
+        },
+        {
+          "src": "comics/up-up-and-out-of-tokens/p5.png",
+          "webpSrc": "comics/up-up-and-out-of-tokens/p5.webp",
+          "width": 1310,
+          "height": 1313,
+          "alt": "Amid extensive wrecked desks, printer pieces, toppled chairs and paper drifts, Mina kneels beside small unpowered Token and steadies his head. Dex celebrates: “Boom! A thousand percent efficiency—in half the time!” Wes looks skeptical. Token’s UI reads “QUOTA EXHAUSTED — RESETS IN 7 DAYS”. Boomer adds “4. BUY A NEW PRINTER” after three existing project tasks on the whiteboard."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Mina",
+              "text": "Ultrafast is live."
+            },
+            {
+              "speaker": "UI",
+              "text": "QUOTA — 100%"
+            }
+          ],
+          "description": "In the sunlit Ahead AI office, Mina presses a console and says “Ultrafast is live.” Small Token celebrates with three glowing quota lights and a glowing T. Dex and Wes watch. A display reads “QUOTA — 100%”."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Completion tag",
+              "text": "EMAILS ANSWERED"
+            },
+            {
+              "speaker": "Completion tag",
+              "text": "PITCH DECK FINISHED"
+            },
+            {
+              "speaker": "Completion tag",
+              "text": "CLIENT PACKETS DELIVERED"
+            },
+            {
+              "speaker": "Inbox screen",
+              "text": "INBOX"
+            },
+            {
+              "speaker": "Previous unread count, crossed out",
+              "text": "99+"
+            },
+            {
+              "speaker": "Current inbox count",
+              "text": "0"
+            },
+            {
+              "speaker": "Presentation screen",
+              "text": "6 SLIDES"
+            }
+          ],
+          "description": "Token tap-dances on a keyboard to answer emails, finishes a checked six-slide pitch deck with his trailing hand, and delivers a neat stack of clipped client packets. Three task labels name the completed work. Quota displays decline from three lit segments to one while Mina, Dex and Wes watch."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "UI",
+              "text": "0 TOKENS"
+            }
+          ],
+          "description": "Token’s head and hands droop and his knees buckle. His eyes, T and three quota windows are black. A large alarm reads “0 TOKENS”. His bright speed trail has broken off behind him; an intact printer lies ahead."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Impact sound",
+              "text": "KRRRAAASH!"
+            }
+          ],
+          "description": "“KRRRAAASH!” Token’s momentum bursts through a printer and a wooden desk brace, collapsing two desks and scattering chairs, paper and equipment. Mina, Dex and Wes react safely behind their workstation. The small robot remains intact and unpowered."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Boom! A thousand percent efficiency—in half the time!"
+            },
+            {
+              "speaker": "Token system UI",
+              "text": "QUOTA EXHAUSTED — RESETS IN 7 DAYS"
+            },
+            {
+              "speaker": "Whiteboard",
+              "text": "1. FINISH CLIENT DEMO"
+            },
+            {
+              "speaker": "Whiteboard",
+              "text": "2. TEST LAUNCH PLAN"
+            },
+            {
+              "speaker": "Whiteboard",
+              "text": "3. REVIEW RESULTS"
+            },
+            {
+              "speaker": "Whiteboard",
+              "text": "4. BUY A NEW PRINTER"
+            }
+          ],
+          "description": "Amid extensive wrecked desks, printer pieces, toppled chairs and paper drifts, Mina kneels beside small unpowered Token and steadies his head. Dex celebrates: “Boom! A thousand percent efficiency—in half the time!” Wes looks skeptical. Token’s UI reads “QUOTA EXHAUSTED — RESETS IN 7 DAYS”. Boomer adds “4. BUY A NEW PRINTER” after three existing project tasks on the whiteboard."
+        }
+      ]
+    },
+    {
       "internalId": "ST-CHIEF-BABYSITTING-ENGINEER",
       "slug": "chief-babysitting-engineer",
       "title": "Chief Babysitting Engineer",
