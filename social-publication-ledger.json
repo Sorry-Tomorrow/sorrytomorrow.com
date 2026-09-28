@@ -2029,8 +2029,13 @@
           "startedAt": "2026-09-28T23:26:02.085Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-09-28T23:26:03.053Z"
+              "status": "done",
+              "startedAt": "2026-09-28T23:26:03.053Z",
+              "result": {
+                "id": "18093417197361446",
+                "sha256": "f99f32e9bd0e0fa8809f0f27bb1f28e4e2a11fa1d292c8c572d3d8621c6eb559"
+              },
+              "completedAt": "2026-09-28T23:26:08.775Z"
             }
           },
           "results": []
