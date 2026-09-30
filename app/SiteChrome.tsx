@@ -1,5 +1,6 @@
 import { publishedEpisodes as episodes, series } from "@/content/episodes";
 import { sitePath } from "./site";
+import { ComicShare } from "./ComicShare";
 
 export function SiteHeader({ preview = false }: { preview?: boolean } = {}) {
   const latest = episodes[0];
@@ -38,6 +39,7 @@ export function SiteHeader({ preview = false }: { preview?: boolean } = {}) {
 export function SiteFooter() {
   return (
     <footer className="site-footer">
+      <ComicShare title={series.title} text={series.description} url={`${series.canonicalOrigin}/`} placement="footer" />
       <a href={`${sitePath("/")}#latest-comic`}>Latest</a>
       <a href={`${sitePath("/")}#characters`}>Characters</a>
       <a href={`${sitePath("/")}#about`}>About</a>
@@ -46,7 +48,7 @@ export function SiteFooter() {
       <a href={sitePath("colophon/")}>Colophon</a>
       <a href={sitePath("privacy/")}>Privacy</a>
       {Object.entries(series.social).map(([channel, social]) => (
-        <a key={social.url} href={social.url} rel="me noreferrer" data-social-channel={channel}>
+        <a key={social.url} href={social.url} rel="me noreferrer" data-social-channel={channel} data-social-destination-type="profile">
           {social.label}
         </a>
       ))}

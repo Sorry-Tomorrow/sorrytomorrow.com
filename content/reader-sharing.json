@@ -1,9 +1,359 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
-  "status": "approved",
-  "manifestSha256": "1e286b5bb0606fdf545020c5024bc73b41dedabac88b4ed134628c08c7c2770e",
-  "approvalReceiptSha256": "b4fbe2ff0e2727a8f5f839e555462508b93e35ccbdf93c6556b8b0adeca27d28",
+  "status": "candidate",
+  "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+  "approvalReceiptSha256": null,
   "episodes": {
+    "executive-twin": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/executive-twin/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Executive Twin — Sorry, Tomorrow. Panel 1. Dex says, “I trained a digital twin on my entire leadership style.” Clara says, “Were outcomes included?” Dex presents a miniature holographic copy while Clara tests the premise.",
+        "sha256": "74ae964d45c5343d21d528940c678ca678da6072f9d398a00a7de01466f9bbb6",
+        "bytes": 172346,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/executive-twin/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 6583,
+        "alt": "Executive Twin. Complete 4-panel Sorry, Tomorrow comic. Panel 1: Panel 1. Dex says, “I trained a digital twin on my entire leadership style.” Clara says, “Were outcomes included?” Dex presents a miniature holographic copy while Clara tests the premise. Visible copy: Dex: “I trained a digital twin on my entire leadership style.” Clara: “Were outcomes included?” Panel 2: Panel 2. Mina says, “It can now make executive decisions at machine speed.” Wes says, “Can it explain one?” Mina celebrates the working prototype as Wes reaches toward rollback. Visible copy: Mina: “It can now make executive decisions at machine speed.” Wes: “Can it explain one?” Panel 3: Panel 3. AI Dex says, “My recommendation: delegate all accountability.” Dex says, “See? It understands management.” The digital twin reproduces Dex’s blind spot perfectly. Visible copy: AI Dex: “My recommendation: delegate all accountability.” Dex: “See? It understands management.” Panel 4: Panel 4. Four holographic Dexes route accountability clockwise around the proudly posing original as Clara and Token stare, Mina applauds, and Wes reaches for rollback. No dialogue.",
+        "sha256": "dfeda429cf06eeb332ab1c7f700819e53a2b39a387e031a8028da221243fc18f",
+        "bytes": 2685263,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-executive-twin-complete.jpg"
+      },
+      "shareText": "Leadership at machine speed. Accountability sold separately."
+    },
+    "undefeated": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/undefeated/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Undefeated — Sorry, Tomorrow. Opening panel: Mina hands Token an unchecked launch checklist and says, “And make no mistakes.”",
+        "sha256": "ac2f24df2ce5cd959c340459065a4a10d8c26d5c51467f7dfc693771be0ae900",
+        "bytes": 143196,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/undefeated/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 3505,
+        "alt": "Undefeated. Complete 2-panel Sorry, Tomorrow comic. Panel 1: Mina hands Token a substantial unchecked launch checklist beside a dark, untouched workstation. The checklist is labeled LAUNCH CHECKLIST. Visible copy: Mina: “And make no mistakes.” Panel 2: The workstation remains untouched and the checklist remains empty. Token stands on a tiny podium holding an enormous gold trophy while a scoreboard reads MISTAKES: 0 and TASKS ATTEMPTED: 0. Mina throws up her hands in stunned disbelief. Visible copy: Token: “Undefeated.”",
+        "sha256": "8ec11cb4d22c013f0fc296b2e08cca67131f543a7bf874a779bd69057384f652",
+        "bytes": 1079025,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-undefeated-complete.jpg"
+      },
+      "shareText": "Zero mistakes. The methodology is flawless."
+    },
+    "vibe-coding-in-your-sleep": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/vibe-coding-in-your-sleep/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Vibe Coding in Your Sleep — Sorry, Tomorrow. Opening panel: Mina sleeps at her desk at 2:17 A.M. while Token waits beside her.",
+        "sha256": "72d34865f4bbf4d6e2f104305f9c33f38a1d887bd001838dfe5dfe89a1fc83c8",
+        "bytes": 124354,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/vibe-coding-in-your-sleep/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 5865,
+        "alt": "Vibe Coding in Your Sleep. Complete 4-panel Sorry, Tomorrow comic. Panel 1: Mina has fallen asleep at her desk while Token waits beside her in ambient listening mode. Visible copy: Clock: “2:17 A.M.” Panel 2: Still asleep, Mina murmurs four disconnected fragments and Token treats them as requirements. Visible copy: Mina: “auto-magical…” Mina: “add glitter…” Mina: “add joy…” Mina: “make token pretty…” Panel 3: By morning, the same workstation has become pastel and decorative while Mina remains asleep. Visible copy: System: “AUTOMATED BEAUTY PROFILE ENABLED” Panel 4: Token stands alone beneath a glittering halo, covered in fluffy trim and charms, visibly irritated by the makeover he executed. No dialogue.",
+        "sha256": "3e2707e8850ac28481684b3ef62bb8fdea25e964847228c2f7d7fc049ba2f700",
+        "bytes": 1709453,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-vibe-coding-in-your-sleep-complete.jpg"
+      },
+      "shareText": "Mina talks in her sleep. Token treats it as a requirements document."
+    },
+    "the-honest-demo": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/the-honest-demo/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "The Honest Demo — Sorry, Tomorrow. Ahead AI begins a live client demonstration. Dex says the Ahead AI Agent is live on the client’s servers, and the middle client CEO asks for the executive summary. Token watches from the left.",
+        "sha256": "e81bc607c1005699521dc778c96b72e828bb3cf75be77edd0e485635e4e8b470",
+        "bytes": 167745,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/the-honest-demo/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 5098,
+        "alt": "The Honest Demo. Complete 4-panel Sorry, Tomorrow comic. Panel 1: Ahead AI begins a live client demonstration. Dex says the Ahead AI Agent is live on the client’s servers, and the middle client CEO asks for the executive summary. Token watches from the left. Visible copy: Dex: “The Ahead AI Agent is live on your servers.” Client CEO: “Give me the executive summary.” Panel 2: The Agent reports that the lease payment is 38 days late and that a customer has been waiting on Line 2 for 36 hours. The room maintains its polite presentation composure. Visible copy: Ahead AI Agent: “Lease payment: 38 days late.” Ahead AI Agent: “Customer has been waiting on Line 2 for 36 hours.” Panel 3: The Agent reports an empty toilet-paper roll in the lobby restroom and names Marcio, the cafeteria cashier, as top performer with zero missed deliveries. Every human stares in synchronized shock while Token remains dry. Visible copy: Ahead AI Agent: “Lobby restroom: out of toilet paper.” Ahead AI Agent: “Marcio, cafeteria cashier. Zero missed deliveries.” Panel 4: The display says Executive Summary Complete. The middle client CEO beams and says, Brilliant! Roll it out immediately. The clients are pleased, Ahead AI is stunned, and Token looks unimpressed. Visible copy: Display: “Executive summary complete.” Client CEO: “Brilliant!! Roll it out immediately!”",
+        "sha256": "ef21d8f3f91bfd09074e8a5a2c009bb1aacfe56a00bfdef3ce30ab58ce6ec382",
+        "bytes": 2412730,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-the-honest-demo-complete.jpg"
+      },
+      "shareText": "The Ahead AI Agent is live on the client’s servers. What could possibly be in the executive summary?"
+    },
+    "founder-inc-llc": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/founder-inc-llc/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Founder, Inc. LLC — Sorry, Tomorrow. At an AI conference badge-pickup table, a confident young man in sunglasses and a coral patterned camp shirt holds a tropical cocktail and proudly displays an oversized gold star labeled FOUNDER.",
+        "sha256": "48fbf1428feec6ed2a26cd2064a3ce6589e12627b06db5a1c87c8cf050caf987",
+        "bytes": 148796,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/founder-inc-llc/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 3257,
+        "alt": "Founder, Inc. LLC. Complete 2-panel Sorry, Tomorrow comic. Panel 1: At an AI conference badge-pickup table, a confident young man in sunglasses and a coral patterned camp shirt holds a tropical cocktail and proudly displays an oversized gold star labeled FOUNDER. Visible copy: Registration sign: “AI CONFERENCE — BADGE PICKUP” Founder star: “FOUNDER” Panel 2: A high, wide view reveals about forty nearly identical copies of the same man standing in pairs and small groups, facing one another in animated conversation while gold founder stars and tropical cocktails repeat across the room. Visible copy: Founder stars: “FOUNDER”",
+        "sha256": "c5f9ef71888aab02d01e576d59e48b864f4b8d2b1a774b8e611940a16ce4a449",
+        "bytes": 1693486,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-founder-inc-llc-complete.jpg"
+      },
+      "shareText": "At first, the badge felt exclusive. Then the mixer doors opened."
+    },
+    "not-so-smart-thermostat": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/not-so-smart-thermostat/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Not-So-Smart Thermostat — Sorry, Tomorrow. Boomer Slate points proudly at a new wall thermostat while Wes, Clara, Mina, Dex, and Token gather around. Boomer says, ‘Good news—the new smart thermostat is installed. It can finally read the room.’",
+        "sha256": "ac907781afa3f2e29c0a78f7d922b37b109dd308b369da16db56bb551c75a7e5",
+        "bytes": 217978,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/not-so-smart-thermostat/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 11060,
+        "alt": "Not-So-Smart Thermostat. Complete 6-panel Sorry, Tomorrow comic. Panel 1: Boomer Slate points proudly at a new wall thermostat while Wes, Clara, Mina, Dex, and Token gather around. Boomer says, ‘Good news—the new smart thermostat is installed. It can finally read the room.’ Visible copy: Boomer: “Good news—the new smart thermostat is installed. It can finally read the room.” Panel 2: Mina Sparks works at her sticker-covered laptop beside Token while four playful text-free doodle bursts—spark, tangled knot, gears, and confetti—spill from the laptop. She says, ‘There… we… go. I connected the thermostat to Token. Now you can just ask him to change it to whatever you want!’ A cable and separate cyan signal show Token connected to the thermostat. Visible copy: Mina: “There… we… go.” Mina: “I connected the thermostat to Token. Now you can just ask him to change it to whatever you want!” Panel 3: Clara Fye rolls her eyes and says, ‘The beach.’ The rest of the office has become a sunny beach, with the team, Token, desks, computers, and chairs standing in sand and shallow water. Visible copy: Clara: “The beach.” Panel 4: Dex Vane excitedly says, ‘The aquarium!’ In the larger half, the office is underwater with fish, kelp, desks, chairs, and the thermostat; the five humans hold their breath while Token remains comfortable. Visible copy: Dex: “The aquarium!” Panel 5: Wes Rollback rolls his eyes and says, ‘The bar…’ In the bar-side outcome, Dex, Clara, Mina, Boomer, and Token celebrate while Wes sits apart at the counter, still unimpressed. Visible copy: Wes: “The bar…” Panel 6: Token cheerfully raises one finger and says, ‘NO HUMAN IN THE LOOP!’ Below, he lounges alone on a navy office couch eating popcorn while the wall thermostat projects a bright, intact city filled with trees, flowers, birds, and a rabbit. The scene is playful, not destructive. Visible copy: Token: “NO HUMAN IN THE LOOP!”",
+        "sha256": "8a61d2080ef3d95e738beb451dbc0a939d11209e2f254ad32042d8ffd982aae1",
+        "bytes": 4733595,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-not-so-smart-thermostat-complete.jpg"
+      },
+      "shareText": "The office gets a smart thermostat. Everyone has a request."
+    },
+    "oops-i-drifted-again": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/oops-i-drifted-again/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Oops… I Drifted Again — Sorry, Tomorrow. Clara Fye shows an icon-only purple-duck card and points toward Token. One purple rubber duck sits in Token's open lower exterior tray while Boomer Slate positions one empty sorting bin.",
+        "sha256": "dae2ba78ce67a5de851670d46ea3aadfa8e3b5144449892c43e12a2cda2a777a",
+        "bytes": 155146,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/oops-i-drifted-again/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 2974,
+        "alt": "Oops… I Drifted Again. Complete 4-panel Sorry, Tomorrow comic. Panel 1: Clara Fye shows an icon-only purple-duck card and points toward Token. One purple rubber duck sits in Token's open lower exterior tray while Boomer Slate positions one empty sorting bin. No dialogue. Panel 2: Token's tray contains several wrong yellow duck variants. Clara classifies them in a tabbed notebook while Boomer holds more sorting bins with warm logistical alarm. No dialogue. Panel 3: A huge fountain of yellow rubber ducks rises from Token's lower tray and curves over his intact body while Clara and Boomer recoil from opposite sides. No dialogue. Panel 4: Yellow rubber ducks fill the office. Boomer stands on a meeting table, Clara stands on a separate pedestal and raises the sole purple duck, Token stands intact beside her, and Mina Sparks smiles safely from a dry duck pile. No dialogue.",
+        "sha256": "e5acc61e8a2837bcc67f42bbf262c999c2e156c5d673aa459b1ecf19a253f367",
+        "bytes": 1739736,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-oops-i-drifted-again-complete.jpg"
+      },
+      "shareText": "One purple duck. A very simple request."
+    },
+    "magnification-spiral": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/magnification-spiral/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "The Magnification Spiral — Sorry, Tomorrow. In a bright office, Clara Fye points to a tiny coral dot in a sparse wall diagram while Boomer Slate leans in; her closed tabbed notebook and his cognac organizer remain with them.",
+        "sha256": "393fab94caff701490e563f2e7603ba43da5d8748b03e9280afebd7b47ff460b",
+        "bytes": 134356,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/magnification-spiral/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 4219,
+        "alt": "The Magnification Spiral. Complete 5-panel Sorry, Tomorrow comic. Panel 1: In a bright office, Clara Fye points to a tiny coral dot in a sparse wall diagram while Boomer Slate leans in; her closed tabbed notebook and his cognac organizer remain with them. No dialogue. Panel 2: At a desk, Clara Fye points with her right hand to a larger coral dot inside a supported lens filled with a dense diagram; the smaller source dot remains on the sparse wall board, Boomer Slate steadies the lens, and Clara's closed notebook rests alone on the desk. No dialogue. Panel 3: Boomer Slate pushes a human-height wheeled lens while Clara Fye holds her closed notebook and points to a dot in the denser web revealed by the glass. No dialogue. Panel 4: Five wheeled lenses form a tunnel through an open office window; Boomer Slate pushes the largest foreground lens while Clara Fye points to the farthest speck. No dialogue. Panel 5: The final lens reveals Token's upper inner cleaning chassis gripping an opaque teal curtain beneath shower jets, with intact cream casings arranged on a cleaning dock; Clara Fye averts her gaze and hugs her closed notebook while Boomer Slate looks away, pivots the lens, and raises an apologetic palm beside jagged silent-shock lines. No dialogue.",
+        "sha256": "ad67333336c26cd89f9f9d12c0516fcc213ff2b8b2e0a8de7be0d2eace7b1b03",
+        "bytes": 2115883,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-magnification-spiral-complete.jpg"
+      },
+      "shareText": "Clara notices one tiny detail. Boomer helps her take a closer look."
+    },
+    "so-you-vibe-coded-an-app": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/so-you-vibe-coded-an-app/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "So You Vibe-Coded an App… — Sorry, Tomorrow. Clara Fye announces, ‘It’s done! Our first vibe-coded app!’ Wes Rollback hesitates: ‘Eh….’ A display reads AUTONOMOUS PRODUCT and 95% DONE above an almost-full progress bar.",
+        "sha256": "c643366381fbc6aee821eb67a332f0405776231cb472fb6537858be9697534b5",
+        "bytes": 202464,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/so-you-vibe-coded-an-app/sharing/v1/complete.jpg",
+        "width": 2160,
+        "height": 2700,
+        "alt": "So You Vibe-Coded an App…. Complete 4-panel Sorry, Tomorrow comic. Panel 1: Clara Fye announces, ‘It’s done! Our first vibe-coded app!’ Wes Rollback hesitates: ‘Eh….’ A display reads AUTONOMOUS PRODUCT and 95% DONE above an almost-full progress bar. Visible copy: Clara: “It’s done! Our first vibe-coded app!” Wes: “Eh….” Display: “AUTONOMOUS PRODUCT / 95% DONE” Panel 2: Clara asks, ‘Wait, what’s that?’ Wes answers, ‘The other “5%…”’ They indicate a tiny floor-level double hatch marked 5%. Visible copy: Clara: “Wait, what’s that?” Wes: “The other “5%…”” Hatch label: “5%” Panel 3: In a silent panel, Clara and Wes crouch and open opposite leaves of the tiny hatch. A receding walkway inside hints at a much larger space. No dialogue. Panel 4: Towering work queues dwarf Clara and Wes. A lone exclamation-point bubble sits above Clara. Wes’s many speech bubbles list Testing, Test Environments, Security, Telemetry, Analytics, Marketing, Social Media, Disaster recovery, Support, Updates, and finally 0 users. Visible copy: Clara’s reaction bubble: “!” Wes: “Testing” Wes: “Test Environments” Wes: “Security” Wes: “Telemetry” Wes: “Analytics” Wes: “Marketing” Wes: “Social Media” Wes: “Disaster recovery” Wes: “Support” Wes: “Updates” Wes: “0 users”",
+        "sha256": "2a61806d7a11d7a385ba38acba81bae147f5e7948d4dc9f54dfa9ecaba778c44",
+        "bytes": 1674710,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-so-you-vibe-coded-an-app-complete.jpg"
+      },
+      "shareText": "A first vibe-coded app. Just a few finishing touches."
+    },
+    "work-life-balance": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/work-life-balance/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Work Life Balance — Sorry, Tomorrow. In a warm office, Mina sits in a normal black office chair with one hand on the mouse. She turns toward standing Wes with an exaggerated proud grin. Her monitor offers to make a presentation from a client brief.",
+        "sha256": "44c414047af3258bc84da651454cb971e10e06b0bf332f014fbf128e41a0f26c",
+        "bytes": 157203,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/work-life-balance/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 3824,
+        "alt": "Work Life Balance. Complete 3-panel Sorry, Tomorrow comic. Panel 1: In a warm office, Mina sits in a normal black office chair with one hand on the mouse. She turns toward standing Wes with an exaggerated proud grin. Her monitor offers to make a presentation from a client brief. Visible copy: Mina: “This new AI makes the whole client presentation for me. Two hours of work—one click.” Screen: “CLIENT BRIEF / MAKE PRESENTATION” Panel 2: A closer two-shot holds their eye contact. Wes smiles and opens one hand as he asks his question. Mina looks up at him while reaching down beside her chair, out of view. Visible copy: Wes: “So… what’ll you do with all this newfound free time?” Panel 3: The office is subtly dimmed, but the monitor remains bright. Mina is now cocooned in a huge teal recliner and a coral-and-cream blanket, surrounded by a giant popcorn bucket, a large soda, and an excessive candy stash. She looks toward Wes and presses a finger to her lips, treating the presentation's 99% progress as a movie climax. Wes looks mildly taken aback. Visible copy: Mina: “Shh. This is the good part.” Screen: “MAKING PRESENTATION / 99%”",
+        "sha256": "6654cac480c9b6a651f6294abb48eef57e29295cf4240627dad851ee89c9cbf4",
+        "bytes": 1493987,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-work-life-balance-complete.jpg"
+      },
+      "shareText": "Mina finds a very comfortable use for the time her new AI saves."
+    },
+    "incognito-mode": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/incognito-mode/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Incognito Mode — Sorry, Tomorrow. In a sunny office, Mina sits at a desk facing a smiling cyan AI face projected above the monitor labeled AI 1. Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.”",
+        "sha256": "6e43b7af054d7bd2be91610fca6c499a5a885fb0f7628c1131bb9f1aadf7e31c",
+        "bytes": 185607,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/incognito-mode/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 6588,
+        "alt": "Incognito Mode. Complete 4-panel Sorry, Tomorrow comic. Panel 1: In a sunny office, Mina sits at a desk facing a smiling cyan AI face projected above the monitor labeled AI 1. Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.” Visible copy: Original AI: “I've checked your code. Everything is correct.” Mina: “Perfect. I trust you.” Panel 2: Hidden behind a large plant, Mina wears sunglasses and a fake mustache, cupping her hand beside her mouth toward a laptop labeled AI 2 resting on her lap. Token watches an approaching Wes through binoculars. Mina: “Check this code. I don't believe a word it said.” Visible copy: Mina: “Check this code. I don't believe a word it said.” Panel 3: Wes parts the plant's leaves and bends toward Mina. Startled, she grasps his collar; the AI 2 laptop remains on her lap. Wes: “Why are you wearing a disguise?” Visible copy: Wes: “Why are you wearing a disguise?” Panel 4: Mina whispers to Wes beside the plant: “My other AI thinks we’re exclusive.” Across the office, AI 1's face now glows red with an angry frown. Token holds his lowered binoculars and says, “You know it can hear you, right?” Visible copy: Mina: “My other AI thinks we’re exclusive.” Token: “You know it can hear you, right?”",
+        "sha256": "5340a0aac1f9d10f6a4bf1fabea249aa95a3bdfbd6dbf78be31b8128a3853864",
+        "bytes": 3009473,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-incognito-mode-complete.jpg"
+      },
+      "shareText": "Mina gets a second opinion on her code. Discreetly."
+    },
+    "the-assistants-assistant": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/the-assistants-assistant/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "The Assistant’s Assistant — Sorry, Tomorrow. In a sunlit office, Boomer sits at a spacious wooden desk and gestures happily toward a smiling AI face on his monitor. A narrow wheeled telephone desk waits nearby. He says, “Finally! An AI assistant to handle all my day-to-day work”",
+        "sha256": "be3a4e6053769752092dd59a19c7a003fd9599bf60cdfe4f070950e1424ceb48",
+        "bytes": 180624,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/the-assistants-assistant/sharing/v1/complete.jpg",
+        "width": 1800,
+        "height": 6939,
+        "alt": "The Assistant’s Assistant. Complete 4-panel Sorry, Tomorrow comic. Panel 1: In a sunlit office, Boomer sits at a spacious wooden desk and gestures happily toward a smiling AI face on his monitor. A narrow wheeled telephone desk waits nearby. He says, “Finally! An AI assistant to handle all my day-to-day work” Visible copy: Boomer: “Finally! An AI assistant to handle all my day-to-day work” Visible labels: “AI” Panel 2: A closer view shows Boomer listening with a finger to his headset. The AI smiles from his monitor and says, “Could you handle the calls? I need somewhere quiet to work.” Visible copy: AI assistant: “Could you handle the calls? I need somewhere quiet to work.” Visible labels: “AI” Panel 3: Cheerfully pushing the narrow desk, its full-size telephone and appointment pad through his office doorway, Boomer says, “Of course. I’ll work out here.” The AI remains at the spacious workstation inside. Visible copy: Boomer: “Of course. I’ll work out here.” Visible labels: “AI; BOOMER SLATE” Panel 4: Clara approaches Boomer, who is now seated at the tiny telephone desk in the hallway, his knees crowded around its supports. His former workstation and the AI remain inside the glass office. Clara asks, “Can I talk to your AI assistant?” Boomer raises a helpful finger and replies, “Do you have an appointment?” Visible copy: Clara: “Can I talk to your AI assistant?” Boomer: “Do you have an appointment?” Visible labels: “AI; BOOMER SLATE”",
+        "sha256": "a825e70352d1b077876d0bc0a95578d07f1dc4e4e8b821ae5ac67f7e8ee6120e",
+        "bytes": 2635156,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-the-assistants-assistant-complete.jpg"
+      },
+      "shareText": "Finally, someone to take work off your plate."
+    },
+    "six-figure-growth": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/six-figure-growth/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Six-Figure Growth? — Sorry, Tomorrow. The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue.",
+        "sha256": "e77ca4781bdaf263b8cb570bf8981991023e660442d783f8c58b3d0b5cc2d9f1",
+        "bytes": 191855,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/six-figure-growth/sharing/v1/complete.jpg",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Six-Figure Growth?. Complete 1-panel Sorry, Tomorrow comic. Panel 1: The Vibe Coder reclines poolside in sunglasses and a tropical shirt, smiling and raising champagne toward a giant green growth chart. The screen reads “MONTHLY AI BILL” and “$128,640.” A laptop sits on the side table. No dialogue. Visible copy: Screen: “MONTHLY AI BILL” Screen: “$128,640”",
+        "sha256": "a90ce5853bbe43aadf2b24f247ffb6c5b35461db7e6dee35e79b9ae42f24b52c",
+        "bytes": 647157,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-six-figure-growth-complete.jpg"
+      },
+      "shareText": "The Vibe Coder celebrates a chart that keeps going up."
+    },
+    "working-from-home-or-laundry-from-work": {
+      "status": "candidate",
+      "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
+      "approvalReceiptSha256": null,
+      "preview": {
+        "src": "/comics/working-from-home-or-laundry-from-work/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Working from Home, or Laundry from Work? — Sorry, Tomorrow. Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office.",
+        "sha256": "3d6586fd3333e4296e464c4494fb809b02a13ccfe7f47b67de6fc9f5459d2fef",
+        "bytes": 249295,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/working-from-home-or-laundry-from-work/sharing/v1/complete.jpg",
+        "width": 1440,
+        "height": 1560,
+        "alt": "Working from Home, or Laundry from Work?. Complete 1-panel Sorry, Tomorrow comic. Panel 1: Miles sits in an office chair, folding a clean blue T-shirt in a laundry room overflowing with clothes. A washer and dryer are stacked behind him. On a laptop beside him, his own video-call preview shows the same hoodie and headset in an immaculate office. No dialogue.",
+        "sha256": "c763b2daa231667ba930ed12cbf816ff2bb32fa6dbaff78bcfec51248108a27e",
+        "bytes": 950320,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-working-from-home-or-laundry-from-work-complete.jpg"
+      },
+      "shareText": "Miles takes multitasking from home a little too literally."
+    },
     "chief-babysitting-engineer": {
       "status": "approved",
       "manifestSha256": "f5b26c7634ca2d9d7a478ead0855bc087db2a94e460061f6b5b99e019e4a3e01",

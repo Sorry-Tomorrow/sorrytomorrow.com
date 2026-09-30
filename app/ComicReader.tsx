@@ -2,10 +2,14 @@ import {
   episodePath,
   episodes,
   publishedEpisodes,
+  series,
   type Episode,
 } from "@/content/episodes";
 import { ComicKeyboardNavigation } from "./ComicKeyboardNavigation";
+import { ComicShare } from "./ComicShare";
+import { getReaderSharing } from "@/content/reader-sharing";
 import { publicAssetPath, sitePath } from "./site";
+import { comicShareText } from "./sharing.mjs";
 
 type ComicReaderProps = {
   episode: Episode;
@@ -27,6 +31,8 @@ export function ComicReader({
   const newer = chronology[episodeIndex - 1];
   const olderHref = older ? episodeHref(older) : undefined;
   const newerHref = newer ? episodeHref(newer) : undefined;
+  const sharing = getReaderSharing(episode.slug);
+  const download = sharing.assets?.download;
 
   return (
     <article
@@ -147,6 +153,22 @@ export function ComicReader({
             </div>
           ))}
       </div>
+
+      {!episode.previewOnly && <ComicShare
+        title={episode.title}
+        text={comicShareText({
+          title: episode.title, seriesTitle: series.title,
+          summary: sharing.assets?.shareText ?? episode.caption,
+          disclosure: series.disclosure,
+          canonical: new URL(episodePath(episode.slug), series.canonicalOrigin).toString(),
+        })}
+        url={new URL(episodePath(episode.slug), series.canonicalOrigin).toString()}
+        slug={episode.slug}
+        number={episode.publicNumber}
+        download={download ? { url: publicAssetPath(download.src), filename: download.filename, bytes: download.bytes, mimeType: download.mimeType } : undefined}
+        officialPosts={sharing.officialPosts}
+        placement={anchorId === "latest-comic" ? "home" : "episode"}
+      />}
 
       <nav className="comic-navigation" aria-label="Comic chronology" data-comic-end>
         {older && olderHref ? (

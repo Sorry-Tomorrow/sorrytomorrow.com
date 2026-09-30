@@ -102,7 +102,7 @@ test("server-renders a unique canonical episode page", async () => {
   );
   assert.match(
     html,
-    /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/executive-twin\/og\.png"/,
+    /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/executive-twin\/sharing\/v1\/preview\.jpg"/,
   );
   assert.match(html, /I trained a digital twin on my entire leadership style/);
   assert.match(html, /id="comic"/);
@@ -116,7 +116,7 @@ test("server-renders the Assistant release with its approved title, preview and 
   const html = await response.text();
   assert.match(html, /<title>The Assistant’s Assistant \| Sorry, Tomorrow<\/title>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/sorrytomorrow\.com\/comics\/the-assistants-assistant\/"/);
-  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/the-assistants-assistant\/p1\.png"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/the-assistants-assistant\/sharing\/v1\/preview\.jpg"/);
   assert.match(html, /reader-layout-assistant/);
   assert.match(html, /Finally! An AI assistant to handle all my day-to-day work/);
   assert.match(html, /Could you handle the calls\? I need somewhere quiet to work\./);
@@ -263,7 +263,7 @@ test("single-panel release renders approved WebP with PNG fallback, exact transc
   const html = await response.text();
   assert.match(html, /<title>Six-Figure Growth\? \| Sorry, Tomorrow<\/title>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/sorrytomorrow\.com\/comics\/six-figure-growth\/"/);
-  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/six-figure-growth\/complete\.jpg"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/six-figure-growth\/sharing\/v1\/preview\.jpg"/);
   assert.match(html, /reader-layout-single-panel/);
   assert.match(html, /<source type="image\/webp" srcSet="\/comics\/six-figure-growth\/p1\.webp"/);
   assert.match(html, /<img class="comic-panel-art" src="\/comics\/six-figure-growth\/p1\.png" width="1193" height="1318"/);
@@ -279,7 +279,7 @@ test("Laundry from Work renders one complete silent panel, exact transcript and 
   const html = await response.text();
   assert.match(html, /<title>Working from Home, or Laundry from Work\? \| Sorry, Tomorrow<\/title>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/sorrytomorrow\.com\/comics\/working-from-home-or-laundry-from-work\/"/);
-  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/working-from-home-or-laundry-from-work\/complete\.jpg"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/sorrytomorrow\.com\/comics\/working-from-home-or-laundry-from-work\/sharing\/v1\/preview\.jpg"/);
   assert.match(html, /reader-layout-single-panel/);
   assert.match(html, /Comic 014 · Ahead AI · v0\.0\.14/);
   assert.match(html, /<source type="image\/webp" srcSet="\/comics\/working-from-home-or-laundry-from-work\/p1\.webp"/);

@@ -1,11 +1,13 @@
 import { access, cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { validateReaderSharing } from "./validate-reader-sharing.mjs";
 
 const catalog = JSON.parse(await readFile("content/episodes.json", "utf8"));
 const hasPrivatePreviews = catalog.episodes.some(episode => episode.previewOnly);
 if (hasPrivatePreviews && process.env.SORRY_TOMORROW_LOCAL_PREVIEW !== "true") {
   throw new Error("Private comic previews are present. Publication is not authorized; use SORRY_TOMORROW_LOCAL_PREVIEW=true only to prepare a local review artifact.");
 }
+await validateReaderSharing(process.cwd(), { localPreview: process.env.SORRY_TOMORROW_LOCAL_PREVIEW === "true" });
 
 const outputDirectory = path.resolve("dist/client");
 const configuredBasePath = process.env.PAGES_BASE_PATH ?? "";

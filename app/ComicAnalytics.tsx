@@ -78,7 +78,11 @@ function attachTracking(comics: ComicReference[], capture: Capture) {
     const target = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>("a") : null;
     if (!target) return;
     if (target.hasAttribute("data-comic-navigation")) navigation(target.href, "link");
-    if (target.dataset.socialChannel) capture("social_link_click", { channel: target.dataset.socialChannel, ...(comic ? { comic_slug: comic.slug } : {}) });
+    if (target.dataset.socialChannel) capture("social_link_click", {
+      channel: target.dataset.socialChannel,
+      ...(target.dataset.socialDestinationType !== undefined ? { destination_type: target.dataset.socialDestinationType } : {}),
+      ...(comic ? { comic_slug: comic.slug } : {}),
+    });
   }
 
   function onKeyboardNavigation(event: Event) {
@@ -86,8 +90,18 @@ function attachTracking(comics: ComicReference[], capture: Capture) {
     if (typeof href === "string") navigation(href, "keyboard");
   }
 
+  function onShare(event: Event) {
+    const detail = (event as CustomEvent<Record<string, unknown>>).detail;
+    if (!detail || typeof detail !== "object") return;
+    capture("reader_share", {
+      action: detail.action, method: detail.method,
+      placement: detail.placement, comic_slug: detail.comic_slug,
+    });
+  }
+
   document.addEventListener("click", onClick, true);
   window.addEventListener("sorrytomorrow:navigation", onKeyboardNavigation);
+  window.addEventListener("sorrytomorrow:share", onShare);
   return () => {
     cancelEndTimer();
     observer?.disconnect();
@@ -95,6 +109,7 @@ function attachTracking(comics: ComicReference[], capture: Capture) {
     document.removeEventListener("visibilitychange", onVisibilityChange);
     document.removeEventListener("click", onClick, true);
     window.removeEventListener("sorrytomorrow:navigation", onKeyboardNavigation);
+    window.removeEventListener("sorrytomorrow:share", onShare);
   };
 }
 

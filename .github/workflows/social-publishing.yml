@@ -71,3 +71,8 @@ jobs:
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
         run: node scripts/social/run.mjs "$SOCIAL_MODE" "$SOCIAL_RELEASE"
+      - name: Refresh public links from verified receipts
+        if: always() && (github.event_name == 'workflow_run' || github.event_name == 'schedule' || inputs.mode == 'publish' || inputs.mode == 'reconcile' || inputs.mode == 'health')
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/social/public-links.mjs remote

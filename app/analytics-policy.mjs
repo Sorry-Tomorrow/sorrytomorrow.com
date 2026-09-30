@@ -1,5 +1,14 @@
-const eventNames = new Set(["$pageview", "comic_view", "comic_end_reached", "comic_navigation", "social_link_click"]);
+const eventNames = new Set(["$pageview", "comic_view", "comic_end_reached", "comic_navigation", "social_link_click", "reader_share"]);
 const channels = new Set(["x", "instagram", "facebook"]);
+const socialDestinationTypes = new Set(["profile", "original_post"]);
+const shareMethods = new Set(["native", "options", "copy_link", "copy_caption", "image", "x", "facebook", "linkedin", "bluesky", "threads", "email"]);
+const shareActions = {
+  opened: new Set(["native", "options"]),
+  copied: new Set(["copy_link", "copy_caption"]),
+  target_opened: new Set(["x", "facebook", "linkedin", "bluesky", "threads", "email"]),
+  handed_off: new Set(["native", "image"]),
+  download_requested: new Set(["image"]),
+};
 
 /** Only a public ingestion key may be serialized into browser-facing HTML. @param {unknown} value */
 export function publicProjectToken(value) {
@@ -33,10 +42,11 @@ export function campaignProperties(search) {
   const medium = params.get("utm_medium") ?? "";
   const campaign = params.get("utm_campaign") ?? "";
   const content = params.get("utm_content") ?? "";
-  if (channels.has(source)) result.utm_source = source;
-  if (medium === "organic_social") result.utm_medium = medium;
+  if (channels.has(source) || (medium === "reader_share" && ["reader", "linkedin", "bluesky", "threads"].includes(source))) result.utm_source = source;
+  if (["organic_social", "reader_share"].includes(medium)) result.utm_medium = medium;
   if (/^comic-\d{3,}-[a-z0-9-]{1,100}$/.test(campaign)) result.utm_campaign = campaign;
   if (/^(full-page|carousel|panels|launch|bio|post|thread|slide-\d{1,2})$/.test(content)) result.utm_content = content;
+  if (medium === "reader_share" && shareMethods.has(content)) result.utm_content = content;
   return result;
 }
 
@@ -96,6 +106,20 @@ export function safeAnalyticsProperties(eventName, raw, href, referrer, comics) 
   if (eventName === "social_link_click") {
     if (!channels.has(String(raw.channel))) return null;
     properties.channel = raw.channel;
+    if (raw.destination_type !== undefined) {
+      if (typeof raw.destination_type !== "string" || !socialDestinationTypes.has(raw.destination_type)) return null;
+      properties.destination_type = raw.destination_type;
+    }
+  }
+  if (eventName === "reader_share") {
+    const action = String(raw.action);
+    const method = String(raw.method);
+    const placement = String(raw.placement);
+    if (!Object.hasOwn(shareActions, action) || !shareActions[action].has(method)) return null;
+    if (!["home", "episode", "footer"].includes(placement)) return null;
+    if (placement !== "footer" && !comic) return null;
+    if (placement === "footer" && raw.comic_slug != null) return null;
+    Object.assign(properties, { action, method, placement, measurement: "reader-action-not-confirmed-publication" });
   }
   return properties;
 }

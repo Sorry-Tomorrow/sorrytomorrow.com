@@ -57,7 +57,16 @@ excluded. Existing Cloudflare aggregate/performance analytics remains unchanged.
 | `comic_view` | The comic section entered a visible viewport. |
 | `comic_end_reached` | End navigation remained in view for one second with all comic images loaded; a viewing proxy, not proof of reading. |
 | `comic_navigation` | A supported older/newer link or keyboard navigation was used. |
-| `social_link_click` | An existing labeled social-profile link was clicked; not an on-platform follow or engagement. |
+| `social_link_click` | A labeled social profile or original comic post was clicked; not an on-platform follow, engagement or completed share. |
+| `reader_share` | A sharing control was opened, copied, handed off, or used to request a target or image download; not verified publication. |
+
+New `social_link_click` events include `destination_type=profile` for footer
+profiles or `destination_type=original_post` for the reader's original-post links.
+The event name and `channel` remain unchanged. Historical events without this
+optional property remain accepted and unclassified; do not assign them a type
+retroactively. Report destination breakdowns with a separate missing-property
+bucket. Only the two bounded values are retained, never an outbound URL or reader
+recipient information.
 
 The filter allows only those events and known comic IDs/slugs/numbers. It strips
 person updates, arbitrary attributes, form contents, full query strings,

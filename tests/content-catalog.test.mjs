@@ -246,7 +246,7 @@ test("The Assistant’s Assistant imports only the four exact corrected approved
   }
   assert.deepEqual(
     (await readdir(new URL("../public/comics/the-assistants-assistant/", import.meta.url))).sort(),
-    ["p1.png", "p2.png", "p3.png", "p4.png"],
+    ["p1.png", "p2.png", "p3.png", "p4.png", "sharing"],
   );
 });
 
@@ -304,7 +304,7 @@ test("Six-Figure Growth preserves its exact approved single panel, copy and read
     assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, asset.target);
     assert.equal(bytes.length, asset.bytes, asset.target);
   }
-  assert.deepEqual((await readdir(new URL("../public/comics/six-figure-growth/", import.meta.url))).sort(), ["complete.jpg", "complete.png", "p1.png", "p1.webp"]);
+  assert.deepEqual((await readdir(new URL("../public/comics/six-figure-growth/", import.meta.url))).sort(), ["complete.jpg", "complete.png", "p1.png", "p1.webp", "sharing"]);
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /\.reader-layout-single-panel \.art-first-comic-art \{ grid-template-columns: minmax\(0, 1fr\); \}/);
   assert.match(css, /\.reader-layout-single-panel \.art-first-comic-art \.comic-panel-art \{ width: 100%; height: auto; transform: none; border: 0; box-shadow: none; \}/);
@@ -357,7 +357,7 @@ test("Laundry from Work releases the exact approved silent panel, accessibility 
       assert.deepEqual([bytes.readUInt32BE(16), bytes.readUInt32BE(20)], asset.target.endsWith("/p1.png") ? [1351, 1244] : [1440, 1560]);
     }
   }
-  assert.deepEqual((await readdir(new URL(`../public/${prefix}`, import.meta.url))).sort(), Object.keys(approvedHashes).sort());
+  assert.deepEqual((await readdir(new URL(`../public/${prefix}`, import.meta.url))).sort(), [...Object.keys(approvedHashes), "sharing"].sort());
 });
 
 test("Up, Up, and Out of Tokens releases all five exact approved panels, copy and sharing assets", async () => {
