@@ -1,0 +1,47 @@
+{
+  "schema": "sorry-tomorrow-public-social-posts-v1",
+  "comics": {
+    "up-up-and-out-of-tokens": {
+      "x": "https://x.com/sorrytomorrowco/status/2104714262547476678",
+      "instagram": "https://www.instagram.com/p/Dd2XK8nFFdk/",
+      "facebook": "https://www.facebook.com/122107583679458114/posts/122114776143458114"
+    },
+    "chief-babysitting-engineer": {
+      "x": "https://x.com/sorrytomorrowco/status/2103468638606909866",
+      "instagram": "https://www.instagram.com/p/DdtgtQiDWhU/",
+      "facebook": "https://www.facebook.com/122107583679458114/posts/122113618251458114"
+    },
+    "working-from-home-or-laundry-from-work": {
+      "x": "https://x.com/sorrytomorrowco/status/2100020774489006353",
+      "instagram": "https://www.instagram.com/p/DdVAwzjmwFX/",
+      "facebook": "https://www.facebook.com/122107583679458114/posts/122110049271458114"
+    },
+    "six-figure-growth": {
+      "x": "https://x.com/sorrytomorrowco/status/2099964813082272160",
+      "instagram": "https://www.instagram.com/p/DdUnUBUoBRG/",
+      "facebook": "https://www.facebook.com/122107583679458114/posts/122110011129458114"
+    },
+    "the-assistants-assistant": {
+      "x": "https://x.com/sorrytomorrowco/status/2099855948558786995",
+      "instagram": "https://www.instagram.com/p/DdT12gSEqTX/",
+      "facebook": "https://www.facebook.com/122107583679458114/posts/122109917931458114"
+    },
+    "incognito-mode": {
+      "x": "https://x.com/sorrytomorrowco/status/2097790920527663356",
+      "instagram": "https://www.instagram.com/p/DdFKyZbCbxe/",
+      "facebook": "https://www.facebook.com/122107583679458114/posts/122107583667458114"
+    },
+    "founder-inc-llc": {
+      "x": "https://x.com/sorrytomorrowco/status/2093531291450761317"
+    },
+    "the-honest-demo": {
+      "x": "https://x.com/sorrytomorrowco/status/2095133581500674084"
+    },
+    "vibe-coding-in-your-sleep": {
+      "x": "https://x.com/sorrytomorrowco/status/2094801185991467334"
+    },
+    "undefeated": {
+      "x": "https://x.com/sorrytomorrowco/status/2094797696762540188"
+    }
+  }
+}
