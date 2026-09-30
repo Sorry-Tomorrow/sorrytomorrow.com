@@ -5,7 +5,8 @@ const count = n => Number.isSafeInteger(n) && n >= 0 ? n : null;
 export async function collectMetrics({ledger,api,selected="",now=new Date()}) {
   let scrubbed=false;
   for(const r of Object.values(ledger.data.releases))for(const s of Object.values(r.platforms??{}))if("metrics" in s){delete s.metrics;scrubbed=true;}
-  const records=Object.values(ledger.data.releases).filter(r=>!selected||r.slug===selected).sort((a,b)=>Date.parse(b.createdAt)-Date.parse(a.createdAt)).slice(0,10);
+  // Withdrawal preserves published states as history, not active metric targets.
+  const records=Object.values(ledger.data.releases).filter(r=>!r.withdrawal&&(!selected||r.slug===selected)).sort((a,b)=>Date.parse(b.createdAt)-Date.parse(a.createdAt)).slice(0,10);
   const results=[];
   for(const record of records)for(const [platform,state]of Object.entries(record.platforms)) {
     if(state.status!=="published")continue;

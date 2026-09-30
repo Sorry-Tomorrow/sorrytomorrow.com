@@ -267,6 +267,103 @@ test("metrics keeps missing counts unavailable and never reads unverified posts"
   assert.ok(!JSON.stringify(ledger.data).includes("impression_count"));
 });
 
+for(const selected of ["","the-assistants-assistant"])test(`metrics excludes withdrawn history while checking its replacement (${selected||"all releases"})`,async()=>{
+  const slug="the-assistants-assistant",now=new Date("2026-09-30T12:00:00.000Z");
+  const record=(ids,createdAt)=>({slug,createdAt,manifestSha256:digest,platforms:Object.fromEntries(["x","instagram","facebook"].map((platform,i)=>[platform,{
+    status:"published",verified:[{id:ids[i],url:`https://example.com/${ids[i]}`,publishedAt:"2026-09-01T12:00:00.000Z"}],
+    results:[{id:ids[i]}],steps:{publish:{status:"done",result:{id:ids[i]}}},
+    metricsLastCheck:{observedAt:"2026-09-02T12:00:00.000Z",posts:[{id:ids[i],status:"observed"}]}
+  }]))});
+  const withdrawn=record(["101","103","123_105"],"2026-09-01T12:00:00.000Z");
+  withdrawn.withdrawal={status:"withdrawn-do-not-republish",executionStatus:"post-deletions-provider-confirmed"};
+  const original=structuredClone(withdrawn),replacement=record(["201","203","123_205"],"2026-09-03T12:00:00.000Z");
+  const other={slug:"other",createdAt:"2026-09-04T12:00:00.000Z",platforms:{x:{status:"published",verified:[{id:"301"}]}}};
+  const ledger={data:{releases:{original:withdrawn,"original@replacement":replacement,other}},save:async()=>assert.deepEqual(withdrawn,original)};
+  const calls=[],api={request:async(platform,method,endpoint)=>{
+    assert.equal(method,"GET");
+    const id=platform==="x"?endpoint.match(/^\/2\/tweets\/([^?]+)/)[1]:endpoint.split("/")[2].split("?")[0];
+    calls.push(id);
+    if(platform==="x")return{data:{created_at:now.toISOString(),public_metrics:{impression_count:0,like_count:0,reply_count:0,retweet_count:0,quote_count:0,bookmark_count:0}}};
+    if(platform==="instagram")return{timestamp:now.toISOString(),like_count:0,comments_count:0,saved_count:0,shares_count:0};
+    return endpoint.includes("/insights?")?{data:[{name:"post_media_view",values:[{value:0}]},{name:"post_reactions_like_total",values:[{value:0}]}]}:{created_time:now.toISOString()};
+  }};
+  const snapshots=await collectMetrics({ledger,api,selected,now});
+  const expected=selected?["201","203","123_205"]:["301","201","203","123_205"];
+  assert.deepEqual([...new Set(calls)],expected);
+  assert.deepEqual(snapshots.flatMap(snapshot=>snapshot.posts.map(post=>post.id)),expected);
+  assert.deepEqual(metricEvents(snapshots).map(event=>event.properties.post_id),expected);
+  assert.equal(reportingStatus(snapshots,{status:"accepted-persistence-not-yet-verified"}),"passed");
+  assert.deepEqual(withdrawn,original);
+  for(const state of Object.values(replacement.platforms))assert.equal(state.metricsLastCheck.observedAt,now.toISOString());
+});
+
+test("metrics applies the ten-release cap after excluding every withdrawal record",async()=>{
+  const releases={};
+  for(let i=1;i<=11;i++){
+    releases[`active-${i}`]={slug:`active-${i}`,createdAt:`2026-09-${String(i).padStart(2,"0")}T12:00:00.000Z`,platforms:{x:{status:"published",verified:[{id:String(200+i)}]}}};
+    releases[`withdrawn-${i}`]={slug:`withdrawn-${i}`,createdAt:`2026-09-${String(i+11).padStart(2,"0")}T12:00:00.000Z`,withdrawal:i===11?{}:{status:"withdrawn-do-not-republish"},platforms:{x:{status:"published",verified:[{id:String(100+i)}]}}};
+  }
+  const calls=[],ledger={data:{releases},save:async()=>{}},api={request:async(_platform,method,endpoint)=>{assert.equal(method,"GET");calls.push(endpoint.match(/^\/2\/tweets\/([^?]+)/)[1]);return{data:{public_metrics:{like_count:1}}};}};
+  const snapshots=await collectMetrics({ledger,api});
+  assert.deepEqual(calls,Array.from({length:10},(_,i)=>String(211-i)));
+  assert.deepEqual(snapshots.map(snapshot=>snapshot.slug),Array.from({length:10},(_,i)=>`active-${11-i}`));
+  assert.equal(releases["active-1"].platforms.x.metricsLastCheck,undefined);
+  for(let i=1;i<=11;i++)assert.equal(releases[`withdrawn-${i}`].platforms.x.metricsLastCheck,undefined);
+});
+
+test("metrics scrubs private counts from skipped withdrawals without changing operational history",async()=>{
+  const state={status:"published",verified:[{id:"101",publishedAt:"2026-09-01T12:00:00.000Z"}],metricsLastCheck:{observedAt:"2026-09-02T12:00:00.000Z",posts:[{id:"101",status:"observed"}]}};
+  const withdrawn={slug:"withdrawn",withdrawal:{status:"withdrawn-do-not-republish"},platforms:{x:structuredClone(state)}};
+  const expected=structuredClone(withdrawn);withdrawn.platforms.x.metrics=[{secret_count:123}];
+  let saves=0;
+  const ledger={data:{releases:{withdrawn}},save:async()=>{saves++;assert.deepEqual(withdrawn,expected);}};
+  const snapshots=await collectMetrics({ledger,api:{request:async()=>assert.fail("Withdrawn posts must not be queried")}});
+  assert.deepEqual(snapshots,[]);assert.deepEqual(withdrawn,expected);assert.equal(saves,1);
+});
+
+async function runWithdrawnMetricsFixture(mode,failure=""){
+  const root=await mkdtemp(path.join(tmpdir(),"st-withdrawn-metrics-"));await mkdir(path.join(root,"social"));
+  await writeFile(path.join(root,"social/policy.json"),JSON.stringify({metaDataAccessExpiresAt:new Date(Date.now()+40*86400000).toISOString()}));
+  const eventPath=path.join(root,"event.json");await writeFile(eventPath,JSON.stringify({repository:{full_name:accounts.repository}}));
+  const slug="the-assistants-assistant";
+  const withdrawn={slug,createdAt:"2026-09-01T12:00:00.000Z",withdrawal:{status:"withdrawn-do-not-republish",executionStatus:"post-deletions-provider-confirmed"},platforms:{x:{status:"published",verified:[{id:"101"}],metricsLastCheck:{observedAt:"2026-09-02T12:00:00.000Z",posts:[{id:"101",status:"observed"}]}}}};
+  const ledger={schema:"sorry-tomorrow-social-ledger-v1",baselineExcludedIds:[],releases:{original:withdrawn,"original@replacement":{slug,createdAt:"2026-09-03T12:00:00.000Z",platforms:{x:{status:"published",verified:[{id:"201"}]}}}}};
+  const postReads=[],saved=[],batches=[];
+  const fetchImpl=async(url,options)=>{
+    const target=new URL(url),method=options.method;
+    let body;
+    if(target.hostname==="api.github.com"){
+      assert.equal(target.pathname,`/repos/${accounts.repository}/contents/social-publication-ledger.json`);
+      if(method==="GET")body={sha:"ledger-sha",content:Buffer.from(JSON.stringify(ledger)).toString("base64")};
+      else{assert.equal(method,"PUT");saved.push(JSON.parse(Buffer.from(JSON.parse(options.body).content,"base64").toString("utf8")));body={content:{sha:`ledger-sha-${saved.length}`}};}
+    }else if(target.hostname==="us.i.posthog.com"){
+      assert.equal(method,"POST");assert.equal(target.pathname,"/batch/");batches.push(JSON.parse(options.body).batch);body={};
+    }else{
+      assert.equal(method,"GET");
+      if(target.hostname==="api.x.com"&&target.pathname==="/2/users/me")body={data:{id:accounts.xUserId,username:accounts.xHandle}};
+      else if(target.hostname==="api.x.com"&&target.pathname.startsWith("/2/tweets/")){
+        const id=target.pathname.split("/").at(-1);postReads.push(id);
+        if(id==="101"||failure==="deleted")return new Response(JSON.stringify({error:{code:34}}),{status:404});
+        if(failure==="provider failure")return new Response(JSON.stringify({error:{code:88}}),{status:503});
+        body={data:{id,public_metrics:failure==="missing counts"?{}:{impression_count:0,like_count:0,reply_count:0,retweet_count:0,quote_count:0,bookmark_count:0}}};
+      }else if(target.hostname==="graph.facebook.com"&&target.pathname==="/v26.0/me")body={id:accounts.facebookPageId,instagram_business_account:{id:accounts.instagramId}};
+      else{assert.equal(target.hostname,"graph.facebook.com");assert.equal(target.pathname,`/v26.0/${accounts.instagramId}`);body={id:accounts.instagramId,username:accounts.instagramHandle};}
+    }
+    return new Response(JSON.stringify(body));
+  };
+  const report=await run({root,mode,selected:mode==="metrics"?slug:"",env:{...env,META_PAGE_ACCESS_TOKEN:"meta-test",GITHUB_TOKEN:"github-test",POSTHOG_PROJECT_TOKEN:`phc_${"a".repeat(40)}`,GITHUB_ACTIONS:"true",GITHUB_REPOSITORY:accounts.repository,GITHUB_REF:"refs/heads/main",GITHUB_EVENT_NAME:"schedule",GITHUB_EVENT_PATH:eventPath},fetchImpl});
+  return{report,withdrawn,postReads,saved,batches};
+}
+
+for(const mode of ["health","metrics"])for(const failure of ["","missing counts","deleted","provider failure"])test(`${mode} skips withdrawn posts and ${failure?`flags active ${failure}`:"reports its healthy replacement"}`,async()=>{
+  const {report,withdrawn,postReads,saved,batches}=await runWithdrawnMetricsFixture(mode,failure);
+  assert.deepEqual(postReads,["201"]);
+  assert.equal(report.status,failure?"attention-required":"passed");
+  assert.deepEqual(report.metrics.flatMap(snapshot=>snapshot.posts.map(post=>({id:post.id,status:post.status}))),[{id:"201",status:failure?"unavailable":"observed"}]);
+  assert.equal(saved.length,1);assert.deepEqual(saved[0].releases.original,withdrawn);
+  assert.deepEqual(batches.flatMap(batch=>batch.map(event=>event.properties.post_id)),["201"]);
+});
+
 test("PostHog receives only anonymous aggregate service events, not private provider data",async()=>{
   const snapshots=[{slug:"test",platform:"x",observedAt:new Date().toISOString(),posts:[{id:"102",status:"observed",metrics:{like_count:0,impression_count:null,email:"private@example.com",access_token:"private-canary"}}]}];
   const events=metricEvents(snapshots);assert.equal(events.length,1);assert.equal(events[0].event,"social_post_metrics");assert.equal(events[0].properties.$process_person_profile,false);assert.equal(events[0].properties.like_count,0);assert.equal(events[0].properties.impression_count,null);assert.ok(!JSON.stringify(events).includes("private"));

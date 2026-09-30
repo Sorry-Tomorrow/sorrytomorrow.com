@@ -47,6 +47,9 @@ identities, checks the recorded Meta data-access expiration and snapshots aggreg
 native metrics for at most ten recently released comics. Failure/renewal warnings
 surface as failed GitHub Actions runs; GitHub notification preferences control
 delivery. It does not rotate credentials or raise spending limits automatically.
+Withdrawn release records are excluded before the ten-release limit; their
+publication and withdrawal history remains in the ledger. A separately approved
+replacement remains eligible, including when it shares the withdrawn comic's slug.
 The optional `metrics` mode only reads verified own posts and records counts.
 Missing/hidden/unsupported metrics are null/unavailable, never fabricated zero.
 No follower lists, comments, DMs or individual audience records are collected.
