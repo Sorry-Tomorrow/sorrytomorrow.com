@@ -7,8 +7,10 @@ import {
   series,
 } from "@/content/episodes";
 import { ComicReader } from "@/app/ComicReader";
+import { getReaderSharing } from "@/content/reader-sharing";
 import { SiteFooter, SiteHeader } from "@/app/SiteChrome";
 import { absolutePageUrl, absolutePublicUrl, siteUrl } from "@/app/site";
+import { shareDescription } from "@/app/sharing.mjs";
 
 type EpisodePageProps = {
   params: Promise<{ slug: string }>;
@@ -28,11 +30,14 @@ export async function generateMetadata({
   if (!episode) return {};
 
   const canonical = absolutePageUrl(episodePath(episode.slug));
-  const image = absolutePublicUrl(episode.ogImage.src);
+  const share = !episode.previewOnly ? getReaderSharing(episode.slug).assets : undefined;
+  const preview = share?.preview ?? episode.ogImage;
+  const description = shareDescription(share?.shareText, episode.caption, canonical.toString());
+  const image = absolutePublicUrl(preview.src);
 
   return {
     title: episode.title,
-    description: episode.caption,
+    description,
     ...(episode.previewOnly ? { robots: { index: false, follow: false } } : {}),
     alternates: {
       canonical,
@@ -45,22 +50,22 @@ export async function generateMetadata({
       url: canonical,
       siteName: series.title,
       title: `${episode.title} | ${series.title}`,
-      description: episode.caption,
+      description,
       ...(!episode.previewOnly && episode.websitePublishedAt ? { publishedTime: episode.websitePublishedAt } : {}),
       images: [
         {
           url: image,
-          width: episode.ogImage.width,
-          height: episode.ogImage.height,
-          alt: episode.ogImage.alt,
+          width: preview.width,
+          height: preview.height,
+          alt: preview.alt,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${episode.title} | ${series.title}`,
-      description: episode.caption,
-      images: [image],
+      description,
+      images: [{ url: image, alt: preview.alt }],
     },
   };
 }

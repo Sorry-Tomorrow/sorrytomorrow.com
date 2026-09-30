@@ -13,6 +13,30 @@ const raw = {
   $raw_user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36",
 };
 
+test("reader actions are allowed with comic context and no private payload", () => {
+  const properties = safeAnalyticsProperties("reader_share", {
+    ...raw, comic_slug: "one", action: "copied", method: "copy_link", placement: "home",
+    recipient: "private@example.com", copied_text: "private clipboard", confirmed_post: true,
+  }, "https://sorrytomorrow.com/", "", comics);
+  assert.equal(properties.comic_slug, "one");
+  assert.equal(properties.action, "copied");
+  assert.equal(properties.measurement, "reader-action-not-confirmed-publication");
+  for (const key of ["recipient", "copied_text", "confirmed_post"]) assert.equal(properties[key], undefined);
+  for (const invalid of [
+    { action: "published", method: "native", placement: "home", comic_slug: "one" },
+    { action: "handed_off", method: "linkedin", placement: "home", comic_slug: "one" },
+    { action: "opened", method: "options", placement: "home", comic_slug: "unknown" },
+    { action: "opened", method: "options", placement: "footer", comic_slug: "one" },
+  ]) assert.equal(safeAnalyticsProperties("reader_share", { ...raw, ...invalid }, "https://sorrytomorrow.com/", "", comics), null);
+});
+
+test("reader referrals remain distinct from owner organic launches", () => {
+  assert.deepEqual(campaignProperties("?utm_source=linkedin&utm_medium=reader_share&utm_campaign=comic-001-one&utm_content=linkedin"), {
+    utm_source: "linkedin", utm_medium: "reader_share", utm_campaign: "comic-001-one", utm_content: "linkedin",
+  });
+  assert.equal(campaignProperties("?utm_source=private-user&utm_medium=reader_share&utm_content=private-caption").utm_source, undefined);
+});
+
 test("cookieless transport retains the required browser field without person updates", () => {
   const properties = safeAnalyticsProperties("$pageview", {
     ...raw, $ip: "192.0.2.1", $initial_raw_user_agent: "initial-private-value",
@@ -116,7 +140,32 @@ test("social events contain a channel, not an arbitrary outbound URL", () => {
   const event = safeAnalyticsProperties("social_link_click", { ...raw, channel: "instagram", href: "https://private.example/" }, "https://sorrytomorrow.com/", "", comics);
   assert.equal(event.channel, "instagram");
   assert.equal(event.href, undefined);
+  assert.equal(Object.hasOwn(event, "destination_type"), false);
   assert.equal(safeAnalyticsProperties("social_link_click", { ...raw, channel: "email" }, "https://sorrytomorrow.com/", "", comics), null);
+});
+
+test("social clicks distinguish profiles and original posts without private destination data", () => {
+  for (const destination_type of ["profile", "original_post"]) {
+    const event = safeAnalyticsProperties("social_link_click", {
+      ...raw, channel: "instagram", comic_slug: "one", destination_type,
+      href: "https://private.example/", recipient: "private@example.com",
+    }, "https://sorrytomorrow.com/comics/one/", "", comics);
+    assert.equal(event.channel, "instagram");
+    assert.equal(event.comic_slug, "one");
+    assert.equal(event.destination_type, destination_type);
+    assert.equal(event.href, undefined);
+    assert.equal(event.recipient, undefined);
+    const pageview = safeAnalyticsProperties("$pageview", { ...raw, destination_type }, "https://sorrytomorrow.com/", "", comics);
+    assert.equal(Object.hasOwn(pageview, "destination_type"), false);
+  }
+});
+
+test("social destination types accept only the bounded string values", () => {
+  for (const destination_type of ["", "post", "PROFILE", "https://private.example/", null, 1, ["profile"], { toString: () => "profile" }]) {
+    assert.equal(safeAnalyticsProperties("social_link_click", {
+      ...raw, channel: "instagram", destination_type,
+    }, "https://sorrytomorrow.com/", "", comics), null);
+  }
 });
 
 test("client setup explicitly disables storage, replay, broad capture, and remote features", async () => {

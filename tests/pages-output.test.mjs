@@ -313,7 +313,7 @@ test("Laundry from Work Pages export preserves the silent comic and native reade
   assert.equal([...html.matchAll(/<img\b[^>]*class="comic-panel-art"/g)].length, 1);
   assert.match(html, /Single panel: Miles wears a green hoodie, cream shirt, dark trousers and a headset\./);
   assert.match(html, /No dialogue\. Attribution: © SORRY, TOMORROW\./);
-  assert.match(html, new RegExp(escapePattern(new URL("comics/working-from-home-or-laundry-from-work/complete.jpg", expectedSiteUrl).toString())));
+  assert.match(html, new RegExp(escapePattern(new URL("comics/working-from-home-or-laundry-from-work/sharing/v1/preview.jpg", expectedSiteUrl).toString())));
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/six-figure-growth/#comic"`));
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/chief-babysitting-engineer/#comic"`));
   assert.doesNotMatch(html, /<p>Working from Home, or Laundry from Work\?<\/p>|Screen:|Visible labels:/);

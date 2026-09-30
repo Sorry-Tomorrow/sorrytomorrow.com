@@ -29,7 +29,9 @@ export default function PrivacyPage() {
         <p>
           We also use PostHog US Cloud for cookieless website analytics: which
           comics appear on screen, whether the end of a comic is reached, navigation
-          between comics, and clicks to our social profiles. Reaching the end is
+          between comics, clicks to our social posts and profiles, and use of
+          sharing, copy-link, and image-download controls. Sharing actions do not
+          tell us whether you published a post or whom you shared with. Reaching the end is
           a viewing signal, not proof that someone read the comic. Selected comic
           campaign tags help us understand where visits come from.
         </p>
@@ -46,6 +48,12 @@ export default function PrivacyPage() {
         <p>
           Links to social platforms are governed by those platforms’ own privacy
           policies after you leave this site.
+        </p>
+        <p>
+          Opening sharing options checks a small public list on GitHub for current
+          links to our original social posts. This request sends ordinary connection
+          information to GitHub; it contains no account login or recipient information.
+          You do not need to connect a social account to this website.
         </p>
       </main>
       <SiteFooter />
