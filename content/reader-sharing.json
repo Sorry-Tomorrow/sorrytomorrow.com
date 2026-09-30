@@ -1,13 +1,13 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
-  "status": "candidate",
+  "status": "approved",
   "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-  "approvalReceiptSha256": null,
+  "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
   "episodes": {
     "executive-twin": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/executive-twin/sharing/v1/preview.jpg",
         "width": 1200,
@@ -30,9 +30,9 @@
       "shareText": "Leadership at machine speed. Accountability sold separately."
     },
     "undefeated": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/undefeated/sharing/v1/preview.jpg",
         "width": 1200,
@@ -55,9 +55,9 @@
       "shareText": "Zero mistakes. The methodology is flawless."
     },
     "vibe-coding-in-your-sleep": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/vibe-coding-in-your-sleep/sharing/v1/preview.jpg",
         "width": 1200,
@@ -80,9 +80,9 @@
       "shareText": "Mina talks in her sleep. Token treats it as a requirements document."
     },
     "the-honest-demo": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/the-honest-demo/sharing/v1/preview.jpg",
         "width": 1200,
@@ -105,9 +105,9 @@
       "shareText": "The Ahead AI Agent is live on the client’s servers. What could possibly be in the executive summary?"
     },
     "founder-inc-llc": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/founder-inc-llc/sharing/v1/preview.jpg",
         "width": 1200,
@@ -130,9 +130,9 @@
       "shareText": "At first, the badge felt exclusive. Then the mixer doors opened."
     },
     "not-so-smart-thermostat": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/not-so-smart-thermostat/sharing/v1/preview.jpg",
         "width": 1200,
@@ -155,9 +155,9 @@
       "shareText": "The office gets a smart thermostat. Everyone has a request."
     },
     "oops-i-drifted-again": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/oops-i-drifted-again/sharing/v1/preview.jpg",
         "width": 1200,
@@ -180,9 +180,9 @@
       "shareText": "One purple duck. A very simple request."
     },
     "magnification-spiral": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/magnification-spiral/sharing/v1/preview.jpg",
         "width": 1200,
@@ -205,9 +205,9 @@
       "shareText": "Clara notices one tiny detail. Boomer helps her take a closer look."
     },
     "so-you-vibe-coded-an-app": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/so-you-vibe-coded-an-app/sharing/v1/preview.jpg",
         "width": 1200,
@@ -230,9 +230,9 @@
       "shareText": "A first vibe-coded app. Just a few finishing touches."
     },
     "work-life-balance": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/work-life-balance/sharing/v1/preview.jpg",
         "width": 1200,
@@ -255,9 +255,9 @@
       "shareText": "Mina finds a very comfortable use for the time her new AI saves."
     },
     "incognito-mode": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/incognito-mode/sharing/v1/preview.jpg",
         "width": 1200,
@@ -280,9 +280,9 @@
       "shareText": "Mina gets a second opinion on her code. Discreetly."
     },
     "the-assistants-assistant": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/the-assistants-assistant/sharing/v1/preview.jpg",
         "width": 1200,
@@ -305,9 +305,9 @@
       "shareText": "Finally, someone to take work off your plate."
     },
     "six-figure-growth": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/six-figure-growth/sharing/v1/preview.jpg",
         "width": 1200,
@@ -330,9 +330,9 @@
       "shareText": "The Vibe Coder celebrates a chart that keeps going up."
     },
     "working-from-home-or-laundry-from-work": {
-      "status": "candidate",
+      "status": "approved",
       "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-      "approvalReceiptSha256": null,
+      "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
       "preview": {
         "src": "/comics/working-from-home-or-laundry-from-work/sharing/v1/preview.jpg",
         "width": 1200,
