@@ -2343,8 +2343,12 @@
               "completedAt": "2026-10-02T12:59:46.108Z"
             },
             "post-1-alt-0": {
-              "status": "in-flight",
-              "startedAt": "2026-10-02T12:59:47.141Z"
+              "status": "done",
+              "startedAt": "2026-10-02T12:59:47.141Z",
+              "result": {
+                "id": "2106006221270462464"
+              },
+              "completedAt": "2026-10-02T12:59:48.251Z"
             }
           },
           "results": [],
