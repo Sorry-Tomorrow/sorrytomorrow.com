@@ -2539,8 +2539,12 @@
               "completedAt": "2026-10-02T13:00:40.370Z"
             },
             "post-0-carousel": {
-              "status": "in-flight",
-              "startedAt": "2026-10-02T13:00:41.678Z"
+              "status": "done",
+              "startedAt": "2026-10-02T13:00:41.678Z",
+              "result": {
+                "id": "18094180481361446"
+              },
+              "completedAt": "2026-10-02T13:00:48.305Z"
             }
           },
           "results": []
