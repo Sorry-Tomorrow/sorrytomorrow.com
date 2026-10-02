@@ -2470,6 +2470,12 @@
             }
           ],
           "verifiedAt": "2026-10-02T13:00:04.114Z"
+        },
+        "instagram": {
+          "status": "reserved",
+          "startedAt": "2026-10-02T13:00:05.211Z",
+          "steps": {},
+          "results": []
         }
       }
     }
