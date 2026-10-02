@@ -2238,6 +2238,15 @@
           "verifiedAt": "2026-09-28T23:27:13.847Z"
         }
       }
+    },
+    "ST-BOT-TOURAGE": {
+      "slug": "bot-tourage",
+      "title": "Bot-tourage",
+      "manifestSha256": "bf2c2b2554253c335fe3d253a9619f81af135a7401ac202ba72cbfdfb8c8fbfd",
+      "sourceCommit": "9a7c11dac6565e184c4ede321d9d0d7876c04ff0",
+      "runId": "37009989901",
+      "createdAt": "2026-10-02T12:59:17.759Z",
+      "platforms": {}
     }
   }
 }
