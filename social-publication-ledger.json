@@ -2661,8 +2661,13 @@
               "completedAt": "2026-10-02T13:01:17.527Z"
             },
             "post-0-image-5": {
-              "status": "in-flight",
-              "startedAt": "2026-10-02T13:01:18.688Z"
+              "status": "done",
+              "startedAt": "2026-10-02T13:01:18.688Z",
+              "result": {
+                "id": "122116057371458114",
+                "sha256": "4df0cc6ce92677204d1f30881870e70d156c8cf102ac5fcf69aef6bc8642c2a7"
+              },
+              "completedAt": "2026-10-02T13:01:21.671Z"
             }
           },
           "results": []
