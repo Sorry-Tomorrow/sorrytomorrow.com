@@ -1,0 +1,309 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-BOT-TOURAGE",
+  "slug": "bot-tourage",
+  "title": "Bot-tourage",
+  "number": 17,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/bot-tourage/",
+  "approval3Sha256": "924419dc360a196d47cc21a13827baf9f327ee365e61a4eebab1e2d90288f5cb",
+  "sourceManifestSha256": "c33f7f7c32e7e8f85f30662e3efb94de9dfe276dc96431ddf920aaeb6308088c",
+  "releaseAuthoritySha256": "7a4b240323533ffc35bbfeb2730dafe6d931c93574feb33960bd055997c1b447",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Bot-tourage\n\nhttps://sorrytomorrow.com/comics/bot-tourage/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/bot-tourage/x/p1.png",
+              "bytes": 3320639,
+              "sha256": "9d3bb01b3bf092930723adb4bfb9cde5cd5270eaea3bcd8634f6cd3e0be635c2",
+              "width": 1409,
+              "height": 1231,
+              "type": "image/png",
+              "alt": "In the sunlit Ahead AI office, Dex smiles and gestures to two small robots on his desk. Bot wears a tuxedo and top hat; Dot wears a lavender dress with cream polka dots and a gold neck bow. Both salute. Dex says, “Keep me updated. Every step. Don't let me miss a thing.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/x/p2.png",
+              "bytes": 3255242,
+              "sha256": "d993b540ad1f66c2f74d0d3ea2503620a85da5c43e1229d9ea2f12cabb2cc910",
+              "width": 1408,
+              "height": 1232,
+              "type": "image/png",
+              "alt": "Bot announces, “Your fluffy cat slippers have arrived!” Dot adds, “ooo extra fluffy!” Dex blushes and touches the back of his head. Clara laughs sheepishly behind her hand, while Wes smiles nearby. The slippers are not shown.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/x/p3.png",
+              "bytes": 2792503,
+              "sha256": "b248108bd81ea29d3e3fcab2e9675822cfaae7ad72f25dec403c2effe3bd72fa",
+              "width": 1280,
+              "height": 1338,
+              "type": "image/png",
+              "alt": "Dex and his wife sit at the same candlelit restaurant table beneath a chandelier. The waiter asks, “And for you, sir?” Bot, on a spare chair with Dot, interrupts: “Reminder: ask your wife about her day.” Dot adds, “Before you talk about work.” Dex freezes over his menu; his wife raises an angry, suspicious eyebrow.",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/x/p4.png",
+              "bytes": 3197247,
+              "sha256": "8469ef967b06ced66aff0addb666a69bbad15335033b80e1b729407b4d50a23c",
+              "width": 1445,
+              "height": 1205,
+              "type": "image/png",
+              "alt": "Beside an opaque coral shower curtain, Bot and Dot sit together on a closed toilet lid. Dot has a lavender shower cap. Dex is entirely hidden except for a hand gripping the curtain. Bot says, “Reminder: take some time for yourself!”",
+              "panelIds": [
+                "p4"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Bot-tourage\n\nhttps://sorrytomorrow.com/comics/bot-tourage/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/bot-tourage/x/p5.png",
+              "bytes": 3185039,
+              "sha256": "24b73640f8eb5c866c8865293ffa7c2f387d1744a54c9a2c2c2ef0b1aab2b6b2",
+              "width": 1466,
+              "height": 1190,
+              "type": "image/png",
+              "alt": "At night, a wide-eyed Dex lies awake in striped pajamas. One cat paws his head while another kneads his chest. On the nightstand, Bot says, “Reminder: feed the cats.” Dot adds, “They seem hungry.”",
+              "panelIds": [
+                "p5"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/x/p6.png",
+              "bytes": 3545035,
+              "sha256": "25a3b5b862b18c612c409dcb3bd583e32be80665cfbc74f62720b1bdbc2c2718",
+              "width": 1254,
+              "height": 1361,
+              "type": "image/png",
+              "alt": "Back in the office, an exhausted Dex wears a suit jacket and tie over striped pajama pants and fluffy cat slippers. Wes hands him coffee and says, “Guess what—I got you another bot!” A third cheerful robot in a sage vest and coral head bow steps forward. Bot and Dot turn toward it, throw their arms up, and cheer silently.",
+              "panelIds": [
+                "p6"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/x/p7.png",
+              "bytes": 2910987,
+              "sha256": "b72484fb29dc1fcf15e12593f12246e8ccb3262fa37485b67168169c368e1cba",
+              "width": 2138,
+              "height": 885,
+              "type": "image/png",
+              "alt": "In an extreme close-up, Dex's eyes bulge and his teeth clench. A coffee cup trembles in his left hand. He says, “Ohh no.”",
+              "panelIds": [
+                "p7"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Bot-tourage\n\nhttps://sorrytomorrow.com/comics/bot-tourage/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/bot-tourage/instagram/p1.jpg",
+              "bytes": 525380,
+              "sha256": "aec58488b5ac375b56f337989671447b62271673174e0d3b33423694c8661688",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "In the sunlit Ahead AI office, Dex smiles and gestures to two small robots on his desk. Bot wears a tuxedo and top hat; Dot wears a lavender dress with cream polka dots and a gold neck bow. Both salute. Dex says, “Keep me updated. Every step. Don't let me miss a thing.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/instagram/p2.jpg",
+              "bytes": 540264,
+              "sha256": "900b703bb7f4e9ec0ab0a5e5f2c0170a2abfcaaf84d3cc83ccccc66e8c867f5b",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Bot announces, “Your fluffy cat slippers have arrived!” Dot adds, “ooo extra fluffy!” Dex blushes and touches the back of his head. Clara laughs sheepishly behind her hand, while Wes smiles nearby. The slippers are not shown.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/instagram/p3.jpg",
+              "bytes": 558850,
+              "sha256": "0780912c9855d9c22ce1158f4cd38096349c0a6f42409191b62bb57109560011",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex and his wife sit at the same candlelit restaurant table beneath a chandelier. The waiter asks, “And for you, sir?” Bot, on a spare chair with Dot, interrupts: “Reminder: ask your wife about her day.” Dot adds, “Before you talk about work.” Dex freezes over his menu; his wife raises an angry, suspicious eyebrow.",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/instagram/p4.jpg",
+              "bytes": 409438,
+              "sha256": "2c589f31dfea2bf2f3cacffd225e3d0387d4654a0f51a916443cba86cda8f42f",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Beside an opaque coral shower curtain, Bot and Dot sit together on a closed toilet lid. Dot has a lavender shower cap. Dex is entirely hidden except for a hand gripping the curtain. Bot says, “Reminder: take some time for yourself!”",
+              "panelIds": [
+                "p4"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/instagram/p5.jpg",
+              "bytes": 469802,
+              "sha256": "e67215337f5f39566b8b8e4b27c2adc19277e9940387191acc48541e73dbc917",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "At night, a wide-eyed Dex lies awake in striped pajamas. One cat paws his head while another kneads his chest. On the nightstand, Bot says, “Reminder: feed the cats.” Dot adds, “They seem hungry.”",
+              "panelIds": [
+                "p5"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/instagram/p6.jpg",
+              "bytes": 640270,
+              "sha256": "4df0cc6ce92677204d1f30881870e70d156c8cf102ac5fcf69aef6bc8642c2a7",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Back in the office, an exhausted Dex wears a suit jacket and tie over striped pajama pants and fluffy cat slippers. Wes hands him coffee and says, “Guess what—I got you another bot!” A third cheerful robot in a sage vest and coral head bow steps forward. Bot and Dot turn toward it, throw their arms up, and cheer silently.",
+              "panelIds": [
+                "p6"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/instagram/p7.jpg",
+              "bytes": 225728,
+              "sha256": "3c89813e2891c23cf3372242ff167fe10888cb988e189adb7ed8152af63d098c",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "In an extreme close-up, Dex's eyes bulge and his teeth clench. A coffee cup trembles in his left hand. He says, “Ohh no.”",
+              "panelIds": [
+                "p7"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Bot-tourage\n\nhttps://sorrytomorrow.com/comics/bot-tourage/\n\nAI-assisted comic by Sorry, Tomorrow.",
+          "media": [
+            {
+              "path": "public/social/bot-tourage/facebook/p1.jpg",
+              "bytes": 525380,
+              "sha256": "aec58488b5ac375b56f337989671447b62271673174e0d3b33423694c8661688",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "In the sunlit Ahead AI office, Dex smiles and gestures to two small robots on his desk. Bot wears a tuxedo and top hat; Dot wears a lavender dress with cream polka dots and a gold neck bow. Both salute. Dex says, “Keep me updated. Every step. Don't let me miss a thing.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/facebook/p2.jpg",
+              "bytes": 540264,
+              "sha256": "900b703bb7f4e9ec0ab0a5e5f2c0170a2abfcaaf84d3cc83ccccc66e8c867f5b",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Bot announces, “Your fluffy cat slippers have arrived!” Dot adds, “ooo extra fluffy!” Dex blushes and touches the back of his head. Clara laughs sheepishly behind her hand, while Wes smiles nearby. The slippers are not shown.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/facebook/p3.jpg",
+              "bytes": 558850,
+              "sha256": "0780912c9855d9c22ce1158f4cd38096349c0a6f42409191b62bb57109560011",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex and his wife sit at the same candlelit restaurant table beneath a chandelier. The waiter asks, “And for you, sir?” Bot, on a spare chair with Dot, interrupts: “Reminder: ask your wife about her day.” Dot adds, “Before you talk about work.” Dex freezes over his menu; his wife raises an angry, suspicious eyebrow.",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/facebook/p4.jpg",
+              "bytes": 409438,
+              "sha256": "2c589f31dfea2bf2f3cacffd225e3d0387d4654a0f51a916443cba86cda8f42f",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Beside an opaque coral shower curtain, Bot and Dot sit together on a closed toilet lid. Dot has a lavender shower cap. Dex is entirely hidden except for a hand gripping the curtain. Bot says, “Reminder: take some time for yourself!”",
+              "panelIds": [
+                "p4"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/facebook/p5.jpg",
+              "bytes": 469802,
+              "sha256": "e67215337f5f39566b8b8e4b27c2adc19277e9940387191acc48541e73dbc917",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "At night, a wide-eyed Dex lies awake in striped pajamas. One cat paws his head while another kneads his chest. On the nightstand, Bot says, “Reminder: feed the cats.” Dot adds, “They seem hungry.”",
+              "panelIds": [
+                "p5"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/facebook/p6.jpg",
+              "bytes": 640270,
+              "sha256": "4df0cc6ce92677204d1f30881870e70d156c8cf102ac5fcf69aef6bc8642c2a7",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Back in the office, an exhausted Dex wears a suit jacket and tie over striped pajama pants and fluffy cat slippers. Wes hands him coffee and says, “Guess what—I got you another bot!” A third cheerful robot in a sage vest and coral head bow steps forward. Bot and Dot turn toward it, throw their arms up, and cheer silently.",
+              "panelIds": [
+                "p6"
+              ]
+            },
+            {
+              "path": "public/social/bot-tourage/facebook/p7.jpg",
+              "bytes": 225728,
+              "sha256": "3c89813e2891c23cf3372242ff167fe10888cb988e189adb7ed8152af63d098c",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "In an extreme close-up, Dex's eyes bulge and his teeth clench. A coffee cup trembles in his left hand. He says, “Ohh no.”",
+              "panelIds": [
+                "p7"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

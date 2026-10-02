@@ -1,0 +1,59 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-10-02",
+  "recordedAt": "2026-10-02T12:36:58.199Z",
+  "internalId": "ST-BOT-TOURAGE",
+  "title": "Bot-tourage",
+  "ownerInstruction": "love it, publish it and ship it!",
+  "resolvedContext": "Final Approval 3 and release of the exact Bot-tourage finish-v1 candidate through the established website, X, Instagram and Facebook destinations.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "924419dc360a196d47cc21a13827baf9f327ee365e61a4eebab1e2d90288f5cb",
+  "sourceManifestSha256": "c33f7f7c32e7e8f85f30662e3efb94de9dfe276dc96431ddf920aaeb6308088c",
+  "readerSharingManifestSha256": "95f5b5f2badc2063440f7960afe623adbbd008842861cd99645032b3b1bd902c",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentityPlan": {
+    "episodeNumber": 17,
+    "displayVersion": "v0.0.17",
+    "slug": "bot-tourage",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/bot-tourage/",
+    "plannedWebsiteReleaseMetadata": "2026-10-02T12:36:58.199Z",
+    "basis": "Fresh origin/main ccba9579e6429f7b893ac11f8f4535d8659c995f contains sixteen comics, maximum number 16; this slug and internal ID are unused."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "captionRule": {
+    "source": "studio/editorial/bot-tourage-v1/art-pass-v1/finish-v1/RELEASE-COPY.json",
+    "text": "Bot-tourage\n\nhttps://sorrytomorrow.com/comics/bot-tourage/\n\nAI-assisted comic by Sorry, Tomorrow.",
+    "policy": "Exact approved caption for every platform/post; two-post X thread repeats the exact caption."
+  },
+  "assetRule": "Copy exact approved seven-panel website PNG/WebP, seven-slide Instagram/Facebook JPEGs, X native PNGs in ordered 4+3 thread, preview and complete-comic JPEGs. No image processing or source changes.",
+  "budgetRule": "Existing X provider $5 cap and auto-recharge off remain unchanged; no purchase, paid promotion, new account or additional service.",
+  "executionRule": "Validate/stage through established readers and social outbox, independently audit scoped release, merge and verify Pages plus provider-confirmed social receipts; inspect unknown outcomes before retrying.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "other comic backfill",
+    "new accounts or permissions"
+  ],
+  "publicationClaim": "Authority only; publication remains unclaimed until verified."
+}

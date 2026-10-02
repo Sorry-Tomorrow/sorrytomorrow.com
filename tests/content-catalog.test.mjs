@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all sixteen release entries in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 16);
+test("keeps all seventeen release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 17);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 16);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 16);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 17);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 17);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -74,12 +74,12 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 16);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 17);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
 });
 
 test("Chief Babysitting Engineer ships the exact approved panels, copy and reader-sharing files", async () => {
-  const episode = catalog.episodes[1];
+  const episode = catalog.episodes[2];
   assert.equal(episode.internalId, "ST-CHIEF-BABYSITTING-ENGINEER");
   assert.equal(episode.slug, "chief-babysitting-engineer");
   assert.equal(episode.title, "Chief Babysitting Engineer");
@@ -192,7 +192,7 @@ test("Incognito Mode retains its approved native images, exact transcript and fo
 
 test("The Assistant’s Assistant imports only the four exact corrected approved website PNGs", async () => {
   const episode = catalog.episodes.find(item => item.internalId === "ST-ASSISTANTS-ASSISTANT");
-  assert.equal(catalog.episodes[4], episode);
+  assert.equal(catalog.episodes[5], episode);
   assert.equal(episode.title, "The Assistant’s Assistant");
   assert.equal(episode.publicNumber, 12);
   assert.equal(episode.publicVersion, "v0.0.12");
@@ -274,7 +274,7 @@ test("the Assistant reader keeps its approved desktop grid and natural full-widt
 
 test("Six-Figure Growth preserves its exact approved single panel, copy and reading edition", async () => {
   const episode = catalog.episodes.find(item => item.internalId === "ST-SIX-FIGURE-GROWTH");
-  assert.equal(catalog.episodes[3], episode);
+  assert.equal(catalog.episodes[4], episode);
   assert.equal(episode.internalId, "ST-SIX-FIGURE-GROWTH");
   assert.equal(episode.title, "Six-Figure Growth?");
   assert.equal(episode.publicNumber, 13);
@@ -311,7 +311,7 @@ test("Six-Figure Growth preserves its exact approved single panel, copy and read
 });
 
 test("Laundry from Work releases the exact approved silent panel, accessibility copy and reading edition", async () => {
-  const episode = catalog.episodes[2];
+  const episode = catalog.episodes[3];
   const prefix = "comics/working-from-home-or-laundry-from-work/";
   assert.equal(episode.internalId, "ST-LAUNDRY-FROM-WORK");
   assert.equal(episode.slug, "working-from-home-or-laundry-from-work");
@@ -362,7 +362,7 @@ test("Laundry from Work releases the exact approved silent panel, accessibility 
 
 test("Up, Up, and Out of Tokens releases all five exact approved panels, copy and sharing assets", async () => {
   const approved = JSON.parse(await readFile(new URL("./fixtures/up-up-and-out-of-tokens-approved.json", import.meta.url), "utf8"));
-  const episode = catalog.episodes[0];
+  const episode = catalog.episodes[1];
   for (const field of ["internalId", "slug", "title", "publicNumber", "publicVersion", "readerLayout"]) assert.equal(episode[field], approved[field], field);
   assert.equal(episode.shell, "art-first");
   assert.equal(episode.caption, approved.title);
@@ -395,4 +395,36 @@ test("Up, Up, and Out of Tokens releases all five exact approved panels, copy an
     assert.equal(bytes.length, approved[kind].bytes, asset.src);
   }
   assert.deepEqual(episode.ogImage, {src:release.preview.src.slice(1), width:approved.preview.width, height:approved.preview.height, alt:approved.preview.alt});
+});
+
+test("Bot-tourage preserves its approved seven-panel assets, exact copy and reader layout", async () => {
+  const approved = JSON.parse(await readFile(new URL("./fixtures/bot-tourage-approved.json", import.meta.url), "utf8"));
+  const episode = catalog.episodes[0];
+  for (const field of ["internalId", "slug", "title", "publicNumber", "publicVersion", "caption", "readerLayout"]) assert.equal(episode[field], approved[field], field);
+  assert.equal(episode.label, "Comic 017 · Ahead AI");
+  assert.equal(episode.shell, "art-first");
+  assert.equal(episode.previewOnly, false);
+  assert.equal(episode.art.length, 7);
+  assert.deepEqual(episode.panels, approved.panels.map(panel => ({lines:panel.lines,description:panel.alt})));
+  for (const [index, panel] of approved.panels.entries()) {
+    const art = episode.art[index];
+    assert.deepEqual(art, {src:`comics/bot-tourage/${panel.id}.png`,webpSrc:`comics/bot-tourage/${panel.id}.webp`,width:panel.width,height:panel.height,alt:panel.alt});
+    for (const [format, source] of [["png", art.src], ["webp", art.webpSrc]]) {
+      const bytes = await readFile(new URL(`../public/${source}`, import.meta.url));
+      assert.equal(createHash("sha256").update(bytes).digest("hex"), panel[format].sha256, source);
+      assert.equal(bytes.length, panel[format].bytes, source);
+    }
+  }
+  const sharing = JSON.parse(await readFile(new URL("../content/reader-sharing.json", import.meta.url), "utf8"));
+  const released = sharing.episodes[approved.slug];
+  assert.equal(released.status, "approved");
+  assert.equal(released.shareText, approved.shareText);
+  for (const kind of ["preview", "download"]) {
+    for (const field of ["src", "sha256", "bytes", "width", "height", "alt"]) assert.equal(released[kind][field], approved[kind][field], `${kind}.${field}`);
+    assert.equal(createHash("sha256").update(await readFile(new URL(`../public${approved[kind].src}`, import.meta.url))).digest("hex"), approved[kind].sha256);
+  }
+  assert.deepEqual(episode.ogImage,{src:approved.preview.src.slice(1),width:1200,height:630,alt:approved.preview.alt});
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.reader-layout-bot-tourage \.art-first-episode-header h2 \{\s*font-family: ComicBangers, Impact, sans-serif;/);
+  assert.match(css, /\.reader-layout-bot-tourage \.art-first-comic-art > :first-child,\s*\.reader-layout-bot-tourage \.art-first-comic-art > :nth-child\(6\),\s*\.reader-layout-bot-tourage \.art-first-comic-art > :last-child \{ grid-column: 1 \/ -1; \}/);
 });
