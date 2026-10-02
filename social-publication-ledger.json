@@ -2288,8 +2288,14 @@
               "completedAt": "2026-10-02T12:59:29.812Z"
             },
             "post-0-image-2": {
-              "status": "in-flight",
-              "startedAt": "2026-10-02T12:59:30.998Z"
+              "status": "done",
+              "startedAt": "2026-10-02T12:59:30.998Z",
+              "result": {
+                "id": "2106006165628813313",
+                "mediaKey": "3_2106006165628813313",
+                "sha256": "b248108bd81ea29d3e3fcab2e9675822cfaae7ad72f25dec403c2effe3bd72fa"
+              },
+              "completedAt": "2026-10-02T12:59:32.877Z"
             }
           },
           "results": [],
