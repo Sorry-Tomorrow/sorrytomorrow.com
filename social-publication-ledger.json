@@ -2248,7 +2248,7 @@
       "createdAt": "2026-10-02T12:59:17.759Z",
       "platforms": {
         "x": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-10-02T12:59:18.873Z",
           "steps": {
             "post-0-image-0": {
@@ -2396,7 +2396,55 @@
               "completedAt": "2026-10-02T13:00:01.599Z"
             }
           },
-          "results": [],
+          "results": [
+            {
+              "id": "2106006209807396975",
+              "url": "https://x.com/sorrytomorrowco/status/2106006209807396975",
+              "images": [
+                {
+                  "id": "2106006119487361024",
+                  "mediaKey": "3_2106006119487361024",
+                  "sha256": "9d3bb01b3bf092930723adb4bfb9cde5cd5270eaea3bcd8634f6cd3e0be635c2"
+                },
+                {
+                  "id": "2106006143088623616",
+                  "mediaKey": "3_2106006143088623616",
+                  "sha256": "d993b540ad1f66c2f74d0d3ea2503620a85da5c43e1229d9ea2f12cabb2cc910"
+                },
+                {
+                  "id": "2106006165628813313",
+                  "mediaKey": "3_2106006165628813313",
+                  "sha256": "b248108bd81ea29d3e3fcab2e9675822cfaae7ad72f25dec403c2effe3bd72fa"
+                },
+                {
+                  "id": "2106006187946680320",
+                  "mediaKey": "3_2106006187946680320",
+                  "sha256": "8469ef967b06ced66aff0addb666a69bbad15335033b80e1b729407b4d50a23c"
+                }
+              ]
+            },
+            {
+              "id": "2106006287431471465",
+              "url": "https://x.com/sorrytomorrowco/status/2106006287431471465",
+              "images": [
+                {
+                  "id": "2106006221270462464",
+                  "mediaKey": "3_2106006221270462464",
+                  "sha256": "24b73640f8eb5c866c8865293ffa7c2f387d1744a54c9a2c2c2ef0b1aab2b6b2"
+                },
+                {
+                  "id": "2106006242128732160",
+                  "mediaKey": "3_2106006242128732160",
+                  "sha256": "25a3b5b862b18c612c409dcb3bd583e32be80665cfbc74f62720b1bdbc2c2718"
+                },
+                {
+                  "id": "2106006265029644288",
+                  "mediaKey": "3_2106006265029644288",
+                  "sha256": "b72484fb29dc1fcf15e12593f12246e8ccb3262fa37485b67168169c368e1cba"
+                }
+              ]
+            }
+          ],
           "xReservedUsd": 1
         }
       }
