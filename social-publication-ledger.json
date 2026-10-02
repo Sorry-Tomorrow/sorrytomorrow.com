@@ -2252,8 +2252,14 @@
           "startedAt": "2026-10-02T12:59:18.873Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-10-02T12:59:19.910Z"
+              "status": "done",
+              "startedAt": "2026-10-02T12:59:19.910Z",
+              "result": {
+                "id": "2106006119487361024",
+                "mediaKey": "3_2106006119487361024",
+                "sha256": "9d3bb01b3bf092930723adb4bfb9cde5cd5270eaea3bcd8634f6cd3e0be635c2"
+              },
+              "completedAt": "2026-10-02T12:59:21.924Z"
             }
           },
           "results": [],
