@@ -2280,8 +2280,12 @@
               "completedAt": "2026-10-02T12:59:27.480Z"
             },
             "post-0-alt-1": {
-              "status": "in-flight",
-              "startedAt": "2026-10-02T12:59:28.589Z"
+              "status": "done",
+              "startedAt": "2026-10-02T12:59:28.589Z",
+              "result": {
+                "id": "2106006143088623616"
+              },
+              "completedAt": "2026-10-02T12:59:29.812Z"
             }
           },
           "results": [],
