@@ -141,6 +141,28 @@
         "path": "studio/operations/up-up-and-out-of-tokens-release-20260928/OWNER-RELEASE-AUTHORITY.json",
         "sha256": "2df636c19b448d50c7c5c8bcbc5607618f355070c2c5549ea46e7f91ccdf09e2"
       }
+    },
+    "ST-BOT-TOURAGE": {
+      "title": "Bot-tourage",
+      "text": "Bot-tourage\n\nhttps://sorrytomorrow.com/comics/bot-tourage/\n\nAI-assisted comic by Sorry, Tomorrow.",
+      "textSha256": "23186e748553f79fcc4848def2c5a003cc65ca5ff6158605d0dab0150c1f0bac",
+      "canonicalUrl": "https://sorrytomorrow.com/comics/bot-tourage/",
+      "sourceCaption": {
+        "path": "deliverables/bot-tourage-v0.0.17-release-v3/caption.txt",
+        "sha256": "839794e27478e650b527f089f65035c210d70acfe3dbe0359871a5fb5de491b2"
+      },
+      "approval3": {
+        "path": "studio/operations/bot-tourage-release-20261002/OWNER-FINAL-APPROVAL.json",
+        "sha256": "924419dc360a196d47cc21a13827baf9f327ee365e61a4eebab1e2d90288f5cb"
+      },
+      "sourceManifest": {
+        "path": "studio/editorial/bot-tourage-v1/art-pass-v1/finish-v1/ASSET-MANIFEST.json",
+        "sha256": "c33f7f7c32e7e8f85f30662e3efb94de9dfe276dc96431ddf920aaeb6308088c"
+      },
+      "releaseAuthority": {
+        "path": "studio/operations/bot-tourage-release-20261002/OWNER-RELEASE-AUTHORITY-V3.json",
+        "sha256": "7a4b240323533ffc35bbfeb2730dafe6d931c93574feb33960bd055997c1b447"
+      }
     }
   }
 }

@@ -40,5 +40,12 @@
     "approval3Sha256": "e23cca05a2abfabb06689aba73f7012b4eab41b5ae63931bdc79dcd63d6ba9c7",
     "sourceManifestSha256": "0315132755bb021234a305beda4f10d3049eea1c28c505805bd0f2e7226bd49a",
     "releaseAuthoritySha256": "2df636c19b448d50c7c5c8bcbc5607618f355070c2c5549ea46e7f91ccdf09e2"
+  },
+  "bot-tourage": {
+    "internalId": "ST-BOT-TOURAGE",
+    "manifestSha256": "bf2c2b2554253c335fe3d253a9619f81af135a7401ac202ba72cbfdfb8c8fbfd",
+    "approval3Sha256": "924419dc360a196d47cc21a13827baf9f327ee365e61a4eebab1e2d90288f5cb",
+    "sourceManifestSha256": "c33f7f7c32e7e8f85f30662e3efb94de9dfe276dc96431ddf920aaeb6308088c",
+    "releaseAuthoritySha256": "7a4b240323533ffc35bbfeb2730dafe6d931c93574feb33960bd055997c1b447"
   }
 }

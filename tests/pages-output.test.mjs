@@ -103,11 +103,12 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 016 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="up-up-and-out-of-tokens"/);
+  assert.match(html, /Comic 017 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="bot-tourage"/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/up-up-and-out-of-tokens\/p1\.webp/);
+  assert.match(html, /comics\/bot-tourage\/p1\.webp/);
+  assert.match(html, /Bot-tourage/);
   assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/six-figure-growth/#comic"`));
@@ -187,6 +188,8 @@ test("produces a complete GitHub Pages artifact", async () => {
     access(new URL("comics/vibe-coding-in-your-sleep/index.html", outputRoot)),
     access(new URL("comics/undefeated/index.html", outputRoot)),
     access(new URL("comics/executive-twin/index.html", outputRoot)),
+    access(new URL("comics/bot-tourage.html", outputRoot)),
+    access(new URL("comics/bot-tourage/index.html", outputRoot)),
     access(new URL("comics/up-up-and-out-of-tokens.html", outputRoot)),
     access(new URL("comics/up-up-and-out-of-tokens/index.html", outputRoot)),
     access(new URL("comics/the-assistants-assistant.html", outputRoot)),
@@ -339,7 +342,8 @@ test("Up, Up, and Out of Tokens Pages export preserves its approved five-panel r
   const html = await readFile(new URL(`comics/${approved.slug}/index.html`, outputRoot), "utf8");
   assert.match(html, /<title>Up, Up, and Out of Tokens \| Sorry, Tomorrow<\/title>/);
   assert.match(html, /reader-layout-single-panel/);
-  assert.match(html, /You’re at the latest comic/);
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/bot-tourage/#comic"`));
+  assert.doesNotMatch(html, /You’re at the latest comic/);
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/chief-babysitting-engineer/#comic"`));
   const images = [...html.matchAll(/<img\b[^>]*class="comic-panel-art"[^>]*>/g)].map(match => match[0]);
   assert.equal(images.length, 5);
@@ -359,4 +363,25 @@ test("Up, Up, and Out of Tokens Pages export preserves its approved five-panel r
     assert.equal(createHash("sha256").update(await readFile(new URL(file, outputRoot))).digest("hex"), approved[kind].sha256, file);
   }
   assert.ok(html.includes(new URL(`comics/${approved.slug}/sharing/v1/preview.jpg`, expectedSiteUrl).toString()));
+});
+
+test("Bot-tourage Pages export contains all seven approved panels and its new chronology", async () => {
+  const approved = JSON.parse(await readFile(new URL("./fixtures/bot-tourage-approved.json", import.meta.url), "utf8"));
+  const html = await readFile(new URL("comics/bot-tourage/index.html", outputRoot), "utf8");
+  assert.match(html, /<title>Bot-tourage \| Sorry, Tomorrow<\/title>/);
+  assert.match(html, /reader-layout-bot-tourage/);
+  assert.match(html, /You’re at the latest comic/);
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/up-up-and-out-of-tokens/#comic"`));
+  const images = [...html.matchAll(/<img\b[^>]*class="comic-panel-art"[^>]*>/g)].map(match => match[0]);
+  assert.equal(images.length, 7);
+  const decoded = html.replaceAll("&#x27;", "'").replaceAll("&quot;", '"').replaceAll("&amp;", "&");
+  for (const [index, panel] of approved.panels.entries()) {
+    const prefix = `comics/bot-tourage/${panel.id}`;
+    assert.ok(images[index].includes(`src="${basePath}/${prefix}.png"`), panel.id);
+    assert.ok(images[index].includes(`width="${panel.width}" height="${panel.height}"`), panel.id);
+    assert.ok(html.includes(`srcSet="${basePath}/${prefix}.webp"`), panel.id);
+    for (const ext of ["png", "webp"]) assert.equal(createHash("sha256").update(await readFile(new URL(`${prefix}.${ext}`, outputRoot))).digest("hex"), panel[ext].sha256, `${prefix}.${ext}`);
+    for (const line of panel.lines) assert.ok(decoded.includes(line.text), `${panel.id}: ${line.text}`);
+  }
+  for (const role of ["preview", "download"]) assert.equal(createHash("sha256").update(await readFile(new URL(approved[role].src.slice(1), outputRoot))).digest("hex"), approved[role].sha256, role);
 });

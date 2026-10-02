@@ -49,11 +49,12 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 016 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="up-up-and-out-of-tokens"/);
+  assert.match(html, /Comic 017 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="bot-tourage"/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/up-up-and-out-of-tokens\/p1\.webp/);
+  assert.match(html, /comics\/bot-tourage\/p1\.webp/);
+  assert.match(html, /Bot-tourage/);
   assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
   assert.match(html, /href="\/comics\/six-figure-growth\/#comic"/);
@@ -168,7 +169,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 16);
+  assert.equal(JSON.parse(catalog).episodes.length, 17);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -246,7 +247,8 @@ test("published navigation connects Founder through the latest release", async (
     ["six-figure-growth", "the-assistants-assistant", "working-from-home-or-laundry-from-work"],
     ["working-from-home-or-laundry-from-work", "six-figure-growth", "chief-babysitting-engineer"],
     ["chief-babysitting-engineer", "working-from-home-or-laundry-from-work", "up-up-and-out-of-tokens"],
-    ["up-up-and-out-of-tokens", "chief-babysitting-engineer", null],
+    ["up-up-and-out-of-tokens", "chief-babysitting-engineer", "bot-tourage"],
+    ["bot-tourage", "up-up-and-out-of-tokens", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);

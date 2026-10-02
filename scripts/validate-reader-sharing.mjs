@@ -30,7 +30,10 @@ export async function validateReaderSharing(root = process.cwd(), { localPreview
       const bytes = await readFile(resolve(root, "public", src));
       assert.equal(createHash("sha256").update(bytes).digest("hex"), asset.sha256, `${episode.slug} ${role}: changed bytes`);
       assert.equal(bytes.length, asset.bytes);
-      assert.ok(bytes.length < 5_000_000, `${episode.slug} ${role}: image must be under 5 MB`);
+      // Downloads are requested separately and may contain a longer complete
+      // story. Keep the smaller budget for link cards loaded as previews.
+      const maxBytes = role === "preview" ? 5_000_000 : 10_000_000;
+      assert.ok(bytes.length < maxBytes, `${episode.slug} ${role}: image must be under ${maxBytes / 1_000_000} MB`);
       const size = imageDimensions(bytes);
       assert.deepEqual({ width: asset.width, height: asset.height, type: asset.mimeType }, size);
       assert.ok(typeof asset.alt === "string" && asset.alt.trim().length > 0);

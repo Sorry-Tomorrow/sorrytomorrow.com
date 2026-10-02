@@ -537,9 +537,35 @@ summary {
 .reader-layout-vibecoded .art-first-comic-art { align-items: start; gap: 22px; }
 .reader-layout-vibecoded .comic-panel-art:first-child,
 .reader-layout-vibecoded .comic-panel-art:last-child { grid-column: 1 / -1; }
+
+/* Bot-tourage's approved seven-panel reader: setup, morning gift and reaction
+   span the desktop page; the intervening scenes form two ordered pairs. */
+.reader-layout-bot-tourage .art-first-episode-header h2 {
+  font-family: ComicBangers, Impact, sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: none;
+}
+.reader-layout-bot-tourage .art-first-comic-page { max-width: 1260px; margin: 0 auto; }
+.reader-layout-bot-tourage .art-first-comic-art { align-items: start; gap: 22px; }
+.reader-layout-bot-tourage .comic-panel-picture { display: block; min-width: 0; }
+.reader-layout-bot-tourage .comic-panel-picture .comic-panel-art { width: 100%; height: auto; box-shadow: none; }
+.reader-layout-bot-tourage .art-first-comic-art > :first-child .comic-panel-art { box-shadow: 0.42rem 0.42rem 0 var(--coral); }
+.reader-layout-bot-tourage .art-first-comic-art > :last-child .comic-panel-art { box-shadow: 0.42rem 0.42rem 0 var(--cyan); }
+.reader-layout-bot-tourage .art-first-comic-art > :first-child,
+.reader-layout-bot-tourage .art-first-comic-art > :nth-child(6),
+.reader-layout-bot-tourage .art-first-comic-art > :last-child { grid-column: 1 / -1; }
 @media (max-width: 720px) {
   .reader-layout-vibecoded .art-first-comic-art { grid-template-columns: 1fr; gap: 14px; }
   .reader-layout-vibecoded .art-first-episode-header h2 { font-size: 3rem; }
+  .reader-layout-bot-tourage .art-first-comic-art { grid-template-columns: 1fr; gap: 14px; }
+  .reader-layout-bot-tourage .art-first-episode-header h2 { font-size: 3rem; }
+}
+@media (max-width: 760px) {
+  .reader-layout-bot-tourage .art-first-comic-art > :first-child .comic-panel-art,
+  .reader-layout-bot-tourage .art-first-comic-art > :last-child .comic-panel-art { box-shadow: none; }
 }
 
 .preview-collection {

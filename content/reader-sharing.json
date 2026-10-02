@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "e225fd772e38b8865995b79b383e81060732a590e562eb3d80572163346c9810",
-  "approvalReceiptSha256": "b1728e7f174f0a0b6b8572a7422bd78181bc978bebc8b3d922567e0da3d7499e",
+  "manifestSha256": "95f5b5f2badc2063440f7960afe623adbbd008842861cd99645032b3b1bd902c",
+  "approvalReceiptSha256": "1dfd1b9c20f883ea5ecc42f7c655221d37d0219e9d686693622060d82feb4724",
   "episodes": {
     "executive-twin": {
       "status": "approved",
@@ -403,6 +403,31 @@
         "filename": "sorry-tomorrow-up-up-and-out-of-tokens-complete.jpg"
       },
       "shareText": "Up, Up, and Out of Tokens\n\nhttps://sorrytomorrow.com/comics/up-up-and-out-of-tokens/\n\nAI-assisted comic by Sorry, Tomorrow."
+    },
+    "bot-tourage": {
+      "status": "approved",
+      "manifestSha256": "95f5b5f2badc2063440f7960afe623adbbd008842861cd99645032b3b1bd902c",
+      "approvalReceiptSha256": "1dfd1b9c20f883ea5ecc42f7c655221d37d0219e9d686693622060d82feb4724",
+      "preview": {
+        "src": "/comics/bot-tourage/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Bot-tourage title beside the complete opening panel: Dex asks Bot and Dot to keep him updated in the Ahead AI office.",
+        "sha256": "f0e339ea0ac22d02233003648336185809d36ad1b820869c4666d9e278ea6793",
+        "bytes": 231299,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/bot-tourage/sharing/v1/complete.jpg",
+        "width": 1440,
+        "height": 8635,
+        "alt": "The complete seven-panel Bot-tourage comic. Dex requests constant updates; his helpers embarrass him at work, interrupt dinner and his shower, remind him about cats already climbing on him, then cheer as Wes presents a third bot. Dex grimaces.",
+        "sha256": "6ded99a73a7d3a48cb07735e1224b4b71a892a28c35fb2f7c4fd61674cd9b118",
+        "bytes": 5598332,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-bot-tourage-complete.jpg"
+      },
+      "shareText": "Bot-tourage\n\nhttps://sorrytomorrow.com/comics/bot-tourage/\n\nAI-assisted comic by Sorry, Tomorrow."
     }
   }
 }

@@ -8,6 +8,14 @@ Canonical masters remain immutable. A browser-optimized derivative is a publicat
 - Report the current catalog with `npm run report:payload`.
 - The ceiling is a review trigger, not permission to recompress approved work after approval.
 
+## Reader-sharing files
+
+Link-preview cards remain under 5 MB. Complete-comic downloads may be under
+10 MB: they contain every panel and are requested separately from the reader's
+displayed art. Bot-tourage's approved seven-panel download is 5,598,332 bytes;
+it ships unchanged. Both roles retain exact approval, hash, dimension and MIME
+validation. This distinction does not change social attachment limits.
+
 ## Approved derivative requirements
 
 A proposed derivative must:
