@@ -2019,10 +2019,20 @@
                 "2104714223632670720",
                 "2104714243295604737"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-09-28T23:25:58.000Z"
             }
           ],
-          "verifiedAt": "2026-09-28T23:26:01.045Z"
+          "verifiedAt": "2026-09-28T23:26:01.045Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-05T21:34:37.094Z",
+            "posts": [
+              {
+                "id": "2104714262547476678",
+                "status": "observed"
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
