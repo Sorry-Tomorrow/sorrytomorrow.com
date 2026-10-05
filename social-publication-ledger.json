@@ -2624,10 +2624,20 @@
                 "18089822855233323"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18094180481361446"
+              "containerId": "18094180481361446",
+              "publishedAt": "2026-10-02T13:00:51.000Z"
             }
           ],
-          "verifiedAt": "2026-10-02T13:00:58.005Z"
+          "verifiedAt": "2026-10-02T13:00:58.005Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-05T21:34:37.094Z",
+            "posts": [
+              {
+                "id": "18192084559401852",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
