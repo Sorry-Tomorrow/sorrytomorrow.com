@@ -2141,10 +2141,20 @@
                 "18095735738532475"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18093417299361446"
+              "containerId": "18093417299361446",
+              "publishedAt": "2026-09-28T23:26:41.000Z"
             }
           ],
-          "verifiedAt": "2026-09-28T23:26:47.910Z"
+          "verifiedAt": "2026-09-28T23:26:47.910Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-05T21:34:37.094Z",
+            "posts": [
+              {
+                "id": "17897152308396422",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
