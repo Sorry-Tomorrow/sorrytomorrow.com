@@ -2763,10 +2763,20 @@
                 "122116057371458114",
                 "122116057431458114"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-02T13:01:28.000Z"
             }
           ],
-          "verifiedAt": "2026-10-02T13:01:34.715Z"
+          "verifiedAt": "2026-10-02T13:01:34.715Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-05T21:34:37.094Z",
+            "posts": [
+              {
+                "id": "1380120908509290_122116057485458114",
+                "status": "observed"
+              }
+            ]
+          }
         }
       }
     }
