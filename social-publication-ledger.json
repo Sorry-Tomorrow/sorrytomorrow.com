@@ -2818,12 +2818,6 @@
       "runId": "37853642918",
       "createdAt": "2026-10-08T22:28:38.989Z",
       "platforms": {
-        "x": {
-          "status": "blocked-budget",
-          "startedAt": "2026-10-08T22:28:40.491Z",
-          "steps": {},
-          "results": []
-        },
         "instagram": {
           "status": "published",
           "startedAt": "2026-10-08T22:28:41.762Z",
