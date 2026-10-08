@@ -2910,6 +2910,13 @@
             }
           ],
           "verifiedAt": "2026-10-08T22:29:13.138Z"
+        },
+        "x": {
+          "status": "reserved",
+          "startedAt": "2026-10-08T22:41:58.997Z",
+          "steps": {},
+          "results": [],
+          "xReservedUsd": 0.5
         }
       }
     }
