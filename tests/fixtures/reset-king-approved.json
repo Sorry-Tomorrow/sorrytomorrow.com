@@ -1,0 +1,51 @@
+{
+  "internalId": "ST-RESET-KING",
+  "slug": "the-reset-king",
+  "title": "The Reset King",
+  "publicNumber": 18,
+  "publicVersion": "v0.0.18",
+  "readerLayout": "single-panel",
+  "alt": "Tiny Token lounges on an enormous gold throne in a jeweled crown, heavy chains and a fur-trimmed red cape, above gold bars stamped FREE RESETS. He pours one stream of gold reset coins from a chalice onto Clara’s navy umbrella. Clara rolls her eyes and holds her coffee. Coins slide off the right edge into Wes’s outstretched mug and off the left edge into Mina’s gathered shirt and Dex’s open briefcase. Mina and Dex look delighted; Wes feigns indifference. No dialogue.",
+  "assets": {
+    "png": {
+      "sha256": "4a0983240ae382235d1b47b67ceaf7736a7ab3fc88729e7d3a834f93a773ce0f",
+      "width": 1086,
+      "height": 1532
+    },
+    "webp": {
+      "sha256": "88e7bed671db126707d4ff9e5e487c25901ec6e16d6d56866b5901fc682ea6e2",
+      "width": 1086,
+      "height": 1532
+    },
+    "preview": {
+      "sha256": "0ade7cdafcee5341ae2a1cc3462a5581200274e65fdd25be644afa9b972d647f",
+      "width": 1200,
+      "height": 630
+    },
+    "complete": {
+      "sha256": "97bd2c707cae2c116f04f4727796063172be723d4c34a4d7ac36ec614ae7e30b",
+      "width": 2160,
+      "height": 3281
+    }
+  },
+  "preview": {
+    "src": "/comics/the-reset-king/sharing/v1/preview.jpg",
+    "width": 1200,
+    "height": 630,
+    "alt": "The Reset King title beside the complete scene of Token on a gold throne pouring reset coins over his colleagues.",
+    "sha256": "0ade7cdafcee5341ae2a1cc3462a5581200274e65fdd25be644afa9b972d647f",
+    "bytes": 238669,
+    "mimeType": "image/jpeg"
+  },
+  "download": {
+    "src": "/comics/the-reset-king/sharing/v1/complete.jpg",
+    "width": 2160,
+    "height": 3281,
+    "alt": "Tiny Token lounges on an enormous gold throne in a jeweled crown, heavy chains and a fur-trimmed red cape, above gold bars stamped FREE RESETS. He pours one stream of gold reset coins from a chalice onto Clara’s navy umbrella. Clara rolls her eyes and holds her coffee. Coins slide off the right edge into Wes’s outstretched mug and off the left edge into Mina’s gathered shirt and Dex’s open briefcase. Mina and Dex look delighted; Wes feigns indifference. No dialogue.",
+    "sha256": "97bd2c707cae2c116f04f4727796063172be723d4c34a4d7ac36ec614ae7e30b",
+    "bytes": 2864982,
+    "mimeType": "image/jpeg",
+    "filename": "sorry-tomorrow-the-reset-king-complete.jpg"
+  },
+  "shareText": "The Reset King | Sorry, Tomorrow"
+}

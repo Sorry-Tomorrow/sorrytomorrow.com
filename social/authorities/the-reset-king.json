@@ -1,0 +1,90 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-10-08",
+  "recordedAt": "2026-10-08T21:29:29.979Z",
+  "internalId": "ST-RESET-KING",
+  "title": "The Reset King",
+  "ownerInstruction": "looks good, approve, publish it",
+  "resolvedContext": "Approval3 and explicit release for the exact The Reset King candidate through the established website, X, Instagram and Facebook.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "e74629ec417ee89b9b1bc4a534976474b8802ff018b799a8a703fcbcd7513f09",
+  "sourceManifestSha256": "d7ab0ba3506275f7910db5559a75c20f70003fd6ceeebd11620ca31fdc5bebb7",
+  "readerSharingManifestSha256": "2ed924dc072609a86086f52f130aac43f1735848c92031b7525b008168bb1476",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentityPlan": {
+    "episodeNumber": 18,
+    "displayVersion": "v0.0.18",
+    "slug": "the-reset-king",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/the-reset-king/",
+    "plannedWebsiteReleaseMetadata": "2026-10-08T21:29:29.979Z",
+    "basis": "Fresh origin/main 9a7c11dac6565e184c4ede321d9d0d7876c04ff0 contains seventeen comics, maximum 17; title/slug/ID are unused."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "captionRule": {
+    "procedure": "studio/editorial/reset-king-v1/art-pass-v1/finish-v1/CAPTION-WORKSHEET.md",
+    "captions": {
+      "x": {
+        "text": "One free reset and suddenly everyone’s royalty.\n\nThe Reset King\nhttps://sorrytomorrow.com/comics/the-reset-king/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=panels\n\nAI-assisted; human-written, directed, edited, and approved.",
+        "url": "https://sorrytomorrow.com/comics/the-reset-king/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=panels",
+        "weightedLength": 149,
+        "characterCount": 269,
+        "mediaOrder": [
+          "p1"
+        ],
+        "placement": "Post caption link."
+      },
+      "instagram": {
+        "text": "That first minute after a free AI reset hits.\n\nThe Reset King\nhttps://sorrytomorrow.com/comics/the-reset-king/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=carousel\n\nAI-assisted; human-written, directed, edited, and approved.",
+        "url": "https://sorrytomorrow.com/comics/the-reset-king/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=carousel",
+        "weightedLength": 146,
+        "characterCount": 277,
+        "mediaOrder": [
+          "p1"
+        ],
+        "placement": "Plain caption URL; not a clickable bio link."
+      },
+      "facebook": {
+        "text": "A free AI reset can make a perfectly ordinary workday feel very extravagant.\n\nThe Reset King\nhttps://sorrytomorrow.com/comics/the-reset-king/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=carousel\n\nAI-assisted; human-written, directed, edited, and approved.",
+        "url": "https://sorrytomorrow.com/comics/the-reset-king/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=carousel",
+        "weightedLength": 177,
+        "characterCount": 307,
+        "mediaOrder": [
+          "p1"
+        ],
+        "placement": "Post caption link."
+      }
+    },
+    "policy": "Exact three distinct premise-first captions, channel-tagged URLs and required disclosure."
+  },
+  "assetRule": "Copy exact approved website PNG/WebP, X PNG, Instagram/Facebook sRGB JPEG, complete edition and preview. One panel per channel. No image processing.",
+  "budgetRule": "No new paid spend. Existing X $5 provider cap/auto-recharge setting remain unchanged.",
+  "executionRule": "Stage verified reader-sharing/social packages; build trusted website and run social workflow after successful deployment; verify all URLs, media bytes, copy and alt before claiming.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "new accounts or permissions",
+    "other comic backfill"
+  ],
+  "publicationClaim": "Authority only; deployment and posting unclaimed until verified."
+}

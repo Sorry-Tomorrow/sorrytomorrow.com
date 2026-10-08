@@ -47,5 +47,12 @@
     "approval3Sha256": "924419dc360a196d47cc21a13827baf9f327ee365e61a4eebab1e2d90288f5cb",
     "sourceManifestSha256": "c33f7f7c32e7e8f85f30662e3efb94de9dfe276dc96431ddf920aaeb6308088c",
     "releaseAuthoritySha256": "7a4b240323533ffc35bbfeb2730dafe6d931c93574feb33960bd055997c1b447"
+  },
+  "the-reset-king": {
+    "internalId": "ST-RESET-KING",
+    "manifestSha256": "e664d073ef355acb3e8e984bee4501230b2a6c03f340250564304b31f794b418",
+    "approval3Sha256": "e74629ec417ee89b9b1bc4a534976474b8802ff018b799a8a703fcbcd7513f09",
+    "sourceManifestSha256": "d7ab0ba3506275f7910db5559a75c20f70003fd6ceeebd11620ca31fdc5bebb7",
+    "releaseAuthoritySha256": "1132616a6ffa726c4eb44a83769b75ccac3a3144b7eeb4a50b7222dfba798bc6"
   }
 }

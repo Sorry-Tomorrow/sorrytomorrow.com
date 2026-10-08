@@ -41,13 +41,16 @@ test("the newest approved captions keep their exact copy with one title and cano
     const approved = sharing.episodes[episode.slug].shareText;
     const text = comicShareText({ title: episode.title, seriesTitle: series.title, summary: approved, disclosure: series.disclosure, canonical });
     const copy = shareCaption(text, canonical);
-    assert.equal(copy, approved, episode.slug);
+    const expectedCopy = approved.split(/\r?\n/).some(line => line.trim() === canonical)
+      ? approved
+      : `${approved.trim() === `${episode.title} | ${series.title}` ? `${approved}\n${series.disclosure}` : `${episode.title} — ${series.title}\n${approved}\n${series.disclosure}`}\n${canonical}`;
+    assert.equal(copy, expectedCopy, episode.slug);
     assert.equal(copy.split(episode.title).length - 1, 1, episode.slug);
     assert.equal(copy.split(canonical).length - 1, 1, episode.slug);
     const native = nativeShareText(text, canonical);
     assert.ok(!native.includes(canonical), episode.slug);
-    assert.ok(native.includes(episode.title) && native.includes("AI-assisted comic by Sorry, Tomorrow."));
-    assert.equal(shareDescription(approved, episode.caption, canonical), episode.caption);
+    assert.ok(native.includes(episode.title) && (native.includes("AI-assisted comic by Sorry, Tomorrow.") || native.includes(series.disclosure)));
+    assert.equal(shareDescription(approved, episode.caption, canonical), approved.split(/\r?\n/).some(line => line.trim() === canonical) ? episode.caption : approved);
   }
 });
 

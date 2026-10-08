@@ -1,0 +1,82 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-RESET-KING",
+  "slug": "the-reset-king",
+  "title": "The Reset King",
+  "number": 18,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/the-reset-king/",
+  "approval3Sha256": "e74629ec417ee89b9b1bc4a534976474b8802ff018b799a8a703fcbcd7513f09",
+  "sourceManifestSha256": "d7ab0ba3506275f7910db5559a75c20f70003fd6ceeebd11620ca31fdc5bebb7",
+  "releaseAuthoritySha256": "1132616a6ffa726c4eb44a83769b75ccac3a3144b7eeb4a50b7222dfba798bc6",
+  "panelOrder": [
+    "p1"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "One free reset and suddenly everyone’s royalty.\n\nThe Reset King\nhttps://sorrytomorrow.com/comics/the-reset-king/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=panels\n\nAI-assisted; human-written, directed, edited, and approved.",
+          "media": [
+            {
+              "path": "public/social/the-reset-king/x/p1.png",
+              "bytes": 4312702,
+              "sha256": "4a0983240ae382235d1b47b67ceaf7736a7ab3fc88729e7d3a834f93a773ce0f",
+              "width": 1086,
+              "height": 1532,
+              "type": "image/png",
+              "alt": "Tiny Token lounges on an enormous gold throne in a jeweled crown, heavy chains and a fur-trimmed red cape, above gold bars stamped FREE RESETS. He pours one stream of gold reset coins from a chalice onto Clara’s navy umbrella. Clara rolls her eyes and holds her coffee. Coins slide off the right edge into Wes’s outstretched mug and off the left edge into Mina’s gathered shirt and Dex’s open briefcase. Mina and Dex look delighted; Wes feigns indifference. No dialogue.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "That first minute after a free AI reset hits.\n\nThe Reset King\nhttps://sorrytomorrow.com/comics/the-reset-king/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=carousel\n\nAI-assisted; human-written, directed, edited, and approved.",
+          "media": [
+            {
+              "path": "public/social/the-reset-king/instagram/p1.jpg",
+              "bytes": 850104,
+              "sha256": "8e24c82bb4b74e95c9beed9b5f60d96dfd13131831e3774bcbd4a9364576ac49",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Tiny Token lounges on an enormous gold throne in a jeweled crown, heavy chains and a fur-trimmed red cape, above gold bars stamped FREE RESETS. He pours one stream of gold reset coins from a chalice onto Clara’s navy umbrella. Clara rolls her eyes and holds her coffee. Coins slide off the right edge into Wes’s outstretched mug and off the left edge into Mina’s gathered shirt and Dex’s open briefcase. Mina and Dex look delighted; Wes feigns indifference. No dialogue.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "A free AI reset can make a perfectly ordinary workday feel very extravagant.\n\nThe Reset King\nhttps://sorrytomorrow.com/comics/the-reset-king/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-018-the-reset-king&utm_content=carousel\n\nAI-assisted; human-written, directed, edited, and approved.",
+          "media": [
+            {
+              "path": "public/social/the-reset-king/facebook/p1.jpg",
+              "bytes": 850104,
+              "sha256": "8e24c82bb4b74e95c9beed9b5f60d96dfd13131831e3774bcbd4a9364576ac49",
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Tiny Token lounges on an enormous gold throne in a jeweled crown, heavy chains and a fur-trimmed red cape, above gold bars stamped FREE RESETS. He pours one stream of gold reset coins from a chalice onto Clara’s navy umbrella. Clara rolls her eyes and holds her coffee. Coins slide off the right edge into Wes’s outstretched mug and off the left edge into Mina’s gathered shirt and Dex’s open briefcase. Mina and Dex look delighted; Wes feigns indifference. No dialogue.",
+              "panelIds": [
+                "p1"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
