@@ -2873,7 +2873,7 @@
           "verifiedAt": "2026-10-08T22:28:58.664Z"
         },
         "facebook": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-10-08T22:28:59.803Z",
           "steps": {
             "post-0-image-0": {
@@ -2894,7 +2894,17 @@
               "completedAt": "2026-10-08T22:29:09.891Z"
             }
           },
-          "results": []
+          "results": [
+            {
+              "id": "1380120908509290_122118413085458114",
+              "images": [
+                {
+                  "id": "122118413043458114",
+                  "sha256": "8e24c82bb4b74e95c9beed9b5f60d96dfd13131831e3774bcbd4a9364576ac49"
+                }
+              ]
+            }
+          ]
         }
       }
     }
