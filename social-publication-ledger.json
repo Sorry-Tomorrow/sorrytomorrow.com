@@ -2825,7 +2825,7 @@
           "results": []
         },
         "instagram": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-10-08T22:28:41.762Z",
           "steps": {
             "post-0-image-0": {
@@ -2847,7 +2847,18 @@
               "completedAt": "2026-10-08T22:28:55.552Z"
             }
           },
-          "results": []
+          "results": [
+            {
+              "id": "18104208617170316",
+              "containerId": "18095568566361446",
+              "images": [
+                {
+                  "id": "18095568566361446",
+                  "sha256": "8e24c82bb4b74e95c9beed9b5f60d96dfd13131831e3774bcbd4a9364576ac49"
+                }
+              ]
+            }
+          ]
         }
       }
     }
