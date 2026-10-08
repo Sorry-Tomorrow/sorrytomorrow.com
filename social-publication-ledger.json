@@ -2825,7 +2825,7 @@
           "results": []
         },
         "instagram": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-10-08T22:28:41.762Z",
           "steps": {
             "post-0-image-0": {
@@ -2858,7 +2858,19 @@
                 }
               ]
             }
-          ]
+          ],
+          "verified": [
+            {
+              "id": "18104208617170316",
+              "url": "https://www.instagram.com/p/DeQAgOdmFIl/",
+              "attachmentIds": [
+                "18104208617170316"
+              ],
+              "copyAndAltVerified": true,
+              "containerId": "18095568566361446"
+            }
+          ],
+          "verifiedAt": "2026-10-08T22:28:58.664Z"
         }
       }
     }
