@@ -80,14 +80,23 @@ export async function executeRelease({entry,ledger,api,root,commit,runId,policy,
   const report=[];
   for(const platform of ["x","instagram","facebook"]) {
     const prior=record.platforms[platform];
-    if(prior){report.push({platform,status:prior.status==="published"?"already-published":"reconciliation-required",posts:prior.verified??[]});continue;}
+    if(prior?.status==="blocked-budget") {
+      assert.equal(platform,"x");
+      assert.deepEqual(prior.steps??{}, {}, "A budget-blocked destination must have no mutation attempts");
+      assert.deepEqual(prior.results??[], [], "A budget-blocked destination must have no provider results");
+      delete record.platforms[platform];
+      await ledger.save();
+    } else if(prior) {
+      report.push({platform,status:prior.status==="published"?"already-published":"reconciliation-required",posts:prior.verified??[]});
+      continue;
+    }
     const state=record.platforms[platform]={status:"reserved",startedAt:now().toISOString(),steps:{},results:[]};
     if(platform==="x") {
       const cutoff=now().getTime()-31*24*60*60*1000;
       const reserved=Object.values(ledger.data.releases).reduce((total,r)=>total+(Date.parse(r.platforms.x?.startedAt??"")>=cutoff?(r.platforms.x.xReservedUsd??0):0),0);
       const amount=policy.xReservePerPostUsd*release.platforms.x.posts.length;
       assert.ok(amount>0 && amount<=1.5 && policy.xMonthlyCapUsd===5);
-      if(reserved+amount>4.9){state.status="blocked-budget";await ledger.save();report.push({platform,status:state.status});continue;}
+      if(reserved+amount>policy.xMonthlyCapUsd){state.status="blocked-budget";await ledger.save();report.push({platform,status:state.status});continue;}
       state.xReservedUsd=amount;
     }
     await ledger.save();
