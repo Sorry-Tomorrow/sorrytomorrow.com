@@ -17,6 +17,41 @@
   },
   "episodes": [
     {
+      "internalId": "ST-RESET-KING",
+      "slug": "the-reset-king",
+      "title": "The Reset King",
+      "publicNumber": 18,
+      "publicVersion": "v0.0.18",
+      "label": "Comic 018 · Ahead AI",
+      "websitePublishedAt": "2026-10-08T21:41:08.276Z",
+      "previewOnly": false,
+      "readerLayout": "single-panel",
+      "displayDate": "v0.0.18",
+      "caption": "A little free reset goes a long way.",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/the-reset-king/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "The Reset King title beside Token on a golden throne, pouring coins onto Clara’s umbrella."
+      },
+      "art": [
+        {
+          "src": "comics/the-reset-king/p1.png",
+          "webpSrc": "comics/the-reset-king/p1.webp",
+          "width": 1086,
+          "height": 1532,
+          "alt": "Tiny Token lounges on an enormous gold throne in a jeweled crown, heavy chains and a fur-trimmed red cape, above gold bars stamped FREE RESETS. He pours one stream of gold reset coins from a chalice onto Clara’s navy umbrella. Clara rolls her eyes and holds her coffee. Coins slide off the right edge into Wes’s outstretched mug and off the left edge into Mina’s gathered shirt and Dex’s open briefcase. Mina and Dex look delighted; Wes feigns indifference. No dialogue."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [],
+          "description": "Tiny Token lounges on an enormous gold throne in a jeweled crown, heavy chains and a fur-trimmed red cape, above gold bars stamped FREE RESETS. He pours one stream of gold reset coins from a chalice onto Clara’s navy umbrella. Clara rolls her eyes and holds her coffee. Coins slide off the right edge into Wes’s outstretched mug and off the left edge into Mina’s gathered shirt and Dex’s open briefcase. Mina and Dex look delighted; Wes feigns indifference. No dialogue."
+        }
+      ]
+    },
+    {
       "internalId": "ST-BOT-TOURAGE",
       "slug": "bot-tourage",
       "title": "Bot-tourage",

@@ -57,6 +57,10 @@ const approvedComicAssets = {
   "comics/undefeated/og.png": "1372470f785a61b4ac31beff7c5a3395d2c7ff7fd302bfee8979616bb9bb978a",
   "comics/vibe-coding-in-your-sleep/og.png": "ba32d3cfc2dada48d96527c099539a5e82ef79c9fcc90a3b402c14dfe2610ea3",
   "comics/the-honest-demo/og.png": "10c0c4aedc695c563a00217b3af22a7ab8c3a9059c4cdf474a91fe1a810343ce",
+  "comics/the-reset-king/p1.png": "4a0983240ae382235d1b47b67ceaf7736a7ab3fc88729e7d3a834f93a773ce0f",
+  "comics/the-reset-king/p1.webp": "88e7bed671db126707d4ff9e5e487c25901ec6e16d6d56866b5901fc682ea6e2",
+  "comics/the-reset-king/sharing/v1/preview.jpg": "0ade7cdafcee5341ae2a1cc3462a5581200274e65fdd25be644afa9b972d647f",
+  "comics/the-reset-king/sharing/v1/complete.jpg": "97bd2c707cae2c116f04f4727796063172be723d4c34a4d7ac36ec614ae7e30b",
 };
 
 test("Pages output retains search verification and the configured single analytics beacon", async () => {
@@ -103,11 +107,11 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 017 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="bot-tourage"/);
+  assert.match(html, /Comic 018 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="the-reset-king"/);
+  assert.match(html, /comics\/the-reset-king\/p1\.webp/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/bot-tourage\/p1\.webp/);
   assert.match(html, /Bot-tourage/);
   assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
@@ -188,6 +192,10 @@ test("produces a complete GitHub Pages artifact", async () => {
     access(new URL("comics/vibe-coding-in-your-sleep/index.html", outputRoot)),
     access(new URL("comics/undefeated/index.html", outputRoot)),
     access(new URL("comics/executive-twin/index.html", outputRoot)),
+    access(new URL("comics/the-reset-king.html", outputRoot)),
+    access(new URL("comics/the-reset-king/index.html", outputRoot)),
+    access(new URL("comics/the-reset-king.html", outputRoot)),
+    access(new URL("comics/the-reset-king/index.html", outputRoot)),
     access(new URL("comics/bot-tourage.html", outputRoot)),
     access(new URL("comics/bot-tourage/index.html", outputRoot)),
     access(new URL("comics/up-up-and-out-of-tokens.html", outputRoot)),
@@ -370,7 +378,8 @@ test("Bot-tourage Pages export contains all seven approved panels and its new ch
   const html = await readFile(new URL("comics/bot-tourage/index.html", outputRoot), "utf8");
   assert.match(html, /<title>Bot-tourage \| Sorry, Tomorrow<\/title>/);
   assert.match(html, /reader-layout-bot-tourage/);
-  assert.match(html, /You’re at the latest comic/);
+  assert.match(html, new RegExp(`href="${escapedBasePath}/comics/the-reset-king/#comic"`));
+  assert.doesNotMatch(html, /You’re at the latest comic/);
   assert.match(html, new RegExp(`href="${escapedBasePath}/comics/up-up-and-out-of-tokens/#comic"`));
   const images = [...html.matchAll(/<img\b[^>]*class="comic-panel-art"[^>]*>/g)].map(match => match[0]);
   assert.equal(images.length, 7);
@@ -384,4 +393,17 @@ test("Bot-tourage Pages export contains all seven approved panels and its new ch
     for (const line of panel.lines) assert.ok(decoded.includes(line.text), `${panel.id}: ${line.text}`);
   }
   for (const role of ["preview", "download"]) assert.equal(createHash("sha256").update(await readFile(new URL(approved[role].src.slice(1), outputRoot))).digest("hex"), approved[role].sha256, role);
+});
+
+
+test("The Reset King Pages export preserves its approved single wordless image and chronology", async () => {
+  const approved=JSON.parse(await readFile(new URL("./fixtures/reset-king-approved.json",import.meta.url),"utf8"));
+  const html=await readFile(new URL("comics/the-reset-king/index.html",outputRoot),"utf8");
+  assert.match(html,/<title>The Reset King \| Sorry, Tomorrow<\/title>/);
+  assert.match(html,/The Reset King/); assert.match(html,/Comic 018 · Ahead AI/);
+  assert.match(html,new RegExp(`href="${escapedBasePath}/comics/bot-tourage/#comic"`));
+  const images=[...html.matchAll(/<img\b[^>]*class="comic-panel-art"[^>]*>/g)].map(m=>m[0]);
+  assert.equal(images.length,1); assert.ok(images[0].includes('comics/the-reset-king/p1.png')); assert.ok(images[0].includes('width="1086" height="1532"'));
+  for(const path of [`comics/the-reset-king/p1.png`,`comics/the-reset-king/p1.webp`,approved.preview.src.slice(1),approved.download.src.slice(1)]) assert.equal(createHash("sha256").update(await readFile(new URL(path,outputRoot))).digest("hex"),approved.assets[path.endsWith("webp")?"webp":path.endsWith("p1.png")?"png":path.includes("preview")?"preview":"complete"].sha256,path);
+  const decoded=html.replaceAll("&amp;","&"); assert.ok(decoded.includes("FREE RESETS")); assert.doesNotMatch(decoded,/FREE RESETS.*(?:says|asks)|<li><strong>Panel 1:<\/strong>[^<]*(?:Token|Dex):/s);
 });

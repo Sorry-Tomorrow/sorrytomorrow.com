@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "95f5b5f2badc2063440f7960afe623adbbd008842861cd99645032b3b1bd902c",
-  "approvalReceiptSha256": "1dfd1b9c20f883ea5ecc42f7c655221d37d0219e9d686693622060d82feb4724",
+  "manifestSha256": "698243a6b41720208888e1e028586b56276fc5135a75a9aa020e1d965bfc8743",
+  "approvalReceiptSha256": "5b7355ddb2a4985cba6dedac7375c927160d3c5f5aa1a613e9cb8ce568859ae5",
   "episodes": {
     "executive-twin": {
       "status": "approved",
@@ -428,6 +428,31 @@
         "filename": "sorry-tomorrow-bot-tourage-complete.jpg"
       },
       "shareText": "Bot-tourage\n\nhttps://sorrytomorrow.com/comics/bot-tourage/\n\nAI-assisted comic by Sorry, Tomorrow."
+    },
+    "the-reset-king": {
+      "status": "approved",
+      "manifestSha256": "698243a6b41720208888e1e028586b56276fc5135a75a9aa020e1d965bfc8743",
+      "approvalReceiptSha256": "5b7355ddb2a4985cba6dedac7375c927160d3c5f5aa1a613e9cb8ce568859ae5",
+      "preview": {
+        "src": "/comics/the-reset-king/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "The Reset King title beside the complete scene of Token on a gold throne pouring reset coins over his colleagues.",
+        "sha256": "0ade7cdafcee5341ae2a1cc3462a5581200274e65fdd25be644afa9b972d647f",
+        "bytes": 238669,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/the-reset-king/sharing/v1/complete.jpg",
+        "width": 2160,
+        "height": 3281,
+        "alt": "Tiny Token lounges on an enormous gold throne in a jeweled crown, heavy chains and a fur-trimmed red cape, above gold bars stamped FREE RESETS. He pours one stream of gold reset coins from a chalice onto Clara’s navy umbrella. Clara rolls her eyes and holds her coffee. Coins slide off the right edge into Wes’s outstretched mug and off the left edge into Mina’s gathered shirt and Dex’s open briefcase. Mina and Dex look delighted; Wes feigns indifference. No dialogue.",
+        "sha256": "97bd2c707cae2c116f04f4727796063172be723d4c34a4d7ac36ec614ae7e30b",
+        "bytes": 2864982,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-the-reset-king-complete.jpg"
+      },
+      "shareText": "The Reset King | Sorry, Tomorrow"
     }
   }
 }

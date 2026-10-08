@@ -49,11 +49,11 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 017 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="bot-tourage"/);
+  assert.match(html, /Comic 018 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="the-reset-king"/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/bot-tourage\/p1\.webp/);
+  assert.match(html, /comics\/the-reset-king\/p1\.webp/);
   assert.match(html, /Bot-tourage/);
   assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
@@ -169,7 +169,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 17);
+  assert.equal(JSON.parse(catalog).episodes.length, 18);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -248,7 +248,8 @@ test("published navigation connects Founder through the latest release", async (
     ["working-from-home-or-laundry-from-work", "six-figure-growth", "chief-babysitting-engineer"],
     ["chief-babysitting-engineer", "working-from-home-or-laundry-from-work", "up-up-and-out-of-tokens"],
     ["up-up-and-out-of-tokens", "chief-babysitting-engineer", "bot-tourage"],
-    ["bot-tourage", "up-up-and-out-of-tokens", null],
+    ["bot-tourage", "up-up-and-out-of-tokens", "the-reset-king"],
+    ["the-reset-king", "bot-tourage", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);
@@ -294,3 +295,6 @@ test("Laundry from Work renders one complete silent panel, exact transcript and 
   assert.doesNotMatch(html, /<p>Working from Home, or Laundry from Work\?<\/p>/);
   assert.doesNotMatch(html, /Screen:|Visible labels:/);
 });
+
+
+test("The Reset King server-rendered page contains one approved image and no dialogue",async()=>{const response=await render("/comics/the-reset-king");assert.equal(response.status,200);const html=await response.text();assert.match(html,/<title>The Reset King \| Sorry, Tomorrow<\/title>/);assert.match(html,/FREE RESETS/);assert.equal([...html.matchAll(/class="comic-panel-art"/g)].length,1);assert.doesNotMatch(html,/Dex:|Mina:|Clara:|Wes:/);});

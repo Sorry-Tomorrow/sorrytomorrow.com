@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all seventeen release entries in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 17);
+test("keeps all eighteen release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 18);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 17);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 17);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 18);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 18);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -74,12 +74,12 @@ test("all released episodes enter RSS and sitemap", async () => {
       assert.equal(output.includes(`/comics/${episode.slug}/`), !episode.previewOnly, episode.slug);
     }
   }
-  assert.equal((rss.match(/<item>/g) ?? []).length, 17);
+  assert.equal((rss.match(/<item>/g) ?? []).length, 18);
   assert.ok(!rss.includes("Invalid Date") && !sitemap.includes("Invalid Date"));
 });
 
 test("Chief Babysitting Engineer ships the exact approved panels, copy and reader-sharing files", async () => {
-  const episode = catalog.episodes[2];
+  const episode = catalog.episodes[3];
   assert.equal(episode.internalId, "ST-CHIEF-BABYSITTING-ENGINEER");
   assert.equal(episode.slug, "chief-babysitting-engineer");
   assert.equal(episode.title, "Chief Babysitting Engineer");
@@ -192,7 +192,7 @@ test("Incognito Mode retains its approved native images, exact transcript and fo
 
 test("The Assistant’s Assistant imports only the four exact corrected approved website PNGs", async () => {
   const episode = catalog.episodes.find(item => item.internalId === "ST-ASSISTANTS-ASSISTANT");
-  assert.equal(catalog.episodes[5], episode);
+  assert.equal(catalog.episodes[6], episode);
   assert.equal(episode.title, "The Assistant’s Assistant");
   assert.equal(episode.publicNumber, 12);
   assert.equal(episode.publicVersion, "v0.0.12");
@@ -274,7 +274,7 @@ test("the Assistant reader keeps its approved desktop grid and natural full-widt
 
 test("Six-Figure Growth preserves its exact approved single panel, copy and reading edition", async () => {
   const episode = catalog.episodes.find(item => item.internalId === "ST-SIX-FIGURE-GROWTH");
-  assert.equal(catalog.episodes[4], episode);
+  assert.equal(catalog.episodes[5], episode);
   assert.equal(episode.internalId, "ST-SIX-FIGURE-GROWTH");
   assert.equal(episode.title, "Six-Figure Growth?");
   assert.equal(episode.publicNumber, 13);
@@ -311,7 +311,7 @@ test("Six-Figure Growth preserves its exact approved single panel, copy and read
 });
 
 test("Laundry from Work releases the exact approved silent panel, accessibility copy and reading edition", async () => {
-  const episode = catalog.episodes[3];
+  const episode = catalog.episodes[4];
   const prefix = "comics/working-from-home-or-laundry-from-work/";
   assert.equal(episode.internalId, "ST-LAUNDRY-FROM-WORK");
   assert.equal(episode.slug, "working-from-home-or-laundry-from-work");
@@ -362,7 +362,7 @@ test("Laundry from Work releases the exact approved silent panel, accessibility 
 
 test("Up, Up, and Out of Tokens releases all five exact approved panels, copy and sharing assets", async () => {
   const approved = JSON.parse(await readFile(new URL("./fixtures/up-up-and-out-of-tokens-approved.json", import.meta.url), "utf8"));
-  const episode = catalog.episodes[1];
+  const episode = catalog.episodes[2];
   for (const field of ["internalId", "slug", "title", "publicNumber", "publicVersion", "readerLayout"]) assert.equal(episode[field], approved[field], field);
   assert.equal(episode.shell, "art-first");
   assert.equal(episode.caption, approved.title);
@@ -399,7 +399,7 @@ test("Up, Up, and Out of Tokens releases all five exact approved panels, copy an
 
 test("Bot-tourage preserves its approved seven-panel assets, exact copy and reader layout", async () => {
   const approved = JSON.parse(await readFile(new URL("./fixtures/bot-tourage-approved.json", import.meta.url), "utf8"));
-  const episode = catalog.episodes[0];
+  const episode = catalog.episodes[1];
   for (const field of ["internalId", "slug", "title", "publicNumber", "publicVersion", "caption", "readerLayout"]) assert.equal(episode[field], approved[field], field);
   assert.equal(episode.label, "Comic 017 · Ahead AI");
   assert.equal(episode.shell, "art-first");
@@ -427,4 +427,16 @@ test("Bot-tourage preserves its approved seven-panel assets, exact copy and read
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /\.reader-layout-bot-tourage \.art-first-episode-header h2 \{\s*font-family: ComicBangers, Impact, sans-serif;/);
   assert.match(css, /\.reader-layout-bot-tourage \.art-first-comic-art > :first-child,\s*\.reader-layout-bot-tourage \.art-first-comic-art > :nth-child\(6\),\s*\.reader-layout-bot-tourage \.art-first-comic-art > :last-child \{ grid-column: 1 \/ -1; \}/);
+});
+
+
+test("The Reset King preserves the approved silent scene, assets, captions and sharing files", async () => {
+  const approved = JSON.parse(await readFile(new URL("./fixtures/reset-king-approved.json", import.meta.url), "utf8"));
+  const episode = catalog.episodes[0];
+  for (const field of ["internalId", "slug", "title", "publicNumber", "publicVersion", "readerLayout"]) assert.equal(episode[field], approved[field], field);
+  assert.equal(episode.art.length, 1); assert.deepEqual(episode.panels, [{lines:[],description:approved.alt}]);
+  assert.equal(episode.art[0].alt, approved.alt);
+  for(const format of ["png","webp"]) { const bytes=await readFile(new URL(`../public/comics/the-reset-king/p1.${format}`,import.meta.url)); assert.equal(createHash("sha256").update(bytes).digest("hex"),approved.assets[format].sha256); }
+  const sharing=JSON.parse(await readFile(new URL("../content/reader-sharing.json",import.meta.url),"utf8")).episodes[approved.slug];
+  for(const role of ["preview","download"]) assert.equal(sharing[role].sha256,approved[role].sha256);
 });
