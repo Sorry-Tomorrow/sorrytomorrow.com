@@ -6,6 +6,8 @@ function containsCanonicalLine(text, canonical) {
 export function comicShareText({ title, seriesTitle, summary, disclosure, canonical }) {
   return containsCanonicalLine(summary, canonical)
     ? summary
+    : summary.trim() === `${title} | ${seriesTitle}`
+      ? `${summary}\n${disclosure}`
     : `${title} — ${seriesTitle}\n${summary}\n${disclosure}`;
 }
 
