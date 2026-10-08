@@ -2932,6 +2932,10 @@
                 "id": "2108327087383674880"
               },
               "completedAt": "2026-10-08T22:42:06.252Z"
+            },
+            "post-0-publish": {
+              "status": "in-flight",
+              "startedAt": "2026-10-08T22:42:07.449Z"
             }
           },
           "results": [],
