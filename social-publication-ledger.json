@@ -2838,8 +2838,13 @@
               "completedAt": "2026-10-08T22:28:50.142Z"
             },
             "post-0-publish": {
-              "status": "in-flight",
-              "startedAt": "2026-10-08T22:28:51.801Z"
+              "status": "done",
+              "startedAt": "2026-10-08T22:28:51.801Z",
+              "result": {
+                "id": "18104208617170316",
+                "containerId": "18095568566361446"
+              },
+              "completedAt": "2026-10-08T22:28:55.552Z"
             }
           },
           "results": []
