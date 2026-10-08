@@ -2873,7 +2873,7 @@
           "verifiedAt": "2026-10-08T22:28:58.664Z"
         },
         "facebook": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-10-08T22:28:59.803Z",
           "steps": {
             "post-0-image-0": {
@@ -2904,7 +2904,18 @@
                 }
               ]
             }
-          ]
+          ],
+          "verified": [
+            {
+              "id": "1380120908509290_122118413085458114",
+              "url": "https://www.facebook.com/122107583679458114/posts/122118413085458114",
+              "attachmentIds": [
+                "122118413043458114"
+              ],
+              "copyAndAltVerified": true
+            }
+          ],
+          "verifiedAt": "2026-10-08T22:29:13.138Z"
         }
       }
     }
