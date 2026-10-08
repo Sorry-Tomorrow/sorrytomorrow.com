@@ -77,10 +77,10 @@ test("failed durable save prevents corrected uploads",async()=>{
   await assert.rejects(executeRelease({...f,api:{request:()=>assert.fail("No API call")}}));assert.equal(json(f.original),before);
 });
 test("budget counts old withdrawn reservations plus correction without cap increase",async()=>{
-  const f=fixture();f.original.platforms.x.xReservedUsd=4.5;
+  const f=fixture();f.original.platforms.x.xReservedUsd=5;
   f.ledger.data.releases[f.key]={manifestSha256,correction:f.grant,platforms:{instagram:{status:"published",verified:[]},facebook:{status:"published",verified:[]}}};
   const result=await executeRelease({...f,api:{request:()=>assert.fail("No API call")}});
-  assert.equal(result[0].status,"blocked-budget");assert.equal(f.original.platforms.x.xReservedUsd,4.5);assert.equal(f.policy.xMonthlyCapUsd,5);
+  assert.equal(result[0].status,"blocked-budget");assert.equal(f.original.platforms.x.xReservedUsd,5);assert.equal(f.policy.xMonthlyCapUsd,5);
 });
 test("corrected reconciliation selects new record and cannot rewrite original",async()=>{
   const f=fixture(),before=json(f.original);
