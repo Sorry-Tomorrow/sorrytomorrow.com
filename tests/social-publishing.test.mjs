@@ -196,6 +196,36 @@ test("existing attempts are never replayed, including partial and uncertain ones
   const result=await executeRelease({entry:{release:f.release,manifestSha256:digest},ledger,api:{request:()=>{throw Error("Unexpected API call");}},root:".",policy:f.policy});
   assert.deepEqual(result.map(r=>r.status),["already-published","reconciliation-required","reconciliation-required"]);assert.equal(writes,0);
 });
+test("a budget-blocked X release can resume only with zero prior mutations and within the configured cap",async()=>{
+  const f=fixture(),root=await mkdtemp(path.join(tmpdir(),"st-social-budget-retry-"));
+  await mkdir(path.join(root,"public/social/test/x"),{recursive:true});
+  await writeFile(path.join(root,f.release.platforms.x.posts[0].media[0].path),"approved test bytes");
+  const now=new Date("2026-10-08T23:00:00.000Z"),recent=Object.fromEntries(Array.from({length:9},(_,i)=>[`prior-${i}`,{platforms:{x:{startedAt:new Date(now.getTime()-i*60_000).toISOString(),xReservedUsd:i===0?0.5:0.5}}}]));
+  const blocked={status:"blocked-budget",startedAt:now.toISOString(),steps:{},results:[]};
+  const record={manifestSha256:digest,platforms:{x:blocked,instagram:{status:"published",verified:[]},facebook:{status:"published",verified:[]}}};
+  const ledger={data:{baselineExcludedIds:[],releases:{...recent,"ST-TEST":record}},save:async()=>{}};
+  const calls=[];const api={request:async(_platform,method,url,body)=>{calls.push({method,url,body});
+    if(method==="GET")return{data:{id:"102",author_id:accounts.xUserId,text:f.release.platforms.x.posts[0].text,attachments:{media_keys:["3_101"]}},includes:{media:[{media_key:"3_101",type:"photo",width:1000,height:1000,alt_text:"Complete panel."}]}};
+    if(url==="/2/media/upload")return{data:{id:"101",media_key:"3_101"}};
+    if(url==="/2/media/metadata")return{data:{id:"101"}};
+    return{data:{id:"102"}};
+  }};
+  const result=await executeRelease({entry:{release:f.release,manifestSha256:digest},ledger,api,root,policy:f.policy,now:()=>now});
+  assert.deepEqual(result.map(item=>item.status),["published","already-published","already-published"]);
+  assert.equal(record.platforms.x.status,"published");assert.equal(record.platforms.x.xReservedUsd,0.5);assert.equal(calls.length,4);
+  assert.equal(recent["prior-0"].platforms.x.xReservedUsd,0.5);
+});
+test("the X reserve still blocks attempts that would exceed its configured monthly cap",async()=>{
+  const f=fixture(),now=new Date("2026-10-08T23:00:00.000Z"),blocked={status:"blocked-budget",startedAt:now.toISOString(),steps:{},results:[]};let calls=0;
+  const ledger={data:{baselineExcludedIds:[],releases:{prior:{platforms:{x:{startedAt:now.toISOString(),xReservedUsd:5}}},"ST-TEST":{manifestSha256:digest,platforms:{x:blocked,instagram:{status:"published",verified:[]},facebook:{status:"published",verified:[]}}}}},save:async()=>{}};
+  const result=await executeRelease({entry:{release:f.release,manifestSha256:digest},ledger,api:{request:async()=>{calls++;throw Error("Must stay blocked");}},root:".",policy:f.policy,now:()=>now});
+  assert.deepEqual(result.map(item=>item.status),["blocked-budget","already-published","already-published"]);assert.equal(blocked.status,"blocked-budget");assert.equal(calls,0);
+});
+test("a blocked X record with mutation evidence is never eligible for automatic retry",async()=>{
+  const f=fixture(),blocked={status:"blocked-budget",steps:{"post-0-image-0":{status:"done"}},results:[]};let calls=0;
+  const ledger={data:{baselineExcludedIds:[],releases:{"ST-TEST":{manifestSha256:digest,platforms:{x:blocked}}}},save:async()=>{}};
+  await assert.rejects(executeRelease({entry:{release:f.release,manifestSha256:digest},ledger,api:{request:async()=>{calls++;}},root:".",policy:f.policy}),/no mutation attempts/);assert.equal(calls,0);
+});
 test("no media write occurs when durable intent cannot be recorded",async()=>{
   const f=fixture();let calls=0;
   const ledger={data:{baselineExcludedIds:[],releases:{}},save:async()=>{throw new SocialError("github_request_failed");}};
