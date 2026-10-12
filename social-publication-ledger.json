@@ -2984,10 +2984,20 @@
               "attachmentIds": [
                 "2108327087383674880"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-08T22:42:08.000Z"
             }
           ],
-          "verifiedAt": "2026-10-08T22:42:11.399Z"
+          "verifiedAt": "2026-10-08T22:42:11.399Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-12T22:07:43.788Z",
+            "posts": [
+              {
+                "id": "2108327110624399736",
+                "status": "observed"
+              }
+            ]
+          }
         }
       }
     }
