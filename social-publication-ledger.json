@@ -2861,10 +2861,20 @@
                 "18104208617170316"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18095568566361446"
+              "containerId": "18095568566361446",
+              "publishedAt": "2026-10-08T22:28:53.000Z"
             }
           ],
-          "verifiedAt": "2026-10-08T22:28:58.664Z"
+          "verifiedAt": "2026-10-08T22:28:58.664Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-12T22:07:43.788Z",
+            "posts": [
+              {
+                "id": "18104208617170316",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
