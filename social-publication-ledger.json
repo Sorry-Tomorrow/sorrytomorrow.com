@@ -3010,7 +3010,7 @@
       "createdAt": "2026-10-14T13:44:34.962Z",
       "platforms": {
         "x": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-10-14T13:44:36.196Z",
           "steps": {
             "post-0-image-0": {
@@ -3100,7 +3100,20 @@
               ]
             }
           ],
-          "xReservedUsd": 0.5
+          "xReservedUsd": 0.5,
+          "verified": [
+            {
+              "id": "2110366260340961340",
+              "url": "https://x.com/sorrytomorrowco/status/2110366260340961340",
+              "attachmentIds": [
+                "2110366173011329024",
+                "2110366203491360768",
+                "2110366231198912512"
+              ],
+              "copyAndAltVerified": true
+            }
+          ],
+          "verifiedAt": "2026-10-14T13:45:03.789Z"
         }
       }
     }
