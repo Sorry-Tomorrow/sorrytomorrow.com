@@ -3114,6 +3114,12 @@
             }
           ],
           "verifiedAt": "2026-10-14T13:45:03.789Z"
+        },
+        "instagram": {
+          "status": "reserved",
+          "startedAt": "2026-10-14T13:45:05.445Z",
+          "steps": {},
+          "results": []
         }
       }
     }
