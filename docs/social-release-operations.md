@@ -5,6 +5,27 @@ posts only hash-registered, destination-approved comic packages from trusted mai
 It does not generate art, rewrite captions, backfill old comics, message users,
 follow accounts, moderate comments, buy credits, boost posts, or create paid ads.
 
+## Caption policy
+
+The owner instruction effective October 8, 2026 prohibits AI-generated,
+AI-assisted, AI-created, and equivalent production-credit wording in new social
+captions. Do not append the historical `DISCLOSURE` constant. This does not change
+platform-native labels, website colophon copy, historical sealed captions, or
+published posts.
+
+New caption text includes the approved title and exactly one `campaignUrl` for
+its destination, with the existing mention, whitespace, and length limits.
+`validateDraftCaption(text, platform, { title, slug, number })` performs offline
+candidate checks without inventing approval or release evidence. Full
+`validateManifest` remains mandatory before staging authorized releases.
+
+The fixed `historicalCaptionManifests` table preserves the eight manifests that
+were registered when the rule changed. Each entry binds its manifest, identity,
+three authority hashes, post count, and exact per-platform caption hashes.
+`exactApprovedCaptions` records retain their existing additional constraints.
+A new manifest, changed caption, changed identity, or changed authority cannot
+borrow a historical exemption. Do not extend this table for future comics.
+
 ## Normal release
 
 1. Finish the ordinary three owner creative approvals, including exact API-ready

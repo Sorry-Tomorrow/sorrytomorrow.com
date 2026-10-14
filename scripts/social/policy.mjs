@@ -3,9 +3,11 @@ import { createHash } from "node:crypto";
 import { readFile, realpath } from "node:fs/promises";
 import path from "node:path";
 import { accounts } from "../social-connections.mjs";
+import { hasGenerationCredit } from "../../app/social-caption-policy.mjs";
 
 export const ORIGIN = "https://sorrytomorrow.com";
 export const PLATFORMS = ["x", "instagram", "facebook"];
+// Historical sealed captions and fixtures only; never append to new post text.
 export const DISCLOSURE = "AI-assisted; human-written, directed, edited, and approved.";
 export const hash = value => createHash("sha256").update(value).digest("hex");
 export const json = value => `${JSON.stringify(value, null, 2)}\n`;
@@ -53,8 +55,46 @@ export function campaignUrl(slug, number, platform) {
   return url.href;
 }
 
-function validateText(text, platform, release, policy) {
-  assert.ok(typeof text === "string" && text.trim() === text && text.includes(release.title), "Missing approved title/disclosure");
+function validateCaptionBasics(text, platform, release, approvedLink) {
+  assert.ok(typeof text === "string" && text.trim() === text && text.includes(release.title), "Missing approved title or caption whitespace");
+  assert.ok(!/@[a-zA-Z0-9_]/.test(text), "Unapproved mention");
+  const links = text.match(/https?:\/\/[^\s]+/g) ?? [];
+  assert.deepEqual(links, [approvedLink], "Unexpected campaign link");
+  const count = platform === "x"
+    ? [...text.replace(links[0], "")].reduce((n, c) => n + (c.codePointAt(0) <= 0x10ff ? 1 : 2), 23)
+    : [...text].length;
+  const limit = platform === "x" ? 280 : 2200;
+  assert.ok(count <= limit, "Caption exceeds limit");
+  return { count, limit, campaignUrl: approvedLink };
+}
+
+// Offline candidate preflight. No approval, ledger, or release authority is inferred.
+export function validateDraftCaption(text, platform, release) {
+  const approvedLink = campaignUrl(release.slug, release.number, platform);
+  assert.ok(typeof text === "string" && !hasGenerationCredit(text), "AI-generation credit is not permitted in new social captions");
+  return validateCaptionBasics(text, platform, release, approvedLink);
+}
+
+// Fixed existing manifests retain exact historical copy; new manifests have no exemption.
+function historicalCaptionBinding(release, approved, policy) {
+  const grants = policy.historicalCaptionManifests ?? {};
+  if (!Object.hasOwn(grants, approved.manifestSha256)) return null;
+  const grant = grants[approved.manifestSha256];
+  assert.equal(grant.internalId, release.internalId, "Historical caption identity differs");
+  for (const field of ["approval3Sha256", "sourceManifestSha256", "releaseAuthoritySha256"]) {
+    assert.ok(sha(grant[field]));
+    assert.equal(grant[field], release[field], `Historical caption ${field} differs`);
+  }
+  for (const platform of PLATFORMS) {
+    assert.ok(Array.isArray(grant.postTextSha256?.[platform]), "Missing historical caption hashes");
+    assert.equal(grant.postTextSha256[platform].length, release.platforms[platform]?.posts?.length, "Historical caption post count differs");
+    assert.ok(grant.postTextSha256[platform].every(sha), "Invalid historical caption hash");
+  }
+  return grant;
+}
+
+function validateText(text, platform, release, policy, historical, postIndex) {
+  assert.ok(typeof text === "string" && text.trim() === text && text.includes(release.title), "Missing approved title or caption whitespace");
   const exactCaption = Object.hasOwn(policy.exactApprovedCaptions ?? {}, release.internalId)
     ? policy.exactApprovedCaptions[release.internalId] : undefined;
   let approvedLink = campaignUrl(release.slug, release.number, platform);
@@ -74,14 +114,13 @@ function validateText(text, platform, release, policy) {
       assert.equal(exactCaption.canonicalUrl, release.canonicalUrl, "Exact caption canonical URL differs");
       approvedLink = exactCaption.canonicalUrl;
     }
-  } else assert.ok(text.includes(DISCLOSURE), "Missing approved title/disclosure");
-  assert.ok(!/@[a-zA-Z0-9_]/.test(text), "Unapproved mention");
-  const links = text.match(/https?:\/\/[^\s]+/g) ?? [];
-  assert.deepEqual(links, [approvedLink], "Unexpected campaign link");
-  const count = platform === "x"
-    ? [...text.replace(links[0], "")].reduce((n, c) => n + (c.codePointAt(0) <= 0x10ff ? 1 : 2), 23)
-    : [...text].length;
-  assert.ok(count <= (platform === "x" ? 280 : 2200), "Caption exceeds limit");
+  }
+  if (historical !== null) {
+    assert.equal(hash(text), historical.postTextSha256[platform][postIndex], "Historical caption text changed");
+  } else {
+    assert.ok(!hasGenerationCredit(text), "AI-generation credit is not permitted in new social captions");
+  }
+  validateCaptionBasics(text, platform, release, approvedLink);
 }
 
 // This allowlist is reviewed with the exact new owner authority and manifest.
@@ -136,13 +175,14 @@ export function validateManifest(release, approved, catalog, policy) {
   assert.ok(!policy.baselineExcludedIds.includes(release.internalId), "Existing comic excluded from backfill");
   assert.deepEqual(Object.keys(release.platforms).sort(), [...PLATFORMS].sort(), "Require each approved destination");
   assert.deepEqual(release.panelOrder, episode.art.map((_, i) => `p${i + 1}`), "Canonical panel order differs");
+  const historical = historicalCaptionBinding(release, approved, policy);
   for (const platform of PLATFORMS) {
     const destination = release.platforms[platform];
     assert.equal(destination.accountId, platform === "x" ? accounts.xUserId : platform === "instagram" ? accounts.instagramId : accounts.facebookPageId);
     assert.ok(Array.isArray(destination.posts) && destination.posts.length > 0 && destination.posts.length <= (platform === "x" ? 3 : 1));
     const order = [];
-    for (const post of destination.posts) {
-      validateText(post.text, platform, release, policy);
+    for (const [postIndex, post] of destination.posts.entries()) {
+      validateText(post.text, platform, release, policy, historical, postIndex);
       assert.ok(Array.isArray(post.media) && post.media.length > 0 && post.media.length <= (platform === "x" ? 4 : 10));
       const shapes = [];
       for (const media of post.media) {

@@ -15,7 +15,7 @@ const digest="a".repeat(64), commit="b".repeat(40);
 const env={X_API_KEY:"test-key",X_API_SECRET:"secret-canary",X_ACCESS_TOKEN:"test-token",X_ACCESS_TOKEN_SECRET:"test-secret"};
 function fixture(){
   const release={schema:"sorry-tomorrow-social-release-v1",internalId:"ST-TEST",slug:"test",title:"Test",number:11,canonicalUrl:"https://sorrytomorrow.com/comics/test/",approval3Sha256:digest,sourceManifestSha256:digest,releaseAuthoritySha256:digest,panelOrder:["p1"],platforms:{}};
-  for(const p of ["x","instagram","facebook"])release.platforms[p]={accountId:p==="x"?accounts.xUserId:p==="instagram"?accounts.instagramId:accounts.facebookPageId,posts:[{text:`Test\n${campaignUrl("test",11,p)}\n${DISCLOSURE}`,media:[{path:`public/social/test/${p}/p1.${p==="instagram"?"jpg":"png"}`,sha256:digest,bytes:100,width:1000,height:1000,type:p==="instagram"?"image/jpeg":"image/png",alt:"Complete panel.",panelIds:["p1"]}]}]};
+  for(const p of ["x","instagram","facebook"])release.platforms[p]={accountId:p==="x"?accounts.xUserId:p==="instagram"?accounts.instagramId:accounts.facebookPageId,posts:[{text:`Test\n${campaignUrl("test",11,p)}`,media:[{path:`public/social/test/${p}/p1.${p==="instagram"?"jpg":"png"}`,sha256:digest,bytes:100,width:1000,height:1000,type:p==="instagram"?"image/jpeg":"image/png",alt:"Complete panel.",panelIds:["p1"]}]}]};
   const approved={manifestSha256:digest,approval3Sha256:digest,sourceManifestSha256:digest,releaseAuthoritySha256:digest,internalId:"ST-TEST"};
   return {release,approved,catalog:{episodes:[{internalId:"ST-TEST",slug:"test",title:"Test",publicNumber:11,art:[{}]}]},policy:{baselineExcludedIds:[],xMonthlyCapUsd:5,xReservePerPostUsd:0.5}};
 }
@@ -24,6 +24,11 @@ function exactCaptionFixture(link=ORIGIN, fields={}){
   const caption={title:f.release.title,text,textSha256:hash(text),sourceCaption:{sha256:hash(`${text}\n`)},approval3:{sha256:f.release.approval3Sha256},sourceManifest:{sha256:f.release.sourceManifestSha256},releaseAuthority:{sha256:f.release.releaseAuthoritySha256},...fields};
   f.policy.exactApprovedCaptions={[f.release.internalId]:caption};
   for(const destination of Object.values(f.release.platforms))destination.posts[0].text=caption.text;
+  f.policy.historicalCaptionManifests={[f.approved.manifestSha256]:{
+    internalId:f.release.internalId,approval3Sha256:f.release.approval3Sha256,
+    sourceManifestSha256:f.release.sourceManifestSha256,releaseAuthoritySha256:f.release.releaseAuthoritySha256,
+    postTextSha256:Object.fromEntries(Object.entries(f.release.platforms).map(([platform,d])=>[platform,d.posts.map(post=>hash(post.text))]))
+  }};
   return {...f,caption};
 }
 test("approved manifest binds complete story, exact account and campaign URLs",()=>{const f=fixture();assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);});
@@ -79,13 +84,14 @@ for(const platform of ["x","instagram","facebook"])test(`exact canonical caption
   f.release.platforms[platform].posts[0].text+=" Changed.";
   assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy),/Caption differs from exact owner approval/);
 });
-test("default captions still require the disclosure and exact per-platform campaign URL",()=>{
+test("new captions omit credit and retain exact per-platform campaign URLs",()=>{
   for(const platform of ["x","instagram","facebook"]){
-    const missingDisclosure=fixture();missingDisclosure.release.platforms[platform].posts[0].text=`Test\n${campaignUrl("test",11,platform)}`;
-    assert.throws(()=>validateManifest(missingDisclosure.release,missingDisclosure.approved,missingDisclosure.catalog,missingDisclosure.policy),/Missing approved title\/disclosure/);
-    const missingTracking=fixture();missingTracking.release.platforms[platform].posts[0].text=`Test\n${missingTracking.release.canonicalUrl}\n${DISCLOSURE}`;
+    const compliant=fixture();assert.equal(validateManifest(compliant.release,compliant.approved,compliant.catalog,compliant.policy),compliant.release);
+    const banned=fixture();banned.release.platforms[platform].posts[0].text+=`\n${DISCLOSURE}`;
+    assert.throws(()=>validateManifest(banned.release,banned.approved,banned.catalog,banned.policy),/AI-generation credit/);
+    const missingTracking=fixture();missingTracking.release.platforms[platform].posts[0].text=`Test\n${missingTracking.release.canonicalUrl}`;
     assert.throws(()=>validateManifest(missingTracking.release,missingTracking.approved,missingTracking.catalog,missingTracking.policy),/Unexpected campaign link/);
-    const wrongPlatform=fixture();wrongPlatform.release.platforms[platform].posts[0].text=`Test\n${campaignUrl("test",11,platform==="x"?"facebook":"x")}\n${DISCLOSURE}`;
+    const wrongPlatform=fixture();wrongPlatform.release.platforms[platform].posts[0].text=`Test\n${campaignUrl("test",11,platform==="x"?"facebook":"x")}`;
     assert.throws(()=>validateManifest(wrongPlatform.release,wrongPlatform.approved,wrongPlatform.catalog,wrongPlatform.policy),/Unexpected campaign link/);
   }
 });
@@ -132,7 +138,7 @@ test("Laundry from Work pins its exact approved caption and native destination m
   }
   const withoutExactApproval=structuredClone(policy);
   delete withoutExactApproval.exactApprovedCaptions[internalId];
-  assert.throws(()=>validateManifest(release,approved,catalog,withoutExactApproval),/Missing approved title\/disclosure/);
+  assert.throws(()=>validateManifest(release,approved,catalog,withoutExactApproval),/Unexpected campaign link/);
 });
 for(const [name,change]of [
   ["wrong account",r=>r.platforms.x.accountId="999"],
@@ -141,7 +147,7 @@ for(const [name,change]of [
   ["PNG on Instagram",r=>r.platforms.instagram.posts[0].media[0].type="image/png"],
   ["path traversal",r=>r.platforms.x.posts[0].media[0].path="public/social/test/../private.png"],
   ["external caption link",r=>r.platforms.x.posts[0].text+= " https://elsewhere.example/"],
-  ["missing disclosure",r=>r.platforms.x.posts[0].text="Test"],
+  ["missing campaign link",r=>r.platforms.x.posts[0].text="Test"],
   ["unapproved mention",r=>r.platforms.x.posts[0].text+=" @someone"],
   ["oversized media",r=>r.platforms.x.posts[0].media[0].bytes=5_000_001],
 ])test(`rejects ${name}`,()=>{const f=fixture();change(f.release);assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));});

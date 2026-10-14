@@ -54,5 +54,12 @@
     "approval3Sha256": "e74629ec417ee89b9b1bc4a534976474b8802ff018b799a8a703fcbcd7513f09",
     "sourceManifestSha256": "d7ab0ba3506275f7910db5559a75c20f70003fd6ceeebd11620ca31fdc5bebb7",
     "releaseAuthoritySha256": "1132616a6ffa726c4eb44a83769b75ccac3a3144b7eeb4a50b7222dfba798bc6"
+  },
+  "dyson-sphere-pressure": {
+    "internalId": "ST-DYSON-SPHERE-PRESSURE",
+    "manifestSha256": "39490a8cd31e0567a506bd97c31bc6110d12823d15a93430d613766146c77846",
+    "approval3Sha256": "6b28c488ac70339615c764d01fd3ed47bd87e9f7e51bfeffc879339c9adfbdd6",
+    "sourceManifestSha256": "efb1d07b2ef6c8258e0fb882554c85921c6d104741925552ff671fdb5a0f575f",
+    "releaseAuthoritySha256": "dfaf84af3fa0b5a79ec68c8c7a8b4c1963c7eaec1ce4e95d22f422d9aa926492"
   }
 }

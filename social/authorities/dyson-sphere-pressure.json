@@ -1,0 +1,59 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-10-14",
+  "recordedAt": "2026-10-14T13:06:58.850Z",
+  "internalId": "ST-DYSON-SPHERE-PRESSURE",
+  "title": "Dyson \"Sphere Pressure\"",
+  "ownerInstruction": "I approve of this comic, go ahead and complete it/ finish it/ publish it",
+  "resolvedContext": "Exact final Approval3 plus explicit publication to established website, X, Instagram and Facebook, under the standing subsequent-comic social authority.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "6b28c488ac70339615c764d01fd3ed47bd87e9f7e51bfeffc879339c9adfbdd6",
+  "sourceManifestSha256": "efb1d07b2ef6c8258e0fb882554c85921c6d104741925552ff671fdb5a0f575f",
+  "readerSharingManifestSha256": "534f3e97beee323924c3de60735ec894bd49272a8848536cfbb97f440bb04318",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentityPlan": {
+    "episodeNumber": 19,
+    "displayVersion": "v0.0.19",
+    "slug": "dyson-sphere-pressure",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/dyson-sphere-pressure/",
+    "plannedWebsiteReleaseMetadata": "2026-10-14T13:06:58.850Z",
+    "basis": "Fresh origin/main 39d20787d749c491e30764b69e713cb0d54bd37e has18 comics, max18; no title/slug/ID collision, fresh durable social ledger has no release/attempt for this identity."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "captionRule": "Exact approved destination-specific premise-first captions, generated campaign URLs and alt; no AI-generation/assistance/creation production credit. Integrate reviewed publisher/share-helper patch before release.",
+  "publisherPatch": {
+    "path": "studio/editorial/token-sunshine-v1/art-pass-v2/finish-v1/publisher-policy-update/PATCH.diff",
+    "sha256": "08f64957ad1eae97248fcb56b08234b8ad4e4d0f6ecccda9f7c95723f567cdc8"
+  },
+  "assetRule": "Copy unchanged approved PNG/WebP/JPEG bytes; all3storypanels in order on every destination; no image processing.",
+  "budgetRule": "Existing X provider $5cap and no-auto-recharge unchanged; obey durable rolling reservations and stop on new spend/permissions.",
+  "executionRule": "Run Studio, source, reader-sharing, social, site/build checks; deploy trusted main; verify actual website/assets/navigation and provider accounts/captions/media/alt before recording published.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "new accounts or permissions",
+    "old comic backfill"
+  ],
+  "publicationClaim": "Authority only; actual publication awaits verification."
+}

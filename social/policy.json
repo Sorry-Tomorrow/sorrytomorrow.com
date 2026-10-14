@@ -164,5 +164,145 @@
         "sha256": "7a4b240323533ffc35bbfeb2730dafe6d931c93574feb33960bd055997c1b447"
       }
     }
+  },
+  "socialCaptionDirection": "Owner instruction effective 2026-10-08: never include AI-generated, AI-assisted, AI-created, or equivalent production-credit text in new social captions. Platform-native labels remain separate. Preserve exact historical captions only for the fixed manifest bindings below.",
+  "historicalCaptionManifests": {
+    "a578d810f0391e2f927db23172c4839080449cb65e1555854151cb390fd685b8": {
+      "internalId": "ST-INCOGNITO-MODE",
+      "approval3Sha256": "cffff64dad094e68665a01d63657c82b774fe0f5a1e88d0a61f7f735824df407",
+      "sourceManifestSha256": "4126e6e716f743d6ae51118250c26afd7c825ed1b691d70c9d53136bff2238e0",
+      "releaseAuthoritySha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108",
+      "postTextSha256": {
+        "x": [
+          "aec7ca023717972b2221f1a24eb2277e87f9bb30d0674e785cb4d6b64f56e5e0"
+        ],
+        "instagram": [
+          "37d3e035f0965d7e94da6a1817df000fe72571ff98d85ff3cbf193172cebdf2e"
+        ],
+        "facebook": [
+          "7fa979c6f260724ba8a96f582fec185c6c37cca0f5cb39ec69f751b516ee795d"
+        ]
+      }
+    },
+    "0514c1e89c6b1a2b05b379cc356632dfecca6b9c54eafcbfae0e1a1fe910a585": {
+      "internalId": "ST-ASSISTANTS-ASSISTANT",
+      "approval3Sha256": "9563913a8bd68d0c1f717377350c0a219190efc5f2dad6d6406d8758551745cd",
+      "sourceManifestSha256": "578d0bb92b46f40985b002840f07ce2a38ad89a91cae01929523cead5f10a36e",
+      "releaseAuthoritySha256": "9c85570cbd2bd663437d0550ad611205da7a9498d419b6f6afda0e8ff379cb7c",
+      "postTextSha256": {
+        "x": [
+          "dc1cb37b29e2365e4488514263acfe3242705fb7b9a10ae81675b16d8a748689"
+        ],
+        "instagram": [
+          "dc1cb37b29e2365e4488514263acfe3242705fb7b9a10ae81675b16d8a748689"
+        ],
+        "facebook": [
+          "dc1cb37b29e2365e4488514263acfe3242705fb7b9a10ae81675b16d8a748689"
+        ]
+      }
+    },
+    "cc5b0b14a06d0c222867ec8fe60a608413e4ba5dc734a72c010939c1669d35b8": {
+      "internalId": "ST-SIX-FIGURE-GROWTH",
+      "approval3Sha256": "c6ad080b1ad9ad0e213baed3100a544c9992cad526cb4991a1e6998447bfbcf9",
+      "sourceManifestSha256": "63a27081fd7539bd5fc76397ac604f8d822b482583ee6a7c385ab1e16d2faa18",
+      "releaseAuthoritySha256": "ad04fe460f821ab2674c007c595cfbfbad75412596cbb689ccb2ec283b9088dd",
+      "postTextSha256": {
+        "x": [
+          "f4eb48b5603fb32fdc70c2cdd648811a3025380e19566ae30e4f171addddcbd3"
+        ],
+        "instagram": [
+          "f4eb48b5603fb32fdc70c2cdd648811a3025380e19566ae30e4f171addddcbd3"
+        ],
+        "facebook": [
+          "f4eb48b5603fb32fdc70c2cdd648811a3025380e19566ae30e4f171addddcbd3"
+        ]
+      }
+    },
+    "cb8f25d34cabbef2526d5b2c6d85355234205304f799677a9b7b169b1e76589d": {
+      "internalId": "ST-LAUNDRY-FROM-WORK",
+      "approval3Sha256": "9e763f9c57ae7929915e45cfad85d9987283c8a24224ba760f681f6742319a58",
+      "sourceManifestSha256": "85f52643b29677d2e5c37cfcf03c10ff42751d3157bf26ee222ce6b3e25daa24",
+      "releaseAuthoritySha256": "bfd09888b5389e2731d8364565467f253c521fed5ccc4b27d474ad84247c094c",
+      "postTextSha256": {
+        "x": [
+          "ea9f06f6e8380488775427e0de27eb19f53ef22125e579e29e6f812aae6cb8a7"
+        ],
+        "instagram": [
+          "ea9f06f6e8380488775427e0de27eb19f53ef22125e579e29e6f812aae6cb8a7"
+        ],
+        "facebook": [
+          "ea9f06f6e8380488775427e0de27eb19f53ef22125e579e29e6f812aae6cb8a7"
+        ]
+      }
+    },
+    "773e350d026b89c24a915078056c0b928680be7c3056c53464ce03ec598ece2a": {
+      "internalId": "ST-CHIEF-BABYSITTING-ENGINEER",
+      "approval3Sha256": "4424b49a76c019b539ae94715e73402e5a0749770ddd9b89dd89b0a99a1707b5",
+      "sourceManifestSha256": "5f36414d1e0c96a3a94dfbe04909c1c247712f221e2358c5b1673836bb39adca",
+      "releaseAuthoritySha256": "7de4d1b724e6fdba0a983b206fa006a8fc77ef4bbd51374ea6c0e273993fccfa",
+      "postTextSha256": {
+        "x": [
+          "1578e76c830981e25e8179b7ff2ec859599aa4aaa47219e890d12ee1abdd1ff3"
+        ],
+        "instagram": [
+          "1578e76c830981e25e8179b7ff2ec859599aa4aaa47219e890d12ee1abdd1ff3"
+        ],
+        "facebook": [
+          "1578e76c830981e25e8179b7ff2ec859599aa4aaa47219e890d12ee1abdd1ff3"
+        ]
+      }
+    },
+    "9f68dafcf7cc5734a5f16d5970b0d280766896c554ad70727a0362bb8ac106d6": {
+      "internalId": "ST-SCRATCH-007",
+      "approval3Sha256": "e23cca05a2abfabb06689aba73f7012b4eab41b5ae63931bdc79dcd63d6ba9c7",
+      "sourceManifestSha256": "0315132755bb021234a305beda4f10d3049eea1c28c505805bd0f2e7226bd49a",
+      "releaseAuthoritySha256": "2df636c19b448d50c7c5c8bcbc5607618f355070c2c5549ea46e7f91ccdf09e2",
+      "postTextSha256": {
+        "x": [
+          "5707f9771d759cb11c62a0b59ad6459a28c6226dd8433f3da9dd166a4a65d8ed"
+        ],
+        "instagram": [
+          "5707f9771d759cb11c62a0b59ad6459a28c6226dd8433f3da9dd166a4a65d8ed"
+        ],
+        "facebook": [
+          "5707f9771d759cb11c62a0b59ad6459a28c6226dd8433f3da9dd166a4a65d8ed"
+        ]
+      }
+    },
+    "bf2c2b2554253c335fe3d253a9619f81af135a7401ac202ba72cbfdfb8c8fbfd": {
+      "internalId": "ST-BOT-TOURAGE",
+      "approval3Sha256": "924419dc360a196d47cc21a13827baf9f327ee365e61a4eebab1e2d90288f5cb",
+      "sourceManifestSha256": "c33f7f7c32e7e8f85f30662e3efb94de9dfe276dc96431ddf920aaeb6308088c",
+      "releaseAuthoritySha256": "7a4b240323533ffc35bbfeb2730dafe6d931c93574feb33960bd055997c1b447",
+      "postTextSha256": {
+        "x": [
+          "23186e748553f79fcc4848def2c5a003cc65ca5ff6158605d0dab0150c1f0bac",
+          "23186e748553f79fcc4848def2c5a003cc65ca5ff6158605d0dab0150c1f0bac"
+        ],
+        "instagram": [
+          "23186e748553f79fcc4848def2c5a003cc65ca5ff6158605d0dab0150c1f0bac"
+        ],
+        "facebook": [
+          "23186e748553f79fcc4848def2c5a003cc65ca5ff6158605d0dab0150c1f0bac"
+        ]
+      }
+    },
+    "e664d073ef355acb3e8e984bee4501230b2a6c03f340250564304b31f794b418": {
+      "internalId": "ST-RESET-KING",
+      "approval3Sha256": "e74629ec417ee89b9b1bc4a534976474b8802ff018b799a8a703fcbcd7513f09",
+      "sourceManifestSha256": "d7ab0ba3506275f7910db5559a75c20f70003fd6ceeebd11620ca31fdc5bebb7",
+      "releaseAuthoritySha256": "1132616a6ffa726c4eb44a83769b75ccac3a3144b7eeb4a50b7222dfba798bc6",
+      "postTextSha256": {
+        "x": [
+          "3bfbb6095df083fbdb7688b0d8cb5729e3be106788e9ced1e55176cf03b383e4"
+        ],
+        "instagram": [
+          "657414a36cbe3adb343c5f9a8c4dfea6aedd02be058c1d50a9c4056b3b06430f"
+        ],
+        "facebook": [
+          "ec88fed2f3328ed20405e3132806bfb09b2d069a321d89e0a786139d72537c93"
+        ]
+      }
+    }
   }
 }

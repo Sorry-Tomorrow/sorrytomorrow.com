@@ -113,10 +113,11 @@ for(const suffix of [" @someone"," https://elsewhere.example/","x".repeat(281)])
   for(const p of Object.values(f.release.platforms))p.posts[0].text=c.text;
   assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));
 });
-test("other episodes retain default campaign/disclosure rules",()=>{
+test("other episodes use the new no-credit campaign rules",()=>{
   const f=fixture();f.release.internalId=f.approved.internalId=f.catalog.episodes[0].internalId="ST-OTHER";delete f.policy.correctedReleases;
   assert.throws(()=>validateManifest(f.release,f.approved,f.catalog,f.policy));
-  for(const [platform,p]of Object.entries(f.release.platforms))p.posts[0].text=`${f.release.title}\n${campaignUrl(slug,12,platform)}\n${DISCLOSURE}`;
+  delete f.policy.historicalCaptionManifests;
+  for(const [platform,p]of Object.entries(f.release.platforms))p.posts[0].text=`${f.release.title}\n${campaignUrl(slug,12,platform)}`;
   assert.equal(validateManifest(f.release,f.approved,f.catalog,f.policy),f.release);
 });
 test("only resolved correction versions Meta fetch URLs with exact bound media hash",()=>{

@@ -1,0 +1,156 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-DYSON-SPHERE-PRESSURE",
+  "slug": "dyson-sphere-pressure",
+  "title": "Dyson \"Sphere Pressure\"",
+  "number": 19,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/dyson-sphere-pressure/",
+  "approval3Sha256": "6b28c488ac70339615c764d01fd3ed47bd87e9f7e51bfeffc879339c9adfbdd6",
+  "sourceManifestSha256": "efb1d07b2ef6c8258e0fb882554c85921c6d104741925552ff671fdb5a0f575f",
+  "releaseAuthoritySha256": "dfaf84af3fa0b5a79ec68c8c7a8b4c1963c7eaec1ce4e95d22f422d9aa926492",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "A denied data center is just an executive brainstorming prompt.\n\nDyson \"Sphere Pressure\"\n\nhttps://sorrytomorrow.com/comics/dyson-sphere-pressure/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-019-dyson-sphere-pressure&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/dyson-sphere-pressure/x/p1.png",
+              "sha256": "4acd1fad869cebea83c3841b21670e653b1cf1f217ef11b1fee6024705a4d0a6",
+              "bytes": 2994927,
+              "width": 1254,
+              "height": 1254,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "In the bright Ahead AI office, Dex leans toward Token on the desk, thumb on chin and a scheming smile. Clara rolls her eyes; Wes smirks behind them. Dex says, \"The Board says the government won’t approve our new data center.\" Clara says, \"Maybe we should just build a Dyson sphere around Token.\" Token raises his hands and says, \"Wait, what?\"",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/dyson-sphere-pressure/x/p2.png",
+              "sha256": "27d5ac304b73221d4bf02fdeef812af9043a24b81f1f6ed0f0d4dec69c2334c7",
+              "bytes": 4519070,
+              "width": 1536,
+              "height": 1024,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Tiny Token runs anxiously inside a monumental glowing spherical framework built around a hamster wheel. One boot meets the inner tread while his other leg lifts and his arms pump. The wheel axle enters a generator, and a huge ribbed power cable exits its output terminal across the office floor. No dialogue.",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/dyson-sphere-pressure/x/p3.png",
+              "sha256": "42d4568bc25eef0571067f0d6b24e0208b542e457bd61d689e814686b76fb3f3",
+              "bytes": 3877183,
+              "width": 1024,
+              "height": 1536,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Dex and Mina lounge in adjacent beach chairs in swimsuits and tanning goggles, smiling despite visibly sunburnt cheeks, shoulders and knees. The ribbed cable plugs into the base of twin tanning lamps shining onto both chairs. Token keeps running in the background wheel; ordinary sunshine is visible through the office windows. Dex says, \"The power of the sun, right in our office.\" Behind them Clara folds her arms, rolls her eyes and says, \"You could just go outside, you know.\" Wes smirks beside her.",
+              "type": "image/png"
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "The data center got a no. The brainstorming didn't.\nSwipe for the office's next big idea.\n\nDyson \"Sphere Pressure\"\n\nhttps://sorrytomorrow.com/comics/dyson-sphere-pressure/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-019-dyson-sphere-pressure&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/dyson-sphere-pressure/instagram/p1.jpg",
+              "sha256": "1d845cbf25fbf52f9bc0efa8451547f4f56b6366ee4e333ebf456e94420b4acf",
+              "bytes": 609011,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "In the bright Ahead AI office, Dex leans toward Token on the desk, thumb on chin and a scheming smile. Clara rolls her eyes; Wes smirks behind them. Dex says, \"The Board says the government won’t approve our new data center.\" Clara says, \"Maybe we should just build a Dyson sphere around Token.\" Token raises his hands and says, \"Wait, what?\"",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/dyson-sphere-pressure/instagram/p2.jpg",
+              "sha256": "b25617639676267a0656f5baee219290e18779d5182bcd0b0c965f7f087841eb",
+              "bytes": 639664,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Tiny Token runs anxiously inside a monumental glowing spherical framework built around a hamster wheel. One boot meets the inner tread while his other leg lifts and his arms pump. The wheel axle enters a generator, and a huge ribbed power cable exits its output terminal across the office floor. No dialogue.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/dyson-sphere-pressure/instagram/p3.jpg",
+              "sha256": "69135b23647ca2633f1fb990a5e6f3d3c1195ac0577ee5000b456f698edf53ca",
+              "bytes": 820110,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Dex and Mina lounge in adjacent beach chairs in swimsuits and tanning goggles, smiling despite visibly sunburnt cheeks, shoulders and knees. The ribbed cable plugs into the base of twin tanning lamps shining onto both chairs. Token keeps running in the background wheel; ordinary sunshine is visible through the office windows. Dex says, \"The power of the sun, right in our office.\" Behind them Clara folds her arms, rolls her eyes and says, \"You could just go outside, you know.\" Wes smirks beside her.",
+              "type": "image/jpeg"
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Tell an executive they can't build a data center and suddenly every sarcastic suggestion sounds like a plan.\n\nDyson \"Sphere Pressure\"\n\nhttps://sorrytomorrow.com/comics/dyson-sphere-pressure/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-019-dyson-sphere-pressure&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/dyson-sphere-pressure/facebook/p1.jpg",
+              "sha256": "1d845cbf25fbf52f9bc0efa8451547f4f56b6366ee4e333ebf456e94420b4acf",
+              "bytes": 609011,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "In the bright Ahead AI office, Dex leans toward Token on the desk, thumb on chin and a scheming smile. Clara rolls her eyes; Wes smirks behind them. Dex says, \"The Board says the government won’t approve our new data center.\" Clara says, \"Maybe we should just build a Dyson sphere around Token.\" Token raises his hands and says, \"Wait, what?\"",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/dyson-sphere-pressure/facebook/p2.jpg",
+              "sha256": "b25617639676267a0656f5baee219290e18779d5182bcd0b0c965f7f087841eb",
+              "bytes": 639664,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Tiny Token runs anxiously inside a monumental glowing spherical framework built around a hamster wheel. One boot meets the inner tread while his other leg lifts and his arms pump. The wheel axle enters a generator, and a huge ribbed power cable exits its output terminal across the office floor. No dialogue.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/dyson-sphere-pressure/facebook/p3.jpg",
+              "sha256": "69135b23647ca2633f1fb990a5e6f3d3c1195ac0577ee5000b456f698edf53ca",
+              "bytes": 820110,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Dex and Mina lounge in adjacent beach chairs in swimsuits and tanning goggles, smiling despite visibly sunburnt cheeks, shoulders and knees. The ribbed cable plugs into the base of twin tanning lamps shining onto both chairs. Token keeps running in the background wheel; ordinary sunshine is visible through the office windows. Dex says, \"The power of the sun, right in our office.\" Behind them Clara folds her arms, rolls her eyes and says, \"You could just go outside, you know.\" Wes smirks beside her.",
+              "type": "image/jpeg"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

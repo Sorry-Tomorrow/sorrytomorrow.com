@@ -1,14 +1,25 @@
-/** Approved newer packages already contain a complete caption; older packages provide a summary. */
+import { hasGenerationCredit } from "./social-caption-policy.mjs";
+import { historicalAuthoredShareCaptions } from "./historical-share-captions.mjs";
+
+/** Complete authored captions retain their exact bytes; generated summaries add no credit. */
 function containsCanonicalLine(text, canonical) {
   return text.split(/\r?\n/).some(line => line.trim() === canonical);
 }
 
-export function comicShareText({ title, seriesTitle, summary, disclosure, canonical }) {
-  return containsCanonicalLine(summary, canonical)
+export function comicShareText({ title, seriesTitle, summary, canonical }) {
+  if (containsCanonicalLine(summary, canonical)) {
+    const exactHistorical = Object.hasOwn(historicalAuthoredShareCaptions, canonical)
+      && historicalAuthoredShareCaptions[canonical] === summary;
+    if (hasGenerationCredit(summary) && !exactHistorical) {
+      throw new Error("AI-generation credit is not permitted in new reader-share captions");
+    }
+    return summary;
+  }
+  const text = [`${title} | ${seriesTitle}`, `${title} — ${seriesTitle}`].includes(summary.trim())
     ? summary
-    : summary.trim() === `${title} | ${seriesTitle}`
-      ? `${summary}\n${disclosure}`
-    : `${title} — ${seriesTitle}\n${summary}\n${disclosure}`;
+    : `${title} — ${seriesTitle}\n${summary}`;
+  if (hasGenerationCredit(text)) throw new Error("AI-generation credit is not permitted in generated reader-share captions");
+  return text;
 }
 
 export function shareCaption(text, canonical) {

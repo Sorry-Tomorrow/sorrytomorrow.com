@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { imageDimensions } from "./social/policy.mjs";
+import { comicShareText } from "../app/sharing.mjs";
 
 export async function validateReaderSharing(root = process.cwd(), { localPreview = false } = {}) {
   const json = async path => JSON.parse(await readFile(resolve(root, path), "utf8"));
@@ -17,6 +18,11 @@ export async function validateReaderSharing(root = process.cwd(), { localPreview
   for (const episode of published) {
     const row = sharing.episodes[episode.slug];
     assert.ok(row && row.preview && row.download, `${episode.slug}: preview and download required`);
+    comicShareText({
+      title: episode.title, seriesTitle: catalog.series.title,
+      summary: row.shareText ?? episode.caption, disclosure: catalog.series.disclosure,
+      canonical: new URL(`/comics/${episode.slug}/`, catalog.series.canonicalOrigin).toString(),
+    });
     if (!localPreview) {
       assert.equal(row.status, "approved", `${episode.slug}: candidate cannot ship`);
       assert.match(row.manifestSha256, /^[a-f0-9]{64}$/);

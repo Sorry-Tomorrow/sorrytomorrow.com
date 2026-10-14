@@ -17,6 +17,85 @@
   },
   "episodes": [
     {
+      "internalId": "ST-DYSON-SPHERE-PRESSURE",
+      "slug": "dyson-sphere-pressure",
+      "title": "Dyson \"Sphere Pressure\"",
+      "publicNumber": 19,
+      "publicVersion": "v0.0.19",
+      "label": "Comic 019 · Ahead AI",
+      "websitePublishedAt": "2026-10-14T13:06:58.850Z",
+      "previewOnly": false,
+      "readerLayout": "dyson-sphere-pressure",
+      "displayDate": "v0.0.19",
+      "caption": "When the data-center plan gets a no, executive brainstorming gets creative.",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/dyson-sphere-pressure/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Dyson \"Sphere Pressure\" title beside the opening office scene: Dex considers Token with a scheming smile, Clara rolls her eyes and Wes smirks."
+      },
+      "art": [
+        {
+          "src": "comics/dyson-sphere-pressure/p1.png",
+          "webpSrc": "comics/dyson-sphere-pressure/p1.webp",
+          "width": 1254,
+          "height": 1254,
+          "alt": "In the bright Ahead AI office, Dex leans toward Token on the desk, thumb on chin and a scheming smile. Clara rolls her eyes; Wes smirks behind them. Dex says, \"The Board says the government won’t approve our new data center.\" Clara says, \"Maybe we should just build a Dyson sphere around Token.\" Token raises his hands and says, \"Wait, what?\""
+        },
+        {
+          "src": "comics/dyson-sphere-pressure/p2.png",
+          "webpSrc": "comics/dyson-sphere-pressure/p2.webp",
+          "width": 1536,
+          "height": 1024,
+          "alt": "Tiny Token runs anxiously inside a monumental glowing spherical framework built around a hamster wheel. One boot meets the inner tread while his other leg lifts and his arms pump. The wheel axle enters a generator, and a huge ribbed power cable exits its output terminal across the office floor. No dialogue."
+        },
+        {
+          "src": "comics/dyson-sphere-pressure/p3.png",
+          "webpSrc": "comics/dyson-sphere-pressure/p3.webp",
+          "width": 1024,
+          "height": 1536,
+          "alt": "Dex and Mina lounge in adjacent beach chairs in swimsuits and tanning goggles, smiling despite visibly sunburnt cheeks, shoulders and knees. The ribbed cable plugs into the base of twin tanning lamps shining onto both chairs. Token keeps running in the background wheel; ordinary sunshine is visible through the office windows. Dex says, \"The power of the sun, right in our office.\" Behind them Clara folds her arms, rolls her eyes and says, \"You could just go outside, you know.\" Wes smirks beside her."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "The Board says the government won’t approve our new data center."
+            },
+            {
+              "speaker": "Clara",
+              "text": "Maybe we should just build a Dyson sphere around Token."
+            },
+            {
+              "speaker": "Token",
+              "text": "Wait, what?"
+            }
+          ],
+          "description": "In the bright Ahead AI office, Dex leans toward Token on the desk, thumb on chin and a scheming smile. Clara rolls her eyes; Wes smirks behind them. Dex says, \"The Board says the government won’t approve our new data center.\" Clara says, \"Maybe we should just build a Dyson sphere around Token.\" Token raises his hands and says, \"Wait, what?\""
+        },
+        {
+          "lines": [],
+          "description": "Tiny Token runs anxiously inside a monumental glowing spherical framework built around a hamster wheel. One boot meets the inner tread while his other leg lifts and his arms pump. The wheel axle enters a generator, and a huge ribbed power cable exits its output terminal across the office floor. No dialogue."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "The power of the sun, right in our office."
+            },
+            {
+              "speaker": "Clara",
+              "text": "You could just go outside, you know."
+            }
+          ],
+          "description": "Dex and Mina lounge in adjacent beach chairs in swimsuits and tanning goggles, smiling despite visibly sunburnt cheeks, shoulders and knees. The ribbed cable plugs into the base of twin tanning lamps shining onto both chairs. Token keeps running in the background wheel; ordinary sunshine is visible through the office windows. Dex says, \"The power of the sun, right in our office.\" Behind them Clara folds her arms, rolls her eyes and says, \"You could just go outside, you know.\" Wes smirks beside her."
+        }
+      ]
+    },
+    {
       "internalId": "ST-RESET-KING",
       "slug": "the-reset-king",
       "title": "The Reset King",
