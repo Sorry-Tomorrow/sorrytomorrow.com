@@ -3202,7 +3202,12 @@
         "facebook": {
           "status": "reserved",
           "startedAt": "2026-10-14T13:45:44.675Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-10-14T13:45:46.149Z"
+            }
+          },
           "results": []
         }
       }
