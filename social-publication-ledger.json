@@ -3220,6 +3220,10 @@
                 "sha256": "b25617639676267a0656f5baee219290e18779d5182bcd0b0c965f7f087841eb"
               },
               "completedAt": "2026-10-14T13:45:52.493Z"
+            },
+            "post-0-image-2": {
+              "status": "in-flight",
+              "startedAt": "2026-10-14T13:45:54.037Z"
             }
           },
           "results": []
