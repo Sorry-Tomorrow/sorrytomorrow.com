@@ -3198,6 +3198,12 @@
             }
           ],
           "verifiedAt": "2026-10-14T13:45:43.273Z"
+        },
+        "facebook": {
+          "status": "reserved",
+          "startedAt": "2026-10-14T13:45:44.675Z",
+          "steps": {},
+          "results": []
         }
       }
     }
