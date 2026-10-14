@@ -3213,8 +3213,13 @@
               "completedAt": "2026-10-14T13:45:48.790Z"
             },
             "post-0-image-1": {
-              "status": "in-flight",
-              "startedAt": "2026-10-14T13:45:50.180Z"
+              "status": "done",
+              "startedAt": "2026-10-14T13:45:50.180Z",
+              "result": {
+                "id": "122120152533458114",
+                "sha256": "b25617639676267a0656f5baee219290e18779d5182bcd0b0c965f7f087841eb"
+              },
+              "completedAt": "2026-10-14T13:45:52.493Z"
             }
           },
           "results": []
