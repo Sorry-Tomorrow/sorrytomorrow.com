@@ -3120,8 +3120,13 @@
           "startedAt": "2026-10-14T13:45:05.445Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-10-14T13:45:07.150Z"
+              "status": "done",
+              "startedAt": "2026-10-14T13:45:07.150Z",
+              "result": {
+                "id": "18096755279361446",
+                "sha256": "1d845cbf25fbf52f9bc0efa8451547f4f56b6366ee4e333ebf456e94420b4acf"
+              },
+              "completedAt": "2026-10-14T13:45:12.731Z"
             }
           },
           "results": []
