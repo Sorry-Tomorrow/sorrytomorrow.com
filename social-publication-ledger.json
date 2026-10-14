@@ -3200,7 +3200,7 @@
           "verifiedAt": "2026-10-14T13:45:43.273Z"
         },
         "facebook": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-10-14T13:45:44.675Z",
           "steps": {
             "post-0-image-0": {
@@ -3239,7 +3239,25 @@
               "completedAt": "2026-10-14T13:46:03.308Z"
             }
           },
-          "results": []
+          "results": [
+            {
+              "id": "1380120908509290_122120152641458114",
+              "images": [
+                {
+                  "id": "122120152485458114",
+                  "sha256": "1d845cbf25fbf52f9bc0efa8451547f4f56b6366ee4e333ebf456e94420b4acf"
+                },
+                {
+                  "id": "122120152533458114",
+                  "sha256": "b25617639676267a0656f5baee219290e18779d5182bcd0b0c965f7f087841eb"
+                },
+                {
+                  "id": "122120152587458114",
+                  "sha256": "69135b23647ca2633f1fb990a5e6f3d3c1195ac0577ee5000b456f698edf53ca"
+                }
+              ]
+            }
+          ]
         }
       }
     }
