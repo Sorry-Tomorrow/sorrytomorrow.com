@@ -3116,7 +3116,7 @@
           "verifiedAt": "2026-10-14T13:45:03.789Z"
         },
         "instagram": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-10-14T13:45:05.445Z",
           "steps": {
             "post-0-image-0": {
@@ -3183,7 +3183,21 @@
                 }
               ]
             }
-          ]
+          ],
+          "verified": [
+            {
+              "id": "18151133098469724",
+              "url": "https://www.instagram.com/p/DeehZAQlwga/",
+              "attachmentIds": [
+                "18029243897691273",
+                "17999083311033027",
+                "17912932398541345"
+              ],
+              "copyAndAltVerified": true,
+              "containerId": "18096755369361446"
+            }
+          ],
+          "verifiedAt": "2026-10-14T13:45:43.273Z"
         }
       }
     }
