@@ -22,7 +22,12 @@ new preview while the reader continues using the original comic panels.
 
 Sharing text accepts either the original summary or a complete authored caption
 containing its canonical URL on a separate line. A complete caption is copied
-unchanged; summaries receive one title, disclosure and canonical link. Native
+unchanged; generated summaries receive one title and canonical link with no
+production credit, including when the reader shares an older comic again. The
+owner instruction effective October 8, 2026 supersedes the former credit default.
+Historical complete authored captions and stored metadata remain unchanged;
+new packages must omit AI-generation/AI-assistance wording in their exact copy.
+`validate-reader-sharing.mjs` checks the generated summary path before shipping. Native
 sharing removes the clean URL line from its text because the tagged URL is sent
 in the Web Share URL field. Metadata uses the episode description when a package
 contains a complete caption. This keeps comics 015/016's already-approved copy

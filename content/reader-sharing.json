@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "698243a6b41720208888e1e028586b56276fc5135a75a9aa020e1d965bfc8743",
-  "approvalReceiptSha256": "5b7355ddb2a4985cba6dedac7375c927160d3c5f5aa1a613e9cb8ce568859ae5",
+  "manifestSha256": "534f3e97beee323924c3de60735ec894bd49272a8848536cfbb97f440bb04318",
+  "approvalReceiptSha256": "8ce43c88f1a5a10f19d94a3b28366c8b83f36e198125ccc8e96dbcba8f0946de",
   "episodes": {
     "executive-twin": {
       "status": "approved",
@@ -453,6 +453,31 @@
         "filename": "sorry-tomorrow-the-reset-king-complete.jpg"
       },
       "shareText": "The Reset King | Sorry, Tomorrow"
+    },
+    "dyson-sphere-pressure": {
+      "status": "approved",
+      "manifestSha256": "534f3e97beee323924c3de60735ec894bd49272a8848536cfbb97f440bb04318",
+      "approvalReceiptSha256": "8ce43c88f1a5a10f19d94a3b28366c8b83f36e198125ccc8e96dbcba8f0946de",
+      "preview": {
+        "src": "/comics/dyson-sphere-pressure/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Dyson \"Sphere Pressure\" title beside the opening office scene: Dex considers Token with a scheming smile, Clara rolls her eyes and Wes smirks.",
+        "sha256": "ea27840649d00d9dd543b9ac173c029d03d3fd9a6da9ee2c728e5abfbfae0cbf",
+        "bytes": 301023,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/dyson-sphere-pressure/sharing/v1/complete.jpg",
+        "width": 2160,
+        "height": 7015,
+        "alt": "Three-panel comic. In the Ahead AI office, Dex says, \"The Board says the government won’t approve our new data center.\" Clara rolls her eyes: \"Maybe we should just build a Dyson sphere around Token.\" Dex considers Token with a scheming smile. Token raises his hands: \"Wait, what?\" Wes smirks. Token then runs inside a huge glowing spherical hamster-wheel generator. Its axle powers a generator with a thick output cable. The cable supplies twin tanning lamps over Dex and Mina, smiling in beach chairs, swimsuits and tanning goggles with visibly sunburnt skin. Ordinary sunshine is visible outside. Dex says, \"The power of the sun, right in our office.\" Clara rolls her eyes: \"You could just go outside, you know.\" Wes smirks behind her.",
+        "sha256": "50b0f95f2a341025b879b31b5d9f63d4e4efccf4370239f6de277b2100191be6",
+        "bytes": 6068580,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-dyson-sphere-pressure-complete.jpg"
+      },
+      "shareText": "Dyson \"Sphere Pressure\" — Sorry, Tomorrow"
     }
   }
 }
