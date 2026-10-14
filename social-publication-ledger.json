@@ -3012,7 +3012,12 @@
         "x": {
           "status": "reserved",
           "startedAt": "2026-10-14T13:44:36.196Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-10-14T13:44:37.290Z"
+            }
+          },
           "results": [],
           "xReservedUsd": 0.5
         }
