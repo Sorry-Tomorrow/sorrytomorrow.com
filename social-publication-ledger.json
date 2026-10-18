@@ -3273,6 +3273,15 @@
           "verifiedAt": "2026-10-14T13:46:06.529Z"
         }
       }
+    },
+    "ST-CHIEF-EXPENDABLE-OFFICER": {
+      "slug": "chief-expendable-officer",
+      "title": "Chief Expendable Officer",
+      "manifestSha256": "59a4411f138e69200f71804b45692990540338c894fbbe2f0f235656b47e8ccd",
+      "sourceCommit": "c06661b757aab8558d139d679701cec3f99b217e",
+      "runId": "39169037189",
+      "createdAt": "2026-10-18T21:43:31.083Z",
+      "platforms": {}
     }
   }
 }
