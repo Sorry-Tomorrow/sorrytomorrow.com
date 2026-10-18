@@ -3413,7 +3413,7 @@
           "verifiedAt": "2026-10-18T21:44:01.458Z"
         },
         "instagram": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-10-18T21:44:02.606Z",
           "steps": {
             "post-0-image-0": {
@@ -3493,7 +3493,22 @@
                 }
               ]
             }
-          ]
+          ],
+          "verified": [
+            {
+              "id": "17934613800142678",
+              "url": "https://www.instagram.com/p/DepraBRGBOZ/",
+              "attachmentIds": [
+                "17912445735540430",
+                "17989669359026679",
+                "17902215594378843",
+                "17917193154261863"
+              ],
+              "copyAndAltVerified": true,
+              "containerId": "18097754906361446"
+            }
+          ],
+          "verifiedAt": "2026-10-18T21:44:54.484Z"
         }
       }
     }
