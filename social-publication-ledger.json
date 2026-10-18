@@ -3551,8 +3551,12 @@
               "completedAt": "2026-10-18T21:45:14.114Z"
             },
             "post-0-publish": {
-              "status": "in-flight",
-              "startedAt": "2026-10-18T21:45:15.333Z"
+              "status": "done",
+              "startedAt": "2026-10-18T21:45:15.333Z",
+              "result": {
+                "id": "1380120908509290_122121033753458114"
+              },
+              "completedAt": "2026-10-18T21:45:20.958Z"
             }
           },
           "results": []
