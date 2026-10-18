@@ -17,6 +17,84 @@
   },
   "episodes": [
     {
+      "internalId": "ST-CHIEF-EXPENDABLE-OFFICER",
+      "slug": "chief-expendable-officer",
+      "title": "Chief Expendable Officer",
+      "publicNumber": 20,
+      "publicVersion": "v0.0.20",
+      "label": "Comic 020 · Ahead AI",
+      "websitePublishedAt": "2026-10-18T21:28:19.598Z",
+      "previewOnly": false,
+      "readerLayout": "chief-expendable-officer",
+      "displayDate": "v0.0.20",
+      "caption": "Dex gives his new agentic workforce a mandate to eliminate redundant work.",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/chief-expendable-officer/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Chief Expendable Officer title beside the opening scene: Dex proudly tells three robot agents to find every redundant role and be ruthless."
+      },
+      "art": [
+        {
+          "src": "comics/chief-expendable-officer/p1.png",
+          "webpSrc": "comics/chief-expendable-officer/p1.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "Dex confidently addresses three small robot agents in a sunny office. A display reads AGENTIC WORKFORCE. Dex says, ‘Find every redundant role. Be ruthless.’"
+        },
+        {
+          "src": "comics/chief-expendable-officer/p2.png",
+          "webpSrc": "comics/chief-expendable-officer/p2.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "Dex gives a proud thumbs-up beside a screen headed OWNER: DEX VANE. It lists 12 MEETINGS — CANCELED; 6 DAILY STATUS REPORTS — STOPPED; OUR STRATEGY FOR DEVELOPING A STRATEGY — DELETED."
+        },
+        {
+          "src": "comics/chief-expendable-officer/p3.png",
+          "webpSrc": "comics/chief-expendable-officer/p3.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "Two small robot guards escort a startled Dex through the office. He carries a cardboard box holding his mug and plant. A third robot on a stepladder removes the DEX VANE nameplate from his office door. Silent panel."
+        },
+        {
+          "src": "comics/chief-expendable-officer/p4.png",
+          "webpSrc": "comics/chief-expendable-officer/p4.webp",
+          "width": 1254,
+          "height": 1254,
+          "alt": "Dex is folded inside a red glass-front emergency cabinet labeled HUMAN ACCOUNTABILITY. Beside an external hammer, a sign reads BREAK GLASS IN CASE OF LAWSUIT. Wes walks past with coffee and a smirk: ‘Good news. They found something they can’t automate.’"
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Find every redundant role. Be ruthless."
+            }
+          ],
+          "description": "Dex confidently addresses three small robot agents in a sunny office. A display reads AGENTIC WORKFORCE. Dex says, ‘Find every redundant role. Be ruthless.’"
+        },
+        {
+          "lines": [],
+          "description": "Dex gives a proud thumbs-up beside a screen headed OWNER: DEX VANE. It lists 12 MEETINGS — CANCELED; 6 DAILY STATUS REPORTS — STOPPED; OUR STRATEGY FOR DEVELOPING A STRATEGY — DELETED."
+        },
+        {
+          "lines": [],
+          "description": "Two small robot guards escort a startled Dex through the office. He carries a cardboard box holding his mug and plant. A third robot on a stepladder removes the DEX VANE nameplate from his office door. Silent panel."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Wes",
+              "text": "Good news. They found something they can’t automate."
+            }
+          ],
+          "description": "Dex is folded inside a red glass-front emergency cabinet labeled HUMAN ACCOUNTABILITY. Beside an external hammer, a sign reads BREAK GLASS IN CASE OF LAWSUIT. Wes walks past with coffee and a smirk: ‘Good news. They found something they can’t automate.’"
+        }
+      ]
+    },
+    {
       "internalId": "ST-DYSON-SPHERE-PRESSURE",
       "slug": "dyson-sphere-pressure",
       "title": "Dyson \"Sphere Pressure\"",

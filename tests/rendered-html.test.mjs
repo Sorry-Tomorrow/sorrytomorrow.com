@@ -49,11 +49,11 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 019 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="dyson-sphere-pressure"/);
+  assert.match(html, /Comic 020 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="chief-expendable-officer"/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/dyson-sphere-pressure\/p1\.webp/);
+  assert.match(html, /comics\/chief-expendable-officer\/p1\.webp/);
   assert.match(html, /Bot-tourage/);
   assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
@@ -169,7 +169,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 19);
+  assert.equal(JSON.parse(catalog).episodes.length, 20);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -250,7 +250,8 @@ test("published navigation connects Founder through the latest release", async (
     ["up-up-and-out-of-tokens", "chief-babysitting-engineer", "bot-tourage"],
     ["bot-tourage", "up-up-and-out-of-tokens", "the-reset-king"],
     ["the-reset-king", "bot-tourage", "dyson-sphere-pressure"],
-    ["dyson-sphere-pressure", "the-reset-king", null],
+    ["dyson-sphere-pressure", "the-reset-king", "chief-expendable-officer"],
+    ["chief-expendable-officer", "dyson-sphere-pressure", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);
@@ -314,6 +315,17 @@ test("Dyson Sphere Pressure renders all approved images, exact transcript and fi
   assert.match(html,/You could just go outside, you know\./);
   for(const id of ["p1","p2","p3"]){assert.ok(html.includes(`comics/dyson-sphere-pressure/${id}.png`));assert.ok(html.includes(`comics/dyson-sphere-pressure/${id}.webp`));}
   assert.match(html,/href="\/comics\/the-reset-king\/#comic"/);
-  assert.match(html,/You’re at the latest comic/);
+  assert.match(html,/href="\/comics\/chief-expendable-officer\/#comic"/);
   assert.match(html,/download="sorry-tomorrow-dyson-sphere-pressure-complete\.jpg"/);
+});
+
+
+test("Chief Expendable Officer preserves all four panels, signs and final navigation", async () => {
+  const response=await render("/comics/chief-expendable-officer"); assert.equal(response.status,200);
+  const html=await response.text();
+  assert.match(html,/reader-layout-chief-expendable-officer/);
+  assert.equal([...html.matchAll(/class="comic-panel-art"/g)].length,4);
+  for (const text of ["Find every redundant role. Be ruthless.","OWNER: DEX VANE","HUMAN ACCOUNTABILITY","BREAK GLASS IN CASE OF LAWSUIT","Good news. They found something they can’t automate."]) assert.ok(html.includes(text),text);
+  assert.match(html,/You’re at the latest comic/);
+  assert.ok(html.includes('/comics/dyson-sphere-pressure/#comic'));
 });
