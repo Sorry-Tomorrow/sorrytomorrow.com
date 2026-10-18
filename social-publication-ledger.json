@@ -3451,6 +3451,10 @@
                 "sha256": "7ddd8a85e3ace76248cc58c4f6603368d99c3bd091ec4e78f69c5c4816b1390f"
               },
               "completedAt": "2026-10-18T21:44:36.869Z"
+            },
+            "post-0-carousel": {
+              "status": "in-flight",
+              "startedAt": "2026-10-18T21:44:38.373Z"
             }
           },
           "results": []
