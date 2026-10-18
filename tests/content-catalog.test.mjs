@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all nineteen release entries in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 19);
+test("keeps all twenty release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 20);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 19);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 19);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 20);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 20);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));

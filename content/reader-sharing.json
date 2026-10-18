@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "534f3e97beee323924c3de60735ec894bd49272a8848536cfbb97f440bb04318",
-  "approvalReceiptSha256": "8ce43c88f1a5a10f19d94a3b28366c8b83f36e198125ccc8e96dbcba8f0946de",
+  "manifestSha256": "ac12aa1a5b61c6d43e2af727345ce03336c0ac3b758e9f561fdd5d8bcb898034",
+  "approvalReceiptSha256": "0b869024c6026492432c41daa9fb353bfef468430235caca18bdc28aa419a0ab",
   "episodes": {
     "executive-twin": {
       "status": "approved",
@@ -478,6 +478,31 @@
         "filename": "sorry-tomorrow-dyson-sphere-pressure-complete.jpg"
       },
       "shareText": "Dyson \"Sphere Pressure\" — Sorry, Tomorrow"
+    },
+    "chief-expendable-officer": {
+      "status": "approved",
+      "manifestSha256": "ac12aa1a5b61c6d43e2af727345ce03336c0ac3b758e9f561fdd5d8bcb898034",
+      "approvalReceiptSha256": "0b869024c6026492432c41daa9fb353bfef468430235caca18bdc28aa419a0ab",
+      "preview": {
+        "src": "/comics/chief-expendable-officer/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Chief Expendable Officer title beside the opening scene: Dex proudly tells three robot agents to find every redundant role and be ruthless.",
+        "sha256": "7f43ed5329aa0b12dee70a234eb03b81d50d9a7a82f629ea2e54b9ac71f0c5cc",
+        "bytes": 299189,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/chief-expendable-officer/sharing/v1/complete.jpg",
+        "width": 2160,
+        "height": 7240,
+        "alt": "Four-panel comic. Dex confidently addresses three small robot agents in a sunny office. A display reads AGENTIC WORKFORCE. Dex says, ‘Find every redundant role. Be ruthless.’ Dex gives a proud thumbs-up beside a screen headed OWNER: DEX VANE. It lists 12 MEETINGS — CANCELED; 6 DAILY STATUS REPORTS — STOPPED; OUR STRATEGY FOR DEVELOPING A STRATEGY — DELETED. Two small robot guards escort a startled Dex through the office. He carries a cardboard box holding his mug and plant. A third robot on a stepladder removes the DEX VANE nameplate from his office door. Silent panel. Dex is folded inside a red glass-front emergency cabinet labeled HUMAN ACCOUNTABILITY. Beside an external hammer, a sign reads BREAK GLASS IN CASE OF LAWSUIT. Wes walks past with coffee and a smirk: ‘Good news. They found something they can’t automate.’",
+        "sha256": "c0087dbc8ceefaa1fb233e986c4de1fc2d5467c82c6540f9723ead62e9b3c356",
+        "bytes": 5818467,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-chief-expendable-officer-complete.jpg"
+      },
+      "shareText": "Chief Expendable Officer — Sorry, Tomorrow"
     }
   }
 }

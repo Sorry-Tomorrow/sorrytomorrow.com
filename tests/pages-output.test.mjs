@@ -107,9 +107,9 @@ test("produces a complete GitHub Pages artifact", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 019 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="dyson-sphere-pressure"/);
-  assert.match(html, /comics\/dyson-sphere-pressure\/p1\.webp/);
+  assert.match(html, /Comic 020 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="chief-expendable-officer"/);
+  assert.match(html, /comics\/chief-expendable-officer\/p1\.webp/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
   assert.match(html, /Bot-tourage/);

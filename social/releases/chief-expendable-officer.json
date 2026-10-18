@@ -1,0 +1,193 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-CHIEF-EXPENDABLE-OFFICER",
+  "slug": "chief-expendable-officer",
+  "title": "Chief Expendable Officer",
+  "number": 20,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/chief-expendable-officer/",
+  "approval3Sha256": "be89b4c57b5902b6d63e4dfd83602bfa2b8f0eccff864463b80b1e5232c74ef1",
+  "sourceManifestSha256": "c081b1587ec75d4d342ac7dc06d067bc0abae40bcdc9f77c4421edb2dd96891d",
+  "releaseAuthoritySha256": "d84960c98393bd3d9a33423c7536ef8854afd2c23491641b70d67fa890c47b67",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Everyone loves efficiency until it reaches their calendar.\n\nChief Expendable Officer\n\nhttps://sorrytomorrow.com/comics/chief-expendable-officer/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-020-chief-expendable-officer&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/chief-expendable-officer/x/p1.png",
+              "sha256": "341ec73c095493b879798197d8d8ff8403ee1fef5be7db6e44db941da016cf66",
+              "bytes": 3245310,
+              "width": 1448,
+              "height": 1086,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "Dex confidently addresses three small robot agents in a sunny office. A display reads AGENTIC WORKFORCE. Dex says, ‘Find every redundant role. Be ruthless.’",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/x/p2.png",
+              "sha256": "f502cdbdd6b461c616f101cac5f6e5fcf526e47c14d3b16785139f1739af8672",
+              "bytes": 2892396,
+              "width": 1448,
+              "height": 1086,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Dex gives a proud thumbs-up beside a screen headed OWNER: DEX VANE. It lists 12 MEETINGS — CANCELED; 6 DAILY STATUS REPORTS — STOPPED; OUR STRATEGY FOR DEVELOPING A STRATEGY — DELETED.",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/x/p3.png",
+              "sha256": "101fddb52cc130a9c0d1dd726637fd5df0076cf91c5136edeaa2c9448fffbf3b",
+              "bytes": 3886793,
+              "width": 1448,
+              "height": 1086,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Two small robot guards escort a startled Dex through the office. He carries a cardboard box holding his mug and plant. A third robot on a stepladder removes the DEX VANE nameplate from his office door. Silent panel.",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/x/p4.png",
+              "sha256": "e1161b6a995b228e12c1c4721a7b7ad3834f263569e50ba5e5a3a492cfe01c80",
+              "bytes": 3472396,
+              "width": 1254,
+              "height": 1254,
+              "panelIds": [
+                "p4"
+              ],
+              "alt": "Dex is folded inside a red glass-front emergency cabinet labeled HUMAN ACCOUNTABILITY. Beside an external hammer, a sign reads BREAK GLASS IN CASE OF LAWSUIT. Wes walks past with coffee and a smirk: ‘Good news. They found something they can’t automate.’",
+              "type": "image/png"
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Everyone loves efficiency until it reaches their calendar.\nSwipe through Dex’s new agentic workforce.\n\nChief Expendable Officer\n\nhttps://sorrytomorrow.com/comics/chief-expendable-officer/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-020-chief-expendable-officer&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/chief-expendable-officer/instagram/p1.jpg",
+              "sha256": "e4a7adcf96b0bf0948873cb8f1b11f3d219c36749018b2ee16bc2f6abff33331",
+              "bytes": 503450,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "Dex confidently addresses three small robot agents in a sunny office. A display reads AGENTIC WORKFORCE. Dex says, ‘Find every redundant role. Be ruthless.’",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/instagram/p2.jpg",
+              "sha256": "d86380f3b04cf5abcca87bf967a1403bfaf915a610fa83906aed2db48637d7f8",
+              "bytes": 449051,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Dex gives a proud thumbs-up beside a screen headed OWNER: DEX VANE. It lists 12 MEETINGS — CANCELED; 6 DAILY STATUS REPORTS — STOPPED; OUR STRATEGY FOR DEVELOPING A STRATEGY — DELETED.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/instagram/p3.jpg",
+              "sha256": "15df3ca8dbd201ee528c64226ff4b6628a446ea726c416606d1a9005b1de9747",
+              "bytes": 534509,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Two small robot guards escort a startled Dex through the office. He carries a cardboard box holding his mug and plant. A third robot on a stepladder removes the DEX VANE nameplate from his office door. Silent panel.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/instagram/p4.jpg",
+              "sha256": "7ddd8a85e3ace76248cc58c4f6603368d99c3bd091ec4e78f69c5c4816b1390f",
+              "bytes": 662537,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p4"
+              ],
+              "alt": "Dex is folded inside a red glass-front emergency cabinet labeled HUMAN ACCOUNTABILITY. Beside an external hammer, a sign reads BREAK GLASS IN CASE OF LAWSUIT. Wes walks past with coffee and a smirk: ‘Good news. They found something they can’t automate.’",
+              "type": "image/jpeg"
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Dex hires an agentic workforce to eliminate redundant work. Finally, someone is taking all those meetings seriously.\n\nChief Expendable Officer\n\nhttps://sorrytomorrow.com/comics/chief-expendable-officer/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-020-chief-expendable-officer&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/chief-expendable-officer/facebook/p1.jpg",
+              "sha256": "e4a7adcf96b0bf0948873cb8f1b11f3d219c36749018b2ee16bc2f6abff33331",
+              "bytes": 503450,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "Dex confidently addresses three small robot agents in a sunny office. A display reads AGENTIC WORKFORCE. Dex says, ‘Find every redundant role. Be ruthless.’",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/facebook/p2.jpg",
+              "sha256": "d86380f3b04cf5abcca87bf967a1403bfaf915a610fa83906aed2db48637d7f8",
+              "bytes": 449051,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Dex gives a proud thumbs-up beside a screen headed OWNER: DEX VANE. It lists 12 MEETINGS — CANCELED; 6 DAILY STATUS REPORTS — STOPPED; OUR STRATEGY FOR DEVELOPING A STRATEGY — DELETED.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/facebook/p3.jpg",
+              "sha256": "15df3ca8dbd201ee528c64226ff4b6628a446ea726c416606d1a9005b1de9747",
+              "bytes": 534509,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Two small robot guards escort a startled Dex through the office. He carries a cardboard box holding his mug and plant. A third robot on a stepladder removes the DEX VANE nameplate from his office door. Silent panel.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/chief-expendable-officer/facebook/p4.jpg",
+              "sha256": "7ddd8a85e3ace76248cc58c4f6603368d99c3bd091ec4e78f69c5c4816b1390f",
+              "bytes": 662537,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p4"
+              ],
+              "alt": "Dex is folded inside a red glass-front emergency cabinet labeled HUMAN ACCOUNTABILITY. Beside an external hammer, a sign reads BREAK GLASS IN CASE OF LAWSUIT. Wes walks past with coffee and a smirk: ‘Good news. They found something they can’t automate.’",
+              "type": "image/jpeg"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

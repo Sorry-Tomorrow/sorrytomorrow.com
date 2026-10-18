@@ -1,0 +1,55 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-10-18",
+  "recordedAt": "2026-10-18T21:28:19.598Z",
+  "internalId": "ST-CHIEF-EXPENDABLE-OFFICER",
+  "title": "Chief Expendable Officer",
+  "ownerInstruction": "approved to publish",
+  "resolvedContext": "Exact final Approval3 plus explicit publication to established website, X, Instagram and Facebook, under the standing subsequent-comic social authority.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "be89b4c57b5902b6d63e4dfd83602bfa2b8f0eccff864463b80b1e5232c74ef1",
+  "sourceManifestSha256": "c081b1587ec75d4d342ac7dc06d067bc0abae40bcdc9f77c4421edb2dd96891d",
+  "readerSharingManifestSha256": "ac12aa1a5b61c6d43e2af727345ce03336c0ac3b758e9f561fdd5d8bcb898034",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentityPlan": {
+    "episodeNumber": 20,
+    "displayVersion": "v0.0.20",
+    "slug": "chief-expendable-officer",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/chief-expendable-officer/",
+    "plannedWebsiteReleaseMetadata": "2026-10-18T21:28:19.598Z",
+    "basis": "Fresh origin/main 707ade859b3c0bef5b80baaf885e8fb4909b24c6 has19 comics, max19; no title/slug/ID collision, fresh durable social ledger has no release/attempt for this identity."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "captionRule": "Exact approved destination-specific premise-first captions, generated campaign URLs and alt; no AI-generation/assistance/creation production credit.",
+  "assetRule": "Copy unchanged approved PNG/WebP/JPEG bytes; all4storypanels in order on every destination; no image processing.",
+  "budgetRule": "Existing X provider $5cap and no-auto-recharge unchanged; obey durable rolling reservations and stop on new spend/permissions.",
+  "executionRule": "Run Studio, source, reader-sharing, social, site/build checks; deploy trusted main; verify actual website/assets/navigation and provider accounts/captions/media/alt before recording published.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "new accounts or permissions",
+    "old comic backfill"
+  ],
+  "publicationClaim": "Authority only; actual publication awaits verification."
+}

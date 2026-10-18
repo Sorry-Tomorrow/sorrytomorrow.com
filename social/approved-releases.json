@@ -61,5 +61,12 @@
     "approval3Sha256": "6b28c488ac70339615c764d01fd3ed47bd87e9f7e51bfeffc879339c9adfbdd6",
     "sourceManifestSha256": "efb1d07b2ef6c8258e0fb882554c85921c6d104741925552ff671fdb5a0f575f",
     "releaseAuthoritySha256": "dfaf84af3fa0b5a79ec68c8c7a8b4c1963c7eaec1ce4e95d22f422d9aa926492"
+  },
+  "chief-expendable-officer": {
+    "internalId": "ST-CHIEF-EXPENDABLE-OFFICER",
+    "manifestSha256": "59a4411f138e69200f71804b45692990540338c894fbbe2f0f235656b47e8ccd",
+    "approval3Sha256": "be89b4c57b5902b6d63e4dfd83602bfa2b8f0eccff864463b80b1e5232c74ef1",
+    "sourceManifestSha256": "c081b1587ec75d4d342ac7dc06d067bc0abae40bcdc9f77c4421edb2dd96891d",
+    "releaseAuthoritySha256": "d84960c98393bd3d9a33423c7536ef8854afd2c23491641b70d67fa890c47b67"
   }
 }
