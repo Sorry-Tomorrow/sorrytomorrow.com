@@ -3513,7 +3513,12 @@
         "facebook": {
           "status": "reserved",
           "startedAt": "2026-10-18T21:44:55.526Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-10-18T21:44:56.771Z"
+            }
+          },
           "results": []
         }
       }
