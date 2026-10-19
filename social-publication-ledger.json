@@ -3407,10 +3407,20 @@
                 "2111936301809442816",
                 "2111936323531776000"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-18T21:43:58.000Z"
             }
           ],
-          "verifiedAt": "2026-10-18T21:44:01.458Z"
+          "verifiedAt": "2026-10-18T21:44:01.458Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-19T19:53:13.706Z",
+            "posts": [
+              {
+                "id": "2111936350937395241",
+                "status": "observed"
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
