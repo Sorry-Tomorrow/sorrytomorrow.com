@@ -3110,10 +3110,20 @@
                 "2110366203491360768",
                 "2110366231198912512"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-14T13:44:59.000Z"
             }
           ],
-          "verifiedAt": "2026-10-14T13:45:03.789Z"
+          "verifiedAt": "2026-10-14T13:45:03.789Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-19T19:53:13.706Z",
+            "posts": [
+              {
+                "id": "2110366260340961340",
+                "status": "observed"
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
