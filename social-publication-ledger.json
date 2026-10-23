@@ -3672,8 +3672,14 @@
           "startedAt": "2026-10-23T22:56:43.239Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-10-23T22:56:44.243Z"
+              "status": "done",
+              "startedAt": "2026-10-23T22:56:44.243Z",
+              "result": {
+                "id": "2113766605146435584",
+                "mediaKey": "3_2113766605146435584",
+                "sha256": "30551cfaba517da1f9608a294460ef10fc7bc638ed904c8be84bc689ee9f82ff"
+              },
+              "completedAt": "2026-10-23T22:56:45.803Z"
             }
           },
           "results": [],
