@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "ac12aa1a5b61c6d43e2af727345ce03336c0ac3b758e9f561fdd5d8bcb898034",
-  "approvalReceiptSha256": "0b869024c6026492432c41daa9fb353bfef468430235caca18bdc28aa419a0ab",
+  "manifestSha256": "7dd64557442638c31b57a9bee62bac6e965fdf03222792d6c0ca8beda412fd01",
+  "approvalReceiptSha256": "224a6bf954066eb20eae3cc1a9b75f235681f544aa02ad67047e1a8b00fdf07e",
   "episodes": {
     "executive-twin": {
       "status": "approved",
@@ -503,6 +503,31 @@
         "filename": "sorry-tomorrow-chief-expendable-officer-complete.jpg"
       },
       "shareText": "Chief Expendable Officer — Sorry, Tomorrow"
+    },
+    "funnel-or-flush": {
+      "status": "approved",
+      "manifestSha256": "7dd64557442638c31b57a9bee62bac6e965fdf03222792d6c0ca8beda412fd01",
+      "approvalReceiptSha256": "224a6bf954066eb20eae3cc1a9b75f235681f544aa02ad67047e1a8b00fdf07e",
+      "preview": {
+        "src": "/comics/funnel-or-flush/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Funnel or Flush? title beside the opening scene: Wes asks for a stapler; Dex withholds it and demands a STAPLER comment to send his workflow.",
+        "sha256": "0c78018653e305c4e7dce110accf2bfbf90b343b038c7a8178599b1ab77dff5a",
+        "bytes": 255248,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/funnel-or-flush/sharing/v1/complete.jpg",
+        "width": 1600,
+        "height": 9700,
+        "alt": "Six-panel comic. Wes reaches for a stapler across Dex’s desk: ‘Pass the stapler?’ Dex pulls it back with a smug smile: ‘Comment ‘STAPLER’ and I’ll send you my workflow.’ Inside a toilet stall, Dex sits facing away, phone in his left hand on the left, right hand on his right knee. A gold-framed dispenser holds a full roll behind a clear locked cover. Its ad reads UPGRADE YOUR STALL, $9.99/month. Toilet paper is a Premium Feature. Dex taps SUBSCRIBE on the dispenser with his right index finger while holding his phone in his left hand. The display says WELCOME TO PREMIUM! His expression brightens. Dex stares in disbelief at one tiny square of toilet paper pinched in his right hand. The full roll remains behind the cover. The display says YOU’VE REACHED YOUR MONTHLY LIMIT. Defeated, Dex turns left toward his phone. The tiny scrap sits on the toilet cistern. The display says INVITE 3 FRIENDS TO UNLOCK ANOTHER SQUARE. Back in the office, a blue notification explicitly connected to a phone reads DEX: ‘I don’t normally share products, but this one has genuinely changed my life.’ ‘Use my code: DEX10.’ The code is highlighted yellow. Clara laughs behind her hand: ‘Isn’t he still in the bathroom?’ Wes smugly sips coffee: ‘Yeah. He needs three followers to finish.’",
+        "sha256": "6c93c2a5f8c54735b010dfa794b9e8e813da7bbb1322cd670a5fe5d56f162e3f",
+        "bytes": 5479114,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-funnel-or-flush-complete.jpg"
+      },
+      "shareText": "Funnel or Flush? — Sorry, Tomorrow"
     }
   }
 }

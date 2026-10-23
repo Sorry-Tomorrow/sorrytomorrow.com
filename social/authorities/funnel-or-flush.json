@@ -1,0 +1,55 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-10-23",
+  "recordedAt": "2026-10-23T22:33:14.373Z",
+  "internalId": "ST-PAY-PER-LOO",
+  "title": "Funnel or Flush?",
+  "ownerInstruction": "lets go with “Funnel or Flush?” and “You’re just one more step away from one more step.” after that dont confirm any more with me, credit the finished comic and publish it",
+  "resolvedContext": "Exact final Approval3 plus explicit publication to established website, X, Instagram and Facebook, under the standing subsequent-comic social authority.",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "15ae186140dd989932ce2cfb64e69875402351da76f09bdc26e385525b5f5ca6",
+  "sourceManifestSha256": "870837324a8393b76b2958ea1ba69c35df8aa7138c70130d19e7127817f35c10",
+  "readerSharingManifestSha256": "7dd64557442638c31b57a9bee62bac6e965fdf03222792d6c0ca8beda412fd01",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentityPlan": {
+    "episodeNumber": 21,
+    "displayVersion": "v0.0.21",
+    "slug": "funnel-or-flush",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/funnel-or-flush/",
+    "plannedWebsiteReleaseMetadata": "2026-10-23T22:33:14.373Z",
+    "basis": "Fresh origin/main c06661b757aab8558d139d679701cec3f99b217e has20 comics, max20; no title/slug/ID collision, fresh durable social ledger has no release/attempt for this identity."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290",
+      "name": "Sorry, Tomorrow"
+    }
+  },
+  "captionRule": "Exact approved destination-specific premise-first captions, generated campaign URLs and alt; no AI-generation/assistance/creation production credit.",
+  "assetRule": "Copy unchanged approved PNG/WebP/JPEG bytes; all6storypanels in order on every destination; no image processing.",
+  "budgetRule": "Existing X provider $5cap and no-auto-recharge unchanged; obey durable rolling reservations and stop on new spend/permissions.",
+  "executionRule": "Run Studio, source, reader-sharing, social, site/build checks; deploy trusted main; verify actual website/assets/navigation and provider accounts/captions/media/alt before recording published.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "new accounts or permissions",
+    "old comic backfill"
+  ],
+  "publicationClaim": "Authority only; actual publication awaits verification."
+}

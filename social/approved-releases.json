@@ -68,5 +68,12 @@
     "approval3Sha256": "be89b4c57b5902b6d63e4dfd83602bfa2b8f0eccff864463b80b1e5232c74ef1",
     "sourceManifestSha256": "c081b1587ec75d4d342ac7dc06d067bc0abae40bcdc9f77c4421edb2dd96891d",
     "releaseAuthoritySha256": "d84960c98393bd3d9a33423c7536ef8854afd2c23491641b70d67fa890c47b67"
+  },
+  "funnel-or-flush": {
+    "internalId": "ST-PAY-PER-LOO",
+    "manifestSha256": "5a9adb85d869ef69d68d0a0669ef1e4b00268e0bb934b19a82b36258ad25c4f4",
+    "approval3Sha256": "15ae186140dd989932ce2cfb64e69875402351da76f09bdc26e385525b5f5ca6",
+    "sourceManifestSha256": "870837324a8393b76b2958ea1ba69c35df8aa7138c70130d19e7127817f35c10",
+    "releaseAuthoritySha256": "fbab4d2fac0d6c385d9628208b695cd2e424a3c8ff6529960eb7548d4872b26d"
   }
 }
