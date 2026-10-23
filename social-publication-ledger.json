@@ -3870,7 +3870,12 @@
         "instagram": {
           "status": "reserved",
           "startedAt": "2026-10-23T22:57:21.647Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-10-23T22:57:22.588Z"
+            }
+          },
           "results": []
         }
       }
