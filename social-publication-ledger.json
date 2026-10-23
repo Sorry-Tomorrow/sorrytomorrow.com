@@ -3932,6 +3932,10 @@
                 "id": "18098851049361446"
               },
               "completedAt": "2026-10-23T22:58:10.875Z"
+            },
+            "post-0-publish": {
+              "status": "in-flight",
+              "startedAt": "2026-10-23T22:58:11.961Z"
             }
           },
           "results": []
