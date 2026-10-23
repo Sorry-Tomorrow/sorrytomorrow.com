@@ -3866,6 +3866,12 @@
             }
           ],
           "verifiedAt": "2026-10-23T22:57:20.572Z"
+        },
+        "instagram": {
+          "status": "reserved",
+          "startedAt": "2026-10-23T22:57:21.647Z",
+          "steps": {},
+          "results": []
         }
       }
     }
