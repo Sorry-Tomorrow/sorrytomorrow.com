@@ -17,6 +17,114 @@
   },
   "episodes": [
     {
+      "internalId": "ST-PAY-PER-LOO",
+      "slug": "funnel-or-flush",
+      "title": "Funnel or Flush?",
+      "publicNumber": 21,
+      "publicVersion": "v0.0.21",
+      "label": "Comic 021 · Ahead AI",
+      "websitePublishedAt": "2026-10-23T22:33:14.373Z",
+      "previewOnly": false,
+      "readerLayout": "funnel-or-flush",
+      "displayDate": "v0.0.21",
+      "caption": "You’re just one more step away from one more step.",
+      "shell": "art-first",
+      "ogImage": {
+        "src": "comics/funnel-or-flush/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Funnel or Flush? title beside the opening scene: Wes asks for a stapler; Dex withholds it and demands a STAPLER comment to send his workflow."
+      },
+      "art": [
+        {
+          "src": "comics/funnel-or-flush/p1.png",
+          "webpSrc": "comics/funnel-or-flush/p1.webp",
+          "width": 1254,
+          "height": 1254,
+          "alt": "Wes reaches for a stapler across Dex’s desk: ‘Pass the stapler?’ Dex pulls it back with a smug smile: ‘Comment ‘STAPLER’ and I’ll send you my workflow.’"
+        },
+        {
+          "src": "comics/funnel-or-flush/p2.png",
+          "webpSrc": "comics/funnel-or-flush/p2.webp",
+          "width": 1254,
+          "height": 1254,
+          "alt": "Inside a toilet stall, Dex sits facing away, phone in his left hand on the left, right hand on his right knee. A gold-framed dispenser holds a full roll behind a clear locked cover. Its ad reads UPGRADE YOUR STALL, $9.99/month. Toilet paper is a Premium Feature."
+        },
+        {
+          "src": "comics/funnel-or-flush/p3.png",
+          "webpSrc": "comics/funnel-or-flush/p3.webp",
+          "width": 1254,
+          "height": 1254,
+          "alt": "Dex taps SUBSCRIBE on the dispenser with his right index finger while holding his phone in his left hand. The display says WELCOME TO PREMIUM! His expression brightens."
+        },
+        {
+          "src": "comics/funnel-or-flush/p4.png",
+          "webpSrc": "comics/funnel-or-flush/p4.webp",
+          "width": 1254,
+          "height": 1254,
+          "alt": "Dex stares in disbelief at one tiny square of toilet paper pinched in his right hand. The full roll remains behind the cover. The display says YOU’VE REACHED YOUR MONTHLY LIMIT."
+        },
+        {
+          "src": "comics/funnel-or-flush/p5.png",
+          "webpSrc": "comics/funnel-or-flush/p5.webp",
+          "width": 1254,
+          "height": 1254,
+          "alt": "Defeated, Dex turns left toward his phone. The tiny scrap sits on the toilet cistern. The display says INVITE 3 FRIENDS TO UNLOCK ANOTHER SQUARE."
+        },
+        {
+          "src": "comics/funnel-or-flush/p6.png",
+          "webpSrc": "comics/funnel-or-flush/p6.webp",
+          "width": 1254,
+          "height": 1254,
+          "alt": "Back in the office, a blue notification explicitly connected to a phone reads DEX: ‘I don’t normally share products, but this one has genuinely changed my life.’ ‘Use my code: DEX10.’ The code is highlighted yellow. Clara laughs behind her hand: ‘Isn’t he still in the bathroom?’ Wes smugly sips coffee: ‘Yeah. He needs three followers to finish.’"
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Wes",
+              "text": "Pass the stapler?"
+            },
+            {
+              "speaker": "Dex",
+              "text": "Comment ‘STAPLER’ and I’ll send you my workflow."
+            }
+          ],
+          "description": "Wes reaches for a stapler across Dex’s desk: ‘Pass the stapler?’ Dex pulls it back with a smug smile: ‘Comment ‘STAPLER’ and I’ll send you my workflow.’"
+        },
+        {
+          "lines": [],
+          "description": "Inside a toilet stall, Dex sits facing away, phone in his left hand on the left, right hand on his right knee. A gold-framed dispenser holds a full roll behind a clear locked cover. Its ad reads UPGRADE YOUR STALL, $9.99/month. Toilet paper is a Premium Feature."
+        },
+        {
+          "lines": [],
+          "description": "Dex taps SUBSCRIBE on the dispenser with his right index finger while holding his phone in his left hand. The display says WELCOME TO PREMIUM! His expression brightens."
+        },
+        {
+          "lines": [],
+          "description": "Dex stares in disbelief at one tiny square of toilet paper pinched in his right hand. The full roll remains behind the cover. The display says YOU’VE REACHED YOUR MONTHLY LIMIT."
+        },
+        {
+          "lines": [],
+          "description": "Defeated, Dex turns left toward his phone. The tiny scrap sits on the toilet cistern. The display says INVITE 3 FRIENDS TO UNLOCK ANOTHER SQUARE."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Clara",
+              "text": "Isn’t he still in the bathroom?"
+            },
+            {
+              "speaker": "Wes",
+              "text": "Yeah. He needs three followers to finish."
+            }
+          ],
+          "description": "Back in the office, a blue notification explicitly connected to a phone reads DEX: ‘I don’t normally share products, but this one has genuinely changed my life.’ ‘Use my code: DEX10.’ The code is highlighted yellow. Clara laughs behind her hand: ‘Isn’t he still in the bathroom?’ Wes smugly sips coffee: ‘Yeah. He needs three followers to finish.’"
+        }
+      ]
+    },
+    {
       "internalId": "ST-CHIEF-EXPENDABLE-OFFICER",
       "slug": "chief-expendable-officer",
       "title": "Chief Expendable Officer",

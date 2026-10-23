@@ -1,0 +1,272 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-PAY-PER-LOO",
+  "slug": "funnel-or-flush",
+  "title": "Funnel or Flush?",
+  "number": 21,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/funnel-or-flush/",
+  "approval3Sha256": "15ae186140dd989932ce2cfb64e69875402351da76f09bdc26e385525b5f5ca6",
+  "sourceManifestSha256": "870837324a8393b76b2958ea1ba69c35df8aa7138c70130d19e7127817f35c10",
+  "releaseAuthoritySha256": "fbab4d2fac0d6c385d9628208b695cd2e424a3c8ff6529960eb7548d4872b26d",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Even passing the stapler is a conversion funnel now.\n\nFunnel or Flush? — 1/2 (panels 1–3)\n\nhttps://sorrytomorrow.com/comics/funnel-or-flush/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-021-funnel-or-flush&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/funnel-or-flush/x/p1.png",
+              "sha256": "30551cfaba517da1f9608a294460ef10fc7bc638ed904c8be84bc689ee9f82ff",
+              "bytes": 2947206,
+              "width": 1254,
+              "height": 1254,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "Wes reaches for a stapler across Dex’s desk: ‘Pass the stapler?’ Dex pulls it back with a smug smile: ‘Comment ‘STAPLER’ and I’ll send you my workflow.’",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/funnel-or-flush/x/p2.png",
+              "sha256": "35a1733f00224b1f23f3c017a5e8f3b190097ef2fa14c41057ede816647a7588",
+              "bytes": 2938342,
+              "width": 1254,
+              "height": 1254,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Inside a toilet stall, Dex sits facing away, phone in his left hand on the left, right hand on his right knee. A gold-framed dispenser holds a full roll behind a clear locked cover. Its ad reads UPGRADE YOUR STALL, $9.99/month. Toilet paper is a Premium Feature.",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/funnel-or-flush/x/p3.png",
+              "sha256": "375c05e8710e7cfe3476a6209d6f0f610e7bfa8f20a424e861111304d8150168",
+              "bytes": 2857315,
+              "width": 1254,
+              "height": 1254,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Dex taps SUBSCRIBE on the dispenser with his right index finger while holding his phone in his left hand. The display says WELCOME TO PREMIUM! His expression brightens.",
+              "type": "image/png"
+            }
+          ]
+        },
+        {
+          "text": "Continued: the upgrade comes with conditions.\n\nFunnel or Flush? — 2/2 (panels 4–6)\n\nhttps://sorrytomorrow.com/comics/funnel-or-flush/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-021-funnel-or-flush&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/funnel-or-flush/x/p4.png",
+              "sha256": "46f77893431d8d22a56037f22745fbb28ba791eb8cb0d6d9ed770bc35cb304bd",
+              "bytes": 2853849,
+              "width": 1254,
+              "height": 1254,
+              "panelIds": [
+                "p4"
+              ],
+              "alt": "Dex stares in disbelief at one tiny square of toilet paper pinched in his right hand. The full roll remains behind the cover. The display says YOU’VE REACHED YOUR MONTHLY LIMIT.",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/funnel-or-flush/x/p5.png",
+              "sha256": "b9ca0ba7196d939f81eb4772db1280ca28c8f567d0db2bb00f904c1b8c28e88e",
+              "bytes": 2875823,
+              "width": 1254,
+              "height": 1254,
+              "panelIds": [
+                "p5"
+              ],
+              "alt": "Defeated, Dex turns left toward his phone. The tiny scrap sits on the toilet cistern. The display says INVITE 3 FRIENDS TO UNLOCK ANOTHER SQUARE.",
+              "type": "image/png"
+            },
+            {
+              "path": "public/social/funnel-or-flush/x/p6.png",
+              "sha256": "376772c8c0a3dff18c0614ed47dbebf1ad0fff9e4a103048664eeee19d78aef3",
+              "bytes": 2404859,
+              "width": 1254,
+              "height": 1254,
+              "panelIds": [
+                "p6"
+              ],
+              "alt": "Back in the office, a blue notification explicitly connected to a phone reads DEX: ‘I don’t normally share products, but this one has genuinely changed my life.’ ‘Use my code: DEX10.’ The code is highlighted yellow. Clara laughs behind her hand: ‘Isn’t he still in the bathroom?’ Wes smugly sips coffee: ‘Yeah. He needs three followers to finish.’",
+              "type": "image/png"
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Even passing the stapler is a conversion funnel now.\nSwipe through Dex’s premium office experience.\n\nFunnel or Flush?\n\nhttps://sorrytomorrow.com/comics/funnel-or-flush/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-021-funnel-or-flush&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/funnel-or-flush/instagram/p1.jpg",
+              "sha256": "56ef64a379f0dc9a2eb6ee80e78ea7bfaf7a6cfc6cf1e1f8bf06d0f8a9870faf",
+              "bytes": 553335,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "Wes reaches for a stapler across Dex’s desk: ‘Pass the stapler?’ Dex pulls it back with a smug smile: ‘Comment ‘STAPLER’ and I’ll send you my workflow.’",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/instagram/p2.jpg",
+              "sha256": "3743df0f4a9ab0e2c134c8ab99b85f1c751f96c6814c308056584449cfb4af29",
+              "bytes": 503929,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Inside a toilet stall, Dex sits facing away, phone in his left hand on the left, right hand on his right knee. A gold-framed dispenser holds a full roll behind a clear locked cover. Its ad reads UPGRADE YOUR STALL, $9.99/month. Toilet paper is a Premium Feature.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/instagram/p3.jpg",
+              "sha256": "3bc4ba7732af29a34768cde6a39329e6c43551119c58036f418890ecc1f14300",
+              "bytes": 485569,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Dex taps SUBSCRIBE on the dispenser with his right index finger while holding his phone in his left hand. The display says WELCOME TO PREMIUM! His expression brightens.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/instagram/p4.jpg",
+              "sha256": "db4b281c337a7affef743835c84fa0c783176c7a8d84d7391b1a7f178ff3050a",
+              "bytes": 488526,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p4"
+              ],
+              "alt": "Dex stares in disbelief at one tiny square of toilet paper pinched in his right hand. The full roll remains behind the cover. The display says YOU’VE REACHED YOUR MONTHLY LIMIT.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/instagram/p5.jpg",
+              "sha256": "a9e625a33c9f88c8c5617d18504e2e886f42d01ccd29817f6496b2c463215afd",
+              "bytes": 496769,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p5"
+              ],
+              "alt": "Defeated, Dex turns left toward his phone. The tiny scrap sits on the toilet cistern. The display says INVITE 3 FRIENDS TO UNLOCK ANOTHER SQUARE.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/instagram/p6.jpg",
+              "sha256": "ef18780d0fa91a4883ab8837ce73934dbb390c032ecc44ac981b671b430120c1",
+              "bytes": 543743,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p6"
+              ],
+              "alt": "Back in the office, a blue notification explicitly connected to a phone reads DEX: ‘I don’t normally share products, but this one has genuinely changed my life.’ ‘Use my code: DEX10.’ The code is highlighted yellow. Clara laughs behind her hand: ‘Isn’t he still in the bathroom?’ Wes smugly sips coffee: ‘Yeah. He needs three followers to finish.’",
+              "type": "image/jpeg"
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Dex turns a simple office favor into an engagement funnel. Then he discovers what it’s like to need the premium plan.\n\nFunnel or Flush?\n\nhttps://sorrytomorrow.com/comics/funnel-or-flush/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-021-funnel-or-flush&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/funnel-or-flush/facebook/p1.jpg",
+              "sha256": "56ef64a379f0dc9a2eb6ee80e78ea7bfaf7a6cfc6cf1e1f8bf06d0f8a9870faf",
+              "bytes": 553335,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p1"
+              ],
+              "alt": "Wes reaches for a stapler across Dex’s desk: ‘Pass the stapler?’ Dex pulls it back with a smug smile: ‘Comment ‘STAPLER’ and I’ll send you my workflow.’",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/facebook/p2.jpg",
+              "sha256": "3743df0f4a9ab0e2c134c8ab99b85f1c751f96c6814c308056584449cfb4af29",
+              "bytes": 503929,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p2"
+              ],
+              "alt": "Inside a toilet stall, Dex sits facing away, phone in his left hand on the left, right hand on his right knee. A gold-framed dispenser holds a full roll behind a clear locked cover. Its ad reads UPGRADE YOUR STALL, $9.99/month. Toilet paper is a Premium Feature.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/facebook/p3.jpg",
+              "sha256": "3bc4ba7732af29a34768cde6a39329e6c43551119c58036f418890ecc1f14300",
+              "bytes": 485569,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p3"
+              ],
+              "alt": "Dex taps SUBSCRIBE on the dispenser with his right index finger while holding his phone in his left hand. The display says WELCOME TO PREMIUM! His expression brightens.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/facebook/p4.jpg",
+              "sha256": "db4b281c337a7affef743835c84fa0c783176c7a8d84d7391b1a7f178ff3050a",
+              "bytes": 488526,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p4"
+              ],
+              "alt": "Dex stares in disbelief at one tiny square of toilet paper pinched in his right hand. The full roll remains behind the cover. The display says YOU’VE REACHED YOUR MONTHLY LIMIT.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/facebook/p5.jpg",
+              "sha256": "a9e625a33c9f88c8c5617d18504e2e886f42d01ccd29817f6496b2c463215afd",
+              "bytes": 496769,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p5"
+              ],
+              "alt": "Defeated, Dex turns left toward his phone. The tiny scrap sits on the toilet cistern. The display says INVITE 3 FRIENDS TO UNLOCK ANOTHER SQUARE.",
+              "type": "image/jpeg"
+            },
+            {
+              "path": "public/social/funnel-or-flush/facebook/p6.jpg",
+              "sha256": "ef18780d0fa91a4883ab8837ce73934dbb390c032ecc44ac981b671b430120c1",
+              "bytes": 543743,
+              "width": 1080,
+              "height": 1350,
+              "panelIds": [
+                "p6"
+              ],
+              "alt": "Back in the office, a blue notification explicitly connected to a phone reads DEX: ‘I don’t normally share products, but this one has genuinely changed my life.’ ‘Use my code: DEX10.’ The code is highlighted yellow. Clara laughs behind her hand: ‘Isn’t he still in the bathroom?’ Wes smugly sips coffee: ‘Yeah. He needs three followers to finish.’",
+              "type": "image/jpeg"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
