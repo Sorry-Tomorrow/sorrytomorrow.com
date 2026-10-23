@@ -3771,8 +3771,14 @@
               "completedAt": "2026-10-23T22:57:10.384Z"
             },
             "post-1-image-2": {
-              "status": "in-flight",
-              "startedAt": "2026-10-23T22:57:11.505Z"
+              "status": "done",
+              "startedAt": "2026-10-23T22:57:11.505Z",
+              "result": {
+                "id": "2113766721429426176",
+                "mediaKey": "3_2113766721429426176",
+                "sha256": "376772c8c0a3dff18c0614ed47dbebf1ad0fff9e4a103048664eeee19d78aef3"
+              },
+              "completedAt": "2026-10-23T22:57:13.451Z"
             }
           },
           "results": [],
