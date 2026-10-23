@@ -3998,8 +3998,13 @@
           "startedAt": "2026-10-23T22:58:23.154Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-10-23T22:58:24.068Z"
+              "status": "done",
+              "startedAt": "2026-10-23T22:58:24.068Z",
+              "result": {
+                "id": "122122047801458114",
+                "sha256": "56ef64a379f0dc9a2eb6ee80e78ea7bfaf7a6cfc6cf1e1f8bf06d0f8a9870faf"
+              },
+              "completedAt": "2026-10-23T22:58:26.268Z"
             }
           },
           "results": []
