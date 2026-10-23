@@ -3926,8 +3926,12 @@
               "completedAt": "2026-10-23T22:58:03.446Z"
             },
             "post-0-carousel": {
-              "status": "in-flight",
-              "startedAt": "2026-10-23T22:58:04.397Z"
+              "status": "done",
+              "startedAt": "2026-10-23T22:58:04.397Z",
+              "result": {
+                "id": "18098851049361446"
+              },
+              "completedAt": "2026-10-23T22:58:10.875Z"
             }
           },
           "results": []
