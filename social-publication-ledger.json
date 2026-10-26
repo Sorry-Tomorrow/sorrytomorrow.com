@@ -3852,7 +3852,8 @@
                 "2113766625178513408",
                 "2113766646795972608"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-23T22:57:00.000Z"
             },
             {
               "id": "2113766742396662170",
@@ -3862,10 +3863,24 @@
                 "2113766698713034752",
                 "2113766721429426176"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-23T22:57:17.000Z"
             }
           ],
-          "verifiedAt": "2026-10-23T22:57:20.572Z"
+          "verifiedAt": "2026-10-23T22:57:20.572Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-10-26T19:54:52.270Z",
+            "posts": [
+              {
+                "id": "2113766668589580609",
+                "status": "observed"
+              },
+              {
+                "id": "2113766742396662170",
+                "status": "observed"
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
