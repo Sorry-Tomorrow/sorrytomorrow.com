@@ -17,6 +17,173 @@
   },
   "episodes": [
     {
+      "internalId": "ST-CHIEF-IMAGE-OFFICER",
+      "publicNumber": 22,
+      "publicVersion": "v0.0.22",
+      "slug": "chief-image-officer",
+      "title": "Chief Image Officer",
+      "label": "Comic 022 · Ahead AI",
+      "previewOnly": false,
+      "shell": "art-first",
+      "readerLayout": "chief-image-officer",
+      "caption": "Dex discovers an image generator. Leadership gets a makeover.",
+      "ogImage": {
+        "src": "comics/chief-image-officer/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Chief Image Officer title beside Dex presenting his image generator to the team."
+      },
+      "art": [
+        {
+          "src": "comics/chief-image-officer/p1.png",
+          "webpSrc": "comics/chief-image-officer/p1.webp",
+          "width": 1536,
+          "height": 1068,
+          "alt": "Dex excitedly presents his laptop to Clara, Mina and Wes in a sunlit office. Clara folds her arms, Mina leans in and Wes sips coffee."
+        },
+        {
+          "src": "comics/chief-image-officer/p2.png",
+          "webpSrc": "comics/chief-image-officer/p2.webp",
+          "width": 1536,
+          "height": 1068,
+          "alt": "Dex hunches over the laptop with his tongue poking out as he types one key. In a diagonal reaction panel, Wes holds an empty mug while Mina waits with her chin in her hand."
+        },
+        {
+          "src": "comics/chief-image-officer/p3.png",
+          "webpSrc": "comics/chief-image-officer/p3.webp",
+          "width": 1254,
+          "height": 1298,
+          "alt": "In a cinematic three-dimensional transformation, Dex stands heroically beneath blue lightning hitting his raised clicker. A jagged frame separates ordinary comic-style Wes holding an unplugged cord."
+        },
+        {
+          "src": "comics/chief-image-officer/p4.png",
+          "webpSrc": "comics/chief-image-officer/p4.webp",
+          "width": 1536,
+          "height": 1068,
+          "alt": "A green voxel-built Dex tips a square mug and spills a stream of cubic coffee down his suit. Across a stepped frame, Clara offers a napkin with an unimpressed look."
+        },
+        {
+          "src": "comics/chief-image-officer/p5.png",
+          "webpSrc": "comics/chief-image-officer/p5.webp",
+          "width": 1536,
+          "height": 1068,
+          "alt": "Black-and-white rubber-hose Dex bounces across the scene and stretches one long arm across a curved frame to clasp Wes’s hand while Wes types with his other hand."
+        },
+        {
+          "src": "comics/chief-image-officer/p6.png",
+          "webpSrc": "comics/chief-image-officer/p6.webp",
+          "width": 1536,
+          "height": 1068,
+          "alt": "Dex and his navy suit melt like a soft oil painting over his chair into a swirling puddle. Clara lifts both feet onto her own chair to escape the spreading paint."
+        },
+        {
+          "src": "comics/chief-image-officer/p7.png",
+          "webpSrc": "comics/chief-image-officer/p7.webp",
+          "width": 1536,
+          "height": 1068,
+          "alt": "Mina beams with pink heart-shaped pupils while holding an adorable tiny knitted Dex in her cupped hands. A braided yarn curve frames the chibi executive."
+        },
+        {
+          "src": "comics/chief-image-officer/p8.png",
+          "webpSrc": "comics/chief-image-officer/p8.webp",
+          "width": 1536,
+          "height": 1284,
+          "alt": "Dex is a huge fierce demon with hooves, wings, glowing eyes, ember armor and branching horns. Unimpressed Mina hangs his suit jacket directly on one of the horns."
+        },
+        {
+          "src": "comics/chief-image-officer/p9.png",
+          "webpSrc": "comics/chief-image-officer/p9.webp",
+          "width": 1536,
+          "height": 1068,
+          "alt": "Back in ordinary office form, Clara asks about an effective CEO while Mina and Wes laugh. Dex misses the joke and eagerly turns back to the laptop."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Clara. Mina. Wes. Check out what I can do with this new AI visual tool."
+            }
+          ],
+          "description": "Dex excitedly presents his laptop to Clara, Mina and Wes in a sunlit office. Clara folds her arms, Mina leans in and Wes sips coffee."
+        },
+        {
+          "lines": [],
+          "description": "Dex hunches over the laptop with his tongue poking out as he types one key. In a diagonal reaction panel, Wes holds an empty mug while Mina waits with her chin in her hand."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Cinematic 3D executive. Dramatic lightning."
+            }
+          ],
+          "description": "In a cinematic three-dimensional transformation, Dex stands heroically beneath blue lightning hitting his raised clicker. A jagged frame separates ordinary comic-style Wes holding an unplugged cord."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Build me a powerful block-builder executive."
+            }
+          ],
+          "description": "A green voxel-built Dex tips a square mug and spills a stream of cubic coffee down his suit. Across a stepped frame, Clara offers a napkin with an unimpressed look."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Charming vintage rubber-hose cartoon."
+            }
+          ],
+          "description": "Black-and-white rubber-hose Dex bounces across the scene and stretches one long arm across a curved frame to clasp Wes’s hand while Wes types with his other hand."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Prestigious oil portrait. Fluid leadership."
+            }
+          ],
+          "description": "Dex and his navy suit melt like a soft oil painting over his chair into a swirling puddle. Clara lifts both feet onto her own chair to escape the spreading paint."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Adorable knitted chibi anime executive."
+            }
+          ],
+          "description": "Mina beams with pink heart-shaped pupils while holding an adorable tiny knitted Dex in her cupped hands. A braided yarn curve frames the chibi executive."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "Terrifying dark-fantasy CEO who commands the room."
+            }
+          ],
+          "description": "Dex is a huge fierce demon with hooves, wings, glowing eyes, ember armor and branching horns. Unimpressed Mina hangs his suit jacket directly on one of the horns."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Clara",
+              "text": "Do they have anything for an effective CEO?"
+            },
+            {
+              "speaker": "Dex",
+              "text": "Oooh! Let me check!"
+            }
+          ],
+          "description": "Back in ordinary office form, Clara asks about an effective CEO while Mina and Wes laugh. Dex misses the joke and eagerly turns back to the laptop."
+        }
+      ],
+      "websitePublishedAt": "2026-10-30T20:30:18.147Z",
+      "displayDate": "v0.0.22"
+    },
+    {
       "internalId": "ST-PAY-PER-LOO",
       "slug": "funnel-or-flush",
       "title": "Funnel or Flush?",

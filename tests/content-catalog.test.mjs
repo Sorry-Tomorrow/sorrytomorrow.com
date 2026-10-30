@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all twenty-one release entries in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 21);
+test("keeps all twenty-two release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 22);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 21);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 21);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 22);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 22);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -462,4 +462,15 @@ test("Dyson Sphere Pressure retains every approved panel byte, five lines and co
   const sharing = JSON.parse(await readFile(new URL("../content/reader-sharing.json", import.meta.url), "utf8")).episodes[approved.slug];
   assert.equal(sharing.status,"approved");assert.equal(sharing.shareText,approved.shareText);
   for(const role of ["preview","download"]){assert.deepEqual(sharing[role],approved[role]);const bytes=await readFile(new URL(`../public${sharing[role].src}`,import.meta.url));assert.equal(createHash("sha256").update(bytes).digest("hex"),approved[role].sha256);}
+});
+
+
+test("Chief Image Officer preserves all nine approved scenes, exact reversal and all destination asset bytes", async () => {
+  const approved=JSON.parse(await readFile(new URL("../content/approved-chief-image-officer-assets.json",import.meta.url),"utf8"));
+  const episode=catalog.episodes.find(e=>e.internalId===approved.internalId);
+  assert.equal(episode.title,"Chief Image Officer"); assert.equal(episode.publicNumber,22); assert.equal(episode.readerLayout,"chief-image-officer");
+  assert.equal(episode.art.length,9); assert.equal(episode.panels.length,9);
+  assert.deepEqual(episode.panels[8].lines,[{speaker:"Clara",text:"Do they have anything for an effective CEO?"},{speaker:"Dex",text:"Oooh! Let me check!"}]);
+  assert.equal(approved.assets.length,47);
+  for(const asset of approved.assets){const bytes=await readFile(new URL("../public/"+asset.target,import.meta.url));assert.equal(bytes.length,asset.bytes);assert.equal(createHash("sha256").update(bytes).digest("hex"),asset.sha256,asset.target);}
 });

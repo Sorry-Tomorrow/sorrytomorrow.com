@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "7dd64557442638c31b57a9bee62bac6e965fdf03222792d6c0ca8beda412fd01",
-  "approvalReceiptSha256": "224a6bf954066eb20eae3cc1a9b75f235681f544aa02ad67047e1a8b00fdf07e",
+  "manifestSha256": "05bd47260e268ccb2dd236e98be17c96cbf1f5b58493e8a662e6bce02e703d1c",
+  "approvalReceiptSha256": "1df4e046a5bc5e6c238afd18ad7f218e89d2adaa4033684b398154e3b4dd579d",
   "episodes": {
     "executive-twin": {
       "status": "approved",
@@ -528,6 +528,31 @@
         "filename": "sorry-tomorrow-funnel-or-flush-complete.jpg"
       },
       "shareText": "Funnel or Flush? — Sorry, Tomorrow"
+    },
+    "chief-image-officer": {
+      "status": "approved",
+      "manifestSha256": "05bd47260e268ccb2dd236e98be17c96cbf1f5b58493e8a662e6bce02e703d1c",
+      "approvalReceiptSha256": "1df4e046a5bc5e6c238afd18ad7f218e89d2adaa4033684b398154e3b4dd579d",
+      "preview": {
+        "src": "/comics/chief-image-officer/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Chief Image Officer title beside the opening office scene: Dex proudly shows his new AI visual tool to Clara, Mina and Wes.",
+        "sha256": "542fe59fea61c1a59cb641dee3875bfcdab39b38c627e1d3112d86776802e538",
+        "bytes": 242695,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/chief-image-officer/sharing/v1/complete.jpg",
+        "width": 1600,
+        "height": 10920,
+        "alt": "Chief Image Officer, a nine-panel Sorry, Tomorrow comic. Dex discovers an image generator and shows off six transformations: cinematic 3D with lightning, a green block-builder spilling cubic coffee, a black-and-white rubber-hose cartoon, a melting oil portrait, a tiny knitted chibi held by heart-eyed Mina, and a huge horned demon used as a coat rack. Back in the office, Clara asks, “Do they have anything for an effective CEO?” Mina and Wes laugh. Dex misses the joke: “Oooh! Let me check!”",
+        "sha256": "18503ac645cee52f0030db939983043b0f16a629074c25ff2b3e3ff045d6af6c",
+        "bytes": 7171302,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-chief-image-officer-complete.jpg"
+      },
+      "shareText": "Chief Image Officer — Sorry, Tomorrow"
     }
   }
 }

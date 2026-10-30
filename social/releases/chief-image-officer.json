@@ -1,0 +1,388 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-CHIEF-IMAGE-OFFICER",
+  "slug": "chief-image-officer",
+  "title": "Chief Image Officer",
+  "number": 22,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/chief-image-officer/",
+  "approval3Sha256": "950a07e51fa616c1d32b47420ec9c350e4859fb329cb5490faa26551144e4eca",
+  "sourceManifestSha256": "8f0ca6190856e4c904984b02feb41e6f110ba797cc26a3e6d75f83f351272dcd",
+  "releaseAuthoritySha256": "c02429aeaf82d62098fd245779488f1e7960cdc01178c459ff857e0ce2ec1056",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Dex found a tool that can make him look like absolutely anything.\n\nChief Image Officer — 1/3 (panels 1–3)\n\nhttps://sorrytomorrow.com/comics/chief-image-officer/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-022-chief-image-officer&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/chief-image-officer/x/p1.png",
+              "sha256": "e4477d64cb03f77468cce56b73764344539324d6f38573d9ce55c883275d3c2e",
+              "bytes": 3160368,
+              "width": 1536,
+              "height": 1068,
+              "type": "image/png",
+              "alt": "Dex excitedly presents his laptop to Clara, Mina and Wes in a sunlit office. Clara folds her arms, Mina leans in and Wes sips coffee.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/x/p2.png",
+              "sha256": "4e61c273ba8e5cc83dfcf2d147919b5fc9d198cc7a5eca4e457210331908d9d9",
+              "bytes": 3215384,
+              "width": 1536,
+              "height": 1068,
+              "type": "image/png",
+              "alt": "Dex hunches over the laptop with his tongue poking out as he types one key. In a diagonal reaction panel, Wes holds an empty mug while Mina waits with her chin in her hand.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/x/p3.png",
+              "sha256": "0a359a402825fef7e000ebb8a2d4530bfa76a1e195a35e837dd5093855eac97e",
+              "bytes": 3702858,
+              "width": 1254,
+              "height": 1298,
+              "type": "image/png",
+              "alt": "In a cinematic three-dimensional transformation, Dex stands heroically beneath blue lightning hitting his raised clicker. A jagged frame separates ordinary comic-style Wes holding an unplugged cord.",
+              "panelIds": [
+                "p3"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Continued: every executive look needs a test drive.\n\nChief Image Officer — 2/3 (panels 4–6)\n\nhttps://sorrytomorrow.com/comics/chief-image-officer/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-022-chief-image-officer&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/chief-image-officer/x/p4.png",
+              "sha256": "5e5a044b06550d5d6ccb4a8b92a11afcecefa3af09c8eb3afed1ec00727161be",
+              "bytes": 2946091,
+              "width": 1536,
+              "height": 1068,
+              "type": "image/png",
+              "alt": "A green voxel-built Dex tips a square mug and spills a stream of cubic coffee down his suit. Across a stepped frame, Clara offers a napkin with an unimpressed look.",
+              "panelIds": [
+                "p4"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/x/p5.png",
+              "sha256": "a24bd349be14c6033286fa1d98539d45dd37cd29134eb8eed69951187bacd79b",
+              "bytes": 3229415,
+              "width": 1536,
+              "height": 1068,
+              "type": "image/png",
+              "alt": "Black-and-white rubber-hose Dex bounces across the scene and stretches one long arm across a curved frame to clasp Wes’s hand while Wes types with his other hand.",
+              "panelIds": [
+                "p5"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/x/p6.png",
+              "sha256": "6c18f36e26919e60bd98915073bef9348112e2783d4ae928951768f1450bbb24",
+              "bytes": 4290725,
+              "width": 1536,
+              "height": 1068,
+              "type": "image/png",
+              "alt": "Dex and his navy suit melt like a soft oil painting over his chair into a swirling puddle. Clara lifts both feet onto her own chair to escape the spreading paint.",
+              "panelIds": [
+                "p6"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Continued: Dex is still exploring his options.\n\nChief Image Officer — 3/3 (panels 7–9)\n\nhttps://sorrytomorrow.com/comics/chief-image-officer/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-022-chief-image-officer&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/chief-image-officer/x/p7.png",
+              "sha256": "66d7d852682725e3c1035200026bba3b8010960cf6efee53ee9c30aaaa08bd3a",
+              "bytes": 3725901,
+              "width": 1536,
+              "height": 1068,
+              "type": "image/png",
+              "alt": "Mina beams with pink heart-shaped pupils while holding an adorable tiny knitted Dex in her cupped hands. A braided yarn curve frames the chibi executive.",
+              "panelIds": [
+                "p7"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/x/p8.png",
+              "sha256": "1908a5b7c3e6f647e26b3c5c647b8769ac071d6bfda14ff55938c86459dbe969",
+              "bytes": 4204303,
+              "width": 1536,
+              "height": 1284,
+              "type": "image/png",
+              "alt": "Dex is a huge fierce demon with hooves, wings, glowing eyes, ember armor and branching horns. Unimpressed Mina hangs his suit jacket directly on one of the horns.",
+              "panelIds": [
+                "p8"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/x/p9.png",
+              "sha256": "d2d12f37099f7738daff385c8952151d6901a089e20a76e0cdf1430bafae2edd",
+              "bytes": 3098106,
+              "width": 1536,
+              "height": 1068,
+              "type": "image/png",
+              "alt": "Back in ordinary office form, Clara asks about an effective CEO while Mina and Wes laugh. Dex misses the joke and eagerly turns back to the laptop.",
+              "panelIds": [
+                "p9"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Dex has discovered AI image prompts. The office is now his personal makeover montage.\nSwipe through all nine panels.\n\nChief Image Officer\n\nhttps://sorrytomorrow.com/comics/chief-image-officer/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-022-chief-image-officer&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/chief-image-officer/instagram/p1.jpg",
+              "sha256": "3b9cde7ee110e2c16143fc534489c3b99101b2ff4ac0c42e855b7e58d6a0d7a8",
+              "bytes": 484908,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex excitedly presents his laptop to Clara, Mina and Wes in a sunlit office. Clara folds her arms, Mina leans in and Wes sips coffee.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/instagram/p2.jpg",
+              "sha256": "e39c456cac6b10f2283baae5845181306ec2f07d009f1ede3d6ecfea6df39875",
+              "bytes": 414257,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex hunches over the laptop with his tongue poking out as he types one key. In a diagonal reaction panel, Wes holds an empty mug while Mina waits with her chin in her hand.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/instagram/p3.jpg",
+              "sha256": "2388349816e90203f036b32907dc305f4c6e59b5965a4167ed01299c2cc34987",
+              "bytes": 674513,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "In a cinematic three-dimensional transformation, Dex stands heroically beneath blue lightning hitting his raised clicker. A jagged frame separates ordinary comic-style Wes holding an unplugged cord.",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/instagram/p4.jpg",
+              "sha256": "863c2ecd24e560de3dd70b718c7f8c738598d11ec084474127cd3963da11614f",
+              "bytes": 451315,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "A green voxel-built Dex tips a square mug and spills a stream of cubic coffee down his suit. Across a stepped frame, Clara offers a napkin with an unimpressed look.",
+              "panelIds": [
+                "p4"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/instagram/p5.jpg",
+              "sha256": "e3de5a50037e28f2425ffcb6263ed72f07a60609d227d8d0a3bad1e6b7716a1a",
+              "bytes": 425687,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Black-and-white rubber-hose Dex bounces across the scene and stretches one long arm across a curved frame to clasp Wes’s hand while Wes types with his other hand.",
+              "panelIds": [
+                "p5"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/instagram/p6.jpg",
+              "sha256": "a481f3639e1098683f6eb4243cb07c0f7a4fcfca2ac9609b481deb4c55fa7344",
+              "bytes": 694144,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex and his navy suit melt like a soft oil painting over his chair into a swirling puddle. Clara lifts both feet onto her own chair to escape the spreading paint.",
+              "panelIds": [
+                "p6"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/instagram/p7.jpg",
+              "sha256": "a6ea2f68cc7cbc78db6e7ce8250ec273afb32727f3666c452a46966875a2d301",
+              "bytes": 591645,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Mina beams with pink heart-shaped pupils while holding an adorable tiny knitted Dex in her cupped hands. A braided yarn curve frames the chibi executive.",
+              "panelIds": [
+                "p7"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/instagram/p8.jpg",
+              "sha256": "cee5158027bf3ef9fe46b33468036aaa76dcc8f64ce6543c936bd939e0bc7dc2",
+              "bytes": 659426,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex is a huge fierce demon with hooves, wings, glowing eyes, ember armor and branching horns. Unimpressed Mina hangs his suit jacket directly on one of the horns.",
+              "panelIds": [
+                "p8"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/instagram/p9.jpg",
+              "sha256": "664bf884092a17715078630f4d133f43819d98364fdb7e4e319d35b848e93b9c",
+              "bytes": 479508,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Back in ordinary office form, Clara asks about an effective CEO while Mina and Wes laugh. Dex misses the joke and eagerly turns back to the laptop.",
+              "panelIds": [
+                "p9"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Dex finds an image generator and decides his leadership style needs a visual upgrade. His colleagues get a front-row seat.\n\nChief Image Officer\n\nhttps://sorrytomorrow.com/comics/chief-image-officer/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-022-chief-image-officer&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/chief-image-officer/facebook/p1.jpg",
+              "sha256": "3b9cde7ee110e2c16143fc534489c3b99101b2ff4ac0c42e855b7e58d6a0d7a8",
+              "bytes": 484908,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex excitedly presents his laptop to Clara, Mina and Wes in a sunlit office. Clara folds her arms, Mina leans in and Wes sips coffee.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/facebook/p2.jpg",
+              "sha256": "e39c456cac6b10f2283baae5845181306ec2f07d009f1ede3d6ecfea6df39875",
+              "bytes": 414257,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex hunches over the laptop with his tongue poking out as he types one key. In a diagonal reaction panel, Wes holds an empty mug while Mina waits with her chin in her hand.",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/facebook/p3.jpg",
+              "sha256": "2388349816e90203f036b32907dc305f4c6e59b5965a4167ed01299c2cc34987",
+              "bytes": 674513,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "In a cinematic three-dimensional transformation, Dex stands heroically beneath blue lightning hitting his raised clicker. A jagged frame separates ordinary comic-style Wes holding an unplugged cord.",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/facebook/p4.jpg",
+              "sha256": "863c2ecd24e560de3dd70b718c7f8c738598d11ec084474127cd3963da11614f",
+              "bytes": 451315,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "A green voxel-built Dex tips a square mug and spills a stream of cubic coffee down his suit. Across a stepped frame, Clara offers a napkin with an unimpressed look.",
+              "panelIds": [
+                "p4"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/facebook/p5.jpg",
+              "sha256": "e3de5a50037e28f2425ffcb6263ed72f07a60609d227d8d0a3bad1e6b7716a1a",
+              "bytes": 425687,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Black-and-white rubber-hose Dex bounces across the scene and stretches one long arm across a curved frame to clasp Wes’s hand while Wes types with his other hand.",
+              "panelIds": [
+                "p5"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/facebook/p6.jpg",
+              "sha256": "a481f3639e1098683f6eb4243cb07c0f7a4fcfca2ac9609b481deb4c55fa7344",
+              "bytes": 694144,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex and his navy suit melt like a soft oil painting over his chair into a swirling puddle. Clara lifts both feet onto her own chair to escape the spreading paint.",
+              "panelIds": [
+                "p6"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/facebook/p7.jpg",
+              "sha256": "a6ea2f68cc7cbc78db6e7ce8250ec273afb32727f3666c452a46966875a2d301",
+              "bytes": 591645,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Mina beams with pink heart-shaped pupils while holding an adorable tiny knitted Dex in her cupped hands. A braided yarn curve frames the chibi executive.",
+              "panelIds": [
+                "p7"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/facebook/p8.jpg",
+              "sha256": "cee5158027bf3ef9fe46b33468036aaa76dcc8f64ce6543c936bd939e0bc7dc2",
+              "bytes": 659426,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex is a huge fierce demon with hooves, wings, glowing eyes, ember armor and branching horns. Unimpressed Mina hangs his suit jacket directly on one of the horns.",
+              "panelIds": [
+                "p8"
+              ]
+            },
+            {
+              "path": "public/social/chief-image-officer/facebook/p9.jpg",
+              "sha256": "664bf884092a17715078630f4d133f43819d98364fdb7e4e319d35b848e93b9c",
+              "bytes": 479508,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Back in ordinary office form, Clara asks about an effective CEO while Mina and Wes laugh. Dex misses the joke and eagerly turns back to the laptop.",
+              "panelIds": [
+                "p9"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
