@@ -4446,6 +4446,12 @@
             }
           ],
           "verifiedAt": "2026-10-30T20:50:35.817Z"
+        },
+        "instagram": {
+          "status": "reserved",
+          "startedAt": "2026-10-30T20:50:37.342Z",
+          "steps": {},
+          "results": []
         }
       }
     }
