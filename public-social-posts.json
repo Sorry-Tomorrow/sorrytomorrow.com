@@ -1,6 +1,11 @@
 {
   "schema": "sorry-tomorrow-public-social-posts-v1",
   "comics": {
+    "chief-image-officer": {
+      "x": "https://x.com/sorrytomorrowco/status/2116271375820230844",
+      "instagram": "https://www.instagram.com/p/DfIe4_CG7q1/",
+      "facebook": "https://www.facebook.com/122107583679458114/posts/122123689785458114"
+    },
     "funnel-or-flush": {
       "x": "https://x.com/sorrytomorrowco/status/2113766668589580609",
       "instagram": "https://www.instagram.com/p/De2ryMXGusP/",
