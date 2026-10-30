@@ -4620,8 +4620,13 @@
           "startedAt": "2026-10-30T20:52:02.530Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-10-30T20:52:03.925Z"
+              "status": "done",
+              "startedAt": "2026-10-30T20:52:03.925Z",
+              "result": {
+                "id": "122123689293458114",
+                "sha256": "3b9cde7ee110e2c16143fc534489c3b99101b2ff4ac0c42e855b7e58d6a0d7a8"
+              },
+              "completedAt": "2026-10-30T20:52:06.922Z"
             }
           },
           "results": []
