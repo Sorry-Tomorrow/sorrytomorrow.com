@@ -4267,8 +4267,12 @@
               "completedAt": "2026-10-30T20:50:04.572Z"
             },
             "post-1-alt-2": {
-              "status": "in-flight",
-              "startedAt": "2026-10-30T20:50:05.759Z"
+              "status": "done",
+              "startedAt": "2026-10-30T20:50:05.759Z",
+              "result": {
+                "id": "2116271437791064064"
+              },
+              "completedAt": "2026-10-30T20:50:07.318Z"
             }
           },
           "results": [],
