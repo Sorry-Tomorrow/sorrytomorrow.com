@@ -4144,6 +4144,15 @@
           }
         }
       }
+    },
+    "ST-CHIEF-IMAGE-OFFICER": {
+      "slug": "chief-image-officer",
+      "title": "Chief Image Officer",
+      "manifestSha256": "69652249fb40af4c09225297c7ca85b3a151cabc03556406f51b12bd0a67e5b4",
+      "sourceCommit": "25a6184bd57543e7769016f1f67bf3c5836ad282",
+      "runId": "41126132811",
+      "createdAt": "2026-10-30T20:49:27.428Z",
+      "platforms": {}
     }
   }
 }
