@@ -4618,7 +4618,12 @@
         "facebook": {
           "status": "reserved",
           "startedAt": "2026-10-30T20:52:02.530Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-10-30T20:52:03.925Z"
+            }
+          },
           "results": []
         }
       }
