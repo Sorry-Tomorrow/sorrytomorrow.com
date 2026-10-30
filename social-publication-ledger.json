@@ -4158,8 +4158,14 @@
           "startedAt": "2026-10-30T20:49:28.767Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-10-30T20:49:29.775Z"
+              "status": "done",
+              "startedAt": "2026-10-30T20:49:29.775Z",
+              "result": {
+                "id": "2116271301077745664",
+                "mediaKey": "3_2116271301077745664",
+                "sha256": "e4477d64cb03f77468cce56b73764344539324d6f38573d9ce55c883275d3c2e"
+              },
+              "completedAt": "2026-10-30T20:49:31.860Z"
             }
           },
           "results": [],
