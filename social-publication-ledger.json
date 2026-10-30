@@ -4154,7 +4154,7 @@
       "createdAt": "2026-10-30T20:49:27.428Z",
       "platforms": {
         "x": {
-          "status": "posted-awaiting-verification",
+          "status": "published",
           "startedAt": "2026-10-30T20:49:28.767Z",
           "steps": {
             "post-0-image-0": {
@@ -4412,7 +4412,40 @@
               ]
             }
           ],
-          "xReservedUsd": 1.5
+          "xReservedUsd": 1.5,
+          "verified": [
+            {
+              "id": "2116271375820230844",
+              "url": "https://x.com/sorrytomorrowco/status/2116271375820230844",
+              "attachmentIds": [
+                "2116271301077745664",
+                "2116271329166929920",
+                "2116271352655044610"
+              ],
+              "copyAndAltVerified": true
+            },
+            {
+              "id": "2116271462164189654",
+              "url": "https://x.com/sorrytomorrowco/status/2116271462164189654",
+              "attachmentIds": [
+                "2116271389241901056",
+                "2116271414583996416",
+                "2116271437791064064"
+              ],
+              "copyAndAltVerified": true
+            },
+            {
+              "id": "2116271555835465911",
+              "url": "https://x.com/sorrytomorrowco/status/2116271555835465911",
+              "attachmentIds": [
+                "2116271474730319872",
+                "2116271501653549056",
+                "2116271528316645376"
+              ],
+              "copyAndAltVerified": true
+            }
+          ],
+          "verifiedAt": "2026-10-30T20:50:35.817Z"
         }
       }
     }
