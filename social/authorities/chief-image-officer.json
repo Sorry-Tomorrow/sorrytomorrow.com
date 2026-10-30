@@ -1,0 +1,53 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-10-30",
+  "recordedAt": "2026-10-30T20:30:18.147Z",
+  "internalId": "ST-CHIEF-IMAGE-OFFICER",
+  "title": "Chief Image Officer",
+  "ownerInstruction": "approved, go ahead and publish it when done",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "950a07e51fa616c1d32b47420ec9c350e4859fb329cb5490faa26551144e4eca",
+  "sourceManifestSha256": "8f0ca6190856e4c904984b02feb41e6f110ba797cc26a3e6d75f83f351272dcd",
+  "readerSharingManifestSha256": "05bd47260e268ccb2dd236e98be17c96cbf1f5b58493e8a662e6bce02e703d1c",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentity": {
+    "number": 22,
+    "displayVersion": "v0.0.22",
+    "slug": "chief-image-officer",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/chief-image-officer/",
+    "plannedWebsiteReleaseMetadata": "2026-10-30T20:30:18.147Z",
+    "basis": "Fresh origin/main ec5092052b2e95c636a4b974e1cff4e9702d4c67 max21, no slug/title/internalID collision; fresh durable ledger has no entry for this comic."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290"
+    }
+  },
+  "captionRule": "Exact approved premise-first captions and campaign links; no AI-generation/assistance/creation production credit.",
+  "assetRule": "Copy exact approved bytes, no image generation/resizing/cropping/lettering/conversion.",
+  "budgetRule": "Existing X provider $5cap and no-auto-recharge unchanged; obey durable reservations.",
+  "executionRule": "Validate source/Studio/site/social checks; deploy trustedmain; verify exact live website/assets and provider account/caption/media/alt facts before recording published.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "new accounts or permissions",
+    "backfill"
+  ],
+  "publicationClaim": "Authority only; not publication evidence."
+}

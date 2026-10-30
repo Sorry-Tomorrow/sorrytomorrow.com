@@ -49,11 +49,11 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 021 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="funnel-or-flush"/);
+  assert.match(html, /Comic 022 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="chief-image-officer"/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/funnel-or-flush\/p1\.webp/);
+  assert.match(html, /comics\/chief-image-officer\/p1\.webp/);
   assert.match(html, /Bot-tourage/);
   assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
@@ -169,7 +169,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 21);
+  assert.equal(JSON.parse(catalog).episodes.length, 22);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -252,7 +252,8 @@ test("published navigation connects Founder through the latest release", async (
     ["the-reset-king", "bot-tourage", "dyson-sphere-pressure"],
     ["dyson-sphere-pressure", "the-reset-king", "chief-expendable-officer"],
     ["chief-expendable-officer", "dyson-sphere-pressure", "funnel-or-flush"],
-    ["funnel-or-flush", "chief-expendable-officer", null],
+    ["funnel-or-flush", "chief-expendable-officer", "chief-image-officer"],
+    ["chief-image-officer", "funnel-or-flush", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);
@@ -332,4 +333,7 @@ test("Chief Expendable Officer preserves all four panels, signs and final naviga
 });
 
 
-test("Funnel or Flush preserves six approved panels and selected tagline",async()=>{const response=await render("/comics/funnel-or-flush");assert.equal(response.status,200);const html=await response.text();assert.match(html,/Funnel or Flush\?/);assert.ok(html.includes("You’re just one more step away from one more step."));assert.equal([...html.matchAll(/class="comic-panel-art"/g)].length,6);assert.ok(html.includes("Yeah. He needs three followers to finish."));assert.ok(html.includes("/comics/chief-expendable-officer/#comic"));assert.match(html,/You’re at the latest comic/);});
+test("Funnel or Flush preserves six approved panels and selected tagline",async()=>{const response=await render("/comics/funnel-or-flush");assert.equal(response.status,200);const html=await response.text();assert.match(html,/Funnel or Flush\?/);assert.ok(html.includes("You’re just one more step away from one more step."));assert.equal([...html.matchAll(/class="comic-panel-art"/g)].length,6);assert.ok(html.includes("Yeah. He needs three followers to finish."));assert.ok(html.includes("/comics/chief-expendable-officer/#comic"));assert.ok(html.includes("/comics/chief-image-officer/#comic"));});
+
+
+test("Chief Image Officer renders all nine ordered panels, title, reversal and sharing metadata",async()=>{const response=await render("/comics/chief-image-officer");assert.equal(response.status,200);const html=await response.text();assert.match(html,/Chief Image Officer/);assert.equal([...html.matchAll(/class="comic-panel-art"/g)].length,9);assert.ok(html.includes("Do they have anything for an effective CEO?"));assert.ok(html.includes("Oooh! Let me check!"));assert.ok(html.includes("/comics/funnel-or-flush/#comic"));assert.match(html,/You’re at the latest comic/);assert.ok(html.includes("comics/chief-image-officer/sharing/v1/preview.jpg"));});

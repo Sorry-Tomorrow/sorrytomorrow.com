@@ -1,0 +1,253 @@
+{
+  "title": "Chief Image Officer",
+  "internalId": "ST-CHIEF-IMAGE-OFFICER",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9"
+  ],
+  "sourceManifestSha256": "8f0ca6190856e4c904984b02feb41e6f110ba797cc26a3e6d75f83f351272dcd",
+  "assets": [
+    {
+      "target": "comics/chief-image-officer/p1.png",
+      "sha256": "e4477d64cb03f77468cce56b73764344539324d6f38573d9ce55c883275d3c2e",
+      "bytes": 3160368
+    },
+    {
+      "target": "comics/chief-image-officer/p1.webp",
+      "sha256": "df287ec47faae24d3c7bdfb0efef941230badec817e9b3e22301dfdc88a0c26d",
+      "bytes": 1442764
+    },
+    {
+      "target": "social/chief-image-officer/x/p1.png",
+      "sha256": "e4477d64cb03f77468cce56b73764344539324d6f38573d9ce55c883275d3c2e",
+      "bytes": 3160368
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p1.jpg",
+      "sha256": "3b9cde7ee110e2c16143fc534489c3b99101b2ff4ac0c42e855b7e58d6a0d7a8",
+      "bytes": 484908
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p1.jpg",
+      "sha256": "3b9cde7ee110e2c16143fc534489c3b99101b2ff4ac0c42e855b7e58d6a0d7a8",
+      "bytes": 484908
+    },
+    {
+      "target": "comics/chief-image-officer/p2.png",
+      "sha256": "4e61c273ba8e5cc83dfcf2d147919b5fc9d198cc7a5eca4e457210331908d9d9",
+      "bytes": 3215384
+    },
+    {
+      "target": "comics/chief-image-officer/p2.webp",
+      "sha256": "9ac6480bb5d206c96a27a26cc25fc03d2238a01eece62572b9a6b4903a64c31c",
+      "bytes": 1443920
+    },
+    {
+      "target": "social/chief-image-officer/x/p2.png",
+      "sha256": "4e61c273ba8e5cc83dfcf2d147919b5fc9d198cc7a5eca4e457210331908d9d9",
+      "bytes": 3215384
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p2.jpg",
+      "sha256": "e39c456cac6b10f2283baae5845181306ec2f07d009f1ede3d6ecfea6df39875",
+      "bytes": 414257
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p2.jpg",
+      "sha256": "e39c456cac6b10f2283baae5845181306ec2f07d009f1ede3d6ecfea6df39875",
+      "bytes": 414257
+    },
+    {
+      "target": "comics/chief-image-officer/p3.png",
+      "sha256": "0a359a402825fef7e000ebb8a2d4530bfa76a1e195a35e837dd5093855eac97e",
+      "bytes": 3702858
+    },
+    {
+      "target": "comics/chief-image-officer/p3.webp",
+      "sha256": "14e6be4ff4f050c3d48e1c8e7fc53e36063d2f757b49b596ae929ad828d76b7a",
+      "bytes": 1649108
+    },
+    {
+      "target": "social/chief-image-officer/x/p3.png",
+      "sha256": "0a359a402825fef7e000ebb8a2d4530bfa76a1e195a35e837dd5093855eac97e",
+      "bytes": 3702858
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p3.jpg",
+      "sha256": "2388349816e90203f036b32907dc305f4c6e59b5965a4167ed01299c2cc34987",
+      "bytes": 674513
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p3.jpg",
+      "sha256": "2388349816e90203f036b32907dc305f4c6e59b5965a4167ed01299c2cc34987",
+      "bytes": 674513
+    },
+    {
+      "target": "comics/chief-image-officer/p4.png",
+      "sha256": "5e5a044b06550d5d6ccb4a8b92a11afcecefa3af09c8eb3afed1ec00727161be",
+      "bytes": 2946091
+    },
+    {
+      "target": "comics/chief-image-officer/p4.webp",
+      "sha256": "5f619ea6e02b2730c93714c2e3bf0c94ebc9e79263983faa7f284b63dc2e1ecf",
+      "bytes": 1321818
+    },
+    {
+      "target": "social/chief-image-officer/x/p4.png",
+      "sha256": "5e5a044b06550d5d6ccb4a8b92a11afcecefa3af09c8eb3afed1ec00727161be",
+      "bytes": 2946091
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p4.jpg",
+      "sha256": "863c2ecd24e560de3dd70b718c7f8c738598d11ec084474127cd3963da11614f",
+      "bytes": 451315
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p4.jpg",
+      "sha256": "863c2ecd24e560de3dd70b718c7f8c738598d11ec084474127cd3963da11614f",
+      "bytes": 451315
+    },
+    {
+      "target": "comics/chief-image-officer/p5.png",
+      "sha256": "a24bd349be14c6033286fa1d98539d45dd37cd29134eb8eed69951187bacd79b",
+      "bytes": 3229415
+    },
+    {
+      "target": "comics/chief-image-officer/p5.webp",
+      "sha256": "5c5450d2341683f1df511da78c72fb3b0ea8d8ffd244122dddcd22b68e28f362",
+      "bytes": 1461608
+    },
+    {
+      "target": "social/chief-image-officer/x/p5.png",
+      "sha256": "a24bd349be14c6033286fa1d98539d45dd37cd29134eb8eed69951187bacd79b",
+      "bytes": 3229415
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p5.jpg",
+      "sha256": "e3de5a50037e28f2425ffcb6263ed72f07a60609d227d8d0a3bad1e6b7716a1a",
+      "bytes": 425687
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p5.jpg",
+      "sha256": "e3de5a50037e28f2425ffcb6263ed72f07a60609d227d8d0a3bad1e6b7716a1a",
+      "bytes": 425687
+    },
+    {
+      "target": "comics/chief-image-officer/p6.png",
+      "sha256": "6c18f36e26919e60bd98915073bef9348112e2783d4ae928951768f1450bbb24",
+      "bytes": 4290725
+    },
+    {
+      "target": "comics/chief-image-officer/p6.webp",
+      "sha256": "0bb42e91549d0fe5f410f1e747ea0cf66e07d4ce006aed88d66c37164dba4fe3",
+      "bytes": 2263358
+    },
+    {
+      "target": "social/chief-image-officer/x/p6.png",
+      "sha256": "6c18f36e26919e60bd98915073bef9348112e2783d4ae928951768f1450bbb24",
+      "bytes": 4290725
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p6.jpg",
+      "sha256": "a481f3639e1098683f6eb4243cb07c0f7a4fcfca2ac9609b481deb4c55fa7344",
+      "bytes": 694144
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p6.jpg",
+      "sha256": "a481f3639e1098683f6eb4243cb07c0f7a4fcfca2ac9609b481deb4c55fa7344",
+      "bytes": 694144
+    },
+    {
+      "target": "comics/chief-image-officer/p7.png",
+      "sha256": "66d7d852682725e3c1035200026bba3b8010960cf6efee53ee9c30aaaa08bd3a",
+      "bytes": 3725901
+    },
+    {
+      "target": "comics/chief-image-officer/p7.webp",
+      "sha256": "4e09e4b62d4f498ba22b7cca82f33f96bfafeec7fc2e348d2d9ddc2fb975433a",
+      "bytes": 1886854
+    },
+    {
+      "target": "social/chief-image-officer/x/p7.png",
+      "sha256": "66d7d852682725e3c1035200026bba3b8010960cf6efee53ee9c30aaaa08bd3a",
+      "bytes": 3725901
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p7.jpg",
+      "sha256": "a6ea2f68cc7cbc78db6e7ce8250ec273afb32727f3666c452a46966875a2d301",
+      "bytes": 591645
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p7.jpg",
+      "sha256": "a6ea2f68cc7cbc78db6e7ce8250ec273afb32727f3666c452a46966875a2d301",
+      "bytes": 591645
+    },
+    {
+      "target": "comics/chief-image-officer/p8.png",
+      "sha256": "1908a5b7c3e6f647e26b3c5c647b8769ac071d6bfda14ff55938c86459dbe969",
+      "bytes": 4204303
+    },
+    {
+      "target": "comics/chief-image-officer/p8.webp",
+      "sha256": "3a9dad48331fe62c6eab71a3f970b8219ad1d6e46eb131f26ff3282adc5fbe78",
+      "bytes": 2125692
+    },
+    {
+      "target": "social/chief-image-officer/x/p8.png",
+      "sha256": "1908a5b7c3e6f647e26b3c5c647b8769ac071d6bfda14ff55938c86459dbe969",
+      "bytes": 4204303
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p8.jpg",
+      "sha256": "cee5158027bf3ef9fe46b33468036aaa76dcc8f64ce6543c936bd939e0bc7dc2",
+      "bytes": 659426
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p8.jpg",
+      "sha256": "cee5158027bf3ef9fe46b33468036aaa76dcc8f64ce6543c936bd939e0bc7dc2",
+      "bytes": 659426
+    },
+    {
+      "target": "comics/chief-image-officer/p9.png",
+      "sha256": "d2d12f37099f7738daff385c8952151d6901a089e20a76e0cdf1430bafae2edd",
+      "bytes": 3098106
+    },
+    {
+      "target": "comics/chief-image-officer/p9.webp",
+      "sha256": "8bbb919677ab0980716241de26978b4af8df4f7a8b02766b565e3cc7e05f392b",
+      "bytes": 1407292
+    },
+    {
+      "target": "social/chief-image-officer/x/p9.png",
+      "sha256": "d2d12f37099f7738daff385c8952151d6901a089e20a76e0cdf1430bafae2edd",
+      "bytes": 3098106
+    },
+    {
+      "target": "social/chief-image-officer/instagram/p9.jpg",
+      "sha256": "664bf884092a17715078630f4d133f43819d98364fdb7e4e319d35b848e93b9c",
+      "bytes": 479508
+    },
+    {
+      "target": "social/chief-image-officer/facebook/p9.jpg",
+      "sha256": "664bf884092a17715078630f4d133f43819d98364fdb7e4e319d35b848e93b9c",
+      "bytes": 479508
+    },
+    {
+      "target": "comics/chief-image-officer/sharing/v1/complete.jpg",
+      "sha256": "18503ac645cee52f0030db939983043b0f16a629074c25ff2b3e3ff045d6af6c",
+      "bytes": 7171302
+    },
+    {
+      "target": "comics/chief-image-officer/sharing/v1/preview.jpg",
+      "sha256": "542fe59fea61c1a59cb641dee3875bfcdab39b38c627e1d3112d86776802e538",
+      "bytes": 242695
+    }
+  ]
+}

@@ -75,5 +75,12 @@
     "approval3Sha256": "15ae186140dd989932ce2cfb64e69875402351da76f09bdc26e385525b5f5ca6",
     "sourceManifestSha256": "870837324a8393b76b2958ea1ba69c35df8aa7138c70130d19e7127817f35c10",
     "releaseAuthoritySha256": "fbab4d2fac0d6c385d9628208b695cd2e424a3c8ff6529960eb7548d4872b26d"
+  },
+  "chief-image-officer": {
+    "internalId": "ST-CHIEF-IMAGE-OFFICER",
+    "manifestSha256": "69652249fb40af4c09225297c7ca85b3a151cabc03556406f51b12bd0a67e5b4",
+    "approval3Sha256": "950a07e51fa616c1d32b47420ec9c350e4859fb329cb5490faa26551144e4eca",
+    "sourceManifestSha256": "8f0ca6190856e4c904984b02feb41e6f110ba797cc26a3e6d75f83f351272dcd",
+    "releaseAuthoritySha256": "c02429aeaf82d62098fd245779488f1e7960cdc01178c459ff857e0ce2ec1056"
   }
 }
