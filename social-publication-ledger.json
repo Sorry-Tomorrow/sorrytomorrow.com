@@ -4152,7 +4152,15 @@
       "sourceCommit": "25a6184bd57543e7769016f1f67bf3c5836ad282",
       "runId": "41126132811",
       "createdAt": "2026-10-30T20:49:27.428Z",
-      "platforms": {}
+      "platforms": {
+        "x": {
+          "status": "reserved",
+          "startedAt": "2026-10-30T20:49:28.767Z",
+          "steps": {},
+          "results": [],
+          "xReservedUsd": 1.5
+        }
+      }
     }
   }
 }
