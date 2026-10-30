@@ -4645,6 +4645,10 @@
                 "sha256": "2388349816e90203f036b32907dc305f4c6e59b5965a4167ed01299c2cc34987"
               },
               "completedAt": "2026-10-30T20:52:15.052Z"
+            },
+            "post-0-image-3": {
+              "status": "in-flight",
+              "startedAt": "2026-10-30T20:52:16.691Z"
             }
           },
           "results": []
