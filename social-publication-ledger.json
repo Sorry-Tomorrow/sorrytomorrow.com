@@ -4338,8 +4338,13 @@
               "completedAt": "2026-10-30T20:50:29.071Z"
             },
             "post-2-publish": {
-              "status": "in-flight",
-              "startedAt": "2026-10-30T20:50:30.327Z"
+              "status": "done",
+              "startedAt": "2026-10-30T20:50:30.327Z",
+              "result": {
+                "id": "2116271555835465911",
+                "url": "https://x.com/sorrytomorrowco/status/2116271555835465911"
+              },
+              "completedAt": "2026-10-30T20:50:32.310Z"
             }
           },
           "results": [],
