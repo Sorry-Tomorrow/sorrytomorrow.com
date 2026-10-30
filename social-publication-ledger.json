@@ -4533,8 +4533,12 @@
               "completedAt": "2026-10-30T20:51:42.421Z"
             },
             "post-0-carousel": {
-              "status": "in-flight",
-              "startedAt": "2026-10-30T20:51:43.675Z"
+              "status": "done",
+              "startedAt": "2026-10-30T20:51:43.675Z",
+              "result": {
+                "id": "18100554917361446"
+              },
+              "completedAt": "2026-10-30T20:51:50.175Z"
             }
           },
           "results": []
