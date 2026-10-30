@@ -4614,6 +4614,12 @@
             }
           ],
           "verifiedAt": "2026-10-30T20:52:01.430Z"
+        },
+        "facebook": {
+          "status": "reserved",
+          "startedAt": "2026-10-30T20:52:02.530Z",
+          "steps": {},
+          "results": []
         }
       }
     }
