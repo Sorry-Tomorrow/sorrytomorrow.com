@@ -4506,8 +4506,13 @@
               "completedAt": "2026-10-30T20:51:20.707Z"
             },
             "post-0-image-6": {
-              "status": "in-flight",
-              "startedAt": "2026-10-30T20:51:21.917Z"
+              "status": "done",
+              "startedAt": "2026-10-30T20:51:21.917Z",
+              "result": {
+                "id": "18100554674361446",
+                "sha256": "a6ea2f68cc7cbc78db6e7ce8250ec273afb32727f3666c452a46966875a2d301"
+              },
+              "completedAt": "2026-10-30T20:51:27.414Z"
             }
           },
           "results": []
