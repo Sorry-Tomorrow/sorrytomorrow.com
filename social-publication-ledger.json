@@ -4422,7 +4422,8 @@
                 "2116271329166929920",
                 "2116271352655044610"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-30T20:49:49.000Z"
             },
             {
               "id": "2116271462164189654",
@@ -4432,7 +4433,8 @@
                 "2116271414583996416",
                 "2116271437791064064"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-30T20:50:09.000Z"
             },
             {
               "id": "2116271555835465911",
@@ -4442,10 +4444,28 @@
                 "2116271501653549056",
                 "2116271528316645376"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-10-30T20:50:31.000Z"
             }
           ],
-          "verifiedAt": "2026-10-30T20:50:35.817Z"
+          "verifiedAt": "2026-10-30T20:50:35.817Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-11-02T22:46:10.711Z",
+            "posts": [
+              {
+                "id": "2116271375820230844",
+                "status": "observed"
+              },
+              {
+                "id": "2116271462164189654",
+                "status": "observed"
+              },
+              {
+                "id": "2116271555835465911",
+                "status": "observed"
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
