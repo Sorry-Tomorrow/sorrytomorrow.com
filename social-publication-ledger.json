@@ -4903,6 +4903,12 @@
             }
           ],
           "verifiedAt": "2026-11-03T18:53:54.453Z"
+        },
+        "instagram": {
+          "status": "reserved",
+          "startedAt": "2026-11-03T18:53:55.636Z",
+          "steps": {},
+          "results": []
         }
       }
     }
