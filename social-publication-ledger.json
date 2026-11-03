@@ -4918,8 +4918,13 @@
               "completedAt": "2026-11-03T18:54:01.330Z"
             },
             "post-0-image-1": {
-              "status": "in-flight",
-              "startedAt": "2026-11-03T18:54:02.543Z"
+              "status": "done",
+              "startedAt": "2026-11-03T18:54:02.543Z",
+              "result": {
+                "id": "18101424524361446",
+                "sha256": "8a3766c4b716320924c24e10a8b6d19b388388a01febe732e0b4299bcb64ec5b"
+              },
+              "completedAt": "2026-11-03T18:54:07.789Z"
             }
           },
           "results": []
