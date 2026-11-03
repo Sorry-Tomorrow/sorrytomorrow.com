@@ -4927,8 +4927,12 @@
               "completedAt": "2026-11-03T18:54:07.789Z"
             },
             "post-0-carousel": {
-              "status": "in-flight",
-              "startedAt": "2026-11-03T18:54:08.969Z"
+              "status": "done",
+              "startedAt": "2026-11-03T18:54:08.969Z",
+              "result": {
+                "id": "18101424593361446"
+              },
+              "completedAt": "2026-11-03T18:54:14.044Z"
             }
           },
           "results": []
