@@ -4827,8 +4827,14 @@
           "startedAt": "2026-11-03T18:53:37.279Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-11-03T18:53:38.593Z"
+              "status": "done",
+              "startedAt": "2026-11-03T18:53:38.593Z",
+              "result": {
+                "id": "2117691696985104384",
+                "mediaKey": "3_2117691696985104384",
+                "sha256": "5fc9bfe918ab0b8006c7d923c0d159f2edd16db2d398d08b1536318628461580"
+              },
+              "completedAt": "2026-11-03T18:53:40.719Z"
             }
           },
           "results": [],
