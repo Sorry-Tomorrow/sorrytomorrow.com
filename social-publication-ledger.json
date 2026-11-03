@@ -4995,6 +4995,10 @@
                 "sha256": "8a3766c4b716320924c24e10a8b6d19b388388a01febe732e0b4299bcb64ec5b"
               },
               "completedAt": "2026-11-03T18:54:31.108Z"
+            },
+            "post-0-publish": {
+              "status": "in-flight",
+              "startedAt": "2026-11-03T18:54:32.510Z"
             }
           },
           "results": []
