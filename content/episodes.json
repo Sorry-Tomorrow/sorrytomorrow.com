@@ -17,6 +17,70 @@
   },
   "episodes": [
     {
+      "internalId": "ST-AGENT-LOOP",
+      "publicNumber": 23,
+      "publicVersion": "v0.0.23",
+      "slug": "endless-loop",
+      "title": "Endless Loop",
+      "label": "Comic 023 · Ahead AI",
+      "previewOnly": false,
+      "shell": "art-first",
+      "readerLayout": "endless-loop",
+      "caption": "Mina builds her first agentic loop. Token takes it for a spin.",
+      "ogImage": {
+        "src": "comics/endless-loop/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Endless Loop title beside Mina introducing her first agentic loop while Token looks toward the Ferris wheel."
+      },
+      "art": [
+        {
+          "src": "comics/endless-loop/p1.png",
+          "webpSrc": "comics/endless-loop/p1.webp",
+          "width": 1536,
+          "height": 1109,
+          "alt": "Mina proudly explains her first agentic loop: Token will build the website, test, fix and repeat. Dex points at the laptop and tells him to get started. Tiny Token sits on books looking out at the Ferris wheel."
+        },
+        {
+          "src": "comics/endless-loop/p2.png",
+          "webpSrc": "comics/endless-loop/p2.webp",
+          "width": 1004,
+          "height": 1632,
+          "alt": "A wordless strip shows tiny Token skipping out of the office with a ride ticket, beside an adult shoe for scale. Below, a complete illuminated Ferris wheel has Token joyfully riding in a visibly attached gondola: “WEEEE!” Defeated Dex holds a laptop showing TESTS FAILED and says, “He refuses to get off the loop.” Mina facepalms; unbothered Wes wears a plush duck hat and eats a rainbow snow cone. An attendant gestures from the exit."
+        }
+      ],
+      "panels": [
+        {
+          "lines": [
+            {
+              "speaker": "Mina",
+              "text": "I built my first agentic loop for Token! He’ll build the website, run the tests, fix what breaks, and repeat until it works."
+            },
+            {
+              "speaker": "Dex",
+              "text": "Great. Token, get started."
+            }
+          ],
+          "description": "Mina proudly explains her first agentic loop: Token will build the website, test, fix and repeat. Dex points at the laptop and tells him to get started. Tiny Token sits on books looking out at the Ferris wheel."
+        },
+        {
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "He refuses to get off the loop."
+            },
+            {
+              "speaker": "Token",
+              "text": "WEEEE!"
+            }
+          ],
+          "description": "A wordless strip shows tiny Token skipping out of the office with a ride ticket, beside an adult shoe for scale. Below, a complete illuminated Ferris wheel has Token joyfully riding in a visibly attached gondola: “WEEEE!” Defeated Dex holds a laptop showing TESTS FAILED and says, “He refuses to get off the loop.” Mina facepalms; unbothered Wes wears a plush duck hat and eats a rainbow snow cone. An attendant gestures from the exit."
+        }
+      ],
+      "websitePublishedAt": "2026-11-03T18:18:55.290Z",
+      "displayDate": "v0.0.23"
+    },
+    {
       "internalId": "ST-CHIEF-IMAGE-OFFICER",
       "publicNumber": 22,
       "publicVersion": "v0.0.22",

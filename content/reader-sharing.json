@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "05bd47260e268ccb2dd236e98be17c96cbf1f5b58493e8a662e6bce02e703d1c",
-  "approvalReceiptSha256": "1df4e046a5bc5e6c238afd18ad7f218e89d2adaa4033684b398154e3b4dd579d",
+  "manifestSha256": "80a8cbebe9e676e8c07de568d4af6a94b9a5bd8fa7e0fadfe3628eb75f7c594c",
+  "approvalReceiptSha256": "733f43f3355f7d51d63d217f9702514a02f5c3f74b30625d4534e06b3fe4d2cc",
   "episodes": {
     "executive-twin": {
       "status": "approved",
@@ -553,6 +553,31 @@
         "filename": "sorry-tomorrow-chief-image-officer-complete.jpg"
       },
       "shareText": "Chief Image Officer — Sorry, Tomorrow"
+    },
+    "endless-loop": {
+      "status": "approved",
+      "manifestSha256": "80a8cbebe9e676e8c07de568d4af6a94b9a5bd8fa7e0fadfe3628eb75f7c594c",
+      "approvalReceiptSha256": "733f43f3355f7d51d63d217f9702514a02f5c3f74b30625d4534e06b3fe4d2cc",
+      "preview": {
+        "src": "/comics/endless-loop/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Endless Loop title beside Mina explaining her first agentic loop, Dex pointing at the laptop and Token distracted by the Ferris wheel.",
+        "sha256": "7be5f376156a7e2ad03e5d1e75ca689166cae26a3884132caf54a32b4a10479e",
+        "bytes": 269775,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/endless-loop/sharing/v1/complete.jpg",
+        "width": 1600,
+        "height": 4200,
+        "alt": "Two-slide, three-beat comic. Mina builds her first agentic loop for Token to build, test and fix a website. Dex dispatches him, but Token looks toward a Ferris wheel. Token skips away with a ride ticket. On the brightly lit wheel he shouts WEEEE! while defeated Dex holds a failed-tests laptop and says He refuses to get off the loop. Mina facepalms; Wes calmly eats a rainbow snow cone in a plush duck hat.",
+        "sha256": "f01b280061181a090e0e8bf9ed25568da289bf28967fed6b290573bc2d753c05",
+        "bytes": 2683105,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-endless-loop-complete.jpg"
+      },
+      "shareText": "Endless Loop — Sorry, Tomorrow"
     }
   }
 }
