@@ -4977,7 +4977,12 @@
         "facebook": {
           "status": "reserved",
           "startedAt": "2026-11-03T18:54:24.197Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-11-03T18:54:25.329Z"
+            }
+          },
           "results": []
         }
       }
