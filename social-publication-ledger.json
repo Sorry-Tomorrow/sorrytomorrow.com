@@ -4825,7 +4825,12 @@
         "x": {
           "status": "reserved",
           "startedAt": "2026-11-03T18:53:37.279Z",
-          "steps": {},
+          "steps": {
+            "post-0-image-0": {
+              "status": "in-flight",
+              "startedAt": "2026-11-03T18:53:38.593Z"
+            }
+          },
           "results": [],
           "xReservedUsd": 0.5
         }
