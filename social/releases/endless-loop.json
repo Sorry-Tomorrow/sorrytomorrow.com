@@ -1,0 +1,119 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-AGENT-LOOP",
+  "slug": "endless-loop",
+  "title": "Endless Loop",
+  "number": 23,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/endless-loop/",
+  "approval3Sha256": "1ef46fabdd1d5ae86e731c2d071739d98b8a84c9aa173666813ea914aa68609d",
+  "sourceManifestSha256": "466f3b809d754dacc2d81332071c144adc37df09b8dbc8cbacbda9987d37a337",
+  "releaseAuthoritySha256": "a98f513bd0ed08f6ad47e7e6f8c1cc525c101e1334b51d604ffa688aa084ee3b",
+  "panelOrder": [
+    "p1",
+    "p2"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "Mina built her first agentic loop. Token had other plans.\n\nEndless Loop\n\nhttps://sorrytomorrow.com/comics/endless-loop/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-023-endless-loop&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/endless-loop/x/p1.png",
+              "sha256": "5fc9bfe918ab0b8006c7d923c0d159f2edd16db2d398d08b1536318628461580",
+              "bytes": 3941822,
+              "width": 1536,
+              "height": 1109,
+              "type": "image/png",
+              "alt": "Mina proudly explains her first agentic loop: Token will build the website, test, fix and repeat. Dex points at the laptop and tells him to get started. Tiny Token sits on books looking out at the Ferris wheel.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/endless-loop/x/p2.png",
+              "sha256": "07eeda5a190eb29ad4cd563d8a6eecdffda6c105a9676600350f49428db25ab1",
+              "bytes": 4098284,
+              "width": 1004,
+              "height": 1632,
+              "type": "image/png",
+              "alt": "A wordless strip shows tiny Token skipping out of the office with a ride ticket, beside an adult shoe for scale. Below, a complete illuminated Ferris wheel has Token joyfully riding in a visibly attached gondola: “WEEEE!” Defeated Dex holds a laptop showing TESTS FAILED and says, “He refuses to get off the loop.” Mina facepalms; unbothered Wes wears a plush duck hat and eats a rainbow snow cone. An attendant gestures from the exit.",
+              "panelIds": [
+                "p2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Build. Test. Fix. Repeat.\nToken has a different idea of a productive loop.\nSwipe for the full comic.\n\nEndless Loop\n\nhttps://sorrytomorrow.com/comics/endless-loop/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-023-endless-loop&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/endless-loop/instagram/p1.jpg",
+              "sha256": "a52513898746e9a4d794f5fad9b8182a0ccec2b7a17af9fd5a58c3bf921e4770",
+              "bytes": 588612,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Mina proudly explains her first agentic loop: Token will build the website, test, fix and repeat. Dex points at the laptop and tells him to get started. Tiny Token sits on books looking out at the Ferris wheel.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/endless-loop/instagram/p2.jpg",
+              "sha256": "8a3766c4b716320924c24e10a8b6d19b388388a01febe732e0b4299bcb64ec5b",
+              "bytes": 874946,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "A wordless strip shows tiny Token skipping out of the office with a ride ticket, beside an adult shoe for scale. Below, a complete illuminated Ferris wheel has Token joyfully riding in a visibly attached gondola: “WEEEE!” Defeated Dex holds a laptop showing TESTS FAILED and says, “He refuses to get off the loop.” Mina facepalms; unbothered Wes wears a plush duck hat and eats a rainbow snow cone. An attendant gestures from the exit.",
+              "panelIds": [
+                "p2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Mina’s first agentic loop is ready to work. Getting Token to agree on what counts as work is another matter.\n\nEndless Loop\n\nhttps://sorrytomorrow.com/comics/endless-loop/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-023-endless-loop&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/endless-loop/facebook/p1.jpg",
+              "sha256": "a52513898746e9a4d794f5fad9b8182a0ccec2b7a17af9fd5a58c3bf921e4770",
+              "bytes": 588612,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Mina proudly explains her first agentic loop: Token will build the website, test, fix and repeat. Dex points at the laptop and tells him to get started. Tiny Token sits on books looking out at the Ferris wheel.",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/endless-loop/facebook/p2.jpg",
+              "sha256": "8a3766c4b716320924c24e10a8b6d19b388388a01febe732e0b4299bcb64ec5b",
+              "bytes": 874946,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "A wordless strip shows tiny Token skipping out of the office with a ride ticket, beside an adult shoe for scale. Below, a complete illuminated Ferris wheel has Token joyfully riding in a visibly attached gondola: “WEEEE!” Defeated Dex holds a laptop showing TESTS FAILED and says, “He refuses to get off the loop.” Mina facepalms; unbothered Wes wears a plush duck hat and eats a rainbow snow cone. An attendant gestures from the exit.",
+              "panelIds": [
+                "p2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -82,5 +82,12 @@
     "approval3Sha256": "950a07e51fa616c1d32b47420ec9c350e4859fb329cb5490faa26551144e4eca",
     "sourceManifestSha256": "8f0ca6190856e4c904984b02feb41e6f110ba797cc26a3e6d75f83f351272dcd",
     "releaseAuthoritySha256": "c02429aeaf82d62098fd245779488f1e7960cdc01178c459ff857e0ce2ec1056"
+  },
+  "endless-loop": {
+    "internalId": "ST-AGENT-LOOP",
+    "manifestSha256": "0093ca49dcc71d028f1692f0684ef72df52a2be429ac683771ef4180851c8b7c",
+    "approval3Sha256": "1ef46fabdd1d5ae86e731c2d071739d98b8a84c9aa173666813ea914aa68609d",
+    "sourceManifestSha256": "466f3b809d754dacc2d81332071c144adc37df09b8dbc8cbacbda9987d37a337",
+    "releaseAuthoritySha256": "a98f513bd0ed08f6ad47e7e6f8c1cc525c101e1334b51d604ffa688aa084ee3b"
   }
 }

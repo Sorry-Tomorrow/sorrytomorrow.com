@@ -1,0 +1,70 @@
+{
+  "title": "Endless Loop",
+  "internalId": "ST-AGENT-LOOP",
+  "panelOrder": [
+    "p1",
+    "p2"
+  ],
+  "assets": [
+    {
+      "target": "comics/endless-loop/p1.png",
+      "sha256": "5fc9bfe918ab0b8006c7d923c0d159f2edd16db2d398d08b1536318628461580",
+      "bytes": 3941822
+    },
+    {
+      "target": "comics/endless-loop/p1.webp",
+      "sha256": "4c5bbc7787cadbd144159e904459a68342b3025898c7be9d75a56051df0dca30",
+      "bytes": 1985152
+    },
+    {
+      "target": "social/endless-loop/x/p1.png",
+      "sha256": "5fc9bfe918ab0b8006c7d923c0d159f2edd16db2d398d08b1536318628461580",
+      "bytes": 3941822
+    },
+    {
+      "target": "social/endless-loop/instagram/p1.jpg",
+      "sha256": "a52513898746e9a4d794f5fad9b8182a0ccec2b7a17af9fd5a58c3bf921e4770",
+      "bytes": 588612
+    },
+    {
+      "target": "social/endless-loop/facebook/p1.jpg",
+      "sha256": "a52513898746e9a4d794f5fad9b8182a0ccec2b7a17af9fd5a58c3bf921e4770",
+      "bytes": 588612
+    },
+    {
+      "target": "comics/endless-loop/p2.png",
+      "sha256": "07eeda5a190eb29ad4cd563d8a6eecdffda6c105a9676600350f49428db25ab1",
+      "bytes": 4098284
+    },
+    {
+      "target": "comics/endless-loop/p2.webp",
+      "sha256": "e51ab0459f8f4fdf366446bc1bb159fff1304363c75339d3c599f800990c820f",
+      "bytes": 2200776
+    },
+    {
+      "target": "social/endless-loop/x/p2.png",
+      "sha256": "07eeda5a190eb29ad4cd563d8a6eecdffda6c105a9676600350f49428db25ab1",
+      "bytes": 4098284
+    },
+    {
+      "target": "social/endless-loop/instagram/p2.jpg",
+      "sha256": "8a3766c4b716320924c24e10a8b6d19b388388a01febe732e0b4299bcb64ec5b",
+      "bytes": 874946
+    },
+    {
+      "target": "social/endless-loop/facebook/p2.jpg",
+      "sha256": "8a3766c4b716320924c24e10a8b6d19b388388a01febe732e0b4299bcb64ec5b",
+      "bytes": 874946
+    },
+    {
+      "target": "comics/endless-loop/sharing/v1/complete.jpg",
+      "sha256": "f01b280061181a090e0e8bf9ed25568da289bf28967fed6b290573bc2d753c05",
+      "bytes": 2683105
+    },
+    {
+      "target": "comics/endless-loop/sharing/v1/preview.jpg",
+      "sha256": "7be5f376156a7e2ad03e5d1e75ca689166cae26a3884132caf54a32b4a10479e",
+      "bytes": 269775
+    }
+  ]
+}

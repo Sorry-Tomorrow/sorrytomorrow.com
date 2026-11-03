@@ -8,14 +8,14 @@ const catalog = JSON.parse(
   await readFile(new URL("../content/episodes.json", import.meta.url), "utf8"),
 );
 
-test("keeps all twenty-two release entries in public reading order", async () => {
-  assert.equal(catalog.episodes.length, 22);
+test("keeps all twenty-three release entries in public reading order", async () => {
+  assert.equal(catalog.episodes.length, 23);
   assert.deepEqual(
     catalog.episodes.map((episode) => episode.publicNumber),
-    [22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    [23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 22);
-  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 22);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.slug)).size, 23);
+  assert.equal(new Set(catalog.episodes.map((episode) => episode.internalId)).size, 23);
   assert.equal(catalog.episodes.filter(episode => episode.previewOnly).length, 0);
   for (const episode of catalog.episodes) {
     assert.ok(!Number.isNaN(Date.parse(episode.websitePublishedAt)));
@@ -474,3 +474,6 @@ test("Chief Image Officer preserves all nine approved scenes, exact reversal and
   assert.equal(approved.assets.length,47);
   for(const asset of approved.assets){const bytes=await readFile(new URL("../public/"+asset.target,import.meta.url));assert.equal(bytes.length,asset.bytes);assert.equal(createHash("sha256").update(bytes).digest("hex"),asset.sha256,asset.target);}
 });
+
+
+test("Endless Loop preserves both selected slides, exact copy and all12destination assets",async()=>{const a=JSON.parse(await readFile(new URL("../content/approved-endless-loop-assets.json",import.meta.url),"utf8")),e=catalog.episodes.find(x=>x.internalId===a.internalId);assert.equal(e.title,"Endless Loop");assert.equal(e.publicNumber,23);assert.equal(e.readerLayout,"endless-loop");assert.equal(e.art.length,2);assert.equal(e.panels.length,2);assert.deepEqual(e.panels[1].lines,[{speaker:"Dex",text:"He refuses to get off the loop."},{speaker:"Token",text:"WEEEE!"}]);assert.equal(a.assets.length,12);for(const x of a.assets){const b=await readFile(new URL("../public/"+x.target,import.meta.url));assert.equal(b.length,x.bytes);assert.equal(createHash("sha256").update(b).digest("hex"),x.sha256,x.target);}});

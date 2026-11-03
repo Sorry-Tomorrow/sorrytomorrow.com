@@ -1,0 +1,53 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-11-03",
+  "recordedAt": "2026-11-03T18:18:55.290Z",
+  "internalId": "ST-AGENT-LOOP",
+  "title": "Endless Loop",
+  "ownerInstruction": "i like everything except the title, Make it Endless Loop; after that, consider it approved, and publish it",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "1ef46fabdd1d5ae86e731c2d071739d98b8a84c9aa173666813ea914aa68609d",
+  "sourceManifestSha256": "466f3b809d754dacc2d81332071c144adc37df09b8dbc8cbacbda9987d37a337",
+  "readerSharingManifestSha256": "80a8cbebe9e676e8c07de568d4af6a94b9a5bd8fa7e0fadfe3628eb75f7c594c",
+  "standingSocialAuthority": {
+    "path": "studio/operations/social-publishing-analytics-setup-20260909/INCOGNITO-RELEASE-AUTHORITY.json",
+    "sha256": "26a2cb2952cccf6ad34c76c81ea1ebcf96e7ad1ef617c164bbde5bb7bd5f2108"
+  },
+  "publicIdentity": {
+    "number": 23,
+    "displayVersion": "v0.0.23",
+    "slug": "endless-loop",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/endless-loop/",
+    "plannedWebsiteReleaseMetadata": "2026-11-03T18:18:55.290Z",
+    "basis": "Fresh origin/main 41ef34d637a472092d66f830488512beae54b678 max22, no slug/title/internalID collision; fresh durable ledger has no entry for this comic."
+  },
+  "accounts": {
+    "x": {
+      "id": "2090544245585125376",
+      "handle": "sorrytomorrowco"
+    },
+    "instagram": {
+      "id": "17841440843377082",
+      "handle": "sorrytomorrowcomic"
+    },
+    "facebook": {
+      "id": "1380120908509290"
+    }
+  },
+  "captionRule": "Exact approved premise-first captions and campaign links; no AI-generation/assistance/creation production credit.",
+  "assetRule": "Copy exact approved bytes, no image generation/resizing/cropping/lettering/conversion.",
+  "budgetRule": "Existing X provider $5cap and no-auto-recharge unchanged; obey durable reservations.",
+  "executionRule": "Validate source/Studio/site/social checks; deploy trustedmain; verify exact live website/assets and provider account/caption/media/alt facts before recording published.",
+  "exclusions": [
+    "LinkedIn",
+    "paid promotion",
+    "new accounts or permissions",
+    "backfill"
+  ],
+  "publicationClaim": "Authority only; not publication evidence."
+}
