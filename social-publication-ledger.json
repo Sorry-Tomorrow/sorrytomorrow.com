@@ -4979,10 +4979,20 @@
                 "18083817620352199"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18101424593361446"
+              "containerId": "18101424593361446",
+              "publishedAt": "2026-11-03T18:54:16.000Z"
             }
           ],
-          "verifiedAt": "2026-11-03T18:54:22.855Z"
+          "verifiedAt": "2026-11-03T18:54:22.855Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-11-09T23:25:46.801Z",
+            "posts": [
+              {
+                "id": "18109130231259751",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
