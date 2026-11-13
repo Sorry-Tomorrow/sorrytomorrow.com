@@ -5302,7 +5302,7 @@
           "verifiedAt": "2026-11-13T23:11:42.702Z"
         },
         "facebook": {
-          "status": "reserved",
+          "status": "posted-awaiting-verification",
           "startedAt": "2026-11-13T23:11:43.633Z",
           "steps": {
             "post-0-image-0": {
@@ -5350,7 +5350,29 @@
               "completedAt": "2026-11-13T23:12:02.975Z"
             }
           },
-          "results": []
+          "results": [
+            {
+              "id": "1380120908509290_122127424071458114",
+              "images": [
+                {
+                  "id": "122127423885458114",
+                  "sha256": "d7206b05abdddd71d72c693fe21a44b266b4bd4ef1bc420eae6c07fdfbbf5e15"
+                },
+                {
+                  "id": "122127423933458114",
+                  "sha256": "59f634d28ae377520b91c1173fb2793a1ce149cd80bf81da3a76e7c9d796d597"
+                },
+                {
+                  "id": "122127423981458114",
+                  "sha256": "52809ff9b72f16a255d3bbbad74dda035f7839b4fad5fd670af0e6ce4851a604"
+                },
+                {
+                  "id": "122127424035458114",
+                  "sha256": "7bd1f2780c46c1065d797c4ed4eb338e696e3b39783648acc8a07cdb61992aa4"
+                }
+              ]
+            }
+          ]
         }
       }
     }
