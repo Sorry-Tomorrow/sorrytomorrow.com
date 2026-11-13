@@ -5132,8 +5132,14 @@
               "completedAt": "2026-11-13T23:10:49.685Z"
             },
             "post-0-image-3": {
-              "status": "in-flight",
-              "startedAt": "2026-11-13T23:10:51.012Z"
+              "status": "done",
+              "startedAt": "2026-11-13T23:10:51.012Z",
+              "result": {
+                "id": "2121380303046316032",
+                "mediaKey": "3_2121380303046316032",
+                "sha256": "1c3d9f966785136fe5f5132ad84ceaddbc532067e93e53c3147e4d5c6f7f994d"
+              },
+              "completedAt": "2026-11-13T23:10:52.581Z"
             }
           },
           "results": [],
