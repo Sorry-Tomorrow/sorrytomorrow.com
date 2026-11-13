@@ -5300,6 +5300,12 @@
             }
           ],
           "verifiedAt": "2026-11-13T23:11:42.702Z"
+        },
+        "facebook": {
+          "status": "reserved",
+          "startedAt": "2026-11-13T23:11:43.633Z",
+          "steps": {},
+          "results": []
         }
       }
     }
