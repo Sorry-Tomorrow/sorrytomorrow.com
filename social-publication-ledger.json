@@ -5333,8 +5333,13 @@
               "completedAt": "2026-11-13T23:11:54.088Z"
             },
             "post-0-image-3": {
-              "status": "in-flight",
-              "startedAt": "2026-11-13T23:11:55.092Z"
+              "status": "done",
+              "startedAt": "2026-11-13T23:11:55.092Z",
+              "result": {
+                "id": "122127424035458114",
+                "sha256": "7bd1f2780c46c1065d797c4ed4eb338e696e3b39783648acc8a07cdb61992aa4"
+              },
+              "completedAt": "2026-11-13T23:11:57.185Z"
             }
           },
           "results": []
