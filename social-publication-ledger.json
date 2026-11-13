@@ -5150,8 +5150,13 @@
               "completedAt": "2026-11-13T23:10:54.773Z"
             },
             "post-0-publish": {
-              "status": "in-flight",
-              "startedAt": "2026-11-13T23:10:55.879Z"
+              "status": "done",
+              "startedAt": "2026-11-13T23:10:55.879Z",
+              "result": {
+                "id": "2121380323090899020",
+                "url": "https://x.com/sorrytomorrowco/status/2121380323090899020"
+              },
+              "completedAt": "2026-11-13T23:10:57.361Z"
             }
           },
           "results": [],
