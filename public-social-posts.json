@@ -1,6 +1,11 @@
 {
   "schema": "sorry-tomorrow-public-social-posts-v1",
   "comics": {
+    "rehuman": {
+      "x": "https://x.com/sorrytomorrowco/status/2121380323090899020",
+      "instagram": "https://www.instagram.com/p/DfsyAyCDRYT/",
+      "facebook": "https://www.facebook.com/122107583679458114/posts/122127424071458114"
+    },
     "endless-loop": {
       "x": "https://x.com/sorrytomorrowco/status/2117691745898991737",
       "instagram": "https://www.instagram.com/p/DfSknOyFzW7/",
