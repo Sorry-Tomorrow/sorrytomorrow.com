@@ -5306,8 +5306,13 @@
           "startedAt": "2026-11-13T23:11:43.633Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-11-13T23:11:45.183Z"
+              "status": "done",
+              "startedAt": "2026-11-13T23:11:45.183Z",
+              "result": {
+                "id": "122127423885458114",
+                "sha256": "d7206b05abdddd71d72c693fe21a44b266b4bd4ef1bc420eae6c07fdfbbf5e15"
+              },
+              "completedAt": "2026-11-13T23:11:47.526Z"
             }
           },
           "results": []
