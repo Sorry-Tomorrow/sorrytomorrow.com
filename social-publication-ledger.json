@@ -5078,8 +5078,14 @@
           "startedAt": "2026-11-13T23:10:36.110Z",
           "steps": {
             "post-0-image-0": {
-              "status": "in-flight",
-              "startedAt": "2026-11-13T23:10:37.084Z"
+              "status": "done",
+              "startedAt": "2026-11-13T23:10:37.084Z",
+              "result": {
+                "id": "2121380244124848128",
+                "mediaKey": "3_2121380244124848128",
+                "sha256": "ba315a46eb9d14d47b19fe649efd0562313bfe956ddb2e6b70edbbd196d932ad"
+              },
+              "completedAt": "2026-11-13T23:10:38.554Z"
             }
           },
           "results": [],
