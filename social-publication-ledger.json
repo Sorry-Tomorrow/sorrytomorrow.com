@@ -5064,6 +5064,15 @@
           }
         }
       }
+    },
+    "ST-REHUMAN": {
+      "slug": "rehuman",
+      "title": "reHUMAN",
+      "manifestSha256": "7c65407e6c7ecf1bb9bce665647c2bae70d70cf205eddaa3fd09cf26c0e25d21",
+      "sourceCommit": "847dc1438dccc8221b5718d0b0d8172e8cd8d11a",
+      "runId": "43525005391",
+      "createdAt": "2026-11-13T23:10:35.027Z",
+      "platforms": {}
     }
   }
 }
