@@ -5244,8 +5244,12 @@
               "completedAt": "2026-11-13T23:11:28.097Z"
             },
             "post-0-carousel": {
-              "status": "in-flight",
-              "startedAt": "2026-11-13T23:11:29.049Z"
+              "status": "done",
+              "startedAt": "2026-11-13T23:11:29.049Z",
+              "result": {
+                "id": "18103644926361446"
+              },
+              "completedAt": "2026-11-13T23:11:33.971Z"
             }
           },
           "results": []
