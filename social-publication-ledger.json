@@ -5342,8 +5342,12 @@
               "completedAt": "2026-11-13T23:11:57.185Z"
             },
             "post-0-publish": {
-              "status": "in-flight",
-              "startedAt": "2026-11-13T23:11:58.236Z"
+              "status": "done",
+              "startedAt": "2026-11-13T23:11:58.236Z",
+              "result": {
+                "id": "1380120908509290_122127424071458114"
+              },
+              "completedAt": "2026-11-13T23:12:02.975Z"
             }
           },
           "results": []
