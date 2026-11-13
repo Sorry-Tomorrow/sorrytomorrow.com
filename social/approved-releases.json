@@ -89,5 +89,12 @@
     "approval3Sha256": "1ef46fabdd1d5ae86e731c2d071739d98b8a84c9aa173666813ea914aa68609d",
     "sourceManifestSha256": "466f3b809d754dacc2d81332071c144adc37df09b8dbc8cbacbda9987d37a337",
     "releaseAuthoritySha256": "a98f513bd0ed08f6ad47e7e6f8c1cc525c101e1334b51d604ffa688aa084ee3b"
+  },
+  "rehuman": {
+    "internalId": "ST-REHUMAN",
+    "manifestSha256": "7c65407e6c7ecf1bb9bce665647c2bae70d70cf205eddaa3fd09cf26c0e25d21",
+    "approval3Sha256": "20991ad9313a3ffc8d4d19e895168b0641070d2fcd485d12e79ed3647cd6ac69",
+    "sourceManifestSha256": "f9ad5663193c3c6f9c50290cf0a59aaf54eb2d6c982e5a6cec5525f07abcbda0",
+    "releaseAuthoritySha256": "88d8799acc10899300895a40b3ee314fbbdced5bc1607d87a09ade62928442d4"
   }
 }

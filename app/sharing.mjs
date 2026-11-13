@@ -15,7 +15,7 @@ export function comicShareText({ title, seriesTitle, summary, canonical }) {
     }
     return summary;
   }
-  const text = [`${title} | ${seriesTitle}`, `${title} — ${seriesTitle}`].includes(summary.trim())
+  const text = summary.includes(title)
     ? summary
     : `${title} — ${seriesTitle}\n${summary}`;
   if (hasGenerationCredit(text)) throw new Error("AI-generation credit is not permitted in generated reader-share captions");

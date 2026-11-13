@@ -49,11 +49,11 @@ test("server-renders the data-driven homepage and archive", async () => {
   assert.match(html, /Oops… I Drifted Again/);
   assert.match(html, /The Magnification Spiral/);
   assert.match(html, /Founder, Inc\. LLC/);
-  assert.match(html, /Comic 023 · Ahead AI/);
-  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="endless-loop"/);
+  assert.match(html, /Comic 024 · Ahead AI/);
+  assert.match(html, /<article[^>]*id="latest-comic"[^>]*data-comic-slug="rehuman"/);
   assert.match(html, /Chief Babysitting Engineer/);
   assert.match(html, /Working from Home, or Laundry from Work\?/);
-  assert.match(html, /comics\/endless-loop\/p1\.webp/);
+  assert.match(html, /comics\/rehuman\/p1\.webp/);
   assert.match(html, /Bot-tourage/);
   assert.match(html, /Up, Up, and Out of Tokens/);
   assert.match(html, /Six-Figure Growth\?/);
@@ -169,7 +169,7 @@ test("keeps the finished surface free of starter residue", async () => {
   assert.match(route, /generateStaticParams/);
   assert.match(route, /generateMetadata/);
   assert.match(route, /CreativeWork/);
-  assert.equal(JSON.parse(catalog).episodes.length, 23);
+  assert.equal(JSON.parse(catalog).episodes.length, 24);
   assert.match(layout, /application\/rss\+xml/);
   assert.match(layout, /AnalyticsBeacon/);
   assert.equal([...castDeck.matchAll(/slug:\s*"/g)].length, 11);
@@ -254,7 +254,8 @@ test("published navigation connects Founder through the latest release", async (
     ["chief-expendable-officer", "dyson-sphere-pressure", "funnel-or-flush"],
     ["funnel-or-flush", "chief-expendable-officer", "chief-image-officer"],
     ["chief-image-officer", "funnel-or-flush", "endless-loop"],
-    ["endless-loop", "chief-image-officer", null],
+    ["endless-loop", "chief-image-officer", "rehuman"],
+    ["rehuman", "endless-loop", null],
   ]) {
     const response = await render(`/comics/${slug}`);
     assert.equal(response.status, 200);
@@ -340,4 +341,4 @@ test("Funnel or Flush preserves six approved panels and selected tagline",async(
 test("Chief Image Officer renders all nine ordered panels, title, reversal and sharing metadata",async()=>{const response=await render("/comics/chief-image-officer");assert.equal(response.status,200);const html=await response.text();assert.match(html,/Chief Image Officer/);assert.equal([...html.matchAll(/class="comic-panel-art"/g)].length,9);assert.ok(html.includes("Do they have anything for an effective CEO?"));assert.ok(html.includes("Oooh! Let me check!"));assert.ok(html.includes("/comics/funnel-or-flush/#comic"));assert.ok(html.includes("/comics/endless-loop/#comic"));assert.ok(html.includes("comics/chief-image-officer/sharing/v1/preview.jpg"));});
 
 
-test("Endless Loop renders both approved slides, connective beat and sharing title",async()=>{const response=await render("/comics/endless-loop");assert.equal(response.status,200);const html=await response.text();assert.match(html,/Endless Loop/);assert.doesNotMatch(html,/One More Pass/);assert.equal([...html.matchAll(/class="comic-panel-art"/g)].length,2);assert.ok(html.includes("He refuses to get off the loop."));assert.ok(html.includes("WEEEE!"));assert.ok(html.includes("ride ticket"));assert.ok(html.includes("snow cone"));assert.ok(html.includes("/comics/chief-image-officer/#comic"));assert.match(html,/You’re at the latest comic/);assert.ok(html.includes("comics/endless-loop/sharing/v1/preview.jpg"));});
+test("Endless Loop renders both approved slides, connective beat and sharing title",async()=>{const response=await render("/comics/endless-loop");assert.equal(response.status,200);const html=await response.text();assert.match(html,/Endless Loop/);assert.doesNotMatch(html,/One More Pass/);assert.equal([...html.matchAll(/class="comic-panel-art"/g)].length,2);assert.ok(html.includes("He refuses to get off the loop."));assert.ok(html.includes("WEEEE!"));assert.ok(html.includes("ride ticket"));assert.ok(html.includes("snow cone"));assert.ok(html.includes("/comics/chief-image-officer/#comic"));assert.ok(html.includes("/comics/rehuman/#comic"));assert.ok(html.includes("comics/endless-loop/sharing/v1/preview.jpg"));});

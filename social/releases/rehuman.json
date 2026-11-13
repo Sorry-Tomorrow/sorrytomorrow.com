@@ -1,0 +1,193 @@
+{
+  "schema": "sorry-tomorrow-social-release-v1",
+  "internalId": "ST-REHUMAN",
+  "slug": "rehuman",
+  "title": "reHUMAN",
+  "number": 24,
+  "canonicalUrl": "https://sorrytomorrow.com/comics/rehuman/",
+  "approval3Sha256": "20991ad9313a3ffc8d4d19e895168b0641070d2fcd485d12e79ed3647cd6ac69",
+  "sourceManifestSha256": "f9ad5663193c3c6f9c50290cf0a59aaf54eb2d6c982e5a6cec5525f07abcbda0",
+  "releaseAuthoritySha256": "88d8799acc10899300895a40b3ee314fbbdced5bc1607d87a09ade62928442d4",
+  "panelOrder": [
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+  ],
+  "platforms": {
+    "x": {
+      "accountId": "2090544245585125376",
+      "posts": [
+        {
+          "text": "All Dex wants to do is cancel a subscription. His AI agent has one last question.\n\nreHUMAN — Sorry, Tomorrow.\n\nhttps://sorrytomorrow.com/comics/rehuman/?utm_source=x&utm_medium=organic_social&utm_campaign=comic-024-rehuman&utm_content=panels",
+          "media": [
+            {
+              "path": "public/social/rehuman/x/p1.png",
+              "sha256": "ba315a46eb9d14d47b19fe649efd0562313bfe956ddb2e6b70edbbd196d932ad",
+              "bytes": 858359,
+              "width": 860,
+              "height": 616,
+              "type": "image/png",
+              "alt": "Dex leans back and clicks his laptop to cancel a subscription. The agent says, “Before I finish, please verify you’re human.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/x/p2.png",
+              "sha256": "16498db0b0b5728bad409bec452983ba0f624804fc7afb54c63ca8839fed5b66",
+              "bytes": 802079,
+              "width": 860,
+              "height": 616,
+              "type": "image/png",
+              "alt": "Over Dex’s shoulder, a bicycle verification grid fills the laptop. The agent says, “Try again.”",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/x/p3.png",
+              "sha256": "b6b14e9cee57c0c79a5e1aeb94854a1058737271184c6705447430fce17ffdbe",
+              "bytes": 897926,
+              "width": 860,
+              "height": 616,
+              "type": "image/png",
+              "alt": "Dex plants both hands on his desk and yells at the laptop, “LET ME SPEAK TO A HUMAN!”",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/x/p4.png",
+              "sha256": "1c3d9f966785136fe5f5132ad84ceaddbc532067e93e53c3147e4d5c6f7f994d",
+              "bytes": 670811,
+              "width": 860,
+              "height": 506,
+              "type": "image/png",
+              "alt": "Dex’s angry face reflects in the dark laptop glass. The agent replies, “You first.”",
+              "panelIds": [
+                "p4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "accountId": "17841440843377082",
+      "posts": [
+        {
+          "text": "Dex is one click away from cancelling a subscription. Then his AI agent asks for proof he’s human.\n\nreHUMAN — swipe for the full comic.\n\nhttps://sorrytomorrow.com/comics/rehuman/?utm_source=instagram&utm_medium=organic_social&utm_campaign=comic-024-rehuman&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/rehuman/instagram/p1.jpg",
+              "sha256": "d7206b05abdddd71d72c693fe21a44b266b4bd4ef1bc420eae6c07fdfbbf5e15",
+              "bytes": 256211,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex leans back and clicks his laptop to cancel a subscription. The agent says, “Before I finish, please verify you’re human.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/instagram/p2.jpg",
+              "sha256": "59f634d28ae377520b91c1173fb2793a1ce149cd80bf81da3a76e7c9d796d597",
+              "bytes": 217921,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Over Dex’s shoulder, a bicycle verification grid fills the laptop. The agent says, “Try again.”",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/instagram/p3.jpg",
+              "sha256": "52809ff9b72f16a255d3bbbad74dda035f7839b4fad5fd670af0e6ce4851a604",
+              "bytes": 270494,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex plants both hands on his desk and yells at the laptop, “LET ME SPEAK TO A HUMAN!”",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/instagram/p4.jpg",
+              "sha256": "7bd1f2780c46c1065d797c4ed4eb338e696e3b39783648acc8a07cdb61992aa4",
+              "bytes": 164905,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex’s angry face reflects in the dark laptop glass. The agent replies, “You first.”",
+              "panelIds": [
+                "p4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "facebook": {
+      "accountId": "1380120908509290",
+      "posts": [
+        {
+          "text": "Before Dex can cancel a subscription, his AI agent wants him to verify he’s human. He’d really rather speak to someone.\n\nRead reHUMAN from Sorry, Tomorrow.\n\nhttps://sorrytomorrow.com/comics/rehuman/?utm_source=facebook&utm_medium=organic_social&utm_campaign=comic-024-rehuman&utm_content=carousel",
+          "media": [
+            {
+              "path": "public/social/rehuman/facebook/p1.jpg",
+              "sha256": "d7206b05abdddd71d72c693fe21a44b266b4bd4ef1bc420eae6c07fdfbbf5e15",
+              "bytes": 256211,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex leans back and clicks his laptop to cancel a subscription. The agent says, “Before I finish, please verify you’re human.”",
+              "panelIds": [
+                "p1"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/facebook/p2.jpg",
+              "sha256": "59f634d28ae377520b91c1173fb2793a1ce149cd80bf81da3a76e7c9d796d597",
+              "bytes": 217921,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Over Dex’s shoulder, a bicycle verification grid fills the laptop. The agent says, “Try again.”",
+              "panelIds": [
+                "p2"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/facebook/p3.jpg",
+              "sha256": "52809ff9b72f16a255d3bbbad74dda035f7839b4fad5fd670af0e6ce4851a604",
+              "bytes": 270494,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex plants both hands on his desk and yells at the laptop, “LET ME SPEAK TO A HUMAN!”",
+              "panelIds": [
+                "p3"
+              ]
+            },
+            {
+              "path": "public/social/rehuman/facebook/p4.jpg",
+              "sha256": "7bd1f2780c46c1065d797c4ed4eb338e696e3b39783648acc8a07cdb61992aa4",
+              "bytes": 164905,
+              "width": 1080,
+              "height": 1350,
+              "type": "image/jpeg",
+              "alt": "Dex’s angry face reflects in the dark laptop glass. The agent replies, “You first.”",
+              "panelIds": [
+                "p4"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

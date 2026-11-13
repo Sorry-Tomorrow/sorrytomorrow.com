@@ -44,7 +44,7 @@ test("the newest approved captions keep their exact copy with one title and cano
     const copy = shareCaption(text, canonical);
     const expectedCopy = approved.split(/\r?\n/).some(line => line.trim() === canonical)
       ? approved
-      : `${[`${episode.title} | ${series.title}`, `${episode.title} — ${series.title}`].includes(approved.trim()) ? approved : `${episode.title} — ${series.title}\n${approved}`}\n${canonical}`;
+      : `${approved.includes(episode.title) ? approved : `${episode.title} — ${series.title}\n${approved}`}\n${canonical}`;
     assert.equal(copy, expectedCopy, episode.slug);
     assert.equal(copy.split(episode.title).length - 1, 1, episode.slug);
     assert.equal(copy.split(canonical).length - 1, 1, episode.slug);

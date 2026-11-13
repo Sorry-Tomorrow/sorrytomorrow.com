@@ -1,0 +1,28 @@
+{
+  "schema": "sorry-tomorrow-owner-release-authority-v1",
+  "date": "2026-11-13",
+  "recordedAt": "2026-11-13T23:01:12.915Z",
+  "ownerInstruction": "I like it, approve the final package for reHUMAN and publish it as Comic 024 on the website, X, Instagram, and Facebook.",
+  "internalId": "ST-REHUMAN",
+  "title": "reHUMAN",
+  "destinations": [
+    "website",
+    "x",
+    "instagram",
+    "facebook"
+  ],
+  "approval3ReceiptSha256": "20991ad9313a3ffc8d4d19e895168b0641070d2fcd485d12e79ed3647cd6ac69",
+  "sourceManifestSha256": "f9ad5663193c3c6f9c50290cf0a59aaf54eb2d6c982e5a6cec5525f07abcbda0",
+  "readerSharingManifestSha256": "3338b167f4ac87c706c68e756fa3f7ad74c690efdd958e8c901877016b4f7ebc",
+  "publicIdentity": {
+    "number": 24,
+    "displayVersion": "v0.0.24",
+    "slug": "rehuman",
+    "canonicalUrl": "https://sorrytomorrow.com/comics/rehuman/"
+  },
+  "accounts": {
+    "x": "2090544245585125376",
+    "instagram": "17841440843377082",
+    "facebook": "1380120908509290"
+  }
+}

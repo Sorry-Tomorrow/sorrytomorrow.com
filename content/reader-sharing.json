@@ -1,8 +1,8 @@
 {
   "schema": "sorry-tomorrow-reader-sharing-public-v1",
   "status": "approved",
-  "manifestSha256": "80a8cbebe9e676e8c07de568d4af6a94b9a5bd8fa7e0fadfe3628eb75f7c594c",
-  "approvalReceiptSha256": "733f43f3355f7d51d63d217f9702514a02f5c3f74b30625d4534e06b3fe4d2cc",
+  "manifestSha256": "3338b167f4ac87c706c68e756fa3f7ad74c690efdd958e8c901877016b4f7ebc",
+  "approvalReceiptSha256": "e4f8c25ab910af704a9e90d7761cbd7eb61c653e8d15954a6559288eeb62bb68",
   "episodes": {
     "executive-twin": {
       "status": "approved",
@@ -578,6 +578,31 @@
         "filename": "sorry-tomorrow-endless-loop-complete.jpg"
       },
       "shareText": "Endless Loop — Sorry, Tomorrow"
+    },
+    "rehuman": {
+      "status": "approved",
+      "manifestSha256": "3338b167f4ac87c706c68e756fa3f7ad74c690efdd958e8c901877016b4f7ebc",
+      "approvalReceiptSha256": "e4f8c25ab910af704a9e90d7761cbd7eb61c653e8d15954a6559288eeb62bb68",
+      "preview": {
+        "src": "/comics/rehuman/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "reHUMAN. Dex tries to cancel a subscription. His laptop asks him to verify he’s human.",
+        "sha256": "00e34b2a7a6d1e366aea9ab952302a54de51d3458b7762a0b3638e275dd6cd21",
+        "bytes": 177726,
+        "mimeType": "image/jpeg"
+      },
+      "download": {
+        "src": "/comics/rehuman/sharing/v1/complete.jpg",
+        "width": 1200,
+        "height": 3570,
+        "alt": "Dex leans back and clicks his laptop to cancel a subscription. The agent says, “Before I finish, please verify you’re human.” Over Dex’s shoulder, a bicycle verification grid fills the laptop. The agent says, “Try again.” Dex plants both hands on his desk and yells at the laptop, “LET ME SPEAK TO A HUMAN!” Dex’s angry face reflects in the dark laptop glass. The agent replies, “You first.”",
+        "sha256": "6f6c4c6ca61fee3e0bc82b8611b213a8f67080b58038b655ddc1114c860a1ef4",
+        "bytes": 1085775,
+        "mimeType": "image/jpeg",
+        "filename": "sorry-tomorrow-rehuman-complete.jpg"
+      },
+      "shareText": "Dex tries to cancel a subscription. His agent asks him to prove he’s human. Read reHUMAN."
     }
   }
 }

@@ -17,6 +17,93 @@
   },
   "episodes": [
     {
+      "internalId": "ST-REHUMAN",
+      "publicNumber": 24,
+      "publicVersion": "v0.0.24",
+      "slug": "rehuman",
+      "title": "reHUMAN",
+      "label": "Comic 024 · Ahead AI",
+      "previewOnly": false,
+      "shell": "art-first",
+      "caption": "Dex tries to cancel a subscription. His agent asks him to prove he’s human.",
+      "ogImage": {
+        "src": "comics/rehuman/sharing/v1/preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "reHUMAN. Dex tries to cancel a subscription. His laptop asks him to verify he’s human."
+      },
+      "art": [
+        {
+          "src": "comics/rehuman/p1.png",
+          "webpSrc": "comics/rehuman/p1.webp",
+          "width": 860,
+          "height": 616,
+          "alt": "Dex leans back and clicks his laptop to cancel a subscription. The agent says, “Before I finish, please verify you’re human.”"
+        },
+        {
+          "src": "comics/rehuman/p2.png",
+          "webpSrc": "comics/rehuman/p2.webp",
+          "width": 860,
+          "height": 616,
+          "alt": "Over Dex’s shoulder, a bicycle verification grid fills the laptop. The agent says, “Try again.”"
+        },
+        {
+          "src": "comics/rehuman/p3.png",
+          "webpSrc": "comics/rehuman/p3.webp",
+          "width": 860,
+          "height": 616,
+          "alt": "Dex plants both hands on his desk and yells at the laptop, “LET ME SPEAK TO A HUMAN!”"
+        },
+        {
+          "src": "comics/rehuman/p4.png",
+          "webpSrc": "comics/rehuman/p4.webp",
+          "width": 860,
+          "height": 506,
+          "alt": "Dex’s angry face reflects in the dark laptop glass. The agent replies, “You first.”"
+        }
+      ],
+      "panels": [
+        {
+          "description": "Dex leans back and clicks his laptop to cancel a subscription. The agent says, “Before I finish, please verify you’re human.”",
+          "lines": [
+            {
+              "speaker": "Agent",
+              "text": "Before I finish, please verify you’re human."
+            }
+          ]
+        },
+        {
+          "description": "Over Dex’s shoulder, a bicycle verification grid fills the laptop. The agent says, “Try again.”",
+          "lines": [
+            {
+              "speaker": "Agent",
+              "text": "Try again."
+            }
+          ]
+        },
+        {
+          "description": "Dex plants both hands on his desk and yells at the laptop, “LET ME SPEAK TO A HUMAN!”",
+          "lines": [
+            {
+              "speaker": "Dex",
+              "text": "LET ME SPEAK TO A HUMAN!"
+            }
+          ]
+        },
+        {
+          "description": "Dex’s angry face reflects in the dark laptop glass. The agent replies, “You first.”",
+          "lines": [
+            {
+              "speaker": "Agent",
+              "text": "You first."
+            }
+          ]
+        }
+      ],
+      "websitePublishedAt": "2026-11-13T23:01:12.915Z",
+      "displayDate": "v0.0.24"
+    },
+    {
       "internalId": "ST-AGENT-LOOP",
       "publicNumber": 23,
       "publicVersion": "v0.0.23",

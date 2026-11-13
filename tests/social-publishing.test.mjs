@@ -188,7 +188,7 @@ test("a redirected or changed public asset fails before upload",async()=>{
 });
 test("safeRead rejects symlinks escaping the checkout",async()=>{
   const root=await mkdtemp(path.join(tmpdir(),"st-social-read-"));const outside=await mkdtemp(path.join(tmpdir(),"st-social-outside-"));
-  await writeFile(path.join(outside,"canary"),"private");await symlink(outside,path.join(root,"link"));await assert.rejects(safeRead(root,"link/canary"));
+  await writeFile(path.join(outside,"canary"),"private");await symlink(outside,path.join(root,"link"),process.platform==="win32"?"junction":"dir");await assert.rejects(safeRead(root,"link/canary"));
 });
 test("PNG dimensions are decoded from bytes and unknown formats fail",()=>{
   const b=Buffer.alloc(34);Buffer.from([137,80,78,71,13,10,26,10]).copy(b);b.write("IHDR",12);b.writeUInt32BE(1480,16);b.writeUInt32BE(1420,20);
