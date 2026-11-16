@@ -5403,10 +5403,20 @@
                 "122127423981458114",
                 "122127424035458114"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-11-13T23:11:59.000Z"
             }
           ],
-          "verifiedAt": "2026-11-13T23:12:06.306Z"
+          "verifiedAt": "2026-11-13T23:12:06.306Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-11-16T23:23:06.904Z",
+            "posts": [
+              {
+                "id": "1380120908509290_122127424071458114",
+                "status": "observed"
+              }
+            ]
+          }
         }
       }
     }
