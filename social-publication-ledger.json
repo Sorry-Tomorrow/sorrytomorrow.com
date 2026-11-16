@@ -5198,10 +5198,20 @@
                 "2121380282007756800",
                 "2121380303046316032"
               ],
-              "copyAndAltVerified": true
+              "copyAndAltVerified": true,
+              "publishedAt": "2026-11-13T23:10:57.000Z"
             }
           ],
-          "verifiedAt": "2026-11-13T23:10:59.571Z"
+          "verifiedAt": "2026-11-13T23:10:59.571Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-11-16T23:23:06.904Z",
+            "posts": [
+              {
+                "id": "2121380323090899020",
+                "status": "observed"
+              }
+            ]
+          }
         },
         "instagram": {
           "status": "published",
