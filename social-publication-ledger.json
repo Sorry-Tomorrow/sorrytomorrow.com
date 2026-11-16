@@ -5306,10 +5306,20 @@
                 "18126883075937199"
               ],
               "copyAndAltVerified": true,
-              "containerId": "18103644926361446"
+              "containerId": "18103644926361446",
+              "publishedAt": "2026-11-13T23:11:37.000Z"
             }
           ],
-          "verifiedAt": "2026-11-13T23:11:42.702Z"
+          "verifiedAt": "2026-11-13T23:11:42.702Z",
+          "metricsLastCheck": {
+            "observedAt": "2026-11-16T23:23:06.904Z",
+            "posts": [
+              {
+                "id": "18348505579254912",
+                "status": "partial"
+              }
+            ]
+          }
         },
         "facebook": {
           "status": "published",
